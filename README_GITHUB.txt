@@ -1,30 +1,24 @@
-THE MAKERS — FULL FEATURE GITHUB PAGES BUILD
+THE MAKERS — GITHUB PAGES SITE
 
-PUBLIC SITE TARGET
+LIVE HOME
 https://themakersffl.github.io/
 
-UPLOAD
-Upload everything in this folder to the ROOT of the TheMakersFFL/themakersffl.github.io repository. index.html must remain at the root.
+WHAT THIS BUILD ADDS
+- Same central 2026 season-file architecture used by the Misc.Exp site.
+- Homepage automatically features the newest published weekly write-up.
+- One Week engine powers Week 1–17 routes.
+- Dynamic Power Rankings, Playoff Odds, Moves, Waivers, Record Book and 2026 War Room.
+- Dedicated 2026 Schedule page.
+- Secure Yahoo-waiver bridge placeholder (no credentials stored in GitHub).
+- In-house Makers draft grades and team breakdowns shown beside Yahoo grades.
+- 2022 remains fully included as the inaugural season.
+- Billy begins a separate franchise in 2025 and does not inherit El Rubio's 2022–24 history.
 
-WHAT IS INCLUDED
-- 49ers red/gold/black/cream theme matching the Misc.Exp site
-- 2022–2025 completed season history
-- 2026 War Room and exact Weeks 1–14 schedule
-- Weekly Write-Ups hub + Week 1–17 pages
-- Trophy Case
-- Franchise ledger + individual manager pages
-- Head-to-Head page (verified historical postseason matrix + full 2026 opponent map)
-- Full 2026 150-pick draft breakdown + 2022–26 Yahoo draft-board archive
-- Moves & Trades
-- Waiver Wire / FAAB history
-- Keeper Ledger
-- Power Rankings
-- Model Playoff Odds
-- Expanded Record Book
-- Makers Wall of Shame
+HOW TO UPDATE THE LIVE SITE
+1. Upload the files in the update ZIP to the ROOT of the themakersffl.github.io repository.
+2. Choose to replace files with the same names.
+3. Commit changes.
+4. GitHub Pages keeps the same public URL.
 
-DATA CAUTION
-The H2H page does not fabricate completed-season regular-season game-by-game totals. It labels its historical matrix as verified postseason/placement games because the normalized site dataset contains standings and postseason results, while older weekly score logs remain in screenshot form.
-
-FRANCHISE CONTINUITY
-Billy begins in 2025 and does not inherit El Rubio's 2022–24 franchise history.
+NORMAL WEEKLY MAINTENANCE
+Use UPDATE_GUIDE.txt. Most 2026 weekly changes belong only in season-2026.js.
