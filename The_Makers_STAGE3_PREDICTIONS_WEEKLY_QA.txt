@@ -1,0 +1,84 @@
+THE MAKERS — STAGE 3 PREDICTIONS / WEEKLY EDITORIAL / LIVE-SCORE FLAG QA
+Date: 2026-09-02
+Base: The_Makers_STAGE2_WAIVERS_MOVES_ROSTERS_FULL.zip
+
+STATUS: PASS
+
+STAGE 3 FEATURES
+1. Predictions page
+- Added predictions.html and a Predictions navigation link.
+- Season-long Makers vs Yahoo winner-pick records.
+- Makers vs Yahoo average per-team score miss.
+- Closer-projection game count.
+- Per-game ledger stores both projected scorelines, projected combined totals, actual score and projection error.
+- Current POST-MNF data correctly shows no frozen Thursday forecast yet.
+
+2. Thursday forecast architecture
+- First POST-WAIVERS import for a week creates a five-game prediction snapshot.
+- Makers projection and Yahoo projection are stored independently.
+- Makers Power Blend v1 combines Yahoo lineup projection when usable, preseason Makers rank, and current scoring form as the season develops.
+- If Yahoo reports 0.00 because a lineup is unset, Makers still produces a nonzero independent forecast using league baseline + Makers strength adjustment.
+- Once a prediction snapshot is locked, later duplicate POST-WAIVERS sightings preserve the original matchup forecasts.
+
+3. Week 1 synthetic Thursday forecast test
+- Prediction snapshot rows: 5/5.
+- All Makers projected team scores: numeric and > 0.
+- Test forecasts from the current real Yahoo Week 1 pool:
+  Moose Knuckles 108.80 – Predacious Fungi 89.21 (Yahoo 106.11 – 94.46)
+  TDs In Your Face 90.07 – Kareem all over your Hunt 97.46 (Yahoo 93.89 – 0.00)
+  Revenge of the period bloods 101.51 – The Eviscerators 112.35 (Yahoo 0.00 – 108.64)
+  Criterus 109.37 – The A Gap 100.16 (Yahoo 103.66 – 0.00)
+  The Mustache riders 98.81 – Pump and Go 100.59 (Yahoo 0.00 – 98.23)
+- These are QA forecasts only. The public site will freeze the real forecast from the actual POST-WAIVERS collector file.
+
+4. All-Play Standings
+- Uses only fully completed weeks with all 10 team scores present.
+- Each completed week creates nine all-play decisions per team.
+- Synthetic completed-week test produced the expected 9-0 through 0-9 ladder.
+- Tracks all-play record, win %, average points, weekly high scores and actual league record.
+
+5. Weekly write-ups
+- Week pages now include a dedicated editorial preview/recap card for all five matchups.
+- Week 1 has five custom preview write-ups based on the existing full Week 1 article.
+- Before results: preview copy renders.
+- After results: recap mode renders and actual score replaces forecast receipt.
+- Thursday prediction snapshots add Makers scoreline/combined total and Yahoo scoreline/combined total.
+
+6. Weekly Write-Ups hub
+- Latest published write-up renders in full inline.
+- Game of the Week, Shame Watch, standings movement, quote and weekly awards remain included.
+- Five-game breakdown appears inline beneath the current article.
+- Prediction comparison appears automatically once a Thursday forecast exists.
+- Removed the prior requirement to click “Open Week” to read the featured full article.
+
+7. Homepage latest-week routing
+- Homepage Weekly Write-Ups hero action routes directly to the latest published full week.
+- Archive access remains available through the Weekly Write-Ups hub.
+
+8. Live-scoring suppression
+- Added season feature flag: features.liveScoring = false.
+- Homepage and dynamic Week pages render zero score cards while the flag is off.
+- makers-static-week.js also respects the same flag.
+- makers-engine.js renderScoreboard() remains unchanged and available for future reactivation.
+- Collector continues to capture live/Yahoo matchup structures; presentation is simply hidden.
+
+RUNTIME QA
+- Current Home render: 0 score cards.
+- Current Week 1 render: 0 score cards, 5 matchup breakdown cards.
+- Current Weekly Write-Ups hub: full article inline + 5 matchup breakdown cards.
+- Predictions page: prediction ledger + All-Play table present before first Thursday forecast.
+- Synthetic POST-WAIVERS: 1 locked Week 1 snapshot, 5 forecast rows.
+- Synthetic completed Week 1: prediction ledger grades all 5 games; All-Play ladder calculates.
+
+TECHNICAL QA
+- HTML pages: 51.
+- Local href/src references checked: 344.
+- Missing local targets: 0.
+- All top-level JavaScript files pass node --check.
+- tools/apply-weekly-export.py passes Python syntax validation.
+- Stage 1 collector/import and Stage 2 waiver/move/roster systems retained.
+- Removed Mis.Exp explanatory phrases remain absent.
+- Mobile CSS added: prediction tables remain horizontally swipeable, matchup breakdown cards collapse to one column, prediction metrics collapse responsively.
+
+NEXT REAL-DATA EVENT
+- Upload the first real Makers POST-WAIVERS JSON. The site will automatically freeze the real Week 1 Makers-vs-Yahoo prediction snapshot from that file.

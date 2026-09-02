@@ -37,6 +37,23 @@
   const txKey=x=>[x.type||'MOVE',x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??'',x.time||''].map(txText).join('|').toLowerCase();
   const seasonTransactions=new Map();
   let transactionSequence=0;
+  Y.predictionSnapshots=Y.predictionSnapshots||{};
+  const round2=v=>Math.round(Number(v)*100)/100;
+  const rankForTeam=t=>Number((Y.draftRankings||[]).find(x=>canonical(x.team)===canonical(t))?.rank)||5.5;
+  function makersProjection(team,yahoo,meanYahoo,completedWeek,standings){
+    const y=Number(yahoo),hasYahoo=Number.isFinite(y)&&y>0;
+    const base=hasYahoo?y:(Number.isFinite(meanYahoo)&&meanYahoo>0?meanYahoo:100);
+    const rank=rankForTeam(team),preAdj=(5.5-rank)*1.35;
+    const rows=Array.isArray(standings)?standings:[];
+    const ppgs=completedWeek>0?rows.map(x=>(num(x.pf)??0)/completedWeek).filter(Number.isFinite):[];
+    const leaguePpg=ppgs.length?ppgs.reduce((a,b)=>a+b,0)/ppgs.length:base;
+    const row=rows.find(x=>canonical(teamName(x))===canonical(team));
+    const teamPpg=completedWeek>0&&row?(num(row.pf)??0)/completedWeek:leaguePpg;
+    const liveAdj=completedWeek>0?Math.max(-9,Math.min(9,(teamPpg-leaguePpg)*0.30)):0;
+    const liveWeight=Math.min(.70,(completedWeek/8)*.70);
+    const adjustment=preAdj*(1-liveWeight)+liveAdj*liveWeight;
+    return round2((hasYahoo?.87:1)*base+(hasYahoo?.13:0)*meanYahoo+adjustment);
+  }
   Y.collectorSnapshots=[];
 
   function applyImport(I,isLatest){
@@ -94,6 +111,21 @@
         const pa=same?(m.projA??m.scoreA):(m.projB??m.scoreB),pb=same?(m.projB??m.scoreB):(m.projA??m.scoreA);
         return [row[0],row[1],pa??'',pb??''];
       });
+      if(String(I.mode||'').toLowerCase()==='post-waivers'){
+        const positive=[];
+        for(const m of upcoming)for(const v of [num(m.projA),num(m.projB)])if(v!=null&&v>0)positive.push(v);
+        const meanYahoo=positive.length?positive.reduce((a,b)=>a+b,0)/positive.length:100;
+        const existing=Y.predictionSnapshots[String(target)]||null;
+        const oldByPair=new Map((existing?.matchups||[]).map(m=>[[canonical(m.teamA),canonical(m.teamB)].sort().join('|'),m]));
+        const forecast=scheduleRows.map(row=>{
+          const m=byPair.get([canonical(row[0]),canonical(row[1])].sort().join('|'));if(!m)return null;
+          const same=canonical(m.teamA)===canonical(row[0]),ya=num(same?m.projA:m.projB),yb=num(same?m.projB:m.projA);
+          const prior=oldByPair.get([canonical(row[0]),canonical(row[1])].sort().join('|'));
+          if(existing?.locked&&prior)return prior;
+          return {teamA:row[0],teamB:row[1],meA:makersProjection(row[0],ya,meanYahoo,completed,data.standings),meB:makersProjection(row[1],yb,meanYahoo,completed,data.standings),yahooA:ya??0,yahooB:yb??0};
+        }).filter(Boolean);
+        Y.predictionSnapshots[String(target)]={week:target,capturedAt:(existing?.locked?existing.capturedAt:(I.capturedAt||'')),phase:'THURSDAY FORECAST',source:'POST-WAIVERS Yahoo collector + Makers power/scoring model',model:'Makers Power Blend v1',locked:true,matchups:forecast};
+      }
     }
     if(isLatest&&upcoming.length){
       Y.liveMatchupProjections=upcoming.map(m=>({...m,teamA:canonical(m.teamA),teamB:canonical(m.teamB)}));

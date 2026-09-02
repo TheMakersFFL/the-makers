@@ -25,3 +25,12 @@ HOW TO UPDATE THE LIVE SITE
 
 NORMAL WEEKLY MAINTENANCE
 Use UPDATE_GUIDE.txt. Most 2026 weekly changes belong in season-2026.js.
+
+
+STAGE 4 (2026-09-02)
+- H2H matrix now shows overall, REG, POST, current series streak and largest archived win in every played rivalry cell; desktop fits within the normal shell and mobile scrolls intentionally.
+- Record Book now uses the unified 2022-forward game archive for live 2026 records, postseason records, score extremes, streaks and completed-season records.
+- League Ledger adds all 10 active managers to Career Wins, Career Points, Postseason, and Basement/Shame boards.
+- Keeper archive is grouped by season and sorted by keeper cost.
+- Added Makers Press Room as an editorial/media archive (weekly dispatches, quotes, predictions, preseason files); it does not import Mis.Exp press-conference punishment.
+- Final navigation order: Weekly Write Ups, 2026, Predictions, Moves, Waivers, Schedule, Power, Odds, Draft, Keepers, Franchises, History, H2H, Records, Trophies, Shame, Press.

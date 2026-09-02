@@ -1,5 +1,7 @@
 window.MAKERS_2026 = {
   "season": 2026,
+  "features": {"liveScoring": false},
+  "predictionSnapshots": {},
   "week": 1,
   "lastUpdated": "Week 1 Weekly Write-Up · September 1, 2026",
   "draftRankings": [
@@ -644,6 +646,33 @@ window.MAKERS_2026 = {
           "The Mustache riders",
           "Pump and Go"
         ]
+      ],
+      "gameBreakdowns": [
+        {
+          "teamA": "The Moose Knuckles",
+          "teamB": "Predacious Fungi",
+          "preview": "Jim brings the steadier contender profile and a loaded Henry/Achane/JSN/McConkey core; Max has enough skill-position talent to make this uncomfortable but enters the opener with the league's loudest quarterback question. The Week 1 pick is The Moose Knuckles."
+        },
+        {
+          "teamA": "TDs In Your Face",
+          "teamB": "Kareem all over your Hunt",
+          "preview": "Nick has the deeper middle of the roster and several spike-week weapons, but the unresolved tight-end spot creates an immediate Week 1 tax. Billy counters with concentrated star power through Christian McCaffrey and CeeDee Lamb. The official pick is Kareem all over your Hunt in a close one."
+        },
+        {
+          "teamA": "Revenge of the period bloods",
+          "teamB": "The Eviscerators",
+          "preview": "Yahoo framed this as an F-versus-A+ mismatch, but Nate's Chase/A.J. Brown/Jacobs/Lamar core is far better than a one-win roster. Andrew still has the keeper-built structural edge, the defending-champion résumé and the deeper complete lineup. The Eviscerators are the pick."
+        },
+        {
+          "teamA": "Criterus",
+          "teamB": "The A Gap",
+          "preview": "This is the cleanest test of our preseason board against Yahoo's grades. Criterus has elite depth across Taylor, Jefferson, Nabers, Bucky and Hurts; The A Gap has enough young ceiling through Puka, Jeanty, Rice and Maye to make it dangerous. We take Criterus, but not comfortably."
+        },
+        {
+          "teamA": "The Mustache riders",
+          "teamB": "Pump and Go",
+          "preview": "TomD owns the model edge and an absurd Brock Bowers keeper price, while Tommy brings more top-end knockout swings through Saquon, Chase Brown, Josh Allen and Trey McBride. This is one of the Week 1 spots where the editorial pick goes against the model: Pump and Go."
+        }
       ],
       "gameOfWeek": "Revenge of the period bloods vs The Eviscerators",
       "gotwCopy": "Yahoo called this an F-versus-A+ mismatch and projected Nate for 1-13 while putting Andrew at 13-1. Our board has them #5 and #2. Andrew is still the pick, but if Nate wins, Yahoo's grade becomes the first framed receipt of 2026.",

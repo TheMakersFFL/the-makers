@@ -6,7 +6,7 @@
    hamb.setAttribute('aria-expanded',String(open));
    hamb.setAttribute('aria-label',open?'Close navigation':'Open navigation');
    hamb.textContent=open?'×':'☰';
-   document.body.classList.toggle('nav-open',open && matchMedia('(max-width:950px)').matches);
+   document.body.classList.toggle('nav-open',open && matchMedia('(max-width:1050px)').matches);
  };
  if(nav&&hamb){
    if(!nav.id)nav.id='site-nav';
@@ -17,7 +17,7 @@
    nav.addEventListener('click',e=>{if(e.target.closest('a'))setNav(false)});
    document.addEventListener('click',e=>{if(nav.classList.contains('open')&&!e.target.closest('.topbar'))setNav(false)});
    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){setNav(false);hamb.focus()}});
-   addEventListener('resize',()=>{if(innerWidth>950&&nav.classList.contains('open'))setNav(false)},{passive:true});
+   addEventListener('resize',()=>{if(innerWidth>1050&&nav.classList.contains('open'))setNav(false)},{passive:true});
  }
  const here=(location.pathname.split('/').pop()||'index.html');
  document.querySelectorAll('.nav a').forEach(a=>{if(a.getAttribute('href')===here)a.classList.add('active')});

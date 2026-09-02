@@ -30,3 +30,12 @@ YAHOO LIVE BRIDGE
 
 STATIC HISTORY FILE
   data.js remains the historical 2022–2025 archive plus the locked 2026 draft/schedule/keeper baseline. Do not rewrite old history to perform ordinary weekly updates.
+
+STAGE 4 — FINAL PARITY / ARCHIVE PASS (2026-09-02)
+- Final nav order: Weekly Write Ups → 2026 → Predictions → Moves → Waivers → Schedule → Power → Odds → Draft → Keepers → Franchises → History → H2H → Records → Trophies → Shame → Press.
+- H2H matrix: Overall + REG + POST + current series streak + largest archived win; desktop fit, mobile swipe.
+- Record Book: unified 2022-forward game archive with live 2026 updates, dynamic streak/single-season/postseason records and full 10-manager ledgers.
+- Makers Basement ledger replaces Mis.Exp porcelain terminology: last-place finishes + 9th-place-game appearances.
+- Keeper archive grouped by season and sorted by keeper cost.
+- Press Room is a Makers editorial archive (weekly dispatches, quotes, frozen predictions, preseason files), not a press-conference punishment.
+- Makers collector v1.0.2, cumulative import pipeline, waiver model and Stage 3 prediction snapshot logic were not changed.
