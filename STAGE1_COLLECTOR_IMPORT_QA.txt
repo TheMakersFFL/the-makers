@@ -1,0 +1,40 @@
+THE MAKERS — STAGE 1 COLLECTOR / IMPORT PIPELINE
+Build date: 2026-09-02
+
+Implemented:
+- Separate Makers Tampermonkey collector based on the validated MEFFL collector architecture.
+- Schema: makers-weekly-collector/v1.
+- Tampermonkey storage namespace: MAKERSFF (separate from MEFFL).
+- Current 2026 Makers team/manager map embedded in the collector and runtime sync.
+- Guard keeps the Makers collector hidden on unrelated Yahoo leagues before binding and off non-bound leagues after binding.
+- POST-MNF and POST-WAIVERS modes.
+- Standings, completed/upcoming matchups, Yahoo projections, rosters, FAAB, transactions and available-player collection.
+- Position-specific available-player targets: QB 15 / RB 25 / WR 25 / TE 15 / K 10 / DEF 10.
+- Cumulative snapshot archive with Tuesday-before-Thursday replay.
+- Season-to-Yahoo-league binding protection.
+- Sanitized browser runtime payload; raw Yahoo page captures/sourceText are excluded from weekly-import.js.
+- Makers runtime overlay feeds current standings/results, weekly result receipts, Yahoo matchup projections, live roster snapshots, FAAB, transactions and available players without rewriting historical data files.
+- Current standings/results continue to feed the existing Makers Power, Odds, War Room, H2H, streak and postseason engines.
+- Existing public presentation/features otherwise left unchanged for Stage 1.
+
+QA PASSED:
+- node --check: all top-level JavaScript files and the userscript.
+- Python importer compiles.
+- 50 HTML files scanned.
+- 335 local href/src references checked; 0 missing targets.
+- Collector identity checks: Makers schema, MAKERSFF storage, MAKERS export naming, all 10 current team names, cross-league guard.
+- Synthetic POST-MNF -> POST-WAIVERS replay: 2 snapshots loaded.
+- Five completed Week 1 results survived the Thursday import.
+- 10 standings rows, 10 roster snapshots and 100 available players survived replay.
+- Thursday FAAB change applied (synthetic Adam $88 remaining).
+- Duplicate Tuesday transaction was deduplicated; one Thursday transaction added correctly.
+- Existing Makers Power engine returned 10 rows after import.
+- Existing Makers simulation/Odds engine returned 10 rows after import.
+- Existing historical engine consumed the five real 2026 synthetic results.
+- Raw Yahoo recovery text/sourceText absent from sanitized weekly-import.js and deployable archived snapshots.
+- Wrong-league synthetic export rejected after season binding.
+
+LIVE ACCEPTANCE NOTE:
+The Yahoo DOM parser cannot be authenticated against the user's Makers league from this environment. The first real AUTO COLLECT on the Makers Yahoo league is the live DOM acceptance test. The raw downloaded JSON should be kept until that first import is validated.
+
+STATUS: PASS — STAGE 1 READY FOR FIRST MAKERS COLLECTION

@@ -1,0 +1,100 @@
+THE MAKERS — STAGE 1 REAL YAHOO DOM ACCEPTANCE QA
+Date: 2026-09-02
+
+STATUS: PASS — FIRST REAL MAKERS YAHOO EXPORT ACCEPTED
+
+REAL SOURCE
+- Raw export: MAKERS_2026_W01_POST_MNF.json
+- Collector used for raw export: v1.0.1
+- Schema: makers-weekly-collector/v1
+- Yahoo season: 2026
+- Yahoo league ID: 471058
+- League name: The Makers
+- Mode: POST-MNF
+- Target Week: 1
+- Completed Week: 0 / preseason
+
+REAL COLLECTOR COVERAGE
+PASS — validation.ok = true
+PASS — standings 10/10
+PASS — rosters 10/10
+PASS — upcoming matchups 5/5
+PASS — FAAB rows 10/10
+PASS — available players 100
+PASS — QB 15 / RB 25 / WR 25 / TE 15 / K 10 / DEF 10
+PASS — 20 Yahoo page captures were available in the private raw recovery export
+PASS — no completed Week 1 games were invented; completedWeek remains 0
+
+LIVE DOM FINDINGS / v1.0.2 FIXES
+1. MATCHUP PROJECTION PARSING
+- Yahoo matchup rows expose current score and projection side-by-side.
+- v1.0.1 could read a current 0.00 node as the projection when only one side had a non-zero projection.
+- Collector v1.0.2 now parses the two matchup sides independently and uses the final fantasy-number on each side as Yahoo projection.
+- The importer also repairs v1.0.1 raw exports from sourceText before sanitization, so this first real upload does not need to be recollected.
+
+Verified Week 1 Yahoo projections after repair:
+- Criterus 103.66 — The A Gap 0.00
+- Pump and Go 98.23 — The Mustache riders 0.00
+- The Moose Knuckles 106.11 — Predacious Fungi 94.46
+- TDs In Your Face 93.89 — Kareem all over your Hunt 0.00
+- Revenge of the period bloods 0.00 — The Eviscerators 108.64
+
+The zero projections are legitimate current Yahoo lineup state, not missing parser data:
+- The Mustache riders: all 15 captured players currently BN
+- Kareem all over your Hunt: all 15 currently BN
+- The A Gap: all 15 currently BN
+- Revenge of the period bloods: all 15 currently BN
+The six teams with starters set show normal Yahoo matchup projections.
+
+2. YAHOO GLUED NA STATUS
+- Real Yahoo DOM exposed Austin EkelerNA, Jaydon BlueNA and Charlie SmythNA.
+- Public importer already normalized these to Austin Ekeler / Jaydon Blue / Charlie Smyth with status NA.
+- Collector v1.0.2 now recognizes NA directly so future raw exports are also clean at source.
+
+SITE IMPORT / RUNTIME
+PASS — season 2026 bound to Yahoo league 471058
+PASS — real snapshot installed under weekly-snapshots/2026/week-01/post-mnf.json
+PASS — weekly-import.js generated from the real snapshot
+PASS — standings overlay = 10 teams
+PASS — live roster overlay = 10 teams / 15 players each
+PASS — FAAB overlay = 10 teams
+PASS — available pool = 100 players with exact position quotas
+PASS — Week 1 Yahoo projection board = 5 matchups
+PASS — no completed 2026 results created from preseason projections
+PASS — transaction count = 0 from this snapshot; no fake transaction rows added
+
+PRIVACY / DEPLOYMENT
+PASS — raw sourceText removed from deployable snapshot
+PASS — raw captures array removed from deployable snapshot
+PASS — raw multi-MB Yahoo export is not inside the public site ZIP
+PASS — weekly-import.js approximately 42 KB
+PASS — sanitized deployable post-mnf snapshot approximately 79 KB
+PASS — NA-glued names absent from public runtime
+
+CODE / LINK QA
+PASS — node --check on all top-level JavaScript files
+PASS — node --check on Makers_Weekly_Collector.user.js v1.0.2
+PASS — Python importer compiles
+PASS — 50 HTML pages scanned
+PASS — 335 local href/src references checked; 0 missing targets
+PASS — weekly-import.js loads before makers-weekly-sync.js on every page that uses the pipeline
+PASS — makers-weekly-sync.js loads before makers-engine.js where applicable
+PASS — weekly import/sync cache key bumped to 20260902-makersstage1live1
+
+COLLECTOR VERSION GOING FORWARD
+- Makers_Weekly_Collector.user.js = v1.0.2
+- Separate MAKERSFF Tampermonkey namespace remains intact
+- Separate makers-weekly-collector/v1 schema remains intact
+- Tuesday POST-MNF + Thursday POST-WAIVERS workflow remains unchanged
+
+NEXT REAL RUN
+After Week 1 MNF is final:
+- POST-MNF
+- Upcoming week = 2
+- AUTO COLLECT LEAGUE
+- EXPORT JSON
+Then after Week 2 waivers process Thursday:
+- POST-WAIVERS
+- Upcoming week = 2
+- AUTO COLLECT LEAGUE
+- EXPORT JSON
