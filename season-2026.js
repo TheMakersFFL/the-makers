@@ -1,7 +1,60 @@
 window.MAKERS_2026 = {
   "season": 2026,
-  "features": {"liveScoring": false},
-  "predictionSnapshots": {},
+  "features": {
+    "liveScoring": false
+  },
+  "predictionSnapshots": {
+    "1": {
+      "week": 1,
+      "capturedAt": "2026-09-02T21:31:30.070Z",
+      "phase": "PRE-WEEK 1 FORECAST",
+      "source": "Current Yahoo lineup projections + Makers Power Blend v1",
+      "model": "Makers Power Blend v1",
+      "locked": false,
+      "matchups": [
+        {
+          "teamA": "The Moose Knuckles",
+          "teamB": "Predacious Fungi",
+          "meA": 108.8,
+          "meB": 89.21,
+          "yahooA": 106.11,
+          "yahooB": 94.46
+        },
+        {
+          "teamA": "TDs In Your Face",
+          "teamB": "Kareem all over your Hunt",
+          "meA": 90.07,
+          "meB": 97.46,
+          "yahooA": 93.89,
+          "yahooB": 0.0
+        },
+        {
+          "teamA": "Revenge of the period bloods",
+          "teamB": "The Eviscerators",
+          "meA": 101.51,
+          "meB": 112.35,
+          "yahooA": 0.0,
+          "yahooB": 108.64
+        },
+        {
+          "teamA": "Criterus",
+          "teamB": "The A Gap",
+          "meA": 109.37,
+          "meB": 100.16,
+          "yahooA": 103.66,
+          "yahooB": 0.0
+        },
+        {
+          "teamA": "The Mustache riders",
+          "teamB": "Pump and Go",
+          "meA": 98.81,
+          "meB": 100.59,
+          "yahooA": 0.0,
+          "yahooB": 98.23
+        }
+      ]
+    }
+  },
   "week": 1,
   "lastUpdated": "Week 1 Weekly Write-Up · September 1, 2026",
   "draftRankings": [

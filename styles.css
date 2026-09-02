@@ -130,3 +130,24 @@ html,body{max-width:100%}body{-webkit-text-size-adjust:100%;text-size-adjust:100
 @media(max-width:650px){.nav.open{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:340px){.nav.open{grid-template-columns:1fr}}
 @media(max-width:1050px){body.nav-open{overflow:hidden}}
+
+/* Cleanup batch: Week 1 preview / projection presentation */
+.weekly-breakdown-card{position:relative;overflow:hidden;background:linear-gradient(180deg,#fffdf8 0%,#fff8ea 100%);border:1px solid #d9cdbb;border-top:4px solid var(--red);box-shadow:0 12px 28px rgba(45,24,14,.08);padding:22px}
+.weekly-breakdown-card:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(180deg,var(--red),rgba(122,0,0,.08))}
+.weekly-breakdown-card.game-of-week-tile{border-color:#b8973d;border-top-color:var(--gold);background:linear-gradient(180deg,#fffdf5 0%,#f7ecd0 100%);box-shadow:0 14px 32px rgba(111,76,0,.16)}
+.gotw-ribbon{display:inline-flex;align-items:center;margin:-4px 0 14px;padding:6px 10px;border-radius:999px;background:var(--gold);color:#2a1c00;font-size:9px;font-weight:950;letter-spacing:.12em}
+.weekly-breakdown-head{padding-bottom:15px}.weekly-breakdown-head span{font-size:16px;line-height:1.18}.weekly-breakdown-head b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#efe4d0;color:var(--red);font-size:10px;letter-spacing:.08em}
+.weekly-projection-pair{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:15px 0 12px}
+.weekly-projection-row{display:grid;grid-template-columns:auto 1fr;gap:3px 9px;align-items:center;padding:11px 12px;border-radius:12px;border:1px solid rgba(25,25,25,.1);background:#fff}
+.weekly-projection-row span{font-size:9px;font-weight:950;letter-spacing:.11em;color:var(--muted)}
+.weekly-projection-row b{justify-self:end;font-size:14px;font-variant-numeric:tabular-nums}
+.weekly-projection-row small{grid-column:1/-1;font-size:10px;color:var(--muted);font-weight:800}
+.weekly-projection-row.makers{border-left:4px solid var(--red)}.weekly-projection-row.yahoo{border-left:4px solid #6d6d6d}
+.prediction-week-section .table-wrap{box-shadow:0 10px 24px rgba(45,24,14,.06)}
+.prediction-ledger td:nth-child(4),.prediction-ledger td:nth-child(6){font-weight:850}
+@media(max-width:650px){.weekly-breakdown-card{padding:17px}.weekly-projection-pair{grid-template-columns:1fr}.weekly-breakdown-head span{font-size:14px}.prediction-ledger{min-width:980px}}
+
+/* Record Book cleanup */
+.record-overview-section{padding-top:22px}.record-overview-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.record-overview-card{background:linear-gradient(180deg,#fffdf8 0%,#fff8ea 100%);border:1px solid #dfd3bd;border-radius:17px;padding:18px;box-shadow:0 8px 26px rgba(16,24,40,.055);min-width:0}.record-overview-card strong{display:block;margin:5px 0 7px;color:var(--red);font-size:30px;line-height:1;letter-spacing:-.035em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.record-overview-card h3{margin:0 0 4px;font-size:17px;line-height:1.15}.record-overview-card p{margin:0;color:var(--muted);font-size:11.5px;line-height:1.4}.record-extreme-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.record-extreme-card{display:flex;flex-direction:column;min-width:0;background:var(--card);border:1px solid #dfd3bd;border-radius:17px;padding:18px;box-shadow:0 6px 24px rgba(16,24,40,.045)}.record-extreme-card h3{margin:4px 0 12px;font-size:17px;line-height:1.2}.record-extreme-card>strong{display:block;color:var(--red);font-size:29px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-bottom:10px}.record-extreme-card>b{font-size:13px;line-height:1.3;margin-bottom:5px;overflow-wrap:anywhere}.record-extreme-card>span{color:var(--muted);font-size:11px;line-height:1.4}
+@media(max-width:1100px){.record-overview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.record-extreme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.record-overview-grid,.record-extreme-grid{grid-template-columns:1fr}.record-overview-card,.record-extreme-card{padding:16px}.record-overview-card strong,.record-extreme-card>strong{font-size:27px}}

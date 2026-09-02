@@ -1,0 +1,79 @@
+THE MAKERS — FINAL CLEANUP QA
+Date: 2026-09-02
+Base: The_Makers_STAGE4_FINAL_PARITY_FULL.zip
+Status: PASS
+
+CUMULATIVE CLEANUP ITEMS VERIFIED
+
+1. TROPHY CASE / TITLE LEADERBOARD
+- Added Toilets column immediately after Best Finish.
+- Historical Toilets: El Rubio 1, Max 1, Adam 1, Nate 1; all others 0.
+- Toilets are now calculated from the loser of archived 9th-place games, including real future 2026 results when they enter the unified game archive.
+- Removed the requested Title Leaderboard explanatory sentence.
+
+2. WEEK 1 PREVIEW / PREDICTIONS
+- Week 1 has five editorial matchup-preview tiles.
+- Each preview displays Makers projected score and Yahoo projected score.
+- Game of the Week: Revenge of the period bloods vs The Eviscerators.
+- Game of the Week tile receives a dedicated visual highlight.
+- Makers vs Yahoo projections table appears immediately beneath the preview tiles.
+- Week 1 provisional Makers forecasts are stored in predictionSnapshots[1].
+- Week 1 Makers picks: The Moose Knuckles, Kareem all over your Hunt, The Eviscerators, Criterus, Pump and Go.
+- Yahoo 0.00 values remain legitimate current Yahoo lineup projections and are not fabricated/replaced.
+
+3. PREDICTIONS PAGE
+- Prediction Ledger includes Makers score, Makers pick, Yahoo score and Yahoo pick.
+- Five Week 1 prediction rows render from the provisional snapshot before the Thursday freeze.
+
+4. 2026 PAGE
+- Removed: Current record, remaining schedule, seed range and bracket path in one place.
+
+5. WAIVER WIRE
+- Removed requested Week 1 Recent / Projected / Suggested FAAB explanatory sentence.
+
+6. SCHEDULE
+- Removed all three requested schedule explanatory sentences.
+- Marquee Dates sorted chronologically by week.
+- Every active 2026 manager appears in at least two Marquee Dates.
+- QA coverage counts: Andrew 6, Billy 2, Chris 2, TomD 4, Adam 2, Max 2, Jim 6, Nick 2, Tommy 4, Nate 2.
+
+7. POWER RANKINGS
+- Removed both requested explanatory sentences.
+
+8. PLAYOFF ODDS
+- Removed all five requested explanatory sentences.
+
+9. HEAD-TO-HEAD
+- Removed requested matrix explainer sentence.
+
+10. RECORD BOOK
+- Removed all five requested explanatory sentences.
+- Rebuilt top overview tiles into complete record cards.
+- Rebuilt score-archive extremes into complete record cards.
+- Biggest Blowout tile includes both teams and score.
+- Highest Combined Score tile includes both teams and score.
+- Current dynamic receipts reproduce The Mustache riders over Pump and Go for biggest blowout and Ninth place NATES vs TDs IN YO FACE for highest combined score.
+
+11. PRESS
+- Removed all three requested explanatory sentences from both HTML/runtime output.
+
+SOURCE / REGRESSION QA
+- HTML pages: 52
+- Local href/src references checked: 376
+- Local anchors checked: 12
+- Missing local targets: 0
+- Broken internal anchors: 0
+- Weekly pipeline ordering errors: 0
+- Requested removed-copy hits across all HTML + JS: 0
+- Top-level JavaScript syntax files checked: 14 / PASS
+- tools/apply-weekly-export.py compile: PASS
+- Dynamic Week 1 previews: 5 cards / 10 projection rows / PASS
+- Dynamic Predictions Week 1 rows: 5 / PASS
+- Marquee chronological order + >=2 manager coverage: PASS
+- Record Book matchup labels: PASS
+- Press dynamic cleanup: PASS
+- Tampermonkey Makers Weekly Collector v1.0.2 hash unchanged from Stage 4: PASS
+- Existing Stage 1–4 architecture preserved.
+
+CACHE / DEPLOYMENT
+- Modified Stage 4 runtime assets use a new final-cleanup cache key so browsers do not reuse older cached JS/CSS.
