@@ -1314,5 +1314,121 @@ window.MAKERS_2026 = {
   "waiverNotes": [
     "Completed waiver claims, free-agent adds, drops, trades and FAAB spend can be published here once Yahoo is connected.",
     "Pending bids should never be exposed before waivers process."
-  ]
+  ],
+  "teamMeta": {
+    "The Eviscerators": {
+      "abbr": "EVI",
+      "color": "#7B1E1E",
+      "logo": ""
+    },
+    "The Moose Knuckles": {
+      "abbr": "MOO",
+      "color": "#3E5C4A",
+      "logo": ""
+    },
+    "TDs In Your Face": {
+      "abbr": "TDS",
+      "color": "#6B4F9B",
+      "logo": ""
+    },
+    "The Mustache riders": {
+      "abbr": "MST",
+      "color": "#8A5B24",
+      "logo": ""
+    },
+    "Criterus": {
+      "abbr": "CRI",
+      "color": "#253A63",
+      "logo": ""
+    },
+    "Kareem all over your Hunt": {
+      "abbr": "KAH",
+      "color": "#8A3D64",
+      "logo": ""
+    },
+    "Pump and Go": {
+      "abbr": "PNG",
+      "color": "#A34D19",
+      "logo": ""
+    },
+    "The A Gap": {
+      "abbr": "GAP",
+      "color": "#365B73",
+      "logo": ""
+    },
+    "Predacious Fungi": {
+      "abbr": "FUN",
+      "color": "#5E6A2E",
+      "logo": ""
+    },
+    "Revenge of the period bloods": {
+      "abbr": "RPB",
+      "color": "#8C1D2C",
+      "logo": ""
+    }
+  },
+  "scoreboardDemo": {
+    "mode": "demo",
+    "week": 1,
+    "label": "DEMO SCOREBOARD · INTERFACE PREVIEW",
+    "lastUpdated": "Sample Week 1 game states — not real Yahoo scores",
+    "matchups": [
+      {
+        "home": "The Moose Knuckles",
+        "away": "Predacious Fungi",
+        "homeScore": 87.42,
+        "awayScore": 79.18,
+        "homeProj": 126.3,
+        "awayProj": 116.8,
+        "status": "LIVE",
+        "detail": "3rd quarter · sample state",
+        "homeWinProb": 64
+      },
+      {
+        "home": "TDs In Your Face",
+        "away": "Kareem all over your Hunt",
+        "homeScore": 104.36,
+        "awayScore": 101.94,
+        "homeProj": 121.6,
+        "awayProj": 119.8,
+        "status": "LIVE",
+        "detail": "Late window · sample close game",
+        "homeWinProb": 53
+      },
+      {
+        "home": "Revenge of the period bloods",
+        "away": "The Eviscerators",
+        "homeScore": 118.2,
+        "awayScore": 124.66,
+        "homeProj": 118.2,
+        "awayProj": 124.66,
+        "status": "FINAL",
+        "detail": "Sample completed-game state",
+        "homeWinProb": 0
+      },
+      {
+        "home": "Criterus",
+        "away": "The A Gap",
+        "homeScore": 96.5,
+        "awayScore": 82.1,
+        "homeProj": 132.4,
+        "awayProj": 119.3,
+        "status": "LIVE",
+        "detail": "4 players remaining · sample state",
+        "homeWinProb": 73
+      },
+      {
+        "home": "The Mustache riders",
+        "away": "Pump and Go",
+        "homeScore": 0,
+        "awayScore": 0,
+        "homeProj": 123.7,
+        "awayProj": 125.1,
+        "status": "UPCOMING",
+        "detail": "Sample pregame state",
+        "homeWinProb": 49
+      }
+    ]
+  },
+  "results": []
 };
