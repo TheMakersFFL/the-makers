@@ -11,7 +11,7 @@ Update these fields there:
   - weekly[week] (headline, writeup, matchups, Game of the Week, awards, shame watch, quote)
   - powerRankings when the weekly Power Rankings change
   - draftRankings stays frozen as the preseason draft verdict
-  - modelOdds if playoff/bye/title probabilities change
+  - modelOdds if playoff/bye/title/toilet probabilities change
   - faab / recentTransactions / topAvailable
 
 Those edits automatically feed:
