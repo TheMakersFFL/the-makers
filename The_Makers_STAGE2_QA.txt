@@ -1,0 +1,98 @@
+THE MAKERS — STAGE 2 PARITY BUILD QA
+Date: 2026-09-02
+Base: The_Makers_STAGE1_V102_ACCEPTED_FULL.zip
+Real Yahoo snapshot: MAKERS_2026_W01_POST_MNF(1).json / collector v1.0.2 / league 471058
+
+STATUS: PASS
+
+STAGE 2 FEATURES
+1. Waiver Wire rebuilt into six position boards:
+   - QB 15
+   - RB 25
+   - WR 25
+   - TE 15
+   - K 10
+   - DEF 10
+   - Position quick-navigation pills included.
+   - Visible columns: Player | Team | Recent | Projected | Suggested FAAB.
+   - Redundant Position and Status columns removed.
+
+2. Makers waiver projection / FAAB model:
+   - New waiver-model.js.
+   - 100/100 current available players have Week 1 Makers projections.
+   - Recent = previous week's actual points; Week 1 correctly renders —.
+   - Suggested FAAB uses $100 budget, projected edge, positional scarcity, pool rank/depth and availability/injury risk.
+   - Each position board sorts descending by Makers projected points.
+
+Week 1 projection-order spot checks:
+   QB  Kyler Murray 18.0 | Matthew Stafford 17.5 | Patrick Mahomes 16.3 | Jared Goff 16.2 | Baker Mayfield 16.1
+   RB  Tyjae Spears 7.2 | Dylan Sampson 6.3 | Keaton Mitchell 6.1 | Najee Harris 5.7 | Ray Davis 5.6
+   WR  Josh Downs 9.0 | Jakobi Meyers 8.1 | Jalen Coker 7.7 | Khalil Shakir 7.7 | Deebo Samuel Sr. 7.4
+   TE  Mark Andrews 8.4 | Dallas Goedert 8.3 | Travis Kelce 8.2 | Isaiah Likely 7.6 | Juwan Johnson 7.2
+   K   Harrison Mevis 8.2 | Tyler Loop 7.9 | Evan McPherson 7.7 | Chase McLaughlin 7.6 | Chris Boswell 7.6
+   DEF Jaguars 7.9 | Steelers 7.1 | Lions 6.6 | Cowboys 6.2 | Chiefs 5.4
+
+3. Moves / transaction activity redesign:
+   - Shared structured activity-card renderer powers Moves and Waiver Wire activity feeds.
+   - ADD/DROP player rows, manager/team, move type, date/time and FAAB have distinct hierarchy.
+   - ADD / WAIVER / DROP / TRADE styling included.
+   - Yahoo private-use glyphs are removed from fallback transaction text.
+   - 2026 column retained in Career Move Ledger and Total includes 2026.
+   - Current real snapshot contains zero completed transactions, so all 2026 move counts correctly begin at 0.
+
+4. Cumulative transaction counting / dedupe:
+   - Existing Stage 1 cumulative sync is now surfaced by the Stage 2 ledger/cards.
+   - Synthetic Tuesday + Thursday test repeated the same Adam transaction in both snapshots plus one new Jim transaction.
+   - Result: 2 unique transactions, Adam=1, Jim=1. PASS.
+
+5. Current Yahoo roster on franchise pages:
+   - Current Yahoo roster section added to franchise detail pages.
+   - Slot | Player | NFL | Pos | Status.
+   - Uses current liveRosters overlay; historical franchise data remains unchanged.
+   - Runtime Adam test renders all 15 roster rows including Puka Nacua.
+   - 10/10 imported live rosters available.
+
+REAL SNAPSHOT / DATA INTEGRITY
+- Standings: 10
+- Rosters: 10
+- Upcoming matchups: 5
+- FAAB rows: 10
+- Available players: 100
+- Available by position: QB15 / RB25 / WR25 / TE15 / K10 / DEF10
+- Waiver projection map coverage: 100/100 names, zero missing.
+- Public weekly snapshot contains no sourceText/raw Yahoo capture text.
+
+RUNTIME RENDER TESTS
+PASS — six waiver-position cards render.
+PASS — 100 available-player rows render.
+PASS — Recent / Projected / Suggested FAAB headers render.
+PASS — Status column is absent from waiver boards.
+PASS — Week 1 Recent renders —.
+PASS — projected values render from waiver-model.js.
+PASS — Career Move Ledger includes 2026.
+PASS — empty current transaction feed handles zero-transaction preseason state.
+PASS — franchise page renders Current Yahoo roster with 15 rows.
+PASS — liveRosters count = 10.
+PASS — topAvailable count = 100.
+PASS — transactionCounts2026 initialized for all ten active managers.
+
+RESPONSIVE / MOBILE
+- Stage 1 Makers mobile framework retained.
+- New waiver boards use horizontal table scrolling on narrow screens.
+- Position pills remain touch-friendly.
+- Activity tiles collapse to two columns with metadata below at <=640px.
+- Franchise roster table is contained in the existing swipe-scroll table wrapper.
+- No page-wide horizontal overflow rules were removed.
+
+TECHNICAL QA
+- HTML files: 50
+- Local href/src references checked: 336
+- Missing local targets: 0
+- All top-level JavaScript files: PASS node --check
+- tools/apply-weekly-export.py: PASS py_compile
+- No files removed from Stage 1 base.
+- New file: waiver-model.js
+- Stage 1 collector v1.0.2/import architecture retained unchanged.
+
+NOTE
+Current Week 1 transaction feed is empty because the accepted Yahoo snapshot contains zero completed transactions. The card renderer and deduplicated move-count path were validated with synthetic transaction snapshots.

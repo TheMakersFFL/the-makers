@@ -1,0 +1,55 @@
+THE MAKERS — STAGE 1 v1.0.2 REAL YAHOO ACCEPTANCE QA
+Date: 2026-09-02
+
+SOURCE
+- Real collector export: MAKERS_2026_W01_POST_MNF(1).json
+- Collector schema: makers-weekly-collector/v1
+- Collector version: 1.0.2
+- Yahoo league: 471058 — The Makers
+- Mode: POST-MNF
+- Target week: 1
+- Completed week: 0 / preseason
+
+REAL EXPORT VALIDATION
+PASS — Collector validation.ok = true.
+PASS — Standings: 10/10 teams.
+PASS — Rosters: 10/10 teams.
+PASS — Upcoming matchups: 5.
+PASS — FAAB rows: 10.
+PASS — Transactions: 0, correct for this snapshot.
+PASS — Available players: 100 total.
+PASS — Position quotas: QB 15 / RB 25 / WR 25 / TE 15 / K 10 / DEF 10.
+
+v1.0.2 LIVE-DOM FIXES CONFIRMED
+PASS — Yahoo matchup projections are parsed directly into the export:
+- Criterus 103.66 vs The A Gap 0.00
+- Pump and Go 98.23 vs The Mustache riders 0.00
+- The Moose Knuckles 106.11 vs Predacious Fungi 94.46
+- TDs In Your Face 93.89 vs Kareem all over your Hunt 0.00
+- Revenge of the period bloods 0.00 vs The Eviscerators 108.64
+PASS — Zero projections correspond to Yahoo teams whose captured roster currently has no active starter slots set; they are not missing parser values.
+PASS — Glued Yahoo NA status is clean at source: Jaydon Blue, Charlie Smyth and Austin Ekeler are stored with status NA rather than NA appended to the player name.
+
+IMPORT / RUNTIME
+PASS — Exact v1.0.2 export installed through tools/apply-weekly-export.py.
+PASS — Season binding remains Yahoo league 471058.
+PASS — Public weekly snapshot is sanitized; sourceText is absent.
+PASS — weekly-import.js is sanitized; sourceText is absent.
+PASS — Runtime overlay loads 1 cumulative snapshot.
+PASS — Runtime standings: 10.
+PASS — Runtime live rosters: 10.
+PASS — Runtime FAAB rows: 10.
+PASS — Runtime available-player pool: 100.
+PASS — Runtime Week 1 Yahoo projections match the export in schedule order.
+PASS — Existing Makers engine loads successfully after the weekly overlay.
+
+REGRESSION / SITE INTEGRITY
+PASS — 50 HTML pages scanned.
+PASS — 335 local href/src references checked; 0 missing targets.
+PASS — All top-level JavaScript files pass node --check.
+PASS — tools/apply-weekly-export.py passes Python syntax validation.
+PASS — Raw multi-megabyte Yahoo page captures are not stored in the deployable runtime; only the compact sanitized snapshot is included.
+
+STATUS
+PASS — Stage 1 collector/import architecture is accepted against the real Yahoo Makers league using collector v1.0.2.
+This build is the correct base for Stage 2.

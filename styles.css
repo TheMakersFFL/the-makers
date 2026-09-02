@@ -73,3 +73,31 @@ html,body{max-width:100%}body{-webkit-text-size-adjust:100%;text-size-adjust:100
 
 @media(max-width:340px){.nav.open{grid-template-columns:1fr}.wrap{width:min(calc(100% - 18px),1220px)}.hero h1{font-size:42px}.rank-card{grid-template-columns:30px minmax(0,1fr) 50px;gap:7px;padding:10px}.rank-num{font-size:17px}}
 @media(max-width:950px){body.nav-open{overflow:hidden}}
+
+
+/* 2026 Stage 2 — waiver boards, transaction tape, live rosters */
+.activity-feed{display:grid;gap:12px}
+.activity-card{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:14px;align-items:center;background:linear-gradient(135deg,#fffaf0 0%,#fffdf8 100%);border:1px solid #ded5c6;border-left:4px solid var(--gold);border-radius:17px;padding:14px 16px 14px 12px;box-shadow:0 7px 20px rgba(38,14,7,.06);transition:transform .16s ease,box-shadow .16s ease}
+.activity-card:hover{transform:translateY(-1px);box-shadow:0 10px 25px rgba(38,14,7,.10)}
+.activity-mark{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#f3ead8;color:var(--red);font-size:25px;font-weight:950;line-height:1}
+.activity-card-waiver{border-left-color:var(--red)}.activity-card-waiver .activity-mark{background:var(--red);color:#fff}
+.activity-card-trade{border-left-color:#2b0a0a}.activity-card-trade .activity-mark{background:#2b0a0a;color:var(--gold)}
+.activity-card-drop{border-left-color:#8b8179}.activity-card-drop .activity-mark{background:#ece7df;color:#4e4540}
+.activity-main{min-width:0}.activity-owner{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}.activity-owner strong{font-size:15px;margin:0}.activity-owner small{color:var(--muted);font-weight:750}
+.activity-type{display:inline-flex;background:#f3ead8;color:var(--red);border-radius:999px;padding:4px 8px;font-size:9px;font-weight:950;letter-spacing:.08em}
+.activity-players{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.activity-player{display:inline-flex;align-items:center;gap:7px;min-width:0;border:1px solid #e5ded4;border-radius:10px;padding:7px 9px;background:#fff}
+.activity-player span{font-size:9px;font-weight:950;letter-spacing:.08em}.activity-player strong{font-size:13px;margin:0;overflow-wrap:anywhere}.activity-player-add span{color:var(--red)}.activity-player-drop{background:#f7f5f2}.activity-player-drop span{color:#746a64}
+.activity-description{margin:0!important;color:#3e3632;line-height:1.45}.activity-meta{display:grid;justify-items:end;gap:7px;text-align:right;white-space:nowrap}.activity-meta time{font-size:11px;color:var(--muted);font-weight:750}.activity-faab{display:inline-flex;border-radius:999px;background:#2b0a0a;color:#fff;padding:5px 8px;font-size:10px;font-weight:950}
+.move-leaderboard .move-current{background:#fff2d6}.move-leaderboard th.move-current{color:var(--gold)}.move-leaderboard .move-total{font-size:16px}.section-action{margin-top:18px}
+.waiver-position-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.waiver-position-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid #d9cdbb;border-radius:999px;background:#fffaf0;color:#3a1717;text-decoration:none;font-size:12px;font-weight:900;box-shadow:0 3px 12px rgba(34,20,12,.05)}
+.waiver-position-pill:hover{transform:translateY(-1px);border-color:var(--gold)}.waiver-position-pill span{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:999px;background:var(--red);color:#fff;font-size:11px}
+.waiver-position-stack{display:grid;gap:18px}.waiver-position-card{position:relative;overflow:hidden;background:#fffaf0;border:1px solid #e2d5c3;border-radius:18px;box-shadow:0 8px 28px rgba(30,18,12,.06)}
+.waiver-position-card:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--red);z-index:2}.waiver-position-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 20px 14px 23px;border-bottom:1px solid #e8dccb;background:linear-gradient(180deg,#fffdf8,#f7eddf)}
+.waiver-position-head h3{margin:2px 0 0;font-size:24px;line-height:1.05}.waiver-position-count{white-space:nowrap;border-radius:999px;background:#2b0a0a;color:#f5e6cb;padding:7px 10px;font-size:10px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
+.waiver-position-table-wrap{border:0;border-radius:0;box-shadow:none;background:transparent}.waiver-position-table{background:transparent;min-width:620px}.waiver-position-table th{font-size:10px;letter-spacing:.06em;text-transform:uppercase}.waiver-position-table th:first-child,.waiver-position-table td:first-child{padding-left:23px}
+.waiver-model-note{margin:0 0 16px;padding:12px 14px;border:1px solid #decfb9;border-radius:13px;background:#fff8e8;color:#4b3830;font-size:12px;line-height:1.55}.waiver-model-note b{color:var(--red)}
+.waiver-projected b{display:inline-flex;min-width:44px;justify-content:center;padding:5px 8px;border-radius:9px;background:#f1eadc;color:#281818}.waiver-faab b{display:inline-flex;min-width:42px;justify-content:center;padding:5px 8px;border-radius:999px;background:var(--red);color:#fff}.waiver-position-table td{vertical-align:middle}
+.franchise-roster-table{min-width:620px}.franchise-roster-table td{vertical-align:middle}.franchise-roster-table td:first-child{font-weight:900;color:var(--red)}
+@media(max-width:700px){.waiver-position-head{padding:15px 15px 13px 19px}.waiver-position-head h3{font-size:21px}.waiver-position-count{font-size:9px}.waiver-position-pill{padding:7px 9px}.waiver-position-table th:first-child,.waiver-position-table td:first-child{padding-left:18px}.waiver-model-note{font-size:11px}}
+@media(max-width:640px){.activity-card{grid-template-columns:40px minmax(0,1fr);padding:12px;gap:11px}.activity-mark{width:38px;height:38px;border-radius:11px}.activity-meta{grid-column:2;display:flex;justify-content:flex-start;align-items:center;gap:8px;text-align:left;white-space:normal}.activity-players{display:grid}.activity-player{width:100%}.move-leaderboard th,.move-leaderboard td{white-space:nowrap}}
+
