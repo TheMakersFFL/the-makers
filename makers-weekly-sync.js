@@ -25,6 +25,7 @@
     'Eviscerators':'The Eviscerators',
     'TDs IN YO FACE':'TDs In Your Face',
     'TDs IN YOUR FACE':'TDs In Your Face',
+    'Dem TDs':'TDs In Your Face',
     'The Mustache Riders':'The Mustache riders',
     'Revenge of the Period Bloods':'Revenge of the period bloods'
   };
@@ -124,7 +125,7 @@
           if(existing?.locked&&prior)return prior;
           return {teamA:row[0],teamB:row[1],meA:makersProjection(row[0],ya,meanYahoo,completed,data.standings),meB:makersProjection(row[1],yb,meanYahoo,completed,data.standings),yahooA:ya??0,yahooB:yb??0};
         }).filter(Boolean);
-        Y.predictionSnapshots[String(target)]={week:target,capturedAt:(existing?.locked?existing.capturedAt:(I.capturedAt||'')),phase:'THURSDAY FORECAST',source:'POST-WAIVERS Yahoo collector + Makers power/scoring model',model:'Makers Power Blend v1',locked:true,matchups:forecast};
+        Y.predictionSnapshots[String(target)]={week:target,capturedAt:(existing?.locked?existing.capturedAt:(I.capturedAt||'')),phase:(existing?.locked&&existing.phase?existing.phase:'THURSDAY FORECAST'),source:(existing?.locked&&existing.source?existing.source:'POST-WAIVERS Yahoo collector + Makers power/scoring model'),model:(existing?.locked&&existing.model?existing.model:'Makers Power Blend v1'),locked:true,matchups:forecast};
       }
     }
     if(isLatest&&upcoming.length){

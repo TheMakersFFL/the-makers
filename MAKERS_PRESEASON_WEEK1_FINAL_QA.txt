@@ -1,0 +1,70 @@
+THE MAKERS — FINAL PRESEASON / WEEK 1 KICKOFF QA
+Date: 2026-09-09
+Base master: The_Makers_SITE_LOAD_REPAIR_FULL(1).zip
+Collector source: MAKERS_2026_W01_POST_WAIVERS.json
+Collector version: 1.1.3
+
+SOURCE / IMPORT
+- validation.ok: true
+- Team map: 10/10
+- Standings: 10/10
+- Rosters: 10/10
+- Upcoming Week 1 projections: 5/5
+- FAAB rows: 10/10
+- Transactions: 13
+- Available players: 100
+- Available by position: QB 15 / RB 25 / WR 25 / TE 15 / K 10 / DEF 10
+- Failed collector sections: 0
+- Imported cumulatively with the September 2 Week 1 POST-MNF snapshot preserved.
+
+FINAL WEEK 1 FORECAST LOCK
+- The Moose Knuckles vs Predacious Fungi: Makers 112.49-94.91 · Yahoo 109.92-100.57 · pick The Moose Knuckles
+- TDs In Your Face vs Kareem all over your Hunt: Makers 104.01-99.96 · Yahoo 109.48-103.28 · pick TDs In Your Face
+- Revenge of the period bloods vs The Eviscerators: Makers 97.30-116.16 · Yahoo 95.56-112.58 · pick The Eviscerators
+- Criterus vs The A Gap: Makers 110.49-93.82 · Yahoo 104.52-93.11 · pick Criterus
+- The Mustache riders vs Pump and Go: Makers 104.21-104.04 · Yahoo 106.61-101.76 · pick The Mustache riders
+- Makers/Yahoo winner-pick splits: 0
+- Final Game of the Week: The Mustache riders vs Pump and Go
+- Snapshot capturedAt: 2026-09-09T17:14:12.110Z
+- Static receipt state: locked=true · phase=FINAL WEEK 1 FORECAST
+
+WEEK 1 EDITORIAL / PRESENTATION
+- Week 1 headline: Week 1: Receipts locked
+- Static week-01.html rewritten to match the final kickoff article.
+- Nick's obsolete no-tight-end storyline removed; current roster/transactions reflect Mark Andrews.
+- Final official pick card: The Moose Knuckles, TDs In Your Face, The Eviscerators, Criterus, The Mustache riders.
+- Homepage hero changed to 2026 WEEK 1 · KICKOFF EDITION.
+- Added opening-night Patriots-Seahawks Makers callout.
+- FAAB framing updated: Andrew $95; Jim $99; Nick $99; remaining managers $100.
+
+COLLECTOR / PIPELINE
+- Bundled Makers Weekly Collector upgraded to v1.1.3.
+- Current collector files: Makers_Weekly_Collector.user.js + Makers_Weekly_Collector_v1.1.3.txt.
+- Runtime alias added: Dem TDs -> TDs In Your Face.
+- Collector guide updated for v1.1.3 and final Week 1 acceptance.
+- Importer now sanitizes delta.newTransactions as well as normal data rows.
+- sourceText hits in weekly-import.js: 0
+- sourceText hits in archived POST-WAIVERS snapshot: 0
+- sourceText hits in archived POST-MNF snapshot: 0
+
+PRESERVATION
+- Existing Makers history, H2H, records, trophy case, keepers, draft archive, analytics and franchise-history architecture preserved.
+- Site-load repair retained.
+- live.js and live-week1.js remain byte-identical after the kickoff update.
+- season-2026.js and season-2026-week1.js remain byte-identical after the kickoff update.
+- Live scoring remains disabled until explicitly reactivated.
+
+TECHNICAL QA
+- HTML files scanned: 53
+- Local href/src references checked: 401
+- Missing local targets: 0
+- Top-level JavaScript files checked: 15
+- JavaScript syntax failures: 0
+- Python weekly importer compile: PASS
+- Stale Week 1 current-copy hits: 0
+- Cache key on modified runtime assets: 20260909-makersw1final1
+- ZIP integrity: PASS
+
+NEXT REAL-DATA EVENT
+- After Week 1 MNF is final: run POST-MNF with Upcoming Week = 2.
+- After Week 2 waivers clear: run POST-WAIVERS with Upcoming Week = 2.

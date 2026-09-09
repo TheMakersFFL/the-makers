@@ -6,57 +6,57 @@ window.MAKERS_2026 = {
   "predictionSnapshots": {
     "1": {
       "week": 1,
-      "capturedAt": "2026-09-02T21:31:30.070Z",
-      "phase": "PRE-WEEK 1 FORECAST",
-      "source": "Current Yahoo lineup projections + Makers Power Blend v1",
+      "capturedAt": "2026-09-09T17:14:12.110Z",
+      "phase": "FINAL WEEK 1 FORECAST",
+      "source": "September 9 POST-WAIVERS Yahoo collector + Makers Power Blend v1",
       "model": "Makers Power Blend v1",
-      "locked": false,
+      "locked": true,
       "matchups": [
         {
           "teamA": "The Moose Knuckles",
           "teamB": "Predacious Fungi",
-          "meA": 108.8,
-          "meB": 89.21,
-          "yahooA": 106.11,
-          "yahooB": 94.46
+          "meA": 112.49,
+          "meB": 94.91,
+          "yahooA": 109.92,
+          "yahooB": 100.57
         },
         {
           "teamA": "TDs In Your Face",
           "teamB": "Kareem all over your Hunt",
-          "meA": 90.07,
-          "meB": 97.46,
-          "yahooA": 93.89,
-          "yahooB": 0.0
+          "meA": 104.01,
+          "meB": 99.96,
+          "yahooA": 109.48,
+          "yahooB": 103.28
         },
         {
           "teamA": "Revenge of the period bloods",
           "teamB": "The Eviscerators",
-          "meA": 101.51,
-          "meB": 112.35,
-          "yahooA": 0.0,
-          "yahooB": 108.64
+          "meA": 97.3,
+          "meB": 116.16,
+          "yahooA": 95.56,
+          "yahooB": 112.58
         },
         {
           "teamA": "Criterus",
           "teamB": "The A Gap",
-          "meA": 109.37,
-          "meB": 100.16,
-          "yahooA": 103.66,
-          "yahooB": 0.0
+          "meA": 110.49,
+          "meB": 93.82,
+          "yahooA": 104.52,
+          "yahooB": 93.11
         },
         {
           "teamA": "The Mustache riders",
           "teamB": "Pump and Go",
-          "meA": 98.81,
-          "meB": 100.59,
-          "yahooA": 0.0,
-          "yahooB": 98.23
+          "meA": 104.21,
+          "meB": 104.04,
+          "yahooA": 106.61,
+          "yahooB": 101.76
         }
       ]
     }
   },
   "week": 1,
-  "lastUpdated": "Week 1 Weekly Write-Up · September 1, 2026",
+  "lastUpdated": "Final Week 1 Kickoff Edition · September 9, 2026",
   "draftRankings": [
     {
       "rank": 1,
@@ -675,9 +675,9 @@ window.MAKERS_2026 = {
   ],
   "weekly": {
     "1": {
-      "status": "Weekly Write-Up",
-      "headline": "Week 1: The receipts are printed",
-      "writeup": "The current iteration is five seasons in, and The Makers has reached the point where there are no clean slates anymore. Every draft pick comes with a memory, every keeper has a price tag attached to it, and every manager has enough history to know exactly which insult is going to land. Andrew enters 2026 as the current iteration's first two-time champion after taking the first current-era title in 2022 and coming back for another in 2025. Jim owns the 2023 banner. Tommy owns 2024. Max owns the most regular-season wins in the modern archive and somehow still has no banner to point at when the argument gets serious. Everybody else has either a runner-up, a near miss, a bad draft, a worse Sunday, or a group chat receipt waiting to be reopened. That is the beauty of Week 1: none of it technically matters yet, but all of it absolutely matters.\n\nThe draft is over, the keepers are locked, and Yahoo has already done what Yahoo does best: hand out enough confidence and disrespect to guarantee that somebody will spend the next four months citing a preseason grade like it was carved into a stone tablet. Andrew got the A+ and the 13-1 projection. Nate got an F and 1-13, which feels less like analysis and more like Yahoo trying to start a fight. Chris got a C+ for the roster we ranked first. Tommy got a D+ for the roster we ranked fourth. Adam got a D while we have him sixth with legitimate upside. If nothing else, the opening week gives us five immediate court cases. Somebody is about to present Exhibit A on Sunday afternoon.\n\nThe first matchup is The Moose Knuckles against Predacious Fungi, and it is a beautiful way to open the season because it pits one of the league's most stable historical contenders against the manager who has quietly piled up more regular-season wins than anybody in the modern archive. Jim has a championship and enters this year with one of the most complete teams in the league. Jayden Daniels gives him week-winning quarterback upside. Derrick Henry and De'Von Achane is the kind of running-back pairing that can make a normal Sunday feel unfair. Jaxon Smith-Njigba and Ladd McConkey give him two high-volume receivers, and George Kittle is still George Kittle. The best part is that Jim didn't have to pay full retail for all of it. JSN in Round 3 and Javonte Williams in Round 12 gave him keeper value that let the rest of the roster breathe.\n\nMax's roster is harder to dismiss than our #10 ranking makes it look. James Cook, Omarion Hampton, Tee Higgins, Garrett Wilson, Emeka Egbuka and Tucker Kraft is a real collection of weekly starters. Egbuka in Round 6 and Kraft in Round 10 are the sort of keeper prices that can make a roster age very well if the players hit. The problem is the position everybody will notice the second the lineups lock: quarterback. Waiting all the way until Malik Willis in Round 15 is either going to look like an enlightened rejection of QB inflation or a man trying to win a drag race after deciding the engine was an optional expense. Our model gives Jim a 68.2% chance. I think Max keeps it competitive because he has too much skill-position talent to get embarrassed, but until the quarterback room proves otherwise, the pick is Moose Knuckles. Jim starts 1-0.\n\nNext up is TDs In Your Face against Kareem all over your Hunt, which might be the weirdest roster-construction matchup of the week. Nick has the more explosive middle of the roster: Jahmyr Gibbs, Kyren Williams, Drake London, Jaylen Waddle and Jameson Williams can all produce the kind of spike weeks that turn a matchup into a funeral by the late window. The issue is that Nick somehow walked out of a fifteen-round draft without a tight end. That is not a typo, it is a lifestyle choice. Maybe it works. Maybe he finds one on waivers and we never speak of it again. Or maybe Week 1 comes down to six points at tight end and we spend four months reminding him that the draft room did, in fact, contain tight ends.\n\nBilly had no keeper discounts at all and still managed to open with Christian McCaffrey and CeeDee Lamb, which is a pretty good answer to the question, 'What if I simply draft two guys who can ruin another person's Sunday by themselves?' There is more uncertainty behind them, but there is also enough upside that Billy can survive some misses. Our model actually favors Nick 55.8%, while our draft board had Billy one spot higher. That makes this the first official rebellion of the season. I am taking Billy. CMC and CeeDee are the two best individual matchup weapons in this game, and in Week 1 I trust concentrated star power before I trust a roster that still has to go shopping for a starting position. Kareem all over your Hunt in a close one.\n\nAnd then we get the Game of the Week: Revenge of the period bloods against The Eviscerators. This is the matchup Yahoo created for us when it gave Nate an F, Andrew an A+, projected Nate for 1-13 and Andrew for 13-1, and then apparently went home satisfied with itself. Andrew absolutely deserves to be favored. He is the defending champion, the only two-time champion of the current iteration, and his roster has the kind of structural advantages that keeper leagues are built around. Bijan Robinson and Breece Hall give him a terrifying backfield. Nico Collins gives him a true WR1. George Pickens in Round 5 and Chris Olave in Round 7 are exactly the kind of keeper prices that let a good manager keep buying talent while everybody else is paying full freight. Yahoo sees a superteam. We see the #2 team in the league. Nobody is arguing that Andrew is good.\n\nWhat we are arguing is that Nate's roster is not an F and does not look remotely like a 1-13 team. Ja'Marr Chase. A.J. Brown. Josh Jacobs. Lamar Jackson. Brian Thomas Jr. Those are not the names you expect to read immediately before 'one win.' Nate has no keeper discount helping him, which is why Andrew has the roster-construction edge, but he drafted enough top-end talent to beat anybody on a good week. Our model still gives Andrew a healthy 71.5% chance, so the smart pick is The Eviscerators. But if Nate wins, I want the Yahoo grade printed, framed and hung somewhere prominent. The emotional value of turning an F into a Week 1 win over the defending champion would be off the charts. Andrew is the pick, but Nate has the best opportunity of the week to make an algorithm eat its own homework.\n\nCriterus versus The A Gap is the matchup I am most interested in from a pure roster-evaluation standpoint. We ranked Chris first. Yahoo gave him a C+. There is almost no position where this roster looks thin. Jonathan Taylor, Justin Jefferson, Malik Nabers and Bucky Irving is an absurd first wave of weekly volume. Terry McLaurin and Marvin Harrison Jr. give him more receiver answers than a ten-team league should comfortably allow. Jalen Hurts gives him elite quarterback scoring. Kyle Pitts gives him upside at tight end. And then Cam Skattebo arrives in Round 9 as the keeper-value cherry on top. Chris has built the sort of roster that can survive one or two wrong lineup decisions and still score enough to make them irrelevant.\n\nAdam is one of the teams I think Yahoo is sleeping on. Puka Nacua is a weekly target monster, Ashton Jeanty has league-winning upside if the talent translates immediately, Rashee Rice in Round 3 is a keeper advantage, Drake Maye gives him real quarterback ceiling, and the David Montgomery/TreVeyon Henderson combination gives him multiple ways to patch the backfield. Sam LaPorta means he does not have to play the weekly tight-end guessing game either. Our model only makes Chris a 58.3% favorite, which is much tighter than our draft rankings. That feels right. Chris is deeper. Adam may have the higher chance of producing two nuclear individual games at once. I still take Criterus, but this is not a comfortable pick. If Chris loses after we ranked him first, I expect the C+ screenshot to be in circulation before the Sunday night game kicks off.\n\nThe opening slate closes with The Mustache riders against Pump and Go, and there may not be a cleaner matchup of two teams that can both reasonably believe they are better than their preseason slot. TomD has Amon-Ra St. Brown as a volume machine, Kenneth Walker as the backfield anchor, and Brock Bowers as an eighth-round keeper, which is basically a cheat code if Bowers gives him elite tight-end production again. The rest of the roster has enough depth that TomD does not need one specific player to save him. The model likes The Mustache riders at 59.8%.\n\nOur draft board, however, ranked Tommy fourth and TomD seventh, because Tommy's top-end build is nasty. Saquon Barkley and Chase Brown can control the running-back spots. Trey McBride gives him another elite tight-end advantage. Josh Allen can be the highest-scoring player in a matchup on any given week. Then DeVonta Smith in Round 5 and Tyler Warren in Round 9 bring keeper value behind the stars. This is a roster built to punch hard, and Week 1 is exactly when I prefer the team with the bigger knockout swings. I am going against the model again and taking Pump and Go. If TomD wins, it will probably be because Bowers immediately reminds us that an eighth-round keeper at an elite onesie position is borderline criminal.\n\nSo the official Week 1 card is Jim over Max, Billy over Nick, Andrew over Nate, Chris over Adam, and Tommy over TomD. That gives me three model favorites and two places where I am volunteering to have this paragraph thrown back at me next week. Perfect. That is what the first write-up of the year should be.\n\nThere is also a bigger picture here. Andrew is trying to become the first back-to-back champion of the current iteration and the first manager to reach three titles. Jim and Tommy are trying to prove their own championships were not isolated peaks. Max is trying to turn the modern archive's best regular-season win total into the one thing still missing from his résumé. TomD is trying to get back to the championship game after being the 2022 runner-up. Nick is still chasing his first title after a 2023 second-place finish. Adam and Nate have both been close enough to know that one good season changes how the entire franchise is remembered. Chris has four seasons of history and no podium finish. Billy is only in Year 2 of his own franchise history and gets to write most of his story from scratch.\n\nAnd for one more week, none of them has lost. The standings are pristine. Every FAAB wallet still has $100. Every keeper still looks like a bargain because nobody has had a bad game yet. Nobody has watched his bench outscore his starters. Nobody has rage-dropped the player who becomes the waiver pickup of the year. Nobody has had to explain why the guy he reached for in Round 6 played twelve snaps. Enjoy the innocence. It expires shortly after kickoff.\n\nWeek 1 is here. The receipts are printed. May your best player stay healthy, may your bench remain quiet enough not to haunt you, and may every one of you lose except the five teams I just picked, because I would like to begin the season pretending I know what I am talking about.",
+      "status": "Kickoff Edition",
+      "headline": "Week 1: Receipts locked",
+      "writeup": "The preseason is over. This is the last clean snapshot before the 2026 season starts, and for once the league has something better than draft grades to argue about: actual Week 1 lineups, actual waiver moves and a final set of projections that are now locked before the first game kicks off.\n\nThe September 9 collector came back completely green. All ten rosters are accounted for, all five Yahoo matchups are populated, all ten FAAB balances are current, the 100-player free-agent board is intact, and thirteen completed transactions have already changed the shape of the opening week. The standings are still 0-0, but the league is not untouched anymore. Andrew is down to $95 FAAB after spending $5 on Kaleb Johnson. Jim and Nick are at $99. Everybody else still has the full $100.\n\nThe other major change is that the original Week 1 article is officially obsolete in one important place: Nick fixed the tight-end problem. TDs In Your Face grabbed Mark Andrews for $0 and now opens with Joe Burrow, Jahmyr Gibbs, Kyren Williams, Drake London, Jaylen Waddle, Andrews and Jameson Williams in the starting lineup. The joke about drafting no tight end had a good six-day run. It has been retired.\n\nThe Moose Knuckles–Predacious Fungi opener still leans hard toward Jim. Yahoo has Jim 109.92–100.57, while the Makers model is even more aggressive at 112.49–94.91. Jim's starting group is Dak Prescott, Derrick Henry, Javonte Williams, Jaxon Smith-Njigba, Ladd McConkey, George Kittle and De'Von Achane. Max still has real firepower through James Cook, Omarion Hampton, Tee Higgins, Garrett Wilson, Tucker Kraft and Rhamondre Stevenson, but the Malik Willis quarterback bet remains the loudest roster-construction gamble in the league. Jim is the pick.\n\nTDs In Your Face against Kareem all over your Hunt is much tighter than the old preview made it sound. Yahoo has Nick 109.48–103.28. The Makers model also takes Nick, 104.01–99.96. Billy still has the two-player sledgehammer of Christian McCaffrey and CeeDee Lamb, but Nick's lineup is now complete enough that the old concentrated-star-power argument no longer outweighs the depth. Nick also added Pittsburgh's defense for $1. The final pick flips from the original article: TDs In Your Face.\n\nRevenge of the period bloods against The Eviscerators is still the most dramatic preseason résumé matchup, but it is no longer the most competitive projection. Yahoo has Andrew ahead 112.58–95.56. The Makers model is even wider at 116.16–97.30. Nate has been active, adding Tyjae Spears for Austin Ekeler and Josh Downs for Trevor Etienne, and his top-end names are still good enough to make any opponent uncomfortable. But Andrew enters as the defending champion with Bijan Robinson, Breece Hall, Nico Collins, George Pickens, Chris Olave and Justin Herbert, then spent the league's first meaningful FAAB shot on Kaleb Johnson. Both models say The Eviscerators, and so do we.\n\nCriterus against The A Gap remains the best direct test of our draft board. We ranked Chris first and Yahoo did not. The final lineup board still supports the argument: Jalen Hurts, Jonathan Taylor, Cam Skattebo, Malik Nabers, Justin Jefferson, Kyle Pitts and Bucky Irving is absurdly complete. Yahoo has Criterus 104.52–93.11; the Makers model has it 110.49–93.82. Adam has enough ceiling to make the projection look stupid—Drake Maye, Puka Nacua, Rashee Rice, Sam LaPorta and a deep set of backs can absolutely spike—but Chris is the final pick.\n\nThat leaves the actual Game of the Week: The Mustache riders against Pump and Go. Yahoo likes TomD 106.61–101.76. The Makers model basically refuses to choose, putting TomD ahead 104.21–104.04. That is a seventeen-hundredths-of-a-point edge. TomD brings Caleb Williams, Kenneth Walker, Travis Etienne, Amon-Ra St. Brown, Zay Flowers, Brock Bowers and Rico Dowdle. Tommy counters with Josh Allen, Saquon Barkley, Chase Brown, DeVonta Smith, DJ Moore, Trey McBride and MarShawn Lloyd. The original editorial card took Tommy. The final locked model says TomD by almost nothing. With the season starting tonight, I am taking the model and making The Mustache riders the official pick—but this is the game most likely to make the prediction receipt look ridiculous by Sunday afternoon.\n\nOpening night also matters more to this league than it looked like it would a week ago. Patriots–Seahawks puts eight Makers starters on the board before Sunday. Jim gets Jaxon Smith-Njigba. Max has Rhamondre Stevenson in the flex. Nate starts A.J. Brown. Andrew starts both Jason Myers and Seattle's defense. Adam starts Drake Maye and the Patriots defense. Billy has Jadarian Price in the flex. Adam's TreVeyon Henderson is OUT on the bench, and Chris has Zach Charbonnet sitting on IR. The first real scoreboard swings will start tonight.\n\nSo the final Week 1 card is The Moose Knuckles over Predacious Fungi, TDs In Your Face over Kareem all over your Hunt, The Eviscerators over Revenge of the period bloods, Criterus over The A Gap, and The Mustache riders over Pump and Go. For the first time in this preseason process, the Makers model and Yahoo agree on all five winners. That does not mean the week is obvious. It just means the arguments have moved from who should win to whether the margins are remotely believable.\n\nThere is still a bigger season sitting behind these five games. Andrew is trying to become the first back-to-back champion of the current iteration and the first manager to reach three current-era titles. Jim and Tommy are trying to turn their own banners into something more than isolated peaks. Max is still trying to convert the modern archive's strongest regular-season résumé into a championship. Nick has already shown that he will fix a roster hole instead of letting the draft-room joke linger. Nate has an entire Yahoo F grade to carry around as motivation. Chris has our #1 roster and the most immediate chance to make us look smart. Adam, TomD and Billy all have enough top-end talent to make the preseason order irrelevant in a hurry.\n\nThe final receipt is now locked. No more preseason edits, no more hypothetical lineups, and no more pretending every $100 FAAB wallet is untouched. The next version of this page gets actual scores.",
       "matchups": [
         [
           "The Moose Knuckles",
@@ -704,49 +704,49 @@ window.MAKERS_2026 = {
         {
           "teamA": "The Moose Knuckles",
           "teamB": "Predacious Fungi",
-          "preview": "Jim brings the steadier contender profile and a loaded Henry/Achane/JSN/McConkey core; Max has enough skill-position talent to make this uncomfortable but enters the opener with the league's loudest quarterback question. The Week 1 pick is The Moose Knuckles."
+          "preview": "Yahoo has Jim 109.92–100.57 and the Makers model widens it to 112.49–94.91. Max still has plenty of skill-position talent, but the Malik Willis quarterback bet remains the loudest opening-week risk. Final pick: The Moose Knuckles."
         },
         {
           "teamA": "TDs In Your Face",
           "teamB": "Kareem all over your Hunt",
-          "preview": "Nick has the deeper middle of the roster and several spike-week weapons, but the unresolved tight-end spot creates an immediate Week 1 tax. Billy counters with concentrated star power through Christian McCaffrey and CeeDee Lamb. The official pick is Kareem all over your Hunt in a close one."
+          "preview": "Nick fixed the draft-night tight-end hole by adding Mark Andrews, and both models now favor him: Yahoo 109.48–103.28, Makers 104.01–99.96. Billy still has CMC and CeeDee, but the final pick flips to TDs In Your Face."
         },
         {
           "teamA": "Revenge of the period bloods",
           "teamB": "The Eviscerators",
-          "preview": "Yahoo framed this as an F-versus-A+ mismatch, but Nate's Chase/A.J. Brown/Jacobs/Lamar core is far better than a one-win roster. Andrew still has the keeper-built structural edge, the defending-champion résumé and the deeper complete lineup. The Eviscerators are the pick."
+          "preview": "Nate has been active since the draft, but both projection systems see a defending-champion advantage. Yahoo: Andrew 112.58–95.56. Makers: Andrew 116.16–97.30. Final pick: The Eviscerators."
         },
         {
           "teamA": "Criterus",
           "teamB": "The A Gap",
-          "preview": "This is the cleanest test of our preseason board against Yahoo's grades. Criterus has elite depth across Taylor, Jefferson, Nabers, Bucky and Hurts; The A Gap has enough young ceiling through Puka, Jeanty, Rice and Maye to make it dangerous. We take Criterus, but not comfortably."
+          "preview": "Our preseason #1 still gets the nod in the final snapshot. Yahoo has Criterus 104.52–93.11; Makers has it 110.49–93.82. Adam has spike-week upside, but Chris owns the deeper complete lineup. Final pick: Criterus."
         },
         {
           "teamA": "The Mustache riders",
           "teamB": "Pump and Go",
-          "preview": "TomD owns the model edge and an absurd Brock Bowers keeper price, while Tommy brings more top-end knockout swings through Saquon, Chase Brown, Josh Allen and Trey McBride. This is one of the Week 1 spots where the editorial pick goes against the model: Pump and Go."
+          "preview": "The real coin flip. Yahoo favors TomD 106.61–101.76, while the Makers model has The Mustache riders ahead only 104.21–104.04. Seventeen hundredths separate the model scores. Final pick: The Mustache riders, barely."
         }
       ],
-      "gameOfWeek": "Revenge of the period bloods vs The Eviscerators",
-      "gotwCopy": "Yahoo called this an F-versus-A+ mismatch and projected Nate for 1-13 while putting Andrew at 13-1. Our board has them #5 and #2. Andrew is still the pick, but if Nate wins, Yahoo's grade becomes the first framed receipt of 2026.",
-      "standingsMovement": "Everybody is 0-0. The only movement so far is reputational: Andrew has been handed the preseason crown, Nate has been buried alive by Yahoo, and Chris has our #1 ranking with a C+ sticker attached to it.",
-      "shameWatch": "Max enters Week 1 with the league's loudest QB question, while Nick still needs a starting tight end. Nobody belongs on the Wall yet, but both roster-construction receipts are already laminated.",
-      "quote": "\"Everybody is undefeated and every roster still makes sense in his own head.\"",
+      "gameOfWeek": "The Mustache riders vs Pump and Go",
+      "gotwCopy": "The final Makers line is 104.21–104.04 — a 0.17-point edge for TomD. Yahoo also favors The Mustache riders, 106.61–101.76. One lineup decision could turn this receipt upside down.",
+      "standingsMovement": "Everybody is still 0-0, but the wallets have moved: Andrew is at $95 FAAB after the $5 Kaleb Johnson claim; Jim and Nick are at $99; the other seven managers remain at $100.",
+      "shameWatch": "Max still opens Week 1 with Malik Willis at quarterback. Nick eliminated the no-tight-end joke by adding Mark Andrews, so the brightest roster-construction spotlight now belongs to Max.",
+      "quote": "\"The preseason is over. The receipts now have timestamps.\"",
       "awards": [
         [
-          "PRESEASON PRESSURE",
+          "KICKOFF FAVORITE",
           "Andrew / The Eviscerators",
-          "Defending champion, our #2 roster, Yahoo A+ and 13-1. There is nowhere to hide."
+          "Defending champion, Yahoo's biggest Week 1 projection edge and the Makers model's biggest Week 1 projection edge."
         ],
         [
-          "DISRESPECT RECEIPT",
-          "Nate / Revenge of the period bloods",
-          "Yahoo F and 1-13. The entire season now comes with a screenshot."
+          "WAIVER FIX",
+          "Nick / TDs In Your Face",
+          "Added Mark Andrews and erased the draft-night tight-end problem before it could become a Week 1 excuse."
         ],
         [
-          "PROVE US RIGHT",
-          "Chris / Criterus",
-          "Our #1 draft, Yahoo C+. Week 1 starts the argument."
+          "RAZOR LINE",
+          "TomD / The Mustache riders",
+          "The Makers model gives TomD a 0.17-point edge over Tommy in the final Game of the Week."
         ]
       ]
     },
@@ -1512,5 +1512,10 @@ window.MAKERS_2026 = {
       }
     ]
   },
-  "results": []
+  "results": [],
+  "openingNight": {
+    "eyebrow": "WEEK 1 KICKOFF",
+    "title": "Opening night is already a league event",
+    "body": "Patriots–Seahawks puts eight Makers starters on the board before Sunday: Jim starts Jaxon Smith-Njigba; Max flexes Rhamondre Stevenson; Nate starts A.J. Brown; Andrew rolls out Jason Myers and Seattle DEF; Adam starts Drake Maye and Patriots DEF; and Billy flexes Jadarian Price. Adam also carries TreVeyon Henderson as OUT on the bench, while Chris has Zach Charbonnet on IR."
+  }
 };

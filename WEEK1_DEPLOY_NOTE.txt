@@ -1,9 +1,22 @@
-THE MAKERS — WEEK 1 DEPLOY FIX
+THE MAKERS — FINAL PRESEASON / WEEK 1 KICKOFF DEPLOY
 
-This package uses NEW asset filenames so an older cached season-2026.js or live.js cannot hide the Week 1 write-up.
+This package is the final pre-kickoff Week 1 master dated September 9, 2026.
 
-The dedicated week-01.html is now a fully static page containing the complete Week 1 column. It does not depend on JavaScript to show the article.
+What changed:
+- Imported the validated MAKERS_2026_W01_POST_WAIVERS snapshot cumulatively.
+- Refreshed all 10 current Yahoo rosters, 13 transactions, FAAB, available players and all 5 Week 1 Yahoo matchup projections.
+- Locked the final Week 1 Makers-vs-Yahoo prediction receipt before kickoff.
+- Rewrote the Week 1 article as the final kickoff edition and updated the static /week-01.html copy.
+- Updated Game of the Week to The Mustache riders vs Pump and Go.
+- Added the Patriots-Seahawks opening-night Makers callout to the homepage.
+- Bundled Makers Weekly Collector v1.1.3 and updated the collector guide.
+- Added Dem TDs -> TDs In Your Face alias support to runtime sync.
+- Sanitized collector delta data so sourceText/raw recovery text is not deployed in weekly-import.js or archived public snapshots.
 
-Upload all files in the update ZIP to the ROOT of the themakersffl.github.io repository and commit them. Replace matching HTML files. The two new JS files should be added as new files.
+Upload the contents of this ZIP to the ROOT of the themakersffl.github.io repository and replace matching files.
 
-After GitHub Pages deploys, Week 1 is directly available at /week-01.html.
+The modified runtime assets use cache key: 20260909-makersw1final1.
+
+Next collector cycle:
+- After Week 1 MNF is final: POST-MNF, Upcoming Week = 2.
+- After Week 2 waivers clear: POST-WAIVERS, Upcoming Week = 2.

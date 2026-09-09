@@ -5,7 +5,7 @@ This is a separate Tampermonkey collector for **The Makers**. It does not use Ya
 ## Install once
 
 1. Open Tampermonkey and create a new userscript.
-2. Replace the template with `Makers_Weekly_Collector.user.js` (the `v1.0.2` `.txt` copy is identical).
+2. Replace the template with `Makers_Weekly_Collector.user.js` (the `v1.1.3` `.txt` copy is identical).
 3. Save/enable it.
 4. Open the **Makers** Yahoo league homepage. The collector intentionally stays hidden on unrelated Yahoo leagues unless it is already bound to the current league.
 5. Click **USE COLLECTOR ON THIS LEAGUE** once. That binds the script to the Makers Yahoo league for the season.
@@ -33,9 +33,9 @@ The Thursday snapshot preserves Tuesday's completed results and adds the post-wa
 
 ## Week 1 acceptance status
 
-The first real Yahoo DOM collection was accepted on September 2, 2026 for Yahoo league **471058 — The Makers**. Collector v1.0.2 includes the two live-DOM fixes found in that acceptance run: side-aware Yahoo matchup projection parsing and direct cleanup of Yahoo's glued `NA` player-status suffix.
+The first real Yahoo DOM collection was accepted on September 2, 2026 for Yahoo league **471058 — The Makers**. Collector v1.1.3 is the current accepted version. It retains the original live-DOM fixes and adds Yahoo-team-ID-first mapping (so team renames such as “Dem TDs” do not break collection), stricter 10/10 and 5/5 validation, resilient available-player collection, and a native Save As export path with download/clipboard fallbacks.
 
-For the next real cycle, run **POST-MNF** after Week 1 is final with Upcoming week = **2**, then run **POST-WAIVERS** on Thursday with Upcoming week = **2**.
+The final Week 1 POST-WAIVERS snapshot was accepted on September 9, 2026 with 10/10 teams, 10/10 rosters, 5/5 matchup projections, 10/10 FAAB rows, 100 available players and 13 transactions. For the next real cycle, run **POST-MNF** after Week 1 is final with Upcoming week = **2**, then run **POST-WAIVERS** on Thursday with Upcoming week = **2**.
 
 ## Safety / privacy
 
