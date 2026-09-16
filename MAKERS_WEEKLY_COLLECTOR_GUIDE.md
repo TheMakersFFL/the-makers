@@ -1,46 +1,77 @@
-# Makers Weekly Collector v1.2.5
+# Makers Weekly Collector v1.3.0 — Wednesday workflow
 
-The Makers collector uses the hardened Yahoo parsing/validation engine developed for the Mis.Exp collector, while remaining isolated to The Makers.
+The Makers collector uses the hardened Yahoo parsing/validation engine developed for Mis.Exp while remaining isolated to The Makers.
 
 ## Isolation
-
 - Yahoo league: **471058 — The Makers**
 - Schema: `makers-weekly-collector/v2`
 - Tampermonkey/storage prefix: `MAKERSFF`
 - Export prefix: `MAKERS_`
 - The script hard-stops on Yahoo league IDs other than `471058`.
-- Makers team aliases and accepted 2026 Yahoo team IDs are built in as fallbacks.
-- v1.2.5 recognizes the current Yahoo rename **Playing Waddle pays the Price** as Billy's franchise and retains **Dem TDs** as Nick's current alias.
+- Makers team aliases and accepted 2026 Yahoo team IDs remain built in as fallbacks.
 
-## Tuesday / POST-MNF
+## Wednesday — one collection, one update
+Set **Upcoming week** to the week that is about to be played. Example: once Week 1 is final and Week 2 waivers clear, set it to **2**.
 
-Set **Upcoming week** to the next week (for the Week 1 closeout, use Week 2), select **POST-MNF**, then run **AUTO COLLECT LEAGUE**.
+1. Wait until Wednesday waivers have processed.
+2. Use **WEDNESDAY** mode.
+3. Run **AUTO COLLECT LEAGUE**.
+4. Confirm all validation checks are green. If Yahoo does not expose something automatically, open that page and use **CAPTURE THIS PAGE**.
+5. Export the JSON.
+6. Send `MAKERS_2026_W02_WEDNESDAY.json` to ChatGPT.
 
-The collector gathers and validates:
+The Wednesday collection combines the old Tuesday recap collection and Thursday post-waiver collection. It gathers and validates:
+- 10/10 standings with W-L, PF/PA, streak, FAAB and waiver priority where Yahoo exposes them;
+- 5/5 final matchups from the completed week covering all 10 franchises;
+- all 10 completed-week lineups with starter/bench slots and actual player scoring;
+- starter-score reconciliation against Yahoo final team scores;
+- all 10 current **post-waiver** rosters with player projections;
+- 5/5 upcoming matchups and Yahoo projections;
+- 100-player available pool: QB 15, RB 25, WR 25, TE 15, K 10, DEF 10;
+- structured transactions with adds, drops and waiver/FAAB information.
 
-- 10/10 standings with W-L, PF/PA, streak, FAAB and waiver priority where Yahoo exposes them
-- 5/5 completed matchups covering all 10 franchises
-- all 10 completed-week lineups with starter/bench slots and actual player scoring
-- starter-score reconciliation against Yahoo final team scores
-- all 10 current rosters with player projections
-- 5/5 upcoming matchups and Yahoo projections
-- 100-player available pool: QB 15, RB 25, WR 25, TE 15, K 10, DEF 10
-- available-player projections and rostered percentages where Yahoo exposes them
-- structured transactions with adds, drops, waiver/FAAB information and Yahoo duplicate wrapper rows compacted
+## What the Wednesday site update includes
+### Previous-week recap
+- final results and standings;
+- five-game Results Recap;
+- Game of the Week, biggest blowout, closest finish, high/low score and bad beat;
+- all-play standings and lineup-efficiency/optimal-lineup receipts;
+- Makers-vs-Yahoo prediction grading;
+- completed-week storylines and awards;
+- H2H matrix/game log, franchise history, career standings, League Ledger and Record Book updates.
 
-v1.2.5 also routes collection through the hardened transaction parser globally, fixing the partial `structured/total` transaction counts seen in v1.2.4.
+### Waivers and current state
+- post-waiver rosters;
+- transaction / FAAB / waiver-priority breakdown;
+- who addressed last week's needs;
+- remaining waiver/free-agent opportunities;
+- meaningful injury and player-status changes;
+- refreshed What Everybody Needs notes.
 
-When the validation panel is green, export the JSON and give it to ChatGPT for the full Makers Tuesday site update.
+### Upcoming-week preview
+- full five-game preview;
+- locked Makers winner pick for every matchup;
+- locked Makers projected score for every matchup;
+- frozen Yahoo projection snapshot for comparison;
+- Game of the Week;
+- matchup-specific H2H/history notes where useful;
+- lineup, roster, injury and playoff implications.
 
-## Thursday / POST-WAIVERS
+### Weekly model refresh
+- Power Rankings / Power Index;
+- playoff odds;
+- first-round bye odds;
+- title equity;
+- Toilet/punishment risk;
+- projected playoff field and race tiers;
+- Franchise Stock Market;
+- weekly storylines and Season Timeline / Weekly Pulse.
 
-Keep **Upcoming week** on the same target week, switch to **POST-WAIVERS**, and run **AUTO COLLECT LEAGUE** after waivers clear.
-
-The Thursday export captures current rosters, transactions, free agents and matchup projections and compares the roster state with the saved Tuesday snapshot.
+## Important weekly rule
+The previous week's recap and the upcoming week's preview are published together on Wednesday. Completed historical receipts remain permanent. Preview projections and picks are frozen as the Wednesday receipt and graded after the week ends.
 
 ## Files
-
 - `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
-- `Makers_Weekly_Collector_v1.2.5.txt` — identical versioned copy
+- `Makers_Weekly_Collector_v1.3.0.txt` — identical versioned copy
 
-Both files are generated by `.github/scripts/build-makers-collector.py` and syntax/feature checked by GitHub Actions before the generated collector is committed.
+The collector keeps the proven full-recap path internally for compatibility; the user-facing workflow is now one Wednesday combined update.
