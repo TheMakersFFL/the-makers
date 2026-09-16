@@ -26,6 +26,6 @@
  window.gradeClass=(g)=>{let x=(g||'').toLowerCase()[0];return ['a','b','c','d','f'].includes(x)?x:'b'};
  window.esc=(s)=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
  const tuesday=document.createElement('script');
- tuesday.src='makers-tuesday-loader.js?v=20260915-tuesday1';
+ tuesday.src='makers-tuesday-loader.js?v=20260915-tuesday3';
  document.body.appendChild(tuesday);
 })();
