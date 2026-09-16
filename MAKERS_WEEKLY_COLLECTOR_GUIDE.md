@@ -1,62 +1,46 @@
-# The Makers — Twice-Weekly Yahoo Collector
+# Makers Weekly Collector v1.2.5
 
-This is a separate Tampermonkey collector for **The Makers**. It does not use Yahoo API credentials and uses its own `MAKERSFF` Tampermonkey storage namespace, separate from the Miscellaneous Expenditures collector.
+The Makers collector uses the hardened Yahoo parsing/validation engine developed for the Mis.Exp collector, while remaining isolated to The Makers.
 
-## Install once
+## Isolation
 
-1. Open Tampermonkey and create a new userscript.
-2. Replace the template with `Makers_Weekly_Collector.user.js` (the `v1.1.3` `.txt` copy is identical).
-3. Save/enable it.
-4. Open the **Makers** Yahoo league homepage. The collector intentionally stays hidden on unrelated Yahoo leagues unless it is already bound to the current league.
-5. Click **USE COLLECTOR ON THIS LEAGUE** once. That binds the script to the Makers Yahoo league for the season.
+- Yahoo league: **471058 — The Makers**
+- Schema: `makers-weekly-collector/v2`
+- Tampermonkey/storage prefix: `MAKERSFF`
+- Export prefix: `MAKERS_`
+- The script hard-stops on Yahoo league IDs other than `471058`.
+- Makers team aliases and accepted 2026 Yahoo team IDs are built in as fallbacks.
+- v1.2.5 recognizes the current Yahoo rename **Playing Waddle pays the Price** as Billy's franchise and retains **Dem TDs** as Nick's current alias.
 
-## Tuesday / after MNF
+## Tuesday / POST-MNF
 
-1. Open the Makers Yahoo league.
-2. Select **POST-MNF**.
-3. Set **Upcoming week** to the next fantasy week. Example: after Week 1 MNF, use Week 2.
-4. Click **AUTO COLLECT LEAGUE**.
-5. Wait for the validation checks. The target coverage is 10 standings teams, 10 rosters, completed results for the prior week (once the season is underway), and 100 available players split QB 15 / RB 25 / WR 25 / TE 15 / K 10 / DEF 10.
-6. Click **EXPORT JSON** and upload the resulting `MAKERS_YYYY_WXX_POST_MNF.json` for site import.
+Set **Upcoming week** to the next week (for the Week 1 closeout, use Week 2), select **POST-MNF**, then run **AUTO COLLECT LEAGUE**.
 
-The Tuesday snapshot is the authoritative post-week result snapshot. It is designed to update completed scores, standings, rosters, waiver pool and the inputs used by Makers Power/Odds/War Room/H2H.
+The collector gathers and validates:
 
-## Thursday / after waivers
+- 10/10 standings with W-L, PF/PA, streak, FAAB and waiver priority where Yahoo exposes them
+- 5/5 completed matchups covering all 10 franchises
+- all 10 completed-week lineups with starter/bench slots and actual player scoring
+- starter-score reconciliation against Yahoo final team scores
+- all 10 current rosters with player projections
+- 5/5 upcoming matchups and Yahoo projections
+- 100-player available pool: QB 15, RB 25, WR 25, TE 15, K 10, DEF 10
+- available-player projections and rostered percentages where Yahoo exposes them
+- structured transactions with adds, drops, waiver/FAAB information and Yahoo duplicate wrapper rows compacted
 
-1. Open the Makers Yahoo league.
-2. Select **POST-WAIVERS**.
-3. Keep **Upcoming week** on the week about to be played.
-4. Click **AUTO COLLECT LEAGUE**.
-5. Export `MAKERS_YYYY_WXX_POST_WAIVERS.json` and upload it for site import.
+v1.2.5 also routes collection through the hardened transaction parser globally, fixing the partial `structured/total` transaction counts seen in v1.2.4.
 
-The Thursday snapshot preserves Tuesday's completed results and adds the post-waiver state: roster changes, FAAB balances/priorities, completed transactions, available players and upcoming Yahoo matchup projections.
+When the validation panel is green, export the JSON and give it to ChatGPT for the full Makers Tuesday site update.
 
-## Week 1 acceptance status
+## Thursday / POST-WAIVERS
 
-The first real Yahoo DOM collection was accepted on September 2, 2026 for Yahoo league **471058 — The Makers**. Collector v1.1.3 is the current accepted version. It retains the original live-DOM fixes and adds Yahoo-team-ID-first mapping (so team renames such as “Dem TDs” do not break collection), stricter 10/10 and 5/5 validation, resilient available-player collection, and a native Save As export path with download/clipboard fallbacks.
+Keep **Upcoming week** on the same target week, switch to **POST-WAIVERS**, and run **AUTO COLLECT LEAGUE** after waivers clear.
 
-The final Week 1 POST-WAIVERS snapshot was accepted on September 9, 2026 with 10/10 teams, 10/10 rosters, 5/5 matchup projections, 10/10 FAAB rows, 100 available players and 13 transactions. For the next real cycle, run **POST-MNF** after Week 1 is final with Upcoming week = **2**, then run **POST-WAIVERS** on Thursday with Upcoming week = **2**.
+The Thursday export captures current rosters, transactions, free agents and matchup projections and compares the roster state with the saved Tuesday snapshot.
 
-## Safety / privacy
+## Files
 
-- The collector never contains a Yahoo password, OAuth token, API key or client secret.
-- The raw export can contain Yahoo page text as a parser recovery aid. Do not deploy the raw export publicly.
-- `tools/apply-weekly-export.py` creates the compact public snapshot and strips raw page captures/source text from `weekly-import.js` and the archived deployable snapshot.
-- The site binds each season to the first accepted Yahoo league ID. An export from another Yahoo league is rejected.
-- Makers and Misc.Exp use different userscript names, schemas, binding keys and Tampermonkey storage namespaces.
+- `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
+- `Makers_Weekly_Collector_v1.2.5.txt` — identical versioned copy
 
-## Site import
-
-From the site root:
-
-```bash
-python tools/apply-weekly-export.py /path/to/MAKERS_2026_W02_POST_MNF.json .
-```
-
-Run the same command for the Thursday file. `weekly-import.js` is rebuilt cumulatively in this order:
-
-1. earlier weeks
-2. POST-MNF
-3. POST-WAIVERS
-
-That means Thursday cannot erase Tuesday's final scores, and later weeks cannot erase earlier results.
+Both files are generated by `.github/scripts/build-makers-collector.py` and syntax/feature checked by GitHub Actions before the generated collector is committed.
