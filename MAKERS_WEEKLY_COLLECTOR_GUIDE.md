@@ -1,4 +1,4 @@
-# Makers Weekly Collector v1.3.0 — Wednesday workflow
+# Makers Weekly Collector v1.3.1 — Wednesday workflow
 
 The Makers collector uses the hardened Yahoo parsing/validation engine developed for Mis.Exp while remaining isolated to The Makers.
 
@@ -16,7 +16,7 @@ Set **Upcoming week** to the week that is about to be played. Example: once Week
 1. Wait until Wednesday waivers have processed.
 2. Use **WEDNESDAY** mode.
 3. Run **AUTO COLLECT LEAGUE**.
-4. Confirm all validation checks are green. If Yahoo does not expose something automatically, open that page and use **CAPTURE THIS PAGE**.
+4. Confirm all validation checks are green. The Wednesday build specifically requires structured transaction/waiver activity to be captured, in addition to the recap and preview data. If Yahoo does not expose something automatically, open that page and use **CAPTURE THIS PAGE**.
 5. Export the JSON.
 6. Send `MAKERS_2026_W02_WEDNESDAY.json` to ChatGPT.
 
@@ -72,6 +72,6 @@ The previous week's recap and the upcoming week's preview are published together
 
 ## Files
 - `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
-- `Makers_Weekly_Collector_v1.3.0.txt` — identical versioned copy
+- `Makers_Weekly_Collector_v1.3.1.txt` — identical versioned copy
 
 The collector keeps the proven full-recap path internally for compatibility; the user-facing workflow is now one Wednesday combined update.
