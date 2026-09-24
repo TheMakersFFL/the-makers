@@ -27,7 +27,8 @@
     'TDs IN YOUR FACE':'TDs In Your Face',
     'Dem TDs':'TDs In Your Face',
     'The Mustache Riders':'The Mustache riders',
-    'Revenge of the Period Bloods':'Revenge of the period bloods'
+    'Revenge of the Period Bloods':'Revenge of the period bloods',
+    'The PRICE is wrong bitch!':'Kareem all over your Hunt'
   };
   const canonical=t=>TEAM_ALIASES[String(t||'').trim()]||String(t||'').trim();
   const num=v=>{const n=Number(String(v??'').replace(/[$,% ,]/g,''));return Number.isFinite(n)?n:null};
@@ -64,7 +65,7 @@
       targetWeek:Number(I.targetWeek)||1,validation:I.validation||{}
     });
     if(isLatest){
-      Y.collectorStatus={active:true,schema:I.schema,mode:I.mode||'',capturedAt:I.capturedAt||'',completedWeek:Number(I.completedWeek)||0,targetWeek:Number(I.targetWeek)||Number(Y.week)||1,validation:I.validation||{},source:'Makers Yahoo browser collector',snapshotCount:valid.length};
+      Y.collectorStatus={active:true,schema:I.schema,mode:I.mode||'',workflow:I.workflow||'',capturedAt:I.capturedAt||'',completedWeek:Number(I.completedWeek)||0,targetWeek:Number(I.targetWeek)||Number(Y.week)||1,validation:I.validation||{},source:'Makers Yahoo browser collector',snapshotCount:valid.length};
       if(I.capturedAt)Y.lastUpdated=I.capturedAt;
       if(Number(I.targetWeek)>=1)Y.week=Number(I.targetWeek);
       Y.weeklyCollectorDelta=I.delta||null;
@@ -140,6 +141,14 @@
 
     if(Array.isArray(data.rosters)&&data.rosters.length){
       Y.liveRosters=data.rosters.map(r=>({team:teamName(r),manager:managerName(r),players:Array.isArray(r.players)?r.players:[],capturedAt:I.capturedAt||''})).filter(r=>r.team);
+    }
+
+    if(Array.isArray(data.completedLineups)&&data.completedLineups.length){
+      Y.completedLineupsByWeek=Y.completedLineupsByWeek||{};
+      const cw=String(Number(I.completedWeek)||Number(data.completedLineups[0]?.week)||0);
+      const rows=data.completedLineups.map(r=>({...r,team:teamName(r),manager:managerName(r),players:Array.isArray(r.players)?r.players:[]})).filter(r=>r.team);
+      if(cw!=='0')Y.completedLineupsByWeek[cw]=rows;
+      if(isLatest)Y.completedLineups=rows;
     }
 
     const tx=(data.transactions||[]).map(x=>({type:txText(x.type||'MOVE').toUpperCase(),manager:txText(x.manager||TEAM_MANAGER[canonical(x.team)]||''),team:canonical(txText(x.team||MANAGER_TEAM[x.manager]||'')),add:txText(x.add||''),drop:txText(x.drop||''),faab:x.faab==null?null:num(x.faab),description:txText(x.description||[x.add&&`Added ${x.add}`,x.drop&&`Dropped ${x.drop}`].filter(Boolean).join(' · ')||'Completed transaction'),time:txText(x.time||x.date||'')}));
