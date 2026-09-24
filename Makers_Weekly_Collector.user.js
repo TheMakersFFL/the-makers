@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Makers Weekly Collector — Wednesday
 // @namespace    https://github.com/TheMakersFFL/the-makers/
-// @version      1.3.1
+// @version      1.3.2
 // @description  Collect Yahoo Fantasy league data once each Wednesday after waivers for The Makers, combining the prior-week recap with post-waiver rosters, projections and the upcoming-week preview.
 // @match        https://football.fantasysports.yahoo.com/f1/*
 // @match        https://football.fantasysports.yahoo.com/*/f1/*
@@ -20,7 +20,7 @@
   'use strict';
 
   const SCHEMA='makers-weekly-collector/v2';
-  const VERSION='1.3.1';
+  const VERSION='1.3.2';
   const EXPECTED_LEAGUE_ID='471058';
   const KNOWN_TEAMS={
     'The Eviscerators':'Andrew',
@@ -41,7 +41,8 @@
     'Dem TDs':'TDs In Your Face',
     'The Mustache Riders':'The Mustache riders',
     'Revenge of the Period Bloods':'Revenge of the period bloods',
-    'Playing Waddle pays the Price':'Kareem all over your Hunt'
+    'Playing Waddle pays the Price':'Kareem all over your Hunt',
+    'The PRICE is wrong bitch!':'Kareem all over your Hunt'
   };
   const KNOWN_TEAM_IDS_2026={
     'The Moose Knuckles':1,
