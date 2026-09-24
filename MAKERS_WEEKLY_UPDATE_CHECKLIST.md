@@ -1,6 +1,6 @@
 # The Makers — Wednesday Weekly Update Checklist
 
-Use this checklist for every in-season update. The old Tuesday close + Thursday preview workflow is retired. The site now gets **one combined Wednesday update after waivers clear**.
+Use this checklist for every in-season update. The site gets **one combined Wednesday update after waivers clear**.
 
 ## Wednesday collector / validation
 - [ ] Wait until Wednesday waivers have processed.
