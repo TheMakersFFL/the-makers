@@ -25,7 +25,4 @@
  window.fmt=(n)=>Number(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
  window.gradeClass=(g)=>{let x=(g||'').toLowerCase()[0];return ['a','b','c','d','f'].includes(x)?x:'b'};
  window.esc=(s)=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
- const weekly=document.createElement('script');
- weekly.src='makers-tuesday-loader.js?v=20260916-wed1';
- document.body.appendChild(weekly);
 })();
