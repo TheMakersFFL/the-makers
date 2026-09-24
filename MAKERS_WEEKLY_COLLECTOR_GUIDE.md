@@ -1,4 +1,4 @@
-# Makers Weekly Collector v1.3.2 — Wednesday workflow
+# Makers Weekly Collector v1.3.3 — Wednesday workflow
 
 The Makers collector uses the hardened Yahoo parsing/validation engine developed for Mis.Exp while remaining isolated to The Makers.
 
@@ -20,7 +20,7 @@ Set **Upcoming week** to the week that is about to be played. Example: once Week
 5. Export the JSON.
 6. Send `MAKERS_2026_W02_WEDNESDAY.json` to ChatGPT.
 
-The Wednesday collection combines the old Tuesday recap collection and Thursday post-waiver collection. It gathers and validates:
+The Wednesday collection gathers and validates the full recap, roster, waiver and preview state in one pass:
 - 10/10 standings with W-L, PF/PA, streak, FAAB and waiver priority where Yahoo exposes them;
 - 5/5 final matchups from the completed week covering all 10 franchises;
 - all 10 completed-week lineups with starter/bench slots and actual player scoring;
@@ -72,10 +72,13 @@ The previous week's recap and the upcoming week's preview are published together
 
 ## Files
 - `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
-- `Makers_Weekly_Collector_v1.3.2.txt` — identical versioned copy
+- `Makers_Weekly_Collector_v1.3.3.txt` — identical versioned copy
 
-The collector keeps the proven full-recap path internally for compatibility; the user-facing workflow is now one Wednesday combined update.
+The collector is natively Wednesday-only: one mode, one validation path, one export.
 
 
-## v1.3.2 fix
-- Added Yahoo team-name alias `The PRICE is wrong bitch!` → canonical Makers franchise `Kareem all over your Hunt`, so standings, completed matchups, score reconciliation and upcoming matchups continue to resolve Billy's team after the rename.
+## v1.3.3 workflow cleanup
+- Internal collector mode is now `WEDNESDAY` with no split-mode compatibility state.
+- The export always reports `mode: "WEDNESDAY"` and `workflow: "wednesday-combined"`.
+- Validation always requires the full completed-week + current-roster + upcoming-preview dataset.
+- The v1.3.2 Billy team-name alias fix remains preserved.
