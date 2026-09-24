@@ -137,6 +137,12 @@
 
   function txEvents(){
     const seen=new Map(),snaps=[...IMPORTS].sort((a,b)=>String(a.capturedAt||'').localeCompare(String(b.capturedAt||'')));
+    const weekFromTime=v=>{const m=String(v||'').match(/Sep\s+(\d{1,2})/i),d=m?Number(m[1]):0;return d&&d<=9?1:d&&d<=16?2:3};
+    for(const raw of (Y.recentTransactions||[])){
+      const manager=raw.manager||managerByTeam(raw.team),add=raw.add||(Array.isArray(raw.added)?raw.added.map(p=>p?.name||p).filter(Boolean).join(', '):''),drop=raw.drop||(Array.isArray(raw.dropped)?raw.dropped.map(p=>p?.name||p).filter(Boolean).join(', '):''),faab=num(raw.faab??raw.faabSpent)??0,time=raw.time||raw.timestamp||raw.date||'';
+      const key=[manager,raw.team,add,drop,faab].map(x=>String(x??'')).join('|').toLowerCase();
+      if(!seen.has(key))seen.set(key,{...raw,manager,add,drop,faab,time,firstTargetWeek:weekFromTime(time)||1,firstCompletedWeek:Math.max(0,(weekFromTime(time)||1)-1),capturedAt:''});
+    }
     for(const s of snaps){for(const raw of s?.data?.transactions||[]){
       const manager=raw.manager||managerByTeam(raw.team);
       const add=raw.add||(Array.isArray(raw.added)?raw.added.map(p=>p?.name||p).filter(Boolean).join(', '):'');
@@ -187,7 +193,7 @@
     go(0,new Set(),0,[]);return Number.isFinite(best)?{score:best,indices:new Set(bestIdx)}:null;
   }
   function lineupAutopsies(){
-    const out=[];for(const s of completedSnapshots()){
+    const out=(Y.legacyLineupAutopsies||[]).map(x=>({...x}));for(const s of completedSnapshots()){
       const week=Number(s.completedWeek);for(const roster of completedRows(s)){const m=roster.manager||managerByTeam(roster.team);if(!m)continue;const g=resultForManagerWeek(m,week);if(!g)continue;const players=roster.players||[],relevant=players.filter(p=>!/^(IR|IL|NA|RES)$/i.test(String(p.slot||''))),allScored=relevant.length>=9&&relevant.every(p=>rosterPoint(p)!=null);if(!allScored)continue;const starters=relevant.filter(p=>!isBenchSlot(p.slot)),starterSum=starters.reduce((s,p)=>s+(rosterPoint(p)||0),0),official=officialScore(g,m),oppScore=opponentScore(g,m);if(official==null||Math.abs(starterSum-official)>1.5)continue;const opt=optimizeRoster(players);if(!opt||opt.score+0.01<official)continue;const left=Math.max(0,opt.score-official),eff=opt.score?official/opt.score:1,bench=[...relevant].filter(p=>isBenchSlot(p.slot)).map(p=>({...p,_pts:rosterPoint(p)})).sort((a,b)=>b._pts-a._pts),topBench=bench[0]||null,lost=official<oppScore,costGame=lost&&opt.score>oppScore;
         out.push({week,manager:m,team:roster.team||teamByManager(m),official,optimal:opt.score,left,eff,opponent:opponentManager(g,m),oppScore,topBench,costGame});
       }}return out;
