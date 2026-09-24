@@ -1,0 +1,70 @@
+THE MAKERS — WEEK 3 FULL UPDATE PHASE 3 CADENCE / RUNTIME QA
+Date: 2026-09-24
+Branch: week3-full-update-2026-09-24
+
+RESULT: PASS
+
+PHASE 3 GOAL
+Make Wednesday the only active in-season collector/runtime workflow and remove the obsolete split-cadence loader/overlay architecture before publishing.
+
+ACTIVE COLLECTOR
+- Makers_Weekly_Collector.user.js bumped to v1.3.3.
+- Internal state mode is WEDNESDAY.
+- Export mode is WEDNESDAY.
+- workflow is wednesday-combined.
+- Export filename is MAKERS_<season>_W<week>_WEDNESDAY.json.
+- Full completed-week + current-roster + upcoming-preview validation always runs.
+- No active POST-MNF or POST-WAIVERS mode selector/path remains.
+- Versioned copy Makers_Weekly_Collector_v1.3.3.txt added and syntax-validated.
+
+ACTIVE SITE RUNTIME
+- makers-weekly-loader.js is the sole weekly loader for dynamic pages.
+- It loads only local repo assets:
+  season-2026.js
+  weekly-import.js
+  makers-weekly-sync.js
+  makers-engine.js
+  league-analytics.js
+  api-config.js / waiver-model.js where needed
+  live.js
+  site.js
+- No remote dependency on miscexpffl.github.io/the-makers remains.
+- site.js no longer injects any weekly renderer/loader.
+- makers-weekly-sync.js only treats wednesday-combined / WEDNESDAY as the lock path.
+
+OBSOLETE RUNTIME REMOVED
+- makers-tuesday-loader.js
+- makers-tuesday.js
+- makers-wednesday-patch.js
+- makers-static-tuesday.js
+- makers-week1-tuesday-data.js
+- makers-wed-1.js
+- makers-wed-2a.js
+- makers-wed-2b.js
+- makers-wed-3.js
+- makers-w03-phase1.js
+
+ROUTE SWEEP
+Every HTML entry point in the repo was checked for:
+- references to removed legacy runtime files
+- Tuesday collector instructions
+- Thursday collector instructions
+- POST-MNF / POST-WAIVERS active workflow instructions
+No active route contains any of those references.
+
+ACTIVE JS SWEEP
+Current runtime files were checked for legacy filenames, old remote repo URLs and split-cadence instructions. None remain.
+
+INTENTIONAL HISTORICAL PROVENANCE
+- One POST-WAIVERS label remains inside the frozen Week 1 prediction receipt in season-2026.js. It records the source of that historical snapshot and is not executable workflow logic.
+- weekly-import.js preserves older raw collector receipts with their original mode labels.
+- Older versioned collector .txt files remain as archives of prior releases.
+These historical receipts are intentionally not rewritten.
+
+DOCUMENTATION
+- MAKERS_WEEKLY_COLLECTOR_GUIDE.md now documents v1.3.3 as natively Wednesday-only.
+- MAKERS_WEEKLY_UPDATE_CHECKLIST.md describes only the single combined Wednesday workflow.
+
+PUBLISH STATUS
+Not published in Phase 3.
+Phase 4 remains the cache-bust / production switch / merge step.
