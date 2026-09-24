@@ -53,10 +53,60 @@ window.MAKERS_2026 = {
           "yahooB": 101.76
         }
       ]
+    },
+    "2": {
+      "week": 2,
+      "capturedAt": "2026-09-17T01:48:34.047Z",
+      "phase": "WEDNESDAY FORECAST",
+      "source": "Wednesday Yahoo collector + Makers Power Blend v1",
+      "model": "Makers Power Blend v1",
+      "locked": true,
+      "matchups": [
+        {
+          "teamA": "The Eviscerators",
+          "teamB": "The A Gap",
+          "meA": 115.5,
+          "meB": 102.5,
+          "yahooA": 116.08,
+          "yahooB": 102.71
+        },
+        {
+          "teamA": "The Moose Knuckles",
+          "teamB": "TDs In Your Face",
+          "meA": 116.3,
+          "meB": 103.5,
+          "yahooA": 115.49,
+          "yahooB": 105.99
+        },
+        {
+          "teamA": "Criterus",
+          "teamB": "The Mustache riders",
+          "meA": 105.5,
+          "meB": 107.4,
+          "yahooA": 103.02,
+          "yahooB": 100.92
+        },
+        {
+          "teamA": "Pump and Go",
+          "teamB": "Kareem all over your Hunt",
+          "meA": 105.1,
+          "meB": 101.8,
+          "yahooA": 104.97,
+          "yahooB": 101.67
+        },
+        {
+          "teamA": "Predacious Fungi",
+          "teamB": "Revenge of the period bloods",
+          "meA": 96.1,
+          "meB": 93.3,
+          "yahooA": 99.64,
+          "yahooB": 94.01
+        }
+      ]
     }
   },
-  "week": 1,
-  "lastUpdated": "Final Week 1 Kickoff Edition · September 9, 2026",
+  "week": 3,
+  "lastUpdated": "September 24, 2026 · Wednesday Week 3 snapshot",
   "draftRankings": [
     {
       "rank": 1,
@@ -143,7 +193,7 @@ window.MAKERS_2026 = {
       "grade": "A",
       "yahoo": "D+",
       "yahooProjection": "6-8",
-      "yahooPower": 1621.0,
+      "yahooPower": 1621,
       "core": [
         "Saquon Barkley",
         "Chase Brown",
@@ -400,7 +450,7 @@ window.MAKERS_2026 = {
       "grade": "A",
       "yahoo": "D+",
       "yahooProjection": "6-8",
-      "yahooPower": 1621.0,
+      "yahooPower": 1621,
       "core": [
         "Saquon Barkley",
         "Chase Brown",
@@ -573,111 +623,141 @@ window.MAKERS_2026 = {
   ],
   "standings": [
     {
-      "team": "The Eviscerators",
-      "manager": "Andrew",
-      "w": 0,
+      "rank": 1,
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "w": 2,
       "l": 0,
-      "pf": 0,
-      "pa": 0,
+      "pf": 285.16,
+      "pa": 188.92,
       "moves": 0,
-      "trades": 0
+      "trades": 0,
+      "record": "2-0-0",
+      "streak": "W-2"
     },
     {
+      "rank": 2,
       "team": "The Moose Knuckles",
       "manager": "Jim",
-      "w": 0,
+      "w": 2,
       "l": 0,
-      "pf": 0,
-      "pa": 0,
+      "pf": 261.86,
+      "pa": 174.68,
       "moves": 0,
-      "trades": 0
+      "trades": 0,
+      "record": "2-0-0",
+      "streak": "W-2"
     },
     {
+      "rank": 3,
+      "team": "The Eviscerators",
+      "manager": "Andrew",
+      "w": 2,
+      "l": 0,
+      "pf": 214.14,
+      "pa": 168.98,
+      "moves": 0,
+      "trades": 0,
+      "record": "2-0-0",
+      "streak": "W-2"
+    },
+    {
+      "rank": 4,
+      "team": "Pump and Go",
+      "manager": "Tommy",
+      "w": 1,
+      "l": 1,
+      "pf": 228.08,
+      "pa": 284.42,
+      "moves": 0,
+      "trades": 0,
+      "record": "1-1-0",
+      "streak": "W-1"
+    },
+    {
+      "rank": 5,
+      "team": "Kareem all over your Hunt",
+      "manager": "Billy",
+      "w": 1,
+      "l": 1,
+      "pf": 200.26,
+      "pa": 218.48,
+      "moves": 0,
+      "trades": 0,
+      "record": "1-1-0",
+      "streak": "L-1"
+    },
+    {
+      "rank": 6,
+      "team": "Criterus",
+      "manager": "Chris",
+      "w": 1,
+      "l": 1,
+      "pf": 192.28,
+      "pa": 202.42,
+      "moves": 0,
+      "trades": 0,
+      "record": "1-1-0",
+      "streak": "L-1"
+    },
+    {
+      "rank": 7,
+      "team": "Revenge of the period bloods",
+      "manager": "Nate",
+      "w": 1,
+      "l": 1,
+      "pf": 191.9,
+      "pa": 199.74,
+      "moves": 0,
+      "trades": 0,
+      "record": "1-1-0",
+      "streak": "W-1"
+    },
+    {
+      "rank": 8,
       "team": "TDs In Your Face",
       "manager": "Nick",
       "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
+      "l": 2,
+      "pf": 192.44,
+      "pa": 239.96,
       "moves": 0,
-      "trades": 0
+      "trades": 0,
+      "record": "0-2-0",
+      "streak": "L-2"
     },
     {
-      "team": "The Mustache riders",
-      "manager": "TomD",
-      "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
-      "moves": 0,
-      "trades": 0
-    },
-    {
-      "team": "Criterus",
-      "manager": "Chris",
-      "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
-      "moves": 0,
-      "trades": 0
-    },
-    {
-      "team": "Kareem all over your Hunt",
-      "manager": "Billy",
-      "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
-      "moves": 0,
-      "trades": 0
-    },
-    {
-      "team": "Pump and Go",
-      "manager": "Tommy",
-      "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
-      "moves": 0,
-      "trades": 0
-    },
-    {
+      "rank": 9,
       "team": "The A Gap",
       "manager": "Adam",
       "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
+      "l": 2,
+      "pf": 187.84,
+      "pa": 206.4,
       "moves": 0,
-      "trades": 0
+      "trades": 0,
+      "record": "0-2-0",
+      "streak": "L-2"
     },
     {
+      "rank": 10,
       "team": "Predacious Fungi",
       "manager": "Max",
       "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
+      "l": 2,
+      "pf": 161.28,
+      "pa": 231.24,
       "moves": 0,
-      "trades": 0
-    },
-    {
-      "team": "Revenge of the period bloods",
-      "manager": "Nate",
-      "w": 0,
-      "l": 0,
-      "pf": 0,
-      "pa": 0,
-      "moves": 0,
-      "trades": 0
+      "trades": 0,
+      "record": "0-2-0",
+      "streak": "L-2"
     }
   ],
   "weekly": {
     "1": {
-      "status": "Kickoff Edition",
-      "headline": "Week 1: Receipts locked",
-      "writeup": "The preseason is over. This is the last clean snapshot before the 2026 season starts, and for once the league has something better than draft grades to argue about: actual Week 1 lineups, actual waiver moves and a final set of projections that are now locked before the first game kicks off.\n\nThe September 9 collector came back completely green. All ten rosters are accounted for, all five Yahoo matchups are populated, all ten FAAB balances are current, the 100-player free-agent board is intact, and thirteen completed transactions have already changed the shape of the opening week. The standings are still 0-0, but the league is not untouched anymore. Andrew is down to $95 FAAB after spending $5 on Kaleb Johnson. Jim and Nick are at $99. Everybody else still has the full $100.\n\nThe other major change is that the original Week 1 article is officially obsolete in one important place: Nick fixed the tight-end problem. TDs In Your Face grabbed Mark Andrews for $0 and now opens with Joe Burrow, Jahmyr Gibbs, Kyren Williams, Drake London, Jaylen Waddle, Andrews and Jameson Williams in the starting lineup. The joke about drafting no tight end had a good six-day run. It has been retired.\n\nThe Moose Knuckles–Predacious Fungi opener still leans hard toward Jim. Yahoo has Jim 109.92–100.57, while the Makers model is even more aggressive at 112.49–94.91. Jim's starting group is Dak Prescott, Derrick Henry, Javonte Williams, Jaxon Smith-Njigba, Ladd McConkey, George Kittle and De'Von Achane. Max still has real firepower through James Cook, Omarion Hampton, Tee Higgins, Garrett Wilson, Tucker Kraft and Rhamondre Stevenson, but the Malik Willis quarterback bet remains the loudest roster-construction gamble in the league. Jim is the pick.\n\nTDs In Your Face against Kareem all over your Hunt is much tighter than the old preview made it sound. Yahoo has Nick 109.48–103.28. The Makers model also takes Nick, 104.01–99.96. Billy still has the two-player sledgehammer of Christian McCaffrey and CeeDee Lamb, but Nick's lineup is now complete enough that the old concentrated-star-power argument no longer outweighs the depth. Nick also added Pittsburgh's defense for $1. The final pick flips from the original article: TDs In Your Face.\n\nRevenge of the period bloods against The Eviscerators is still the most dramatic preseason résumé matchup, but it is no longer the most competitive projection. Yahoo has Andrew ahead 112.58–95.56. The Makers model is even wider at 116.16–97.30. Nate has been active, adding Tyjae Spears for Austin Ekeler and Josh Downs for Trevor Etienne, and his top-end names are still good enough to make any opponent uncomfortable. But Andrew enters as the defending champion with Bijan Robinson, Breece Hall, Nico Collins, George Pickens, Chris Olave and Justin Herbert, then spent the league's first meaningful FAAB shot on Kaleb Johnson. Both models say The Eviscerators, and so do we.\n\nCriterus against The A Gap remains the best direct test of our draft board. We ranked Chris first and Yahoo did not. The final lineup board still supports the argument: Jalen Hurts, Jonathan Taylor, Cam Skattebo, Malik Nabers, Justin Jefferson, Kyle Pitts and Bucky Irving is absurdly complete. Yahoo has Criterus 104.52–93.11; the Makers model has it 110.49–93.82. Adam has enough ceiling to make the projection look stupid—Drake Maye, Puka Nacua, Rashee Rice, Sam LaPorta and a deep set of backs can absolutely spike—but Chris is the final pick.\n\nThat leaves the actual Game of the Week: The Mustache riders against Pump and Go. Yahoo likes TomD 106.61–101.76. The Makers model basically refuses to choose, putting TomD ahead 104.21–104.04. That is a seventeen-hundredths-of-a-point edge. TomD brings Caleb Williams, Kenneth Walker, Travis Etienne, Amon-Ra St. Brown, Zay Flowers, Brock Bowers and Rico Dowdle. Tommy counters with Josh Allen, Saquon Barkley, Chase Brown, DeVonta Smith, DJ Moore, Trey McBride and MarShawn Lloyd. The original editorial card took Tommy. The final locked model says TomD by almost nothing. With the season starting tonight, I am taking the model and making The Mustache riders the official pick—but this is the game most likely to make the prediction receipt look ridiculous by Sunday afternoon.\n\nOpening night also matters more to this league than it looked like it would a week ago. Patriots–Seahawks puts eight Makers starters on the board before Sunday. Jim gets Jaxon Smith-Njigba. Max has Rhamondre Stevenson in the flex. Nate starts A.J. Brown. Andrew starts both Jason Myers and Seattle's defense. Adam starts Drake Maye and the Patriots defense. Billy has Jadarian Price in the flex. Adam's TreVeyon Henderson is OUT on the bench, and Chris has Zach Charbonnet sitting on IR. The first real scoreboard swings will start tonight.\n\nSo the final Week 1 card is The Moose Knuckles over Predacious Fungi, TDs In Your Face over Kareem all over your Hunt, The Eviscerators over Revenge of the period bloods, Criterus over The A Gap, and The Mustache riders over Pump and Go. For the first time in this preseason process, the Makers model and Yahoo agree on all five winners. That does not mean the week is obvious. It just means the arguments have moved from who should win to whether the margins are remotely believable.\n\nThere is still a bigger season sitting behind these five games. Andrew is trying to become the first back-to-back champion of the current iteration and the first manager to reach three current-era titles. Jim and Tommy are trying to turn their own banners into something more than isolated peaks. Max is still trying to convert the modern archive's strongest regular-season résumé into a championship. Nick has already shown that he will fix a roster hole instead of letting the draft-room joke linger. Nate has an entire Yahoo F grade to carry around as motivation. Chris has our #1 roster and the most immediate chance to make us look smart. Adam, TomD and Billy all have enough top-end talent to make the preseason order irrelevant in a hurry.\n\nThe final receipt is now locked. No more preseason edits, no more hypothetical lineups, and no more pretending every $100 FAAB wallet is untouched. The next version of this page gets actual scores.",
+      "status": "Results Recap",
+      "headline": "187.86: TomD Detonates Week 1, Billy Steals One, and the League Immediately Gets Weird",
+      "writeup": "Week 1 gave us a scoring record, one shared model miss, two perfect lineup cards and immediate pressure at the bottom of the board. TomD supplied the explosion; Billy supplied the upset; Chris survived the closest finish.\n\nThe Mustache riders 187.86 — Pump and Go 107.46. TomD did not ease into 2026. Caleb Williams scored 39.76, Kenneth Walker added 32.60, Christian Watson dropped 29.70 and Zay Flowers added 24.50 as The Mustache riders set a new modern-era regular-season weekly scoring record. Tommy scored a respectable 107.46 behind Josh Allen's 38.66 and still lost by 80.40.\n\nThe Moose Knuckles 125.60 — Predacious Fungi 80.10. Jim's veteran-heavy build looked exactly like the version he drafted it to be. Derrick Henry went for 34.80, Jaxon Smith-Njigba scored 21.20 and Javonte Williams added 20.20.\n\nThe Eviscerators 118.56 — Revenge of the period bloods 86.26. Andrew opened the title defense cleanly behind Bijan Robinson, Chris Olave, Breece Hall and Nico Collins.\n\nKareem all over your Hunt 103.70 — TDs In Your Face 97.86. Billy delivered the only result that beat both the Makers model and Yahoo, and he did it with a perfect optimal lineup.\n\nCriterus 110.82 — The A Gap 105.12. The closest game of Week 1 went to Chris by 5.70. Chuba Hubbard's 21.70 on the Criterus bench kept the win from being completely clean.",
       "matchups": [
         [
           "The Moose Knuckles",
@@ -727,33 +807,70 @@ window.MAKERS_2026 = {
           "preview": "The real coin flip. Yahoo favors TomD 106.61–101.76, while the Makers model has The Mustache riders ahead only 104.21–104.04. Seventeen hundredths separate the model scores. Final pick: The Mustache riders, barely."
         }
       ],
-      "gameOfWeek": "The Mustache riders vs Pump and Go",
-      "gotwCopy": "The final Makers line is 104.21–104.04 — a 0.17-point edge for TomD. Yahoo also favors The Mustache riders, 106.61–101.76. One lineup decision could turn this receipt upside down.",
-      "standingsMovement": "Everybody is still 0-0, but the wallets have moved: Andrew is at $95 FAAB after the $5 Kaleb Johnson claim; Jim and Nick are at $99; the other seven managers remain at $100.",
-      "shameWatch": "Max still opens Week 1 with Malik Willis at quarterback. Nick eliminated the no-tight-end joke by adding Mark Andrews, so the brightest roster-construction spotlight now belongs to Max.",
-      "quote": "\"The preseason is over. The receipts now have timestamps.\"",
+      "gameOfWeek": "Criterus vs The A Gap",
+      "gotwCopy": "Chris escaped Adam 110.82–105.12 in the closest finish of the opening week.",
+      "standingsMovement": "TomD, Jim, Andrew, Chris and Billy opened 1-0; the other five started 0-1.",
+      "shameWatch": "Max opened with the Week 1 low at 80.10 while Tommy became the wrong-place-wrong-week victim of TomD's record.",
+      "quote": "Week 1 needed exactly one Sunday to make the preseason order feel negotiable.",
       "awards": [
         [
-          "KICKOFF FAVORITE",
-          "Andrew / The Eviscerators",
-          "Defending champion, Yahoo's biggest Week 1 projection edge and the Makers model's biggest Week 1 projection edge."
+          "WEEKLY MVP",
+          "TomD — The Mustache riders",
+          "187.86 points and a new modern-era weekly scoring record."
         ],
         [
-          "WAIVER FIX",
-          "Nick / TDs In Your Face",
-          "Added Mark Andrews and erased the draft-night tight-end problem before it could become a Week 1 excuse."
+          "PLAYER NUKE",
+          "Caleb Williams — 39.76",
+          "The highest starter score in the league."
         ],
         [
-          "RAZOR LINE",
-          "TomD / The Mustache riders",
-          "The Makers model gives TomD a 0.17-point edge over Tommy in the final Game of the Week."
+          "UPSET OF THE WEEK",
+          "Billy over Nick",
+          "The only result both the Makers model and Yahoo missed."
+        ],
+        [
+          "BENCH TAX",
+          "Nick — 22.00 points left",
+          "The largest gap between actual and optimal lineup score in Week 1."
+        ]
+      ],
+      "results": [
+        [
+          "Revenge of the period bloods",
+          "The Eviscerators",
+          "86.26",
+          "118.56"
+        ],
+        [
+          "The Moose Knuckles",
+          "Predacious Fungi",
+          "125.60",
+          "80.10"
+        ],
+        [
+          "TDs In Your Face",
+          "Kareem all over your Hunt",
+          "97.86",
+          "103.70"
+        ],
+        [
+          "Pump and Go",
+          "The Mustache riders",
+          "107.46",
+          "187.86"
+        ],
+        [
+          "Criterus",
+          "The A Gap",
+          "110.82",
+          "105.12"
         ]
       ]
     },
     "2": {
-      "status": "Scheduled",
-      "headline": "Week 2 write-up pending",
-      "writeup": "",
+      "status": "Results Recap",
+      "headline": "Week 2: Jim Drops 136, Allen Drops 44, and Three Teams Reach 2-0",
+      "writeup": "Week 2 split the league into three perfect starts, four teams at 1-1 and three teams already carrying 0-2 pressure. Jim owned the weekly scoreboard, Tommy got the bounce-back he needed, and the prediction ledger gave the Makers model a narrow win over Yahoo.\n\nThe Moose Knuckles 136.26 — TDs In Your Face 94.58. Jim posted the Week 2 high, went 9-0 in all-play and moved to 2-0. Jaxon Smith-Njigba scored 38.00 and Dak Prescott added 33.76. Nick fell to 0-2 despite a roster that still projects competitively going forward. The 41.68-point margin was the biggest of the week.\n\nPump and Go 120.62 — Kareem all over your Hunt 96.56. Tommy answered the Week 1 record-book ambush with the second-highest score of Week 2. Josh Allen's 44.32 was the highest individual starter score in the league and DeVonta Smith added 21.20. Both teams leave the week 1-1.\n\nThe Mustache riders 97.30 — Criterus 81.46. TomD did not need another 187-point explosion to get to 2-0. Amon-Ra St. Brown scored 29.70 and Mustache survived the exact matchup where Yahoo had preferred Chris. Criterus fell to 1-1.\n\nRevenge of the period bloods 105.64 — Predacious Fungi 81.18. Nate recovered to 1-1 while Max posted the Week 2 low and went 0-9 in all-play. Predacious Fungi is now 0-2 with the league's lowest two-week points total.\n\nThe Eviscerators 95.58 — The A Gap 82.72. Andrew moved to 2-0 and Adam fell to 0-2 in the closest game of the week — and even that was a 12.86-point margin.\n\nThe Week 2 prediction receipt favored the Makers model. Makers went 4-1 on winners; Yahoo went 3-2. Makers correctly flipped the Criterus–Mustache matchup but both systems missed Nate over Max. Makers averaged a 15.07-point team-score miss versus Yahoo's 14.87, while Makers was better on matchup-margin error, 18.20 to 20.30.",
       "matchups": [
         [
           "The Moose Knuckles",
@@ -776,17 +893,70 @@ window.MAKERS_2026 = {
           "Kareem all over your Hunt"
         ]
       ],
-      "gameOfWeek": "",
-      "gotwCopy": "",
-      "standingsMovement": "",
-      "shameWatch": "",
-      "quote": "",
-      "awards": []
+      "gameOfWeek": "The Moose Knuckles vs TDs In Your Face",
+      "gotwCopy": "Jim turned the marquee slot into the Week 2 high score and largest margin, 136.26–94.58.",
+      "standingsMovement": "TomD, Jim and Andrew are 2-0. Tommy, Billy, Chris and Nate are 1-1. Nick, Adam and Max are 0-2.",
+      "shameWatch": "Max owns the Week 2 low at 81.18 and an 0-9 all-play week. Nick and Adam also enter Week 3 at 0-2.",
+      "quote": "Two weeks is still early. It is also enough time for 0-2 to stop feeling theoretical.",
+      "awards": [
+        [
+          "WEEK 2 KING",
+          "Jim — The Moose Knuckles",
+          "136.26 points and a 9-0 all-play record."
+        ],
+        [
+          "PLAYER NUKE",
+          "Josh Allen — 44.32",
+          "The highest individual starter score of Week 2."
+        ],
+        [
+          "BIGGEST BEATING",
+          "Moose 136.26–94.58 TDs",
+          "A 41.68-point margin."
+        ],
+        [
+          "WEEKLY LOW",
+          "Max — Predacious Fungi",
+          "81.18 points and an 0-9 all-play record."
+        ]
+      ],
+      "results": [
+        [
+          "The Eviscerators",
+          "The A Gap",
+          "95.58",
+          "82.72"
+        ],
+        [
+          "The Moose Knuckles",
+          "TDs In Your Face",
+          "136.26",
+          "94.58"
+        ],
+        [
+          "Criterus",
+          "The Mustache riders",
+          "81.46",
+          "97.30"
+        ],
+        [
+          "Pump and Go",
+          "Kareem all over your Hunt",
+          "120.62",
+          "96.56"
+        ],
+        [
+          "Predacious Fungi",
+          "Revenge of the period bloods",
+          "81.18",
+          "105.64"
+        ]
+      ]
     },
     "3": {
-      "status": "Scheduled",
-      "headline": "Week 3 write-up pending",
-      "writeup": "",
+      "status": "Wednesday preview · picks locked",
+      "headline": "Week 3: Three Unbeatens, Three 0-2 Teams, and a Heavyweight Moose–Pump Test",
+      "writeup": "Week 2 is closed and Week 3 is locked from the Wednesday post-waiver snapshot. The Mustache riders, The Moose Knuckles and The Eviscerators are 2-0. TDs In Your Face, The A Gap and Predacious Fungi are 0-2. That makes every game useful and at least three of them uncomfortable.\n\nPump and Go vs. The Moose Knuckles is the Game of the Week. Tommy just scored 120.62 and got 44.32 from Josh Allen; Jim just led the league with 136.26 and sits 2-0. Yahoo has Moose 115.74–106.82. The Makers projection also leans Jim, 118.52–108.76. A Jim win creates a 3-0 launch. A Tommy win puts one of the strongest two-week scoring profiles back into the top group at 2-1.\n\nPredacious Fungi vs. The Eviscerators puts the league's lowest-scoring 0-2 team against the defending champion's 2-0 start. Yahoo has Andrew 113.67–102.24; Makers widens it to 116.58–96.34. Max needs the first win before the standings and the scoring profile start telling the same ugly story.\n\nTDs In Your Face vs. Revenge of the period bloods is the one Week 3 matchup where Yahoo and the Makers projection lean opposite directions. Yahoo likes Nick 107.09–97.20. The Makers model has Nick 102.49–98.33, still taking TDs but by a much smaller margin. Nick is 0-2 but has scored 192.44; Nate is 1-1 after beating Max. The record pressure belongs to Nick.\n\nThe Mustache riders vs. The A Gap gives TomD a chance to reach 3-0 after scoring 285.16 through two weeks. Adam is 0-2 but has lost by only 5.70 and 12.86. Yahoo has Mustache 108.68–95.00; Makers has TomD 108.18–95.19. This is the clearest standings-pressure game on the slate.\n\nCriterus vs. Kareem all over your Hunt closes the board with both teams at 1-1. Yahoo prefers Billy 106.78–102.25, while the Makers model prefers Chris 107.19–103.54. That is the only projected winner disagreement this week and the cleanest test of the preseason board against the current Yahoo lineup state.\n\nThe five Makers picks are The Eviscerators, The Moose Knuckles, TDs In Your Face, The Mustache riders and Criterus. The Week 3 receipt is frozen here and will be graded after the games.",
       "matchups": [
         [
           "The Moose Knuckles",
@@ -809,12 +979,55 @@ window.MAKERS_2026 = {
           "The A Gap"
         ]
       ],
-      "gameOfWeek": "",
-      "gotwCopy": "",
-      "standingsMovement": "",
-      "shameWatch": "",
-      "quote": "",
-      "awards": []
+      "gameOfWeek": "Pump and Go vs The Moose Knuckles",
+      "gotwCopy": "The two highest Week 2 scorers meet. Yahoo has Jim 115.74–106.82; Makers has Moose 118.52–108.76.",
+      "standingsMovement": "TomD, Jim and Andrew can reach 3-0. Nick, Adam and Max are trying to avoid 0-3.",
+      "shameWatch": "Max has the lowest two-week PF at 161.28. Nick and Adam are also 0-2, so Week 3 can turn an ugly start into a real race problem.",
+      "quote": "Week 3 is where the standings stop looking like a small sample and start looking like a threat.",
+      "awards": [
+        [
+          "GAME OF THE WEEK",
+          "Pump and Go vs The Moose Knuckles",
+          "Tommy's 120.62 Week 2 meets Jim's league-high 136.26."
+        ],
+        [
+          "MODEL SPLIT",
+          "Criterus vs Kareem",
+          "Yahoo prefers Billy; Makers prefers Chris."
+        ],
+        [
+          "0-3 WATCH",
+          "Nick · Adam · Max",
+          "Three managers enter the week without a win."
+        ]
+      ],
+      "gameBreakdowns": [
+        {
+          "teamA": "Predacious Fungi",
+          "teamB": "The Eviscerators",
+          "preview": "Max is 0-2 with the league-low two-week PF. Andrew is 2-0. Both projection systems favor The Eviscerators."
+        },
+        {
+          "teamA": "Pump and Go",
+          "teamB": "The Moose Knuckles",
+          "preview": "Game of the Week. The top two Week 2 scorers meet with Jim trying to reach 3-0."
+        },
+        {
+          "teamA": "TDs In Your Face",
+          "teamB": "Revenge of the period bloods",
+          "preview": "Nick is 0-2 despite 192.44 PF. Nate is 1-1 after a Week 2 rebound. Yahoo and Makers both lean TDs, with very different margins."
+        },
+        {
+          "teamA": "The Mustache riders",
+          "teamB": "The A Gap",
+          "preview": "TomD can reach 3-0; Adam is trying to avoid 0-3 after two losses by a combined 18.56 points."
+        },
+        {
+          "teamA": "Criterus",
+          "teamB": "Kareem all over your Hunt",
+          "preview": "Both are 1-1. Yahoo prefers Billy, while the Makers projection prefers Chris."
+        }
+      ]
     },
     "4": {
       "status": "Scheduled",
@@ -1222,7 +1435,7 @@ window.MAKERS_2026 = {
       "manager": "Andrew",
       "playoff": 93.2,
       "bye": 56.4,
-      "title": 28.0,
+      "title": 28,
       "avgSeed": 2.8,
       "toilet": 0.7
     },
@@ -1285,7 +1498,7 @@ window.MAKERS_2026 = {
       "manager": "Adam",
       "playoff": 31.7,
       "bye": 3.7,
-      "title": 2.0,
+      "title": 2,
       "avgSeed": 7.4,
       "toilet": 18.6
     },
@@ -1390,7 +1603,298 @@ window.MAKERS_2026 = {
       "claimsWon": 0
     }
   ],
-  "recentTransactions": [],
+  "recentTransactions": [
+    {
+      "team": "TDs In Your Face",
+      "manager": "Nick",
+      "type": "ADD_DROP",
+      "time": "Sep 16, 2:38 pm",
+      "faab": null,
+      "add": "Deebo Samuel Sr.",
+      "drop": "Michael Pittman Jr.",
+      "description": "Added Deebo Samuel Sr. · Dropped Michael Pittman Jr."
+    },
+    {
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "type": "ADD_DROP",
+      "time": "Sep 16, 7:10 am",
+      "faab": null,
+      "add": "Caleb Douglas",
+      "drop": "Alec Pierce",
+      "description": "Added Caleb Douglas · Dropped Alec Pierce"
+    },
+    {
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "type": "ADD_DROP",
+      "time": "Sep 16, 7:02 am",
+      "faab": null,
+      "add": "Baker Mayfield",
+      "drop": "Michael Wilson",
+      "description": "Added Baker Mayfield · Dropped Michael Wilson"
+    },
+    {
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 1,
+      "add": "Evan McPherson",
+      "drop": "Jake Bates",
+      "description": "Added Evan McPherson · Dropped Jake Bates · $1 FAAB"
+    },
+    {
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 2,
+      "add": "Buccaneers",
+      "drop": "Chargers",
+      "description": "Added Buccaneers · Dropped Chargers · $2 FAAB"
+    },
+    {
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 2,
+      "add": "Cairo Santos",
+      "drop": "Chase McLaughlin",
+      "description": "Added Cairo Santos · Dropped Chase McLaughlin · $2 FAAB"
+    },
+    {
+      "team": "The A Gap",
+      "manager": "Adam",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 7,
+      "add": "Patrick Mahomes",
+      "drop": "Bo Nix",
+      "description": "Added Patrick Mahomes · Dropped Bo Nix · $7 FAAB"
+    },
+    {
+      "team": "The A Gap",
+      "manager": "Adam",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 7,
+      "add": "Dallas Goedert",
+      "drop": "Rachaad White",
+      "description": "Added Dallas Goedert · Dropped Rachaad White · $7 FAAB"
+    },
+    {
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 10,
+      "add": "Jalen Coker",
+      "drop": "De'Zhaun Stribling",
+      "description": "Added Jalen Coker · Dropped De'Zhaun Stribling · $10 FAAB"
+    },
+    {
+      "team": "Pump and Go",
+      "manager": "Tommy",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 11,
+      "add": "49ers",
+      "drop": "Titans",
+      "description": "Added 49ers · Dropped Titans · $11 FAAB"
+    },
+    {
+      "team": "The Eviscerators",
+      "manager": "Andrew",
+      "type": "WAIVER",
+      "time": "Sep 16, 2:03 am",
+      "faab": 21,
+      "add": "Dalton Kincaid",
+      "drop": "Kaleb Johnson",
+      "description": "Added Dalton Kincaid · Dropped Kaleb Johnson · $21 FAAB"
+    },
+    {
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "type": "ADD_DROP",
+      "time": "Sep 15, 7:07 pm",
+      "faab": null,
+      "add": "",
+      "drop": "Chris Bell",
+      "description": "Dropped Chris Bell"
+    },
+    {
+      "team": "The A Gap",
+      "manager": "Adam",
+      "type": "ADD_DROP",
+      "time": "Sep 13, 5:34 pm",
+      "faab": null,
+      "add": "Bo Nix",
+      "drop": "Kyler Murray",
+      "description": "Added Bo Nix · Dropped Kyler Murray"
+    },
+    {
+      "team": "The A Gap",
+      "manager": "Adam",
+      "type": "ADD_DROP",
+      "time": "Sep 13, 11:43 am",
+      "faab": null,
+      "add": "Kyler Murray",
+      "drop": "",
+      "description": "Added Kyler Murray"
+    },
+    {
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "type": "ADD_DROP",
+      "time": "Sep 10, 7:09 pm",
+      "faab": null,
+      "add": "Chris Bell",
+      "drop": "Woody Marks",
+      "description": "Added Chris Bell · Dropped Woody Marks"
+    },
+    {
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "type": "ADD_DROP",
+      "time": "Sep 10, 3:29 pm",
+      "faab": null,
+      "add": "Isaiah Likely",
+      "drop": "",
+      "description": "Added Isaiah Likely"
+    },
+    {
+      "team": "Revenge of the period bloods",
+      "manager": "Nate",
+      "type": "ADD_DROP",
+      "time": "Sep 6, 12:26 pm",
+      "faab": null,
+      "add": "Josh Downs",
+      "drop": "Trevor Etienne",
+      "description": "Added Josh Downs · Dropped Trevor Etienne"
+    },
+    {
+      "team": "Revenge of the period bloods",
+      "manager": "Nate",
+      "type": "ADD_DROP",
+      "time": "Sep 6, 12:04 pm",
+      "faab": null,
+      "add": "Tyjae Spears",
+      "drop": "Austin Ekeler",
+      "description": "Added Tyjae Spears · Dropped Austin Ekeler"
+    },
+    {
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "type": "WAIVER",
+      "time": "Sep 6, 12:19 am",
+      "faab": 1,
+      "add": "Jake Bates",
+      "drop": "Harrison Mevis",
+      "description": "Added Jake Bates · Dropped Harrison Mevis · $1 FAAB"
+    },
+    {
+      "team": "Criterus",
+      "manager": "Chris",
+      "type": "ADD_DROP",
+      "time": "Sep 3, 12:09 pm",
+      "faab": null,
+      "add": "Keaton Mitchell",
+      "drop": "",
+      "description": "Added Keaton Mitchell"
+    },
+    {
+      "team": "Pump and Go",
+      "manager": "Tommy",
+      "type": "ADD_DROP",
+      "time": "Sep 3, 9:40 am",
+      "faab": null,
+      "add": "Titans",
+      "drop": "Travis Hunter",
+      "description": "Added Titans · Dropped Travis Hunter"
+    },
+    {
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "type": "ADD_DROP",
+      "time": "Sep 3, 7:13 am",
+      "faab": null,
+      "add": "Chase McLaughlin",
+      "drop": "",
+      "description": "Added Chase McLaughlin"
+    },
+    {
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "type": "ADD_DROP",
+      "time": "Sep 3, 6:06 am",
+      "faab": null,
+      "add": "Harrison Mevis",
+      "drop": "",
+      "description": "Added Harrison Mevis"
+    },
+    {
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "type": "ADD_DROP",
+      "time": "Sep 3, 6:05 am",
+      "faab": null,
+      "add": "Tank Dell",
+      "drop": "Cairo Santos",
+      "description": "Added Tank Dell · Dropped Cairo Santos"
+    },
+    {
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "type": "WAIVER",
+      "time": "Sep 3, 12:18 am",
+      "faab": 0,
+      "add": "James Conner",
+      "drop": "Jake Bates",
+      "description": "Added James Conner · Dropped Jake Bates · $0 FAAB"
+    },
+    {
+      "team": "TDs In Your Face",
+      "manager": "Nick",
+      "type": "WAIVER",
+      "time": "Sep 3, 12:18 am",
+      "faab": 0,
+      "add": "Mark Andrews",
+      "drop": "Bo Nix",
+      "description": "Added Mark Andrews · Dropped Bo Nix · $0 FAAB"
+    },
+    {
+      "team": "TDs In Your Face",
+      "manager": "Nick",
+      "type": "WAIVER",
+      "time": "Sep 3, 12:18 am",
+      "faab": 1,
+      "add": "Steelers",
+      "drop": "49ers",
+      "description": "Added Steelers · Dropped 49ers · $1 FAAB"
+    },
+    {
+      "team": "Kareem all over your Hunt",
+      "manager": "Billy",
+      "type": "WAIVER",
+      "time": "Sep 3, 12:18 am",
+      "faab": 0,
+      "add": "Jaguars",
+      "drop": "",
+      "description": "Added Jaguars · $0 FAAB"
+    },
+    {
+      "team": "The Eviscerators",
+      "manager": "Andrew",
+      "type": "WAIVER",
+      "time": "Sep 3, 12:18 am",
+      "faab": 5,
+      "add": "Kaleb Johnson",
+      "drop": "Wan'Dale Robinson",
+      "description": "Added Kaleb Johnson · Dropped Wan'Dale Robinson · $5 FAAB"
+    }
+  ],
   "topAvailable": [],
   "apiStatus": "Yahoo connect pending",
   "waiverNotes": [
@@ -1512,7 +2016,148 @@ window.MAKERS_2026 = {
       }
     ]
   },
-  "results": [],
+  "results": [
+    {
+      "year": 2026,
+      "week": 1,
+      "round": "Week 1",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "Revenge of the period bloods",
+      "teamB": "The Eviscerators",
+      "managerA": "Nate",
+      "managerB": "Andrew",
+      "scoreA": 86.26,
+      "scoreB": 118.56,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "round": "Week 1",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "The Moose Knuckles",
+      "teamB": "Predacious Fungi",
+      "managerA": "Jim",
+      "managerB": "Max",
+      "scoreA": 125.6,
+      "scoreB": 80.1,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "round": "Week 1",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "TDs In Your Face",
+      "teamB": "Kareem all over your Hunt",
+      "managerA": "Nick",
+      "managerB": "Billy",
+      "scoreA": 97.86,
+      "scoreB": 103.7,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "round": "Week 1",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "Pump and Go",
+      "teamB": "The Mustache riders",
+      "managerA": "Tommy",
+      "managerB": "TomD",
+      "scoreA": 107.46,
+      "scoreB": 187.86,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "round": "Week 1",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "Criterus",
+      "teamB": "The A Gap",
+      "managerA": "Chris",
+      "managerB": "Adam",
+      "scoreA": 110.82,
+      "scoreB": 105.12,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "round": "Week 2",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "The Eviscerators",
+      "teamB": "The A Gap",
+      "managerA": "Andrew",
+      "managerB": "Adam",
+      "scoreA": 95.58,
+      "scoreB": 82.72,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "round": "Week 2",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "The Moose Knuckles",
+      "teamB": "TDs In Your Face",
+      "managerA": "Jim",
+      "managerB": "Nick",
+      "scoreA": 136.26,
+      "scoreB": 94.58,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "round": "Week 2",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "Criterus",
+      "teamB": "The Mustache riders",
+      "managerA": "Chris",
+      "managerB": "TomD",
+      "scoreA": 81.46,
+      "scoreB": 97.3,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "round": "Week 2",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "Pump and Go",
+      "teamB": "Kareem all over your Hunt",
+      "managerA": "Tommy",
+      "managerB": "Billy",
+      "scoreA": 120.62,
+      "scoreB": 96.56,
+      "source": "Makers Yahoo Wednesday collector"
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "round": "Week 2",
+      "stage": "Regular Season",
+      "status": "FINAL",
+      "teamA": "Predacious Fungi",
+      "teamB": "Revenge of the period bloods",
+      "managerA": "Max",
+      "managerB": "Nate",
+      "scoreA": 81.18,
+      "scoreB": 105.64,
+      "source": "Makers Yahoo Wednesday collector"
+    }
+  ],
   "openingNight": {
     "eyebrow": "WEEK 1 KICKOFF",
     "title": "Opening night is already a league event",
