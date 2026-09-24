@@ -64,6 +64,8 @@ These historical receipts are intentionally not rewritten.
 DOCUMENTATION
 - MAKERS_WEEKLY_COLLECTOR_GUIDE.md now documents v1.3.3 as natively Wednesday-only.
 - MAKERS_WEEKLY_UPDATE_CHECKLIST.md describes only the single combined Wednesday workflow.
+- README_GITHUB.txt now names collector v1.3.3 and documents only one Wednesday maintenance cycle.
+- UPDATE_GUIDE.txt no longer describes Tuesday-named compatibility files as active implementation dependencies.
 
 PUBLISH STATUS
 Not published in Phase 3.
