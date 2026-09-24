@@ -956,7 +956,7 @@ window.MAKERS_2026 = {
     "3": {
       "status": "Wednesday preview · picks locked",
       "headline": "Week 3: Three Unbeatens, Three 0-2 Teams, and a Heavyweight Moose–Pump Test",
-      "writeup": "Week 2 is closed and Week 3 is locked from the Wednesday post-waiver snapshot. The Mustache riders, The Moose Knuckles and The Eviscerators are 2-0. TDs In Your Face, The A Gap and Predacious Fungi are 0-2. That makes every game useful and at least three of them uncomfortable.\n\nPump and Go vs. The Moose Knuckles is the Game of the Week. Tommy just scored 120.62 and got 44.32 from Josh Allen; Jim just led the league with 136.26 and sits 2-0. Yahoo has Moose 115.74–106.82. The Makers projection also leans Jim, 118.52–108.76. A Jim win creates a 3-0 launch. A Tommy win puts one of the strongest two-week scoring profiles back into the top group at 2-1.\n\nPredacious Fungi vs. The Eviscerators puts the league's lowest-scoring 0-2 team against the defending champion's 2-0 start. Yahoo has Andrew 113.67–102.24; Makers widens it to 116.58–96.34. Max needs the first win before the standings and the scoring profile start telling the same ugly story.\n\nTDs In Your Face vs. Revenge of the period bloods is the one Week 3 matchup where Yahoo and the Makers projection lean opposite directions. Yahoo likes Nick 107.09–97.20. The Makers model has Nick 102.49–98.33, still taking TDs but by a much smaller margin. Nick is 0-2 but has scored 192.44; Nate is 1-1 after beating Max. The record pressure belongs to Nick.\n\nThe Mustache riders vs. The A Gap gives TomD a chance to reach 3-0 after scoring 285.16 through two weeks. Adam is 0-2 but has lost by only 5.70 and 12.86. Yahoo has Mustache 108.68–95.00; Makers has TomD 108.18–95.19. This is the clearest standings-pressure game on the slate.\n\nCriterus vs. Kareem all over your Hunt closes the board with both teams at 1-1. Yahoo prefers Billy 106.78–102.25, while the Makers model prefers Chris 107.19–103.54. That is the only projected winner disagreement this week and the cleanest test of the preseason board against the current Yahoo lineup state.\n\nThe five Makers picks are The Eviscerators, The Moose Knuckles, TDs In Your Face, The Mustache riders and Criterus. The Week 3 receipt is frozen here and will be graded after the games.",
+      "writeup": "Week 2 is closed and Week 3 is locked from the Wednesday post-waiver snapshot. The Mustache riders, The Moose Knuckles and The Eviscerators are 2-0. TDs In Your Face, The A Gap and Predacious Fungi are 0-2. That makes every game useful and at least three of them uncomfortable.\n\nPump and Go vs. The Moose Knuckles is the Game of the Week. Tommy just scored 120.62 and got 44.32 from Josh Allen; Jim just led the league with 136.26 and sits 2-0. Yahoo has Moose 115.74–106.82. The Makers projection also leans Jim, 118.52–108.76. A Jim win creates a 3-0 launch. A Tommy win puts one of the strongest two-week scoring profiles back into the top group at 2-1.\n\nPredacious Fungi vs. The Eviscerators puts the league's lowest-scoring 0-2 team against the defending champion's 2-0 start. Yahoo has Andrew 113.67–102.24; Makers widens it to 116.58–96.34. Max needs the first win before the standings and the scoring profile start telling the same ugly story.\n\nTDs In Your Face vs. Revenge of the period bloods has both systems taking Nick, but with very different margins. Yahoo likes TDs 107.09–97.20. The Makers model has Nick 102.49–98.33, a much tighter game. Nick is 0-2 but has scored 192.44; Nate is 1-1 after beating Max. The record pressure belongs to Nick.\n\nThe Mustache riders vs. The A Gap gives TomD a chance to reach 3-0 after scoring 285.16 through two weeks. Adam is 0-2 but has lost by only 5.70 and 12.86. Yahoo has Mustache 108.68–95.00; Makers has TomD 108.18–95.19. This is the clearest standings-pressure game on the slate.\n\nCriterus vs. Kareem all over your Hunt closes the board with both teams at 1-1. Yahoo prefers Billy 106.78–102.25, while the Makers model prefers Chris 107.19–103.54. That is the only projected winner disagreement this week and the cleanest test of the preseason board against the current Yahoo lineup state.\n\nThe five Makers picks are The Eviscerators, The Moose Knuckles, TDs In Your Face, The Mustache riders and Criterus. The Week 3 receipt is frozen here and will be graded after the games.",
       "matchups": [
         [
           "The Moose Knuckles",
@@ -2162,5 +2162,167 @@ window.MAKERS_2026 = {
     "eyebrow": "WEEK 1 KICKOFF",
     "title": "Opening night is already a league event",
     "body": "Patriots–Seahawks puts eight Makers starters on the board before Sunday: Jim starts Jaxon Smith-Njigba; Max flexes Rhamondre Stevenson; Nate starts A.J. Brown; Andrew rolls out Jason Myers and Seattle DEF; Adam starts Drake Maye and Patriots DEF; and Billy flexes Jadarian Price. Adam also carries TreVeyon Henderson as OUT on the bench, while Chris has Zach Charbonnet on IR."
-  }
+  },
+  "legacyLineupAutopsies": [
+    {
+      "week": 1,
+      "manager": "TomD",
+      "team": "The Mustache riders",
+      "official": 187.86,
+      "optimal": 187.86,
+      "left": 0,
+      "eff": 1,
+      "opponent": "Tommy",
+      "oppScore": 107.46,
+      "topBench": {
+        "name": "Jaxson Dart",
+        "_pts": 29.6
+      },
+      "costGame": false
+    },
+    {
+      "week": 1,
+      "manager": "Jim",
+      "team": "The Moose Knuckles",
+      "official": 125.6,
+      "optimal": 133.76,
+      "left": 8.16,
+      "eff": 0.939,
+      "opponent": "Max",
+      "oppScore": 80.1,
+      "topBench": {
+        "name": "Jayden Daniels",
+        "_pts": 19.66
+      },
+      "costGame": false
+    },
+    {
+      "week": 1,
+      "manager": "Andrew",
+      "team": "The Eviscerators",
+      "official": 118.56,
+      "optimal": 138.5,
+      "left": 19.94,
+      "eff": 0.856,
+      "opponent": "Nate",
+      "oppScore": 86.26,
+      "topBench": {
+        "name": "Brock Purdy",
+        "_pts": 24.1
+      },
+      "costGame": false
+    },
+    {
+      "week": 1,
+      "manager": "Chris",
+      "team": "Criterus",
+      "official": 110.82,
+      "optimal": 124.92,
+      "left": 14.1,
+      "eff": 0.887,
+      "opponent": "Adam",
+      "oppScore": 105.12,
+      "topBench": {
+        "name": "Chuba Hubbard",
+        "_pts": 21.7
+      },
+      "costGame": false
+    },
+    {
+      "week": 1,
+      "manager": "Tommy",
+      "team": "Pump and Go",
+      "official": 107.46,
+      "optimal": 112.56,
+      "left": 5.1,
+      "eff": 0.955,
+      "opponent": "TomD",
+      "oppScore": 187.86,
+      "topBench": {
+        "name": "Tyler Warren",
+        "_pts": 7.8
+      },
+      "costGame": false
+    },
+    {
+      "week": 1,
+      "manager": "Adam",
+      "team": "The A Gap",
+      "official": 105.12,
+      "optimal": 115.62,
+      "left": 10.5,
+      "eff": 0.909,
+      "opponent": "Chris",
+      "oppScore": 110.82,
+      "topBench": {
+        "name": "Jacory Croskey-Merritt",
+        "_pts": 11.6
+      },
+      "costGame": true
+    },
+    {
+      "week": 1,
+      "manager": "Billy",
+      "team": "Kareem all over your Hunt",
+      "official": 103.7,
+      "optimal": 103.7,
+      "left": 0,
+      "eff": 1,
+      "opponent": "Nick",
+      "oppScore": 97.86,
+      "topBench": {
+        "name": "Ravens DEF",
+        "_pts": 6
+      },
+      "costGame": false
+    },
+    {
+      "week": 1,
+      "manager": "Nick",
+      "team": "TDs In Your Face",
+      "official": 97.86,
+      "optimal": 119.86,
+      "left": 22,
+      "eff": 0.816,
+      "opponent": "Billy",
+      "oppScore": 103.7,
+      "topBench": {
+        "name": "Kyle Monangai",
+        "_pts": 19.4
+      },
+      "costGame": true
+    },
+    {
+      "week": 1,
+      "manager": "Nate",
+      "team": "Revenge of the period bloods",
+      "official": 86.26,
+      "optimal": 103.76,
+      "left": 17.5,
+      "eff": 0.831,
+      "opponent": "Andrew",
+      "oppScore": 118.56,
+      "topBench": {
+        "name": "Parker Washington",
+        "_pts": 16.2
+      },
+      "costGame": false
+    },
+    {
+      "week": 1,
+      "manager": "Max",
+      "team": "Predacious Fungi",
+      "official": 80.1,
+      "optimal": 82.4,
+      "left": 2.3,
+      "eff": 0.972,
+      "opponent": "Jim",
+      "oppScore": 125.6,
+      "topBench": {
+        "name": "Garrett Wilson",
+        "_pts": 9.4
+      },
+      "costGame": false
+    }
+  ]
 };
