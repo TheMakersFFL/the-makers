@@ -36,7 +36,7 @@
   const managerName=x=>x?.manager||TEAM_MANAGER[teamName(x)]||'';
   const pairKey=(week,a,b)=>`${Number(week)||0}|${[canonical(a),canonical(b)].sort().join('|')}`;
   const txText=v=>String(v??'').replace(/[\uE000-\uF8FF]/g,'').replace(/\s+/g,' ').trim();
-  const txKey=x=>[x.type||'MOVE',x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??'',x.time||''].map(txText).join('|').toLowerCase();
+  const txKey=x=>[x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??''].map(txText).join('|').toLowerCase();
   const seasonTransactions=new Map();
   let transactionSequence=0;
   const isWednesday=I=>String(I?.workflow||'').toLowerCase()==='wednesday-combined'||String(I?.mode||'').toUpperCase()==='WEDNESDAY';
