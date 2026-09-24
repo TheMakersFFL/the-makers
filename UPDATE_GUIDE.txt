@@ -11,8 +11,9 @@ Historical baseline:
   - Do not rewrite completed historical seasons during ordinary weekly maintenance.
 
 Current live-season layer:
-  - The existing Tuesday-named live files remain compatible implementation details until they are naturally rolled forward in the next weekly build.
-  - User-facing workflow is now Wednesday only.
+  - Dynamic pages use the local Makers weekly runtime and makers-weekly-loader.js.
+  - Wednesday is the only active in-season collection and publishing workflow.
+  - Retired split-cadence renderer files are not part of the production runtime.
 
 WEDNESDAY COMBINED UPDATE — AFTER WAIVERS
 1. Wait until Wednesday waivers have processed.
