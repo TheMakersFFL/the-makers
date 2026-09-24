@@ -1,4 +1,4 @@
-# Makers Weekly Collector v1.3.1 — Wednesday workflow
+# Makers Weekly Collector v1.3.2 — Wednesday workflow
 
 The Makers collector uses the hardened Yahoo parsing/validation engine developed for Mis.Exp while remaining isolated to The Makers.
 
@@ -72,6 +72,10 @@ The previous week's recap and the upcoming week's preview are published together
 
 ## Files
 - `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
-- `Makers_Weekly_Collector_v1.3.1.txt` — identical versioned copy
+- `Makers_Weekly_Collector_v1.3.2.txt` — identical versioned copy
 
 The collector keeps the proven full-recap path internally for compatibility; the user-facing workflow is now one Wednesday combined update.
+
+
+## v1.3.2 fix
+- Added Yahoo team-name alias `The PRICE is wrong bitch!` → canonical Makers franchise `Kareem all over your Hunt`, so standings, completed matchups, score reconciliation and upcoming matchups continue to resolve Billy's team after the rename.
