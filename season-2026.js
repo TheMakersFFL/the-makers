@@ -893,8 +893,8 @@ window.MAKERS_2026 = {
           "Kareem all over your Hunt"
         ]
       ],
-      "gameOfWeek": "The Moose Knuckles vs TDs In Your Face",
-      "gotwCopy": "Jim turned the marquee slot into the Week 2 high score and largest margin, 136.26–94.58.",
+      "gameOfWeek": "The Eviscerators vs The A Gap",
+      "gotwCopy": "Andrew beat Adam 95.58–82.72 in the closest finish of Week 2, a 12.86-point margin.",
       "standingsMovement": "TomD, Jim and Andrew are 2-0. Tommy, Billy, Chris and Nate are 1-1. Nick, Adam and Max are 0-2.",
       "shameWatch": "Max owns the Week 2 low at 81.18 and an 0-9 all-play week. Nick and Adam also enter Week 3 at 0-2.",
       "quote": "Two weeks is still early. It is also enough time for 0-2 to stop feeling theoretical.",
