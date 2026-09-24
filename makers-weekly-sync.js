@@ -120,7 +120,7 @@
         const pa=same?(m.projA??m.scoreA):(m.projB??m.scoreB),pb=same?(m.projB??m.scoreB):(m.projA??m.scoreA);
         return [row[0],row[1],pa??'',pb??''];
       });
-      if(isWednesday(I)||String(I.mode||'').toLowerCase()==='post-waivers'){
+      if(isWednesday(I)){
         const positive=[];
         for(const m of upcoming)for(const v of [num(m.projA),num(m.projB)])if(v!=null&&v>0)positive.push(v);
         const meanYahoo=positive.length?positive.reduce((a,b)=>a+b,0)/positive.length:100;
