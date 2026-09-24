@@ -143,7 +143,7 @@
       const drop=raw.drop||(Array.isArray(raw.dropped)?raw.dropped.map(p=>p?.name||p).filter(Boolean).join(', '):'');
       const faab=num(raw.faab??raw.faabSpent)??0,time=raw.time||raw.timestamp||raw.date||'';
       const tx={...raw,manager,add,drop,faab,time};
-      const key=[raw.type,manager,raw.team,add,drop,faab,time||raw.description].map(x=>String(x??'')).join('|');
+      const key=[manager,raw.team,add,drop,faab].map(x=>String(x??'')).join('|').toLowerCase();
       if(!seen.has(key))seen.set(key,{...tx,firstTargetWeek:Number(s.targetWeek)||Number(s.completedWeek)+1||1,firstCompletedWeek:Number(s.completedWeek)||0,capturedAt:s.capturedAt});
     }}
     return [...seen.values()];
