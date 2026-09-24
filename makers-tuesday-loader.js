@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   const BASE='https://miscexpffl.github.io/the-makers/';
-  const bust='20260916-wed1';
+  const bust='20260924-w03p1';
   const load=(file,remote=false)=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=`${remote?BASE:''}${file}?v=${bust}`;
@@ -16,6 +16,7 @@
     await load('makers-wed-2a.js');
     await load('makers-wed-2b.js');
     await load('makers-wed-3.js');
+    await load('makers-w03-phase1.js');
   };
   const go=async()=>{
     const filename=(location.pathname.split('/').pop()||'index.html').toLowerCase();
