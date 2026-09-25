@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  const bust='makers-20260924-phase4';
+  const bust='makers-20260924-audit1';
   const load=file=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
