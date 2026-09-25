@@ -18,7 +18,7 @@ CURRENT 2026 BUILD
 - Predictions tracks Makers vs Yahoo receipts and score/margin accuracy.
 - Analytics includes all-play, lineup efficiency, transaction ROI, acquisition receipts and weekly awards.
 - Moves, Waivers, Schedule, Franchise Files, Record Book, H2H and the live 2026 History chapter roll forward cumulatively.
-- Makers Weekly Collector v1.3.3 is the current collector.
+- Makers Weekly Collector v1.3.4 is the current collector.
 - Collector mode: WEDNESDAY.
 - Collector workflow: wednesday-combined.
 
