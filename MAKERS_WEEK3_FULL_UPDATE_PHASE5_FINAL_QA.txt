@@ -1,0 +1,103 @@
+THE MAKERS — WEEK 3 FULL UPDATE PHASE 5 FINAL PRODUCTION QA
+Date: 2026-09-24
+Branch: week3-phase5-final-qa-2026-09-24
+
+RESULT: PASS AFTER FINAL CLEANUP
+
+DEPLOYMENT VERIFIED BEFORE PHASE 5 FIX
+- GitHub Pages build for Phase 4 merge d87a980890a3c42f6dad31a22d88744597ce85da completed successfully.
+- Workflow: pages build and deployment.
+- Run #51 conclusion: success.
+
+PUBLIC BROWSER LIMITATION
+- The public web fetch environment cannot render https://themakersffl.github.io/the-makers/.
+- This is recorded as an environment-access limitation; it is not treated as either a live-site pass or failure.
+
+PRIMARY ROUTES AUDITED
+- Home
+- Weekly Write Ups
+- Individual Week
+- 2026 War Room
+- Predictions
+- Analytics
+- Moves
+- Waivers
+- Schedule
+- Power
+- Odds
+- Draft
+- Keepers
+- Franchises
+- Franchise detail
+- History
+- H2H
+- Records
+- Trophies
+- Shame
+- Press
+- 2022 / 2023 / 2024 / 2025 archive pages
+- Legacy week-01 through week-17 routes
+- Legacy manager-specific franchise routes
+
+CURRENT DATA QA
+- Current week: 3
+- Completed week: 2
+- Collector mode: WEDNESDAY
+- Workflow: wednesday-combined
+- Standings: 10/10
+- Week 1 results: 5 games / 10 unique teams
+- Week 2 results: 5 games / 10 unique teams
+- Week 3 locked forecast: 5 games / 10 unique teams
+- Cumulative H2H/record games: 328
+- Power rows: 10
+- Odds rows: 10
+- Lineup autopsies: 20
+- Unique completed 2026 transaction events: 54
+- League pulse completed weeks: 1, 2
+- Weekly award archive completed weeks only: 1, 2
+
+CAREER RECORD ROLLFORWARD VERIFIED
+- Max 33-25
+- Nick 32-26
+- Andrew 33-25
+- Tommy 32-26
+- Jim 33-25
+- TomD 31-27
+- Nate 28-30
+- Adam 23-35
+- Chris 20-38
+- El Rubio 18-24
+- Billy 7-9
+
+ROUTE / CACHE QA
+- Primary dynamic routes use makers-weekly-loader.js?v=makers-20260924-phase4.
+- Loader internal cache key is makers-20260924-phase4.
+- H2H loads current season-2026.js, weekly import, weekly sync, engine and H2H renderer using Phase 4 keys.
+- Trophy loads the current cumulative engine and updates career W-L.
+- Draft no longer loads obsolete weekly runtime.
+- Static/archive pages use the refreshed site.js Phase 4 key.
+- Legacy manager-specific franchise URLs redirect to franchise.html?manager=<manager>.
+- Week 02 through Week 17 legacy URLs already redirect to week.html?week=<n>.
+
+PHASE 5 ISSUE FOUND AND FIXED
+- week-01.html was still a full frozen September 9 Week 1 page using the retired Week 1 runtime.
+- week-01.html now redirects to week.html?week=1, matching Week 02-17.
+- With that route removed, the following dead Week 1 runtime files were deleted:
+  - season-2026-week1.js
+  - live-week1.js
+  - makers-static-week.js
+
+ACTIVE JS SYNTAX
+PASS:
+- makers-weekly-loader.js
+- makers-weekly-sync.js
+- makers-engine.js
+- league-analytics.js
+- live.js
+- site.js
+- makers-h2h-live.js
+- Makers_Weekly_Collector.user.js
+
+FINAL SOURCE QA
+PASS.
+The Makers production source is fully aligned to the Week 2 close / Week 3 Wednesday state and the single Wednesday collector/runtime architecture.
