@@ -1,4 +1,4 @@
-# Makers Weekly Collector v1.3.3 — Wednesday workflow
+# Makers Weekly Collector v1.3.4 — Wednesday workflow
 
 The Makers collector uses the hardened Yahoo parsing/validation engine developed for Mis.Exp while remaining isolated to The Makers.
 
@@ -11,14 +11,14 @@ The Makers collector uses the hardened Yahoo parsing/validation engine developed
 - Makers team aliases and accepted 2026 Yahoo team IDs remain built in as fallbacks.
 
 ## Wednesday — one collection, one update
-Set **Upcoming week** to the week that is about to be played. Example: once Week 1 is final and Week 2 waivers clear, set it to **2**.
+Set **Upcoming week** to the week that is about to be played. The collector now auto-suggests the current upcoming week from the season calendar (and honors a Yahoo `week=` URL when present), but confirm the number before collecting. Example: once Week 1 is final and Week 2 waivers clear, use **2**.
 
 1. Wait until Wednesday waivers have processed.
 2. Use **WEDNESDAY** mode.
 3. Run **AUTO COLLECT LEAGUE**.
 4. Confirm all validation checks are green. The Wednesday build specifically requires structured transaction/waiver activity to be captured, in addition to the recap and preview data. If Yahoo does not expose something automatically, open that page and use **CAPTURE THIS PAGE**.
 5. Export the JSON.
-6. Send `MAKERS_2026_W02_WEDNESDAY.json` to ChatGPT.
+6. Send the exported `MAKERS_<season>_W<upcoming-week>_WEDNESDAY.json` file to ChatGPT.
 
 The Wednesday collection gathers and validates the full recap, roster, waiver and preview state in one pass:
 - 10/10 standings with W-L, PF/PA, streak, FAAB and waiver priority where Yahoo exposes them;
@@ -72,13 +72,14 @@ The previous week's recap and the upcoming week's preview are published together
 
 ## Files
 - `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
-- `Makers_Weekly_Collector_v1.3.3.txt` — identical versioned copy
+- `Makers_Weekly_Collector_v1.3.4.txt` — identical versioned copy
 
 The collector is natively Wednesday-only: one mode, one validation path, one export.
 
 
-## v1.3.3 workflow cleanup
+## v1.3.4 workflow cleanup
 - Internal collector mode is now `WEDNESDAY` with no split-mode compatibility state.
 - The export always reports `mode: "WEDNESDAY"` and `workflow: "wednesday-combined"`.
 - Validation always requires the full completed-week + current-roster + upcoming-preview dataset.
 - The v1.3.2 Billy team-name alias fix remains preserved.
+- v1.3.4 removes the hard-coded Week 2 startup default and self-advances the suggested Upcoming week.
