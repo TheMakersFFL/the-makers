@@ -18,7 +18,7 @@ Set **Upcoming week** to the week that is about to be played. Example: once Week
 3. Run **AUTO COLLECT LEAGUE**.
 4. Confirm all validation checks are green. The Wednesday build specifically requires structured transaction/waiver activity to be captured, in addition to the recap and preview data. If Yahoo does not expose something automatically, open that page and use **CAPTURE THIS PAGE**.
 5. Export the JSON.
-6. Send `MAKERS_2026_W02_WEDNESDAY.json` to ChatGPT.
+6. Send the exported `MAKERS_<season>_W<upcoming-week>_WEDNESDAY.json` file to ChatGPT.
 
 The Wednesday collection gathers and validates the full recap, roster, waiver and preview state in one pass:
 - 10/10 standings with W-L, PF/PA, streak, FAAB and waiver priority where Yahoo exposes them;
