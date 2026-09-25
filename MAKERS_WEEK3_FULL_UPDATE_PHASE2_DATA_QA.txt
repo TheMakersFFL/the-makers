@@ -1,0 +1,65 @@
+THE MAKERS — WEEK 3 PHASE 2 DATA QA
+Date: 2026-09-24
+Branch: week3-full-update-2026-09-24
+
+RESULT: PASS
+
+Validated current state:
+- Week 3 current; Week 2 completed.
+- Runtime collector mode normalized to WEDNESDAY.
+- workflow = wednesday-combined.
+- Latest collector validation passed.
+- Standings 10/10.
+- Week 1 finals 5/5 preserved.
+- Week 2 finals 5/5 imported.
+- Week 3 projections 5/5.
+- Current rosters 10/10.
+- Available players 100/100.
+- Cumulative 2026 results: 10 games.
+- Historical + 2026 H2H/record engine: 328 games.
+
+Prediction grading:
+- Week 1: Makers 4-1; Yahoo 4-1.
+- Week 2: Makers 4-1; Yahoo 3-2.
+- Season: Makers 8-2; Yahoo 7-3.
+- Week 3 Makers forecast locked from the Sep 24 Wednesday snapshot.
+- Week 3 winner split: Makers takes Criterus; Yahoo takes Kareem.
+
+Live Power Index:
+1 Andrew 96.51
+2 Jim 88.22
+3 TomD 78.82
+4 Nick 55.36
+5 Chris 52.46
+6 Billy 48.13
+7 Tommy 37.28
+8 Nate 19.09
+9 Adam 17.82
+10 Max 8.48
+
+Current playoff model:
+Andrew 97.6; Jim 96.3; TomD 93.2; Chris 71.2; Nick 66.0; Billy 65.1; Tommy 51.7; Nate 28.8; Adam 17.7; Max 12.3.
+
+Analytics:
+- Week 1 lineup receipts 10/10.
+- Week 2 lineup receipts 10/10.
+- Total lineup autopsies: 20.
+- Week 1 league average 112.33.
+- Week 2 league average 99.19.
+- Week 1 high TomD 187.86.
+- Week 2 high Jim 136.26.
+- Week 2 low Max 81.18.
+
+Transactions:
+- Prior 2026 receipt preserved.
+- Sep 24 Wednesday receipt added.
+- 54 unique completed 2026 transaction events after robust dedupe.
+- Move totals: Nick 10, Max 10, Adam 8, TomD 8, Jim 6, Andrew 3, Billy 3, Chris 2, Tommy 2, Nate 2.
+
+Phase 2 source work:
+- season-2026.js: cumulative results, standings, recaps, locked prediction receipts, Week 3 preview, Week 1 lineup receipts.
+- makers-weekly-sync.js: Wednesday-combined lock support, WEDNESDAY normalization, structured transaction parsing and dedupe.
+- league-analytics.js: Wednesday completed-lineup support, Week 1 lineup preservation, current-week award guard, structured transaction parsing.
+
+Next:
+Phase 3 removes/retire active legacy Tuesday/Thursday runtime and normalizes the collector export itself.

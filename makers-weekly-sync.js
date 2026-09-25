@@ -36,9 +36,16 @@
   const managerName=x=>x?.manager||TEAM_MANAGER[teamName(x)]||'';
   const pairKey=(week,a,b)=>`${Number(week)||0}|${[canonical(a),canonical(b)].sort().join('|')}`;
   const txText=v=>String(v??'').replace(/[\uE000-\uF8FF]/g,'').replace(/\s+/g,' ').trim();
-  const txKey=x=>[x.type||'MOVE',x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??'',x.time||''].map(txText).join('|').toLowerCase();
+  const txKey=x=>[x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??''].map(txText).join('|').toLowerCase();
   const seasonTransactions=new Map();
   let transactionSequence=0;
+  const isWednesday=I=>String(I?.workflow||'').toLowerCase()==='wednesday-combined'||String(I?.mode||'').toUpperCase()==='WEDNESDAY';
+  for(const raw of (Y.recentTransactions||[])){
+    const add=txText(raw.add||raw.added?.[0]?.name||raw.added?.[0]||'');
+    const drop=txText(raw.drop||raw.dropped?.[0]?.name||raw.dropped?.[0]||'');
+    const seed={type:txText(raw.type||'MOVE').toUpperCase(),manager:txText(raw.manager||TEAM_MANAGER[canonical(raw.team)]||''),team:canonical(txText(raw.team||MANAGER_TEAM[raw.manager]||'')),add,drop,faab:raw.faab==null?(raw.faabSpent==null?null:num(raw.faabSpent)):num(raw.faab),description:txText(raw.description||[add&&`Added ${add}`,drop&&`Dropped ${drop}`].filter(Boolean).join(' · ')||'Completed transaction'),time:txText(raw.time||raw.timestamp||raw.date||'')};
+    const key=txKey(seed);if(key)seasonTransactions.set(key,{...seed,_captureIndex:-1,_captureOrder:transactionSequence++});
+  }
   Y.predictionSnapshots=Y.predictionSnapshots||{};
   const round2=v=>Math.round(Number(v)*100)/100;
   const rankForTeam=t=>Number((Y.draftRankings||[]).find(x=>canonical(x.team)===canonical(t))?.rank)||5.5;
@@ -61,11 +68,11 @@
   function applyImport(I,isLatest){
     const data=I.data||{};
     Y.collectorSnapshots.push({
-      mode:I.mode||'',capturedAt:I.capturedAt||'',completedWeek:Number(I.completedWeek)||0,
+      mode:isWednesday(I)?'WEDNESDAY':(I.mode||''),capturedAt:I.capturedAt||'',completedWeek:Number(I.completedWeek)||0,
       targetWeek:Number(I.targetWeek)||1,validation:I.validation||{}
     });
     if(isLatest){
-      Y.collectorStatus={active:true,schema:I.schema,mode:I.mode||'',workflow:I.workflow||'',capturedAt:I.capturedAt||'',completedWeek:Number(I.completedWeek)||0,targetWeek:Number(I.targetWeek)||Number(Y.week)||1,validation:I.validation||{},source:'Makers Yahoo browser collector',snapshotCount:valid.length};
+      Y.collectorStatus={active:true,schema:I.schema,mode:isWednesday(I)?'WEDNESDAY':(I.mode||''),workflow:I.workflow||'',capturedAt:I.capturedAt||'',completedWeek:Number(I.completedWeek)||0,targetWeek:Number(I.targetWeek)||Number(Y.week)||1,validation:I.validation||{},source:'Makers Yahoo browser collector',snapshotCount:valid.length};
       if(I.capturedAt)Y.lastUpdated=I.capturedAt;
       if(Number(I.targetWeek)>=1)Y.week=Number(I.targetWeek);
       Y.weeklyCollectorDelta=I.delta||null;
@@ -113,7 +120,7 @@
         const pa=same?(m.projA??m.scoreA):(m.projB??m.scoreB),pb=same?(m.projB??m.scoreB):(m.projA??m.scoreA);
         return [row[0],row[1],pa??'',pb??''];
       });
-      if(String(I.mode||'').toLowerCase()==='post-waivers'){
+      if(isWednesday(I)){
         const positive=[];
         for(const m of upcoming)for(const v of [num(m.projA),num(m.projB)])if(v!=null&&v>0)positive.push(v);
         const meanYahoo=positive.length?positive.reduce((a,b)=>a+b,0)/positive.length:100;
@@ -126,7 +133,7 @@
           if(existing?.locked&&prior)return prior;
           return {teamA:row[0],teamB:row[1],meA:makersProjection(row[0],ya,meanYahoo,completed,data.standings),meB:makersProjection(row[1],yb,meanYahoo,completed,data.standings),yahooA:ya??0,yahooB:yb??0};
         }).filter(Boolean);
-        Y.predictionSnapshots[String(target)]={week:target,capturedAt:(existing?.locked?existing.capturedAt:(I.capturedAt||'')),phase:(existing?.locked&&existing.phase?existing.phase:'THURSDAY FORECAST'),source:(existing?.locked&&existing.source?existing.source:'POST-WAIVERS Yahoo collector + Makers power/scoring model'),model:(existing?.locked&&existing.model?existing.model:'Makers Power Blend v1'),locked:true,matchups:forecast};
+        Y.predictionSnapshots[String(target)]={week:target,capturedAt:(existing?.locked?existing.capturedAt:(I.capturedAt||'')),phase:(existing?.locked&&existing.phase?existing.phase:'WEDNESDAY FORECAST'),source:(existing?.locked&&existing.source?existing.source:'Wednesday Yahoo collector + Makers Power Blend v1'),model:(existing?.locked&&existing.model?existing.model:'Makers Power Blend v1'),locked:true,matchups:forecast};
       }
     }
     if(isLatest&&upcoming.length){
@@ -151,7 +158,12 @@
       if(isLatest)Y.completedLineups=rows;
     }
 
-    const tx=(data.transactions||[]).map(x=>({type:txText(x.type||'MOVE').toUpperCase(),manager:txText(x.manager||TEAM_MANAGER[canonical(x.team)]||''),team:canonical(txText(x.team||MANAGER_TEAM[x.manager]||'')),add:txText(x.add||''),drop:txText(x.drop||''),faab:x.faab==null?null:num(x.faab),description:txText(x.description||[x.add&&`Added ${x.add}`,x.drop&&`Dropped ${x.drop}`].filter(Boolean).join(' · ')||'Completed transaction'),time:txText(x.time||x.date||'')}));
+    const tx=(data.transactions||[]).map(x=>{
+      const add=txText(x.add||(Array.isArray(x.added)?x.added.map(p=>p?.name||p).filter(Boolean).join(', '):''));
+      const drop=txText(x.drop||(Array.isArray(x.dropped)?x.dropped.map(p=>p?.name||p).filter(Boolean).join(', '):''));
+      const faab=x.faab==null?(x.faabSpent==null?null:num(x.faabSpent)):num(x.faab);
+      return {type:txText(x.type||'MOVE').toUpperCase(),manager:txText(x.manager||TEAM_MANAGER[canonical(x.team)]||''),team:canonical(txText(x.team||MANAGER_TEAM[x.manager]||'')),add,drop,faab,description:txText(x.description||[add&&`Added ${add}`,drop&&`Dropped ${drop}`,faab!=null&&`${faab} FAAB`].filter(Boolean).join(' · ')||'Completed transaction'),time:txText(x.time||x.timestamp||x.date||'')};
+    });
     tx.forEach((x,order)=>{const key=txKey(x);if(key)seasonTransactions.set(key,{...x,_captureIndex:transactionSequence,_captureOrder:order})});
     transactionSequence++;
     const faab=(data.faab||[]).map((x,i)=>({priority:num(x.priority)??i+1,manager:x.manager||TEAM_MANAGER[canonical(x.team)]||'',team:canonical(x.team||MANAGER_TEAM[x.manager]||''),spent:num(x.spent)??Math.max(0,100-(num(x.remaining)??100)),remaining:num(x.remaining)??100,claimsWon:num(x.claimsWon)??0}));

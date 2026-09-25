@@ -1,0 +1,70 @@
+THE MAKERS — WEEK 3 FULL UPDATE PHASE 4 PUBLISH QA
+Date: 2026-09-24
+Branch: week3-full-update-2026-09-24
+
+RESULT: READY TO PUBLISH
+
+PUBLISH SCOPE
+- Publish the cumulative Phase 1 inventory, Phase 2 Week 2/Week 3 data reconciliation, and Phase 3 Wednesday-only runtime cleanup.
+- Switch dynamic production pages to the local Makers weekly runtime.
+- Cache-bust the Week 3 runtime.
+- Bring H2H and Trophy pages onto the current cumulative engine.
+- Refresh shared site.js cache keys on primary static/archive navigation pages.
+
+CURRENT RUNTIME
+- makers-weekly-loader.js cache key: makers-20260924-phase4
+- Runtime chain:
+  season-2026.js
+  weekly-import.js
+  makers-weekly-sync.js
+  makers-engine.js
+  league-analytics.js
+  api-config.js / waiver-model.js when needed
+  live.js
+  site.js
+- No active remote dependency on miscexpffl.github.io/the-makers.
+
+DYNAMIC PAGES ON CURRENT LOADER
+- index.html
+- weeks.html
+- week.html
+- season-2026.html
+- predictions.html
+- analytics.html
+- transactions.html
+- waiver-wire.html
+- schedule.html
+- power-rankings.html
+- playoff-odds.html
+- franchises.html
+- franchise.html
+- records.html
+- press.html
+
+STATIC / SPECIAL ENTRY POINTS
+- head-to-head.html now loads season-2026.js + current weekly sync/engine + makers-h2h-live.js with Phase 4 cache keys.
+- trophy-case.html now loads the current cumulative engine and rolls career W-L through Week 2.
+- drafts.html no longer loads obsolete weekly Week 1 scripts.
+- history.html, keepers.html, wall-of-shame.html and season-2022/2023/2024/2025 cache-bust the cleaned shared site.js.
+
+FINAL PRE-MERGE RUNTIME CHECK
+- Current week: 3
+- Completed week: 2
+- Collector mode: WEDNESDAY
+- Workflow: wednesday-combined
+- Standings: 10
+- Current-season results: 10
+- Week 3 locked forecasts: 5
+- H2H/record engine games: 328
+- Power rows: 10
+- Odds rows: 10
+- Validated lineup autopsies: 20
+- Unique completed 2026 transaction events: 54
+
+BRANCH STATE
+- Ahead of main.
+- Behind main: 0.
+- No merge divergence.
+
+PHASE 5
+Final production QA remains after merge: verify every navigation page/subsection, current Week 2/Week 3 content, H2H/records/franchise pages, cache/runtime references and any remaining stale historical entry points.

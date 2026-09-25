@@ -1,0 +1,38 @@
+THE MAKERS — WEEK 3 FULL UPDATE PHASE 1 INVENTORY QA
+Date: 2026-09-24
+Branch: week3-full-update-2026-09-24
+
+SCOPE
+Inventory the production repo, Week 3 collector snapshot, current frontend/runtime architecture, weekly overlays, static/historical pages, and collector workflow before reconciliation.
+
+VALIDATED WEEK 3 INPUT
+- Schema: makers-weekly-collector/v2
+- Collector: v1.3.2
+- Workflow: wednesday-combined
+- Target week: 3
+- Completed week: 2
+- Captured: 2026-09-24T20:23:52.435Z
+- Validation: PASS
+- Standings: 10/10
+- Completed Week 2 games: 5/5
+- Completed lineups: 10/10, 90/90 starter scores reconciled
+- Current rosters: 10/10 with projections
+- Week 3 matchups: 5/5 projected
+- Transactions: 25/25 structured
+- Available players: 100/100 projected
+
+CURRENT PRODUCTION FINDINGS
+1. The Week 3 compact snapshot and a partial makers-w03-phase1.js layer are already present on main.
+2. The partial Week 3 layer updates standings/finals/rosters/projections, but does not complete Power/Odds/editorial/prediction/analytics turnover.
+3. Dynamic pages still load makers-tuesday-loader.js.
+4. makers-tuesday-loader.js remotely fetches legacy renderer/data assets from https://miscexpffl.github.io/the-makers/ even though the authoritative repo is TheMakersFFL/the-makers.
+5. The active old renderer is hardcoded around Week 1/Week 2 Tuesday/Thursday language.
+6. A newer local data-driven runtime already exists:
+   season-2026.js -> weekly-import.js -> makers-weekly-sync.js -> makers-engine.js -> league-analytics.js/live.js
+7. weekly-import.js already contains the validated Week 3 export, but is missing the Week 2 Wednesday import needed to preserve Week 1 completed-game receipts in the modern pipeline.
+8. makers-weekly-sync.js only creates locked prediction snapshots for legacy post-waivers mode; it does not yet treat workflow=wednesday-combined as the lock condition.
+9. league-analytics.js still filters completed lineup analytics by legacy POST-MNF mode and adds waiver timeline entries from legacy POST-WAIVERS mode.
+10. The current collector UI is Wednesday-only to the user, but its exported mode is still internally post-mnf.
+
+PHASE 1 DECISION
+Migrate production to the modern local runtime rather than adding another patch to the legacy Tuesday renderer. Preserve completed historical receipts, import Week 1 and Week 2 results into the modern cumulative state, lock Week 3 predictions from the Wednesday snapshot, and retire obsolete active split-cadence runtime files after validation.
