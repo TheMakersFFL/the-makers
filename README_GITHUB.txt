@@ -12,12 +12,12 @@ CURRENT 2026 BUILD
 - The site uses one combined Wednesday update after waivers clear.
 - The current week closes the prior week's results and opens the upcoming week's preview in one cumulative pass.
 - Weekly Write-Ups preserve completed recaps and publish the locked upcoming preview.
-- 2026 War Room includes standings, race dashboard, projected field and current season context.
+- 2026 War Room includes standings, race dashboard, projected field, Franchise Stock Market and current season context.
 - Power Rankings use the live Power Index instead of the frozen preseason board.
 - Playoff Odds include playoff, first-round bye, title and toilet/punishment probabilities.
 - Predictions tracks Makers vs Yahoo receipts and score/margin accuracy.
 - Analytics includes all-play, lineup efficiency, transaction ROI, acquisition receipts and weekly awards.
-- Moves, Waivers, Schedule, Franchise Files, Record Book, H2H and History roll forward cumulatively.
+- Moves, Waivers, Schedule, Franchise Files, Record Book, H2H and the live 2026 History chapter roll forward cumulatively.
 - Makers Weekly Collector v1.3.3 is the current collector.
 - Collector mode: WEDNESDAY.
 - Collector workflow: wednesday-combined.
