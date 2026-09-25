@@ -1,0 +1,100 @@
+THE MAKERS — WEEK 3 FULL SITE AUDIT / MISSING UPDATE CLEANUP
+Date: 2026-09-24
+Branch: week3-full-site-audit-cleanup-2026-09-24
+
+AUDIT RESULT: PASS AFTER CORRECTIONS
+
+SCOPE
+Audited all primary navigation routes, special/static routes, legacy redirects, current Week 2/Week 3 data surfaces, weekly runtime, collector workflow, documentation, H2H/records, schedule, history and War Room parity.
+
+MISSING UPDATES FOUND AND FIXED
+
+1. SCHEDULE RESULTS WERE NOT ROLLING FORWARD
+Before:
+- Team schedule roads showed opponents/H2H but not completed Week 1/2 W/L score receipts.
+- Schedule card still featured a hard-coded Week 1 heavyweight.
+- Schedule H2H labels used only the 2022–2025 historical table.
+Fixed:
+- Completed weeks now show W/L and final score on every team road.
+- Current week is marked CURRENT WEEK / NOW.
+- Week 3 spotlight is derived from current live Power ranks.
+- Schedule H2H uses the cumulative engine including 2026 results.
+- Preseason strength labels are now explicitly labeled preseason.
+
+2. WEEKLY "CURRENT POWER" CARDS WERE PRESEASON
+Before:
+- Week pages labeled a section CURRENT POWER but rendered frozen draft grades/ranks.
+Fixed:
+- Weekly rank cards now use the live Power Index, current record and live rank.
+
+3. FRANCHISE STOCK MARKET WAS MISSING
+The weekly guide/checklist called for a Franchise Stock Market, but the 2026 War Room did not render one.
+Fixed:
+- Added Franchise Stock Market to the War Room.
+- Shows preseason rank vs current live Power rank, movement, record, Power Index and playoff odds.
+- Movement is explicitly measured against the locked preseason Makers board.
+- Current biggest riser: TDs In Your Face / Nick, up 5 Power positions from preseason.
+
+4. SEASON HISTORY ACTIVE CHAPTER WAS GENERIC
+Before:
+- The 2026 History section only said the season was in progress.
+Fixed:
+- History now loads the current cumulative season state.
+- Shows current standings leader, live Power leader, highest Toilet Bowl risk, current week, completed week, unbeaten managers and winless managers.
+- Current state: Week 2 closed / Week 3 live.
+
+5. H2H PAGE COPY WAS STALE
+Before:
+- Header/meta copy said the archive ran only through 2025 and displayed "318 historical games."
+Fixed:
+- Header now describes the archive through the current 2026 season.
+- The dynamically updated cumulative total is labeled "games logged."
+- Current engine total remains 328 games.
+
+6. COLLECTOR GUIDE HAD A WEEK 2-SPECIFIC EXPORT EXAMPLE
+Fixed:
+- Export handoff instruction is now evergreen:
+  MAKERS_<season>_W<upcoming-week>_WEDNESDAY.json
+
+7. COLLECTOR ITSELF STILL DEFAULTED TO UPCOMING WEEK 2
+Before:
+- A fresh collector install initialized targetWeek=2.
+Fixed:
+- Collector v1.3.4 now auto-suggests the upcoming week from the season calendar.
+- If Yahoo provides a week= URL parameter, that value takes priority.
+- Manual Upcoming week selection remains available and should still be confirmed before collecting.
+- On 2026-09-24 the automatic suggestion resolves to Week 3.
+- Makers_Weekly_Collector_v1.3.4.txt added as the matching archive copy.
+
+RUNTIME ACCEPTANCE
+- Current week: 3
+- Completed week: 2
+- Standings: 10/10
+- Current-season results: 10
+- Week 3 locked forecasts: 5/5
+- Week 1 schedule receipts render
+- Week 2 schedule receipts render
+- Week 3 schedule state renders CURRENT WEEK
+- War Room Franchise Stock Market renders
+- Week 3 page CURRENT POWER uses live Power cards
+- Homepage shows Week 3 / Week 2 closed state
+- History live chapter resolves Week 3 correctly
+- Collector v1.3.4 syntax PASS
+- Live runtime syntax PASS
+
+CACHE
+- All 15 dynamic entry points now load makers-weekly-loader.js?v=makers-20260924-audit1
+- Loader internal cache key is makers-20260924-audit1
+
+INTENTIONAL STATIC/HISTORICAL AREAS
+- Draft page remains a frozen draft-night receipt.
+- Keeper page remains a verified keeper archive.
+- 2022–2025 season pages remain immutable historical records.
+- Wall of Shame remains the completed last-place archive; current shame risk is live on Home/Odds/History.
+- Older versioned collector files remain historical release archives.
+
+PUBLIC RENDER LIMITATION
+The external web fetcher cannot directly open the GitHub Pages site from this environment. GitHub Pages deployment status is therefore used for production deployment verification, while render logic is validated directly against the production data/runtime.
+
+FINAL STATUS
+All missing Week 3 update items found in this audit have been corrected on this branch.
