@@ -1,0 +1,51 @@
+THE MAKERS — WEEK 4 PHASE 4 EDITORIAL QA
+Date: 2026-09-30
+Branch: week4-update-2026-09-30
+
+RESULT: PASS
+
+WEEK 3 ARCHIVE
+- Final recap archived with all five Week 3 results.
+- Headline: Week 3: Jim and TomD Stay Perfect, Max Wakes Up, and Adam Is Already Looking for the Emergency Exit.
+- Week 3 GOTW: Predacious Fungi vs The Eviscerators.
+- Max upset Andrew 128.80-124.68.
+- Moose beat Pump 144.10-74.46.
+- TDs beat Revenge 139.34-100.74.
+- Mustache beat A Gap 107.34-66.84.
+- Kareem beat Criterus 106.98-81.92.
+- Week 3 prediction grading: Makers 3-2, Yahoo 3-2.
+- Season prediction grading through Week 3: Makers 11-4, Yahoo 10-5.
+
+WEEK 4 PREVIEW
+- Headline: Week 4: Somebody’s Perfect Record Is Getting Tested, Adam Is Playing With Fire, and Jim Has Become Annoyingly Legitimate.
+- Game of the Week: The Mustache riders vs The Eviscerators.
+- Yahoo: Mustache 110.72 - Eviscerators 109.53.
+- Makers: Eviscerators 113.05 - Mustache 110.51.
+- Other Makers forecasts:
+  * Moose 115.57 over Criterus 111.14.
+  * TDs 101.71 over Fungi 98.00.
+  * Kareem 104.64 over A Gap 95.14.
+  * Pump 105.38 over Revenge 102.59.
+- Shame Watch: Adam 0-3; 11.9% playoff odds; 23.5% Toilet Bowl risk.
+
+VOICE / EDITORIAL STANDARD
+- Uses league-history callbacks and manager-specific jokes rather than straight factual prose.
+- Jim: transaction-churn / modern move-record running joke.
+- TomD: perennial contender / empty modern title column.
+- Andrew: defending champion / only two-time modern champion.
+- Max: regular-season success, transaction volume, December history.
+- Nick: four straight championship brackets and 2022 0.01-point PF-title loss to Jim.
+- Adam: 2025 championship-game appearance after 2024 Wall of Shame; now 0-3.
+- Tommy: 2024 champion.
+- Nate: 2024 finalist / 2025 Wall of Shame.
+- Billy: separate franchise beginning in 2025.
+- Chris: preseason 2026 draft favorite now 1-2.
+
+RUNTIME
+- Added week4-editorial.js.
+- Loaded after week4-models.js and before league-analytics.js/live.js.
+- Loader cache key bumped to makers-20260930-w4p4.
+- No production publish performed.
+
+NEXT
+Phase 5: full source/runtime consistency audit, stale Week 3 sweep, H2H/records/schedule/franchise/stock/waiver checks, cache-key audit, and release prep.
