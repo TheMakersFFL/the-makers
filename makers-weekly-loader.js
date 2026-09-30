@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  const bust='makers-20260930-w4p2';
+  const bust='makers-20260930-w4p2full';
   const load=file=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
@@ -13,6 +13,14 @@
       await load('season-2026.js');
       await load('weekly-import.js');
       await load('week4-import.js');
+      await load('week4-rosters-a.js');
+      await load('week4-rosters-b.js');
+      await load('week4-completed-a.js');
+      await load('week4-completed-b.js');
+      await load('week4-transactions.js');
+      await load('week4-faab.js');
+      await load('week4-available-a.js');
+      await load('week4-available-b.js');
       await load('makers-weekly-sync.js');
       await load('makers-engine.js');
       await load('league-analytics.js');
