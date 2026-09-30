@@ -14,7 +14,7 @@ function card(t,b,ey=''){return `<div class="card">${ey?`<div class="kicker">${e
 function gradeClass(g){let x=(g||'').toLowerCase()[0];return ['a','b','c','d','f'].includes(x)?x:'b'}
 function currentFranchise(manager){return D.franchises.find(f=>f.manager===manager)}
 function historicalRecord(manager){return D.records.find(r=>r.manager===manager)}
-function ourTeam(manager){return (Y.powerRankings||Y.draftRankings).find(t=>t.manager===manager)}
+function ourTeam(manager){const draft=(Y.draftRankings||[]).find(t=>t.manager===manager)||{},live=(Y.powerRankings||[]).find(t=>t.manager===manager)||{};return {...draft,...Object.fromEntries(Object.entries(live).filter(([,v])=>v!=null&&v!==''))}}
 function teamRankCards(){const rows=E.powerMetrics?E.powerMetrics():[];return rows.map(t=>`<a class="rank-card" href="franchise.html?manager=${encodeURIComponent(t.manager)}"><div class="rank-num">${t.powerRank}</div><div class="rank-team"><strong>${e(t.team)}</strong><small>${e(t.manager)} · ${t.w}-${t.l}</small></div><div class="rank-grade"><strong>${t.powerIndex.toFixed(1)}</strong><small>Live Power</small></div></a>`).join('')}
 function publishedWeeks(){return Object.entries(Y.weekly||{}).map(([w,d])=>({week:Number(w),...d})).filter(d=>d.writeup&&d.writeup.trim()).sort((a,b)=>b.week-a.week)}
 function homepageWeeklies(){const p=publishedWeeks();if(!p.length)return `<section class="section home-weekly-section"><div class="wrap"><div class="section-head"><div><div class="kicker">FROM THE LEAGUE DESK</div><h2>Weekly write-ups</h2></div></div><div class="notice"><b>Week 1 is almost here.</b> The first recap will take this spot once the games give us something worth arguing about.</div></div></section>`;
