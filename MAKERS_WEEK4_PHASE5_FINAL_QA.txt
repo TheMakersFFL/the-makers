@@ -1,0 +1,102 @@
+THE MAKERS — WEEK 4 PHASE 5 CONSISTENCY / RELEASE QA
+Date: 2026-09-30
+Branch: week4-update-2026-09-30
+
+RESULT: PASS — SOURCE/RUNTIME RELEASE PREP COMPLETE
+PRODUCTION: NOT PUBLISHED IN PHASE 5
+
+WEEKLY STATE
+- Week 3 closed; Week 4 current.
+- Standings: 10/10 teams, three completed games each.
+- Week 3 finals: 5/5.
+- Week 4 Yahoo matchup projections: 5/5.
+- Completed Week 3 lineups: 10/10, 90/90 starter scores.
+- Current Week 4 rosters: 10/10; Nick's second WR slot remains intentionally empty because Yahoo shows it empty.
+- Transactions: 25/25 structured.
+- FAAB: 10/10.
+- Available pool: 100/100 projected players.
+- Parser repairs preserved for Ladd McConkey, Jaylen Waddle and Jordan Addison in current and completed-lineup data.
+
+MODEL CONSISTENCY
+- Week 4 Power snapshot locked through week4-models.js.
+- Playoff / bye / title / Toilet Bowl odds use the same locked runtime snapshot.
+- Week 4 Makers forecasts use the same snapshot.
+- Week 3 prediction grading: Makers 3-2, Yahoo 3-2.
+- Season grading through Week 3: Makers 11-4, Yahoo 10-5.
+- Stock / War Room / Power / Odds consume the shared engine snapshot.
+
+POWER INDEX
+1 Jim 92.02
+2 Andrew 86.86
+3 TomD 83.42
+4 Nick 61.26
+5 Billy 56.70
+6 Chris 48.86
+7 Tommy 37.63
+8 Max 25.09
+9 Nate 24.80
+10 Adam 19.62
+
+WEEK 4 MAKERS FORECASTS
+- Eviscerators 113.05 over Mustache riders 110.51.
+- Moose Knuckles 115.57 over Criterus 111.14.
+- TDs In Your Face 101.71 over Predacious Fungi 98.00.
+- Kareem all over your Hunt 104.64 over The A Gap 95.14.
+- Pump and Go 105.38 over Revenge of the period bloods 102.59.
+- Only Makers/Yahoo split: Mustache vs Eviscerators.
+
+WEEKLY EDITORIAL
+- Week 3 converted to closed recap.
+- Week 4 preview published in branch data.
+- Game of the Week: The Mustache riders vs The Eviscerators.
+- No fabricated Commissioner section.
+
+CACHE / ROUTE AUDIT
+- Found route-wide stale Week 3 loader cache key makers-20260924-audit1.
+- Rolled active dynamic wrappers to makers-weekly-loader.js?v=makers-20260930-w4p5:
+  index.html
+  weeks.html
+  week.html
+  season-2026.html
+  predictions.html
+  analytics.html
+  transactions.html
+  waiver-wire.html
+  schedule.html
+  power-rankings.html
+  playoff-odds.html
+  franchises.html
+  franchise.html
+  records.html
+  press.html
+- makers-weekly-loader.js internal bust also moved to makers-20260930-w4p5.
+
+H2H / RECORDS
+- Historical H2H HTML is preserved.
+- makers-h2h-live.js now pulls the Week 4 factual payload and reruns the weekly sync before rebuilding the matrix/counters.
+- Expected archive totals after Week 3: 285 regular-season + 38 postseason/placement = 323 games.
+- The five Week 3 2026 results flow into current H2H series through MAKERS_ENGINE.allGames().
+- Records page is dynamic and consumes careerRecords/allGames, so Week 3 results update career W-L, points and game-count ledgers.
+
+SCHEDULE
+- 14-week / 70-game regular-season schedule preserved.
+- 15 games completed through Week 3.
+- Schedule renderer reads Y.results for Weeks 1-3 final receipts and marks Week 4 current.
+
+STATIC / HISTORICAL PAGES
+- Keepers: verified keeper archive; no weekly turnover required.
+- Wall of Shame: completed-season historical archive; no Week 4 turnover required.
+- Draft archive: historical/draft content; no weekly results turnover required.
+- History: completed 2022-25 cards preserved; active 2026 panel rebuilt on the Week 4 factual/model chain.
+- Trophy Case: championship history preserved; live career-record column moved to the Week 4 factual chain.
+
+CADENCE / BACKEND
+- MAKERS_WEEKLY_UPDATE_CHECKLIST.md is Wednesday-only.
+- MAKERS_WEEKLY_COLLECTOR_GUIDE.md is Wednesday-only.
+- Current production collector line remains v1.3.4; Week 4 export's v1.3.2 metadata must not regress the collector.
+- No active Tuesday/Thursday collector workflow is required.
+
+RELEASE STATUS
+- Week 4 branch is prepared for publish.
+- main was not modified in Phase 5.
+- Phase 6 should fast-forward/publish the Week 4 branch, verify GitHub Pages deployment, then perform the true rendered browser audit in Work/Cloud Browser.
