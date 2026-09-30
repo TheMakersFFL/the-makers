@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  const bust='makers-20260930-w4p3';
+  const bust='makers-20260930-w4p4';
   const load=file=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
@@ -24,6 +24,7 @@
       await load('makers-weekly-sync.js');
       await load('makers-engine.js');
       await load('week4-models.js');
+      await load('week4-editorial.js');
       await load('league-analytics.js');
       if((document.body.dataset.page||'')==='waivers'){
         await load('api-config.js');
