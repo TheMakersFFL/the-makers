@@ -2,18 +2,21 @@ THE MAKERS — WEEK 4 PHASE 2 DATA QA
 Date: 2026-09-30
 Branch: week4-update-2026-09-30
 
-RESULT: PASS — FACTUAL CORE IMPORTED
+RESULT: PASS — FULL FACTUAL DATA LAYER COMPLETE
 
 Collector:
 - The Makers, league 471058.
 - Wednesday-combined Week 4 target / Week 3 completed snapshot.
 - Standings 10/10.
 - Week 3 finals 5/5.
-- Week 3 completed score reconciliation 10/10.
+- Week 3 completed lineups 10/10.
+- Week 3 starter scores 90/90.
+- Yahoo score reconciliation 10/10.
+- Week 4 current rosters 10/10.
 - Week 4 projected matchups 5/5.
 - FAAB 10/10.
-- Collector available-player pool validated 100/100.
-- Collector transaction capture validated 25/25 structured.
+- Transactions 25/25 structured.
+- Available-player pool 100/100 with projections.
 
 Week 3 finals:
 - Predacious Fungi 128.80 def The Eviscerators 124.68.
@@ -41,17 +44,37 @@ Current standings imported:
 9 Chris / Criterus 1-2, PF 274.20.
 10 Adam / The A Gap 0-3, PF 254.68.
 
-Normalization findings carried forward:
-- Nick's second WR starter slot is truly empty on Yahoo; do not fabricate a starter.
-- Collector misparsed three bench player names from schedule text. Raw Yahoo capture identifies them as:
-  * Ladd McConkey — The Moose Knuckles.
-  * Jaylen Waddle — TDs In Your Face.
-  * Jordan Addison — Pump and Go.
-- Production collector remains on the newer v1.3.4 line; do not regress it to export-reported v1.3.2.
+Normalization repairs applied from raw Yahoo captures:
+- Ladd McConkey repaired for The Moose Knuckles.
+- Jaylen Waddle repaired for TDs In Your Face.
+- Jordan Addison repaired for Pump and Go.
+- The same three repairs were applied to Week 3 completed-lineup receipts where Yahoo returned game-status fragments instead of player names.
 
-Source work:
-- Added week4-import.js.
-- Wired week4-import.js after historical weekly-import.js and before makers-weekly-sync.js.
-- Bumped dynamic loader cache key to makers-20260930-w4p2.
+Intentional preserved Yahoo state:
+- TDs In Your Face has one genuinely empty Week 4 WR starter slot at capture time.
+- No starter was fabricated to force a 9/9 lineup.
 
-No production publish performed in Phase 2.
+Phase 2 load chain before makers-weekly-sync.js:
+- week4-import.js
+- week4-rosters-a.js
+- week4-rosters-b.js
+- week4-completed-a.js
+- week4-completed-b.js
+- week4-transactions.js
+- week4-faab.js
+- week4-available-a.js
+- week4-available-b.js
+
+Loader cache key:
+- makers-20260930-w4p2full
+
+Collector version handling:
+- Uploaded export reports v1.3.2.
+- Production collector source remains on the newer v1.3.4 line and must not be regressed.
+
+Production status:
+- NOT published to main.
+- All Week 4 work remains on week4-update-2026-09-30.
+
+Next:
+- Phase 3 model/analytics rollover using this completed factual Week 3 + Week 4 foundation.
