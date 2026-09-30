@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  const bust='makers-20260924-audit1';
+  const bust='makers-20260930-w4p2';
   const load=file=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
@@ -12,6 +12,7 @@
     try{
       await load('season-2026.js');
       await load('weekly-import.js');
+      await load('week4-import.js');
       await load('makers-weekly-sync.js');
       await load('makers-engine.js');
       await load('league-analytics.js');
