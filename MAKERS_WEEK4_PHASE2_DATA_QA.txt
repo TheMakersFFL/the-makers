@@ -1,0 +1,57 @@
+THE MAKERS — WEEK 4 PHASE 2 DATA QA
+Date: 2026-09-30
+Branch: week4-update-2026-09-30
+
+RESULT: PASS — FACTUAL CORE IMPORTED
+
+Collector:
+- The Makers, league 471058.
+- Wednesday-combined Week 4 target / Week 3 completed snapshot.
+- Standings 10/10.
+- Week 3 finals 5/5.
+- Week 3 completed score reconciliation 10/10.
+- Week 4 projected matchups 5/5.
+- FAAB 10/10.
+- Collector available-player pool validated 100/100.
+- Collector transaction capture validated 25/25 structured.
+
+Week 3 finals:
+- Predacious Fungi 128.80 def The Eviscerators 124.68.
+- The Moose Knuckles 144.10 def Pump and Go 74.46.
+- TDs In Your Face 139.34 def Revenge of the period bloods 100.74.
+- The Mustache riders 107.34 def The A Gap 66.84.
+- Kareem all over your Hunt 106.98 def Criterus 81.92.
+
+Week 4 Yahoo projection slate:
+- The Mustache riders 110.72 vs The Eviscerators 109.53.
+- The Moose Knuckles 111.55 vs Criterus 108.15.
+- TDs In Your Face 104.72 vs Predacious Fungi 102.86.
+- The A Gap 96.06 vs Kareem all over your Hunt 107.69.
+- Pump and Go 104.10 vs Revenge of the period bloods 102.34.
+
+Current standings imported:
+1 Jim / The Moose Knuckles 3-0, PF 405.96.
+2 TomD / The Mustache riders 3-0, PF 392.50.
+3 Andrew / The Eviscerators 2-1, PF 338.82.
+4 Billy / Kareem all over your Hunt 2-1, PF 307.24.
+5 Nick / TDs In Your Face 1-2, PF 331.78.
+6 Tommy / Pump and Go 1-2, PF 302.54.
+7 Nate / Revenge of the period bloods 1-2, PF 292.64.
+8 Max / Predacious Fungi 1-2, PF 290.08.
+9 Chris / Criterus 1-2, PF 274.20.
+10 Adam / The A Gap 0-3, PF 254.68.
+
+Normalization findings carried forward:
+- Nick's second WR starter slot is truly empty on Yahoo; do not fabricate a starter.
+- Collector misparsed three bench player names from schedule text. Raw Yahoo capture identifies them as:
+  * Ladd McConkey — The Moose Knuckles.
+  * Jaylen Waddle — TDs In Your Face.
+  * Jordan Addison — Pump and Go.
+- Production collector remains on the newer v1.3.4 line; do not regress it to export-reported v1.3.2.
+
+Source work:
+- Added week4-import.js.
+- Wired week4-import.js after historical weekly-import.js and before makers-weekly-sync.js.
+- Bumped dynamic loader cache key to makers-20260930-w4p2.
+
+No production publish performed in Phase 2.
