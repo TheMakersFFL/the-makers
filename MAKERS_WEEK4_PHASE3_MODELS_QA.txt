@@ -1,0 +1,58 @@
+THE MAKERS — WEEK 4 PHASE 3 MODELS QA
+Date: 2026-09-30
+Branch: week4-update-2026-09-30
+
+RESULT: PASS — MODEL / ANALYTICS ROLLOVER COMPLETE
+
+Prediction grading through Week 3:
+- Week 1: Makers 4-1; Yahoo 4-1.
+- Week 2: Makers 4-1; Yahoo 3-2.
+- Week 3: Makers 3-2; Yahoo 3-2.
+- Season through Week 3: Makers 11-4; Yahoo 10-5.
+
+Week 3 Makers misses:
+- Predacious Fungi upset The Eviscerators 128.80–124.68.
+- Kareem all over your Hunt beat Criterus 106.98–81.92.
+
+Week 4 Power Index — Makers Power Blend v1:
+1. Jim / The Moose Knuckles — 92.02
+2. Andrew / The Eviscerators — 86.86
+3. TomD / The Mustache riders — 83.42
+4. Nick / TDs In Your Face — 61.26
+5. Billy / Kareem all over your Hunt — 56.70
+6. Chris / Criterus — 48.86
+7. Tommy / Pump and Go — 37.63
+8. Max / Predacious Fungi — 25.09
+9. Nate / Revenge of the period bloods — 24.80
+10. Adam / The A Gap — 19.62
+
+24,000-run Week 4 playoff model:
+- Jim: playoff 98.2%, bye 68.1%, title 24.8%, toilet 0.3%, avg seed 2.23.
+- TomD: playoff 96.0%, bye 46.7%, title 18.0%, toilet 0.6%, avg seed 2.93.
+- Andrew: playoff 95.2%, bye 53.1%, title 26.7%, toilet 0.5%, avg seed 2.81.
+- Billy: playoff 76.8%, bye 12.2%, title 8.1%, toilet 4.5%, avg seed 4.95.
+- Nick: playoff 74.4%, bye 9.6%, title 10.4%, toilet 3.6%, avg seed 5.14.
+- Chris: playoff 60.8%, bye 5.4%, title 6.3%, toilet 7.0%, avg seed 5.89.
+- Tommy: playoff 43.0%, bye 2.7%, title 3.0%, toilet 13.6%, avg seed 6.70.
+- Nate: playoff 22.3%, bye 0.9%, title 1.1%, toilet 23.0%, avg seed 7.90.
+- Max: playoff 21.4%, bye 0.9%, title 1.0%, toilet 23.4%, avg seed 7.93.
+- Adam: playoff 11.9%, bye 0.3%, title 0.7%, toilet 23.5%, avg seed 8.52.
+
+Locked Week 4 Makers forecasts:
+- The Eviscerators 113.05 over The Mustache riders 110.51. Yahoo: Mustache 110.72–109.53.
+- The Moose Knuckles 115.57 over Criterus 111.14. Yahoo: Moose 111.55–108.15.
+- TDs In Your Face 101.71 over Predacious Fungi 98.00. Yahoo: TDs 104.72–102.86.
+- Kareem all over your Hunt 104.64 over The A Gap 95.14. Yahoo: Kareem 107.69–96.06.
+- Pump and Go 105.38 over Revenge of the period bloods 102.59. Yahoo: Pump 104.10–102.34.
+
+Week 4 pick split:
+- Makers and Yahoo agree on Moose, TDs, Kareem, and Pump.
+- Makers takes The Eviscerators over Mustache; Yahoo narrowly takes Mustache.
+
+Runtime consistency:
+- week4-models.js locks Power, playoff/bye/title/toilet odds and Week 4 forecast receipt.
+- MAKERS_ENGINE.powerMetrics() and MAKERS_ENGINE.simulate() are overridden with the locked Week 4 snapshot before league-analytics.js/live.js render.
+- Stock/analytics consumers therefore read the same Week 4 Power/Odds state.
+- Loader cache key bumped to makers-20260930-w4p3.
+
+No production publish performed in Phase 3.
