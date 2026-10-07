@@ -40,6 +40,6 @@
       await load('week5-available.js');
       await load('makers-weekly-sync.js');
       render();
-    }catch(err){console.error('Makers H2H Week 4 refresh failed',err);render()}
+    }catch(err){console.error('Makers H2H Week 5 refresh failed',err);render()}
   })();
 })();
