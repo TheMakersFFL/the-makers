@@ -1,0 +1,157 @@
+THE MAKERS — WEEK 5 PHASE 4 EDITORIAL QA
+Date: 2026-10-07
+Branch: week5-update-2026-10-07
+Production: NOT PUBLISHED
+
+RESULT: PASS — WEEK 4 RECAP + WEEK 5 PREVIEW COMPLETE
+
+FILES
+Added:
+- week5-editorial.js
+
+Updated:
+- makers-weekly-loader.js
+
+Loader cache key:
+- makers-20261007-w5p4
+
+WEEK 4 RECAP
+Status:
+- FINAL
+
+Headline:
+Week 4: Andrew Takes No. 1 Power, Chris Knocks Jim Down, and Adam Is Officially 0-4
+
+Week 4 finals covered:
+- The Eviscerators 128.00-125.68 The Mustache riders
+- Criterus 117.32-90.10 The Moose Knuckles
+- TDs In Your Face 132.92-104.54 Predacious Fungi
+- Kareem all over your Hunt 141.78-92.90 The A Gap
+- Pump and Go 70.92-60.34 Revenge of the period bloods
+
+Week 4 major factual receipts included:
+- Andrew moved to No. 1 Power after beating TomD.
+- Billy posted the Week 4 high score at 141.78.
+- Tetairoa McMillan scored 35.20 and CeeDee Lamb 29.80 for Billy.
+- Chris upset Jim 117.32-90.10.
+- Jim had Javonte Williams 26.80 and Emanuel Wilson 25.00 on his bench.
+- Nick scored 132.92 and improved to 2-2.
+- Tommy won 70.92-60.34 despite the low combined score.
+- Adam fell to 0-4.
+
+TRADE COVERAGE
+The Oct 6 trade is deliberately treated as a major Week 5 storyline.
+
+TDs In Your Face / Nick:
+- acquired Christian Watson
+- sent Quinshon Judkins
+
+The Mustache riders / TomD:
+- acquired Quinshon Judkins
+- sent Christian Watson
+
+Week 4 context:
+- Judkins scored 17.10 on Nick's bench.
+- Watson scored 5.70 in TomD's starting lineup.
+
+Week 5 context:
+- Christian Watson is already in Nick's starting WR slot, projected 13.26.
+- Quinshon Judkins is already in TomD's starting RB slot, projected 10.93.
+- Editorial does not declare a trade winner before the players produce for their new teams.
+
+PREDICTION GRADING INCLUDED
+Week 4:
+- Makers 4-1
+- Yahoo 3-2
+
+Season through Week 4:
+- Makers 15-5
+- Yahoo 13-7
+
+Week 4 score MAE:
+- Makers 21.56
+- Yahoo 20.64
+
+WEEK 5 PREVIEW
+Status:
+- WEDNESDAY PREVIEW
+
+Headline:
+Week 5: The Trade Is Live, Four Teams Are 3-1, and Adam Is Running Out of Speeches
+
+Game of the Week:
+TDs In Your Face vs. The Eviscerators
+
+GOTW rationale:
+- Andrew is 3-1 and No. 1 in Power.
+- Nick is 2-2, has won two straight, owns the highest Yahoo Week 5 projection, and immediately starts newly acquired Christian Watson.
+- Makers forecast: TDs 115.91-110.75 Eviscerators.
+- Yahoo forecast: TDs 120.43-107.38 Eviscerators.
+
+Other Week 5 matchup coverage:
+- Moose vs A Gap: Jim tries to bounce back while Adam tries to avoid 0-5.
+- Mustache vs Kareem: two 3-1 teams; Judkins debuts for TomD; Billy comes off the weekly high.
+- Criterus vs Revenge: real Wednesday empty DEF for Chris and empty TE for Nate are explicitly preserved.
+- Pump vs Fungi: closest Makers forecast of the week.
+
+LOCKED WEEK 5 FORECASTS USED
+- Moose 118.06-102.13 A Gap
+- TDs 115.91-110.75 Eviscerators
+- Fungi 96.88-95.27 Pump
+- Criterus 93.64-75.72 Revenge
+- Mustache 106.32-98.79 Kareem
+
+Yahoo:
+- Moose 115.91-105.10 A Gap
+- TDs 120.43-107.38 Eviscerators
+- Fungi 101.68-94.42 Pump
+- Criterus 88.98-73.57 Revenge
+- Mustache 105.78-100.22 Kareem
+
+Makers and Yahoo agree on all five Week 5 winners.
+
+MODEL / ODDS REFERENCES USED
+- Andrew / Eviscerators: Power 87.56, playoffs 97.5%, title 28.4%
+- Jim / Moose: Power 83.82, playoffs 96.2%
+- TomD / Mustache: Power 79.74, playoffs 93.5%
+- Billy / Kareem: Power 67.58, playoffs 84.1%
+- Nick / TDs: Power 67.40, playoffs 79.4%
+- Chris / Criterus: Power 57.16, playoffs 70.3%
+- Tommy / Pump: Power 47.72, playoffs 49.0%
+- Max / Fungi: Power 31.27, playoffs 13.3%, Toilet 24.9%
+- Nate / Revenge: Power 28.74, playoffs 11.4%, Toilet 26.2%
+- Adam / A Gap: Power 23.08, playoffs 5.4%, Toilet 24.9%
+
+WEEK 5 AWARD / WATCH CARDS
+- Game of the Week: TDs vs Eviscerators
+- Trade Debut: Christian Watson ↔ Quinshon Judkins
+- 3-1 Collision: Mustache vs Kareem
+- 0-5 Watch: Moose vs A Gap
+- Empty-Slot Watch: Criterus DEF / Revenge TE
+
+COMMISSIONER WRITE-UP
+No Week 5 Commissioner Write-Up was provided.
+No commissioner copy was invented.
+
+RUNTIME QA
+Verified:
+- MAKERS_2026.week = 5
+- current model snapshot = Week 5
+- Week 4 status = FINAL
+- Week 5 status = WEDNESDAY PREVIEW
+- Week 4 recap length > 4,000 characters
+- Week 5 preview length > 5,000 characters
+- trade is materially discussed in both recap and preview
+- five Week 4 recap breakdowns present
+- five Week 5 preview breakdowns present
+- five Week 5 matchup pairs present
+- no Week 5 commissionerWriteup field inserted
+- Week 5 prediction snapshot contains five locked forecasts
+- lastUpdated = October 7, 2026 Wednesday Week 5 editorial snapshot
+
+PHASE 4 STATUS
+PASS — COMPLETE
+No production publish performed.
+
+Next:
+Phase 5 — full source/runtime/cache/route/history/H2H/records/transactions/Wednesday-only release audit.
