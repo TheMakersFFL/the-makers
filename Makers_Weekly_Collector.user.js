@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Makers Weekly Collector — Wednesday
 // @namespace    https://github.com/TheMakersFFL/the-makers/
-// @version      1.3.4
+// @version      1.3.5
 // @description  Collect Yahoo Fantasy league data once each Wednesday after waivers for The Makers, combining the prior-week recap with post-waiver rosters, projections and the upcoming-week preview.
 // @match        https://football.fantasysports.yahoo.com/f1/*
 // @match        https://football.fantasysports.yahoo.com/*/f1/*
@@ -20,7 +20,7 @@
   'use strict';
 
   const SCHEMA='makers-weekly-collector/v2';
-  const VERSION='1.3.4';
+  const VERSION='1.3.5';
   const EXPECTED_LEAGUE_ID='471058';
   const KNOWN_TEAMS={
     'The Eviscerators':'Andrew',
@@ -281,7 +281,10 @@
     return m?m[1]:'';
   }
   function inferPlayerPos(text=''){
-    const hits=String(text).toUpperCase().match(/\b(QB|RB|WR|TE|K|DEF|D\/ST)\b/g)||[];return hits.find(x=>x!=='D/ST')||hits[0]||'';
+    const meta=String(text).match(/\b[A-Za-z]{2,3}\s*-\s*(QB|RB|WR|TE|K|DEF|D\/ST)\b/i);
+    if(meta)return String(meta[1]).toUpperCase()==='D/ST'?'DEF':String(meta[1]).toUpperCase();
+    const hits=String(text).toUpperCase().match(/\b(QB|RB|WR|TE|K|DEF|D\/ST)\b/g)||[];
+    const pos=hits.find(x=>x!=='D/ST')||hits[0]||'';return pos==='D/ST'?'DEF':pos;
   }
   function inferNflTeam(text=''){
     const m=String(text).match(/\b([A-Za-z]{2,3})\s*-\s*(?:QB|RB|WR|TE|K|DEF|D\/ST)\b/i);return m?m[1].toUpperCase():'';
@@ -295,13 +298,20 @@
     return /\b[A-Za-z]{2,3}\s*-\s*(?:QB|RB|WR|TE|K|DEF|D\/ST)\b/i.test(r.text);
   }
   function pickName(r){
-    const anchors=[...r.row.querySelectorAll('a[href]')].map(a=>textOf(a)).filter(x=>x&&x.length>=2&&x.length<90&&!findKnownTeams(x).length);
+    const lines=String(r.text).split(/\n+/).map(clean).filter(Boolean);
+    const badName=n=>/^(?:sun|mon|tue|wed|thu|fri|sat|final|bye)\b/i.test(clean(n));
+    for(let i=1;i<lines.length;i++){
+      if(/^([A-Za-z]{2,3})\s*-\s*(?:QB|RB|WR|TE|K|DEF|D\/ST)(?:\s+(?:IR-R|PUP-R|NFI-R|IR\+|IR|PUP|NFI|SUSP|OUT|CEL|NA|O|Q|D))?$/i.test(lines[i])){
+        const picked=splitPlayerNameStatus(lines[i-1]);if(validPlayerName(picked.name)&&!badName(picked.name))return picked;
+      }
+    }
+    const anchors=[...r.row.querySelectorAll('a[href]')].map(a=>textOf(a)).filter(x=>x&&x.length>=2&&x.length<90&&!findKnownTeams(x).length&&!badName(x));
     const plausible=anchors.find(x=>/\p{L}/u.test(x)&&!/video|forecast|note|watch|add|drop|research|matchup/i.test(x));
     if(plausible)return splitPlayerNameStatus(plausible);
-    const iPlayer=hix(r.headers,['player','players','offense','kickers','defense/special teams']);if(iPlayer>=0&&r.cells[iPlayer])return splitPlayerNameStatus(r.cells[iPlayer].split('\n')[0]);
-    const lines=String(r.text).split(/\n+/).map(clean).filter(Boolean);
-    for(let i=1;i<lines.length;i++)if(/^([A-Za-z]{2,3})\s*-\s*(?:QB|RB|WR|TE|K|DEF|D\/ST)$/i.test(lines[i]))return splitPlayerNameStatus(lines[i-1]);
-    const m=r.text.match(/^(.{2,100}?)(?=\s+[A-Za-z]{2,3}\s*-\s*(?:QB|RB|WR|TE|K|DEF|D\/ST)\b)/i);return splitPlayerNameStatus(m?m[1]:r.cells[0]||'');
+    const iPlayer=hix(r.headers,['player','players','offense','kickers','defense/special teams']);
+    if(iPlayer>=0&&r.cells[iPlayer]){const picked=splitPlayerNameStatus(r.cells[iPlayer].split('\n')[0]);if(!badName(picked.name))return picked}
+    const m=r.text.match(/^(.{2,100}?)(?=\s+[A-Za-z]{2,3}\s*-\s*(?:QB|RB|WR|TE|K|DEF|D\/ST)\b)/i);
+    const picked=splitPlayerNameStatus(m?m[1]:r.cells[0]||'');return badName(picked.name)?{name:'',status:''}:picked;
   }
   function numericAt(r,index){return index>=0?num(r.cells[index]):null}
   function inferRowStatus(name,text,base=''){
@@ -323,7 +333,12 @@
   function parseRoster(root=document,title=document.title,url=location.href,opts={}){
     const full=`${title} ${textOf(root.body||root).slice(0,5000)}`;
     const teams=findKnownTeams(full),team=opts.team||teams[0]||'';if(!team)return null;
-    const week=Number(opts.week)||Number(new URL(url,location.href).searchParams.get('week'))||null,players=[];
+    const week=Number(opts.week)||Number(new URL(url,location.href).searchParams.get('week'))||null,players=[],isCurrent=opts.current===true,emptySlots=[];
+    for(const er of tableRows(root)){
+      if(!/\(Empty\)/i.test(er.text))continue;
+      let emptySlot=slotFromText(er.text);if(!emptySlot){const iSlot=hix(er.headers,['pos','slot','position']);if(iSlot>=0)emptySlot=slotFromText(er.cells[iSlot]||'')}
+      if(emptySlot==='D/ST')emptySlot='DEF';if(STARTER_SLOTS.has(emptySlot))emptySlots.push(emptySlot);
+    }
     for(const r of tableRows(root)){
       if(!looksLikePlayerRow(r))continue;
       const picked=pickName(r),name=picked.name;if(!validPlayerName(name))continue;
@@ -332,8 +347,8 @@
       if(!slot)slot=pos;
       const iPts=hix(h,['fan pts','fpts','fantasy points','pts','points']),iProj=hix(h,['proj pts','projected','proj']),iOpp=hix(h,['opp','opponent']),iStart=hix(h,['% start','start %','start']),iRos=hix(h,['% ros','rostered','% rostered']),iBye=hix(h,['bye']);
       const metrics=parseRosterMetrics(r.text);
-      let points=metrics?.points??numericAt(r,iPts),projected=metrics?.projected??numericAt(r,iProj);
-      if(points!=null&&Math.abs(points)>80&&metrics?.points!=null)points=metrics.points;
+      let points=isCurrent?null:(metrics?.points??numericAt(r,iPts)),projected=metrics?.projected??numericAt(r,iProj);
+      if(!isCurrent&&points!=null&&Math.abs(points)>80&&metrics?.points!=null)points=metrics.points;
       const started=STARTER_SLOTS.has(slot),bench=BENCH_SLOTS.has(slot),status=inferRowStatus(name,r.text,picked.status),opponent=iOpp>=0?clean(c[iOpp]):inferOpponent(r.text);
       players.push({name,pos,nflTeam,slot,status,started,bench,points,projected,bye:metrics?.bye??numericAt(r,iBye),startPct:metrics?.startPct??numericAt(r,iStart),rosteredPct:metrics?.rosteredPct??numericAt(r,iRos),opponent,sourceText:r.text});
     }
@@ -345,7 +360,7 @@
     const arr=Object.values(by).map(({_quality,...p})=>p).filter(p=>validPlayerName(p.name)).slice(0,20);
     const starters=arr.filter(p=>p.started===true),benchers=arr.filter(p=>p.bench===true);
     const sum=(xs,key)=>Number(xs.filter(p=>p[key]!=null).reduce((s,p)=>s+Number(p[key]||0),0).toFixed(2));
-    return {week,team,manager:managerForTeam(team),url,players:arr,rosterCount:arr.length,starterCount:starters.length,benchCount:benchers.length,starterPoints:sum(starters,'points'),benchPoints:sum(benchers,'points'),starterProjectedPoints:sum(starters,'projected'),benchProjectedPoints:sum(benchers,'projected'),scoredStarterCount:starters.filter(p=>p.points!=null).length,projectedStarterCount:starters.filter(p=>p.projected!=null).length,source:'yahoo-team-page'};
+    return {week,team,manager:managerForTeam(team),url,players:arr,rosterCount:arr.length,starterCount:starters.length,benchCount:benchers.length,starterPoints:sum(starters,'points'),benchPoints:sum(benchers,'points'),starterProjectedPoints:sum(starters,'projected'),benchProjectedPoints:sum(benchers,'projected'),scoredStarterCount:starters.filter(p=>p.points!=null).length,projectedStarterCount:starters.filter(p=>p.projected!=null).length,emptySlots:uniq(emptySlots),source:'yahoo-team-page'};
   }
 
   function transactionPlayers(text=''){
@@ -480,20 +495,50 @@
     const by={};for(const p of out){const k=[p.name.toLowerCase(),p.nflTeam,p.pos,norm(p.action)].join('|');if(!by[k])by[k]=p}return Object.values(by);
   }
 
+  function tradePlayersV135(text=''){
+    const lines=String(text).split(/\n+/).map(clean).filter(Boolean).map(x=>x.replace(/^[^\p{L}\p{N}$]+/u,'').trim()).filter(Boolean);
+    const metaRe=/^([A-Za-z]{2,3})\s*-\s*(QB|RB|WR|TE|K|DEF|D\/ST)(?:\s+(IR-R|PUP-R|NFI-R|IR\+|IR|PUP|NFI|SUSP|OUT|CEL|NA|O|Q|D))?$/i;
+    const inlineMetaRe=/^(.+?)\s+([A-Za-z]{2,3})\s*-\s*(QB|RB|WR|TE|K|DEF|D\/ST)(?:\s+(IR-R|PUP-R|NFI-R|IR\+|IR|PUP|NFI|SUSP|OUT|CEL|NA|O|Q|D))?$/i;
+    const out=[];
+    const add=(name,nflTeam,pos,status='')=>{
+      name=splitPlayerNameStatus(name).name.trim();status=clean(status).toUpperCase();pos=String(pos).toUpperCase()==='D/ST'?'DEF':String(pos).toUpperCase();
+      if(!validPlayerName(name)||!nflTeam||!pos||findKnownTeams(name).length)return;
+      out.push({name,nflTeam:String(nflTeam).toUpperCase(),pos,status,action:'Trade'});
+    };
+    for(let i=0;i<lines.length;i++){
+      let name='',nflTeam='',pos='',status='',m=lines[i].match(metaRe);
+      if(m){name=lines[i-1]||'';nflTeam=m[1];pos=m[2];status=m[3]||'';}
+      else {m=lines[i].match(inlineMetaRe);if(!m)continue;name=m[1];nflTeam=m[2];pos=m[3];status=m[4]||'';}
+      add(name,nflTeam,pos,status);
+    }
+    const by={};for(const p of out){const k=[p.name.toLowerCase(),p.nflTeam,p.pos].join('|');if(!by[k])by[k]=p}return Object.values(by);
+  }
+
   function parseTransactionsV125(root=document){
     const out=[],timeRe=/\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},?\s+\d{1,2}:\d{2}\s*(?:am|pm)\b/ig;
+    const transactionRowRe=/(?:\bfree agent\b|\bwaivers?\b|\btrade\b|\btraded\b|\badded?\b|\bdropped?\b)/i;
     for(const r of tableRows(root)){
-      if(!/free agent|waiver|to waivers|trade|add|drop/i.test(r.text))continue;
+      if(!transactionRowRe.test(r.text))continue;
       const times=[...String(r.text).matchAll(timeRe)].map(m=>m[0]);
       if(times.length!==1)continue;
       const teams=findKnownTeams(r.text);if(teams.length!==1)continue;
-      const team=teams[0],players=transactionPlayersV125(r.text),isTrade=/\btrade(?:d)?\b/i.test(r.text);
+      const team=teams[0],isTrade=/\b(?:trade|traded)\b/i.test(r.text),players=isTrade?tradePlayersV135(r.text):transactionPlayersV125(r.text);
       if(!players.length&&!isTrade)continue;
-      const dropped=players.filter(p=>/to waivers|\bdrop(?:ped)?\b|\bwaived\b/i.test(p.action));
-      const added=players.filter(p=>!dropped.includes(p)&&/free agent|from waivers|(?<!to\s)waiver|\badd(?:ed)?\b/i.test(p.action));
+      const dropped=isTrade?[]:players.filter(p=>/to waivers|\bdrop(?:ped)?\b|\bwaived\b/i.test(p.action));
+      const added=isTrade?players.map(p=>({...p,action:'Trade'})):players.filter(p=>!dropped.includes(p)&&/free agent|from waivers|(?<!to\s)waiver|\badd(?:ed)?\b/i.test(p.action));
       const bid=r.text.match(/\$(\d+)\s*(?:FAAB|Waiver)/i),hasWaiver=added.some(p=>/waiver/i.test(p.action));
       const type=isTrade?'TRADE':hasWaiver?'WAIVER':'ADD_DROP';
       out.push({team,manager:managerForTeam(team),type,timestamp:times[0],faabSpent:bid?Number(bid[1]):null,added,dropped,players,text:r.text});
+    }
+    const tradeGroups={};
+    for(const x of out)if(x.type==='TRADE')(tradeGroups[x.timestamp]??=[]).push(x);
+    for(const group of Object.values(tradeGroups)){
+      if(group.length<2)continue;
+      for(const x of group){
+        const seen=new Set();
+        x.dropped=group.filter(y=>y!==x).flatMap(y=>y.added||[]).map(p=>({...p,action:'Trade'})).filter(p=>{const k=[p.name.toLowerCase(),p.nflTeam,p.pos].join('|');if(seen.has(k))return false;seen.add(k);return true});
+        x.players=[...(x.added||[]),...(x.dropped||[])];
+      }
     }
     const by={};
     for(const x of out){
@@ -541,8 +586,8 @@
     if(kind==='matchups'||kind==='league'){
       const ms=parseMatchups(root,wk,Boolean(opts.forceFinal));patch.matchups=ms;patch.matchupProjections=ms.filter(x=>x.projA!=null&&x.projB!=null);
     }
-    if(kind==='roster'){const r=parseRoster(root,title,url,{week:wk,team:opts.team});patch.rosters=r?[r]:[]}
-    if(kind==='completed-roster'){const r=parseRoster(root,title,url,{week:wk,team:opts.team});patch.completedLineups=r?[r]:[]}
+    if(kind==='roster'){const r=parseRoster(root,title,url,{week:wk,team:opts.team,current:true});patch.rosters=r?[r]:[]}
+    if(kind==='completed-roster'){const r=parseRoster(root,title,url,{week:wk,team:opts.team,completed:true});patch.completedLineups=r?[r]:[]}
     if(kind==='transactions'||kind==='league')patch.transactions=parseTransactionsV125(root);
     if(kind==='players')patch.availablePlayers=parseAvailable(root);
     const tm=discoverTeamMap(root);if(tm.length)state.teamMap=mergeTeamMap(state.teamMap,tm);
@@ -703,13 +748,17 @@
       if(scoreReconciled!==10)lineupShapeOk=false;
     }
 
-    let currentShapeOk=rosters.length===10,currentProjectedTeams=0,currentProjectionReconciled=0;
+    let currentShapeOk=rosters.length===10,currentProjectedTeams=0,currentProjectionReconciled=0,emptyStarterSlots=0;
     for(const r of rosters){
-      const sh=realRosterShape(r);if(sh.players<14||sh.players>18||sh.starters!==9)currentShapeOk=false;if(sh.projectedStarters>=8)currentProjectedTeams++;
+      const sh=realRosterShape(r),empty=uniq(r.emptySlots||[]).filter(x=>STARTER_SLOTS.has(x)).length,expectedStarters=Math.max(0,9-empty);
+      emptyStarterSlots+=empty;
+      if(sh.players<14||sh.players>18||sh.starters!==expectedStarters)currentShapeOk=false;
+      if(sh.projectedStarters===expectedStarters)currentProjectedTeams++;
       const official=teamProjectionFromMatchups(upcoming,r.team);if(official!=null&&r.starterProjectedPoints!=null&&Math.abs(Number(r.starterProjectedPoints)-Number(official))<=1.0)currentProjectionReconciled++;
     }
+    currentShapeOk=currentShapeOk&&currentProjectionReconciled===10;
     const currentProjectionOk=currentProjectedTeams===10&&upcomingOk;
-    const structuredTx=tx.filter(x=>x.type&&x.timestamp&&((x.added||[]).length||(x.dropped||[]).length||x.type==='TRADE')).length;
+    const structuredTx=tx.filter(x=>x.type&&x.timestamp&&((x.added||[]).length||(x.dropped||[]).length)).length;
     const freeAgentDetail=POS.map(p=>`${p} ${availCounts[p]}/${AVAILABLE_LIMITS[p]}`).join(' · ');
 
     const checks=[
@@ -717,7 +766,7 @@
       ['Completed matchups',finalsOk,completed===0?'Preseason':`${finals.length}/5 games · ${finalTeams}/10 teams`],
       ['Completed lineups',lineupShapeOk,completed===0?'Preseason':`${lineups.length}/10 teams · ${lineupPlayers} real players · ${starterScores}/90 starter scores`],
       ['Score reconciliation',completed===0||scoreReconciled===10,completed===0?'Preseason':`${scoreReconciled}/10 team totals match Yahoo`],
-      ['Current rosters',currentShapeOk,`${rosters.length}/10 teams · ${currentProjectedTeams}/10 with starter projections`],
+      ['Current rosters',currentShapeOk,`${rosters.length}/10 teams · ${currentProjectedTeams}/10 projected · ${currentProjectionReconciled}/10 reconciled · ${emptyStarterSlots} explicit empty starter slot${emptyStarterSlots===1?'':'s'}`],
       ['Upcoming matchups',upcomingOk,`${upcomingScheduled.length}/5 scheduled · ${upcomingProjected.length}/5 projected`],
       ['Available players',availOk&&availProjectionCount>=Math.min(90,avail.length),`${freeAgentDetail} · ${availProjectionCount}/${avail.length} projections`],
       ['Transactions',tx.length>0&&structuredTx===tx.length,`${structuredTx}/${tx.length} structured`]
