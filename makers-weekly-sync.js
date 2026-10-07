@@ -36,7 +36,7 @@
   const managerName=x=>x?.manager||TEAM_MANAGER[teamName(x)]||'';
   const pairKey=(week,a,b)=>`${Number(week)||0}|${[canonical(a),canonical(b)].sort().join('|')}`;
   const txText=v=>String(v??'').replace(/[\uE000-\uF8FF]/g,'').replace(/\s+/g,' ').trim();
-  const txKey=x=>[x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??''].map(txText).join('|').toLowerCase();
+  const txKey=x=>[x.manager||'',x.team||'',x.type||'',x.add||'',x.drop||'',x.faab??'',x.time||''].map(txText).join('|').toLowerCase();
   const seasonTransactions=new Map();
   let transactionSequence=0;
   const isWednesday=I=>String(I?.workflow||'').toLowerCase()==='wednesday-combined'||String(I?.mode||'').toUpperCase()==='WEDNESDAY';
@@ -179,7 +179,9 @@
   const seasonTx=[...seasonTransactions.values()].sort((a,b)=>b._captureIndex-a._captureIndex||a._captureOrder-b._captureOrder).map(({_captureIndex,_captureOrder,...x})=>x);
   if(seasonTx.length)Y.recentTransactions=seasonTx;
   const moveCounts=Object.fromEntries(Object.values(TEAM_MANAGER).map(m=>[m,0]));
-  seasonTx.forEach(x=>{const m=x.manager||TEAM_MANAGER[x.team]||'';if(m)moveCounts[m]=(moveCounts[m]||0)+1});
+  const tradeCounts=Object.fromEntries(Object.values(TEAM_MANAGER).map(m=>[m,0]));
+  seasonTx.forEach(x=>{const m=x.manager||TEAM_MANAGER[x.team]||'';if(!m)return;moveCounts[m]=(moveCounts[m]||0)+1;if(String(x.type||'').toUpperCase()==='TRADE')tradeCounts[m]=(tradeCounts[m]||0)+1});
   Y.transactionCounts2026=moveCounts;
-  Y.standings=(Y.standings||[]).map(s=>({...s,moves:moveCounts[s.manager]??s.moves??0}));
+  Y.tradeCounts2026=tradeCounts;
+  Y.standings=(Y.standings||[]).map(s=>({...s,moves:moveCounts[s.manager]??s.moves??0,trades:tradeCounts[s.manager]??s.trades??0}));
 })();
