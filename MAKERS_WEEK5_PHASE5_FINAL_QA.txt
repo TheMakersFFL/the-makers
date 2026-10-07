@@ -9,25 +9,21 @@ PASS — RELEASE READY
 
 RELEASE BASELINE
 - Production main remains at c600d15a5cd345e7e67f652d00d221b63af2f91f.
-- Week 5 working branch remains 0 commits behind main.
+- Week 5 branch remains 0 commits behind main.
 - No production publish has occurred.
 
 CURRENT WEEK STATE
 - MAKERS_2026.week = 5.
 - completedWeek = 4.
-- Week 1 = Results Recap, 5 finals.
-- Week 2 = Results Recap, 5 finals.
-- Week 3 = FINAL, 5 finals.
-- Week 4 = FINAL, 5 finals.
-- Week 5 = WEDNESDAY PREVIEW, 5 scheduled matchups, 0 finals.
-- Week 5 headline and full editorial are present.
-- Week 5 Game of the Week = TDs In Your Face vs. The Eviscerators.
+- Weeks 1-4 each contain 5 final results and are normalized to FINAL by week5-phase5-consistency.js.
+- Week 5 = WEDNESDAY PREVIEW with 5 scheduled matchups and 0 finals.
+- Current Week 5 Game of the Week = TDs In Your Face vs. The Eviscerators.
 
-ACTIVE ROUTE CACHE SWEEP
-Final Week 5 runtime cache key:
+ACTIVE CACHE / ROUTE SWEEP
+Final runtime cache key:
 makers-20261007-w5p5
 
-Verified live routes:
+Verified loader-based routes:
 - index.html
 - weeks.html
 - week.html
@@ -43,43 +39,41 @@ Verified live routes:
 - franchise.html
 - records.html
 - press.html
-- history.html
-- head-to-head.html
-- trophy-case.html
 
-All loader-based routes now request:
+All request:
 makers-weekly-loader.js?v=makers-20261007-w5p5
 
-No audited live route retains:
-- makers-20260930-w4p5
-- makers-20260930-w4p7
-- another Week 4 cache key
-
-Historical/static routes such as Draft, Keepers and Wall of Shame do not require a weekly data mutation.
+No audited loader-based route retains makers-20260930-w4p5, makers-20260930-w4p7, or another Week 4 runtime cache key.
 
 SPECIAL LIVE ARCHIVE ROUTES
 history.html
-- direct runtime chain rolled to makers-20261007-w5p5
-- Week 5 factual scripts added before the sync
-- week5-models.js loads after week4-models.js
+- direct factual/model/editorial chain rolled to makers-20261007-w5p5
+- Week 5 factual scripts load before makers-weekly-sync.js
+- week5-models.js supersedes week4-models.js
 - week5-editorial.js is present
-- stale "Loading the current Week 4 snapshot" fallback corrected to Week 5
+- stale "Loading the current Week 4 snapshot" fallback was changed to Week 5
 
 trophy-case.html
-- direct runtime chain rolled to makers-20261007-w5p5
-- Week 5 factual scripts added before the sync
-- current career records therefore include Week 4 results
+- direct factual chain rolled to makers-20261007-w5p5
+- Week 5 factual scripts load before makers-weekly-sync.js
+- live career records therefore include Week 4 results
 
 head-to-head.html
 - route cache rolled to makers-20261007-w5p5
-- makers-h2h-live.js rolled to Week 5 and now dynamically loads both the Week 4 and Week 5 factual payloads before rerunning the sync
-- static fallback totals updated to the current Week 4-complete archive
+- static fallback counters now show 300 regular-season / 38 postseason-placement / 338 total
+- makers-h2h-live.js uses makers-20261007-w5p5
+- H2H refresh now loads Week 4 and Week 5 factual payloads before rerunning makers-weekly-sync.js
+
+Individual franchise shortcut pages remain simple redirects to franchise.html and contain no stale weekly runtime cache.
+
+Historical/static pages:
+- drafts.html
+- keepers.html
+- wall-of-shame.html
+These remain historical/static and require no Week 5 factual mutation.
 
 LOADER ORDER
-makers-weekly-loader.js now uses:
-makers-20261007-w5p5
-
-Order:
+makers-weekly-loader.js final order:
 1. season-2026.js
 2. weekly-import.js
 3. Week 4 factual files
@@ -90,26 +84,25 @@ Order:
 8. week5-models.js
 9. week4-editorial.js
 10. week5-editorial.js
-11. league-analytics.js
-12. waiver model only on waiver page
-13. live.js
-14. site.js
-
-The Week 5 model and editorial therefore supersede Week 4 current-state overlays while retaining historical Week 4 receipts.
+11. week5-phase5-consistency.js
+12. league-analytics.js
+13. waiver-model only on Waivers
+14. live.js
+15. site.js
 
 STANDINGS
-1. The Mustache riders / TomD — 3-1 — 518.18 PF
-2. The Moose Knuckles / Jim — 3-1 — 496.06 PF
-3. The Eviscerators / Andrew — 3-1 — 466.82 PF
-4. Kareem all over your Hunt / Billy — 3-1 — 449.02 PF
-5. TDs In Your Face / Nick — 2-2 — 464.70 PF
-6. Criterus / Chris — 2-2 — 391.52 PF
-7. Pump and Go / Tommy — 2-2 — 373.46 PF
-8. Predacious Fungi / Max — 1-3 — 394.62 PF
-9. Revenge of the period bloods / Nate — 1-3 — 352.98 PF
-10. The A Gap / Adam — 0-4 — 347.58 PF
+1. The Mustache riders / TomD — 3-1 — PF 518.18
+2. The Moose Knuckles / Jim — 3-1 — PF 496.06
+3. The Eviscerators / Andrew — 3-1 — PF 466.82
+4. Kareem all over your Hunt / Billy — 3-1 — PF 449.02
+5. TDs In Your Face / Nick — 2-2 — PF 464.70
+6. Criterus / Chris — 2-2 — PF 391.52
+7. Pump and Go / Tommy — 2-2 — PF 373.46
+8. Predacious Fungi / Max — 1-3 — PF 394.62
+9. Revenge of the period bloods / Nate — 1-3 — PF 352.98
+10. The A Gap / Adam — 0-4 — PF 347.58
 
-POWER / ODDS / STOCK CONSISTENCY
+POWER / ODDS / STOCK
 Locked Week 5 Power:
 1 Eviscerators 87.56
 2 Moose 83.82
@@ -123,34 +116,31 @@ Locked Week 5 Power:
 10 A Gap 23.08
 
 Locked playoff / bye / title / Toilet odds:
-Eviscerators 97.5 / 64.5 / 28.4 / 0.3
-Moose 96.2 / 53.8 / 22.1 / 0.4
-Mustache 93.5 / 37.1 / 16.5 / 0.9
-Kareem 84.1 / 18.0 / 8.8 / 2.9
-TDs 79.4 / 13.6 / 11.7 / 3.0
-Criterus 70.3 / 8.2 / 7.5 / 5.2
-Pump 49.0 / 4.0 / 3.6 / 11.2
-Fungi 13.3 / 0.4 / 0.6 / 24.9
-Revenge 11.4 / 0.3 / 0.5 / 26.2
-A Gap 5.4 / 0.1 / 0.3 / 24.9
+- Eviscerators 97.5 / 64.5 / 28.4 / 0.3
+- Moose 96.2 / 53.8 / 22.1 / 0.4
+- Mustache 93.5 / 37.1 / 16.5 / 0.9
+- Kareem 84.1 / 18.0 / 8.8 / 2.9
+- TDs 79.4 / 13.6 / 11.7 / 3.0
+- Criterus 70.3 / 8.2 / 7.5 / 5.2
+- Pump 49.0 / 4.0 / 3.6 / 11.2
+- Fungi 13.3 / 0.4 / 0.6 / 24.9
+- Revenge 11.4 / 0.3 / 0.5 / 26.2
+- A Gap 5.4 / 0.1 / 0.3 / 24.9
 
-Franchise Stock uses the same locked Week 5 Power / playoff state.
-Preseason-to-live movement:
-- Mustache +4
-- Kareem +4
-- TDs +4
-- Fungi +2
-- Eviscerators +1
-- Moose +1
-- Pump -3
-- Revenge -4
-- A Gap -4
-- Criterus -5
-
-No separate MEFFL-style dollar pricing system was introduced.
+Franchise Stock Market recomputation exactly matches the stored Week 5 snapshot:
+- Eviscerators preseason #2 -> live #1 (+1)
+- Moose #3 -> #2 (+1)
+- Mustache #7 -> #3 (+4)
+- Kareem #8 -> #4 (+4)
+- TDs #9 -> #5 (+4)
+- Criterus #1 -> #6 (-5)
+- Pump #4 -> #7 (-3)
+- Fungi #10 -> #8 (+2)
+- Revenge #5 -> #9 (-4)
+- A Gap #6 -> #10 (-4)
 
 WEEK 5 FORECASTS
-Every team maps to exactly one Week 5 opponent and one Makers/Yahoo projection.
+All 10 teams map to exactly one opponent and one Makers/Yahoo projection.
 
 Makers:
 - Moose 118.06-102.13 A Gap
@@ -169,40 +159,60 @@ Yahoo:
 Makers and Yahoo agree on all five Week 5 winners.
 
 ROSTER EXCEPTIONS
-The factual layer continues to preserve the real Wednesday empty starter state:
-- Criterus / Chris — empty DEF
-- Revenge / Nate — empty TE
+The factual layer preserves the real Wednesday empty-starter state:
+- Criterus / Chris — empty DEF; 8 populated starters; Yahoo projection 88.98
+- Revenge / Nate — empty TE; 8 populated starters; Yahoo projection 73.57
 
 No artificial starter was inserted.
-The current roster projections remain the actual Yahoo Wednesday projections.
 
 SCHEDULE
+- 14-week / 70-game regular-season schedule preserved.
 - 20 completed 2026 regular-season games through Week 4.
-- 5 finals in each of Weeks 1-4.
-- Week 5 has 5 scheduled matchups and 0 finals.
-- Week 5 is the current week.
+- Weeks 1-4 each have five finals.
+- Week 5 has five scheduled matchups and zero finals.
 
-H2H ARCHIVE
-The current engine contains:
+H2H / HISTORY
+Current live engine:
 - 338 total games
 - 300 regular-season games
 - 38 postseason / placement games
 
-The prior 318-game static archive is the 2022-2025 baseline.
-The 20 completed 2026 games through Week 4 bring the live archive to 338.
+Archive composition:
+- 2022: 70 regular + 11 postseason/placement
+- 2023: 70 + 9
+- 2024: 70 + 9
+- 2025: 70 + 9
+- 2026 through Week 4: 20 regular-season games
 
-Week 4 rivalry updates:
-- TomD vs Andrew: Andrew leads 7-1 overall; 5-1 regular season; Andrew has won 5 straight
-- Jim vs Chris: Chris leads 4-2; 4-2 regular season; Chris has won 2 straight
-- Nick vs Max: Max leads 5-2 overall; 4-2 regular season
-- Adam vs Billy: Billy leads 2-1
-- Tommy vs Nate: Tommy leads 7-2 overall; 6-2 regular season; Tommy has won 6 straight
+Week 4 rivalry rollovers:
+TomD vs Andrew
+- Andrew leads 7-1 overall
+- Andrew leads 5-1 regular season
+- Andrew 2-0 postseason
+- current rivalry streak: Andrew W5
 
-head-to-head.html dynamic metrics and matrix read from MAKERS_ENGINE after the Week 5 refresh.
-Static fallback counters were also changed to 300 / 38 / 338.
+Jim vs Chris
+- Chris leads 4-2 overall / regular season
+- current rivalry streak: Chris W2
+
+Nick vs Max
+- Max leads 5-2 overall
+- Max leads 4-2 regular season
+- Max leads 1-0 postseason
+- current rivalry streak: Nick W1
+
+Adam vs Billy
+- Billy leads 2-1
+- current rivalry streak: Billy W1
+
+Tommy vs Nate
+- Tommy leads 7-2 overall
+- Tommy leads 6-2 regular season
+- Tommy 1-0 postseason
+- current rivalry streak: Tommy W6
 
 RECORDS / CAREER LEDGER
-Current active streaks:
+Current active 2026 streaks:
 - TomD L1
 - Jim L1
 - Andrew W1
@@ -214,7 +224,7 @@ Current active streaks:
 - Nate L2
 - Adam L4
 
-Current engine career records after Week 4:
+Current career records after Week 4:
 - Andrew 34-26
 - Jim 34-26
 - Nick 34-26
@@ -227,78 +237,72 @@ Current engine career records after Week 4:
 - Billy 9-9
 - El Rubio 18-24 historical
 
-Record-book live engine remains authoritative.
-No historical completed-season trophy or title data was rewritten.
+Current record-watch leaders:
+- Highest score: TomD 187.86, 2026 Week 1
+- Lowest score: Billy 42.98, 2025 Week 4
+- Largest margin: Mustache over Pump by 100.56, 2025 Week 14
+- Highest combined: Nate vs Nick 303.87, 2022 Week 5
 
 PREDICTION GRADING
-Through Week 4:
-- Makers 15-5
-- Yahoo 13-7
-
 Week 4:
 - Makers 4-1
 - Yahoo 3-2
+
+Season through Week 4:
+- Makers 15-5
+- Yahoo 13-7
 
 Week 4 team-score MAE:
 - Makers 21.56
 - Yahoo 20.64
 
 TRANSACTIONS / TRADE
-The transaction dedupe key was strengthened in Phase 5 to include:
+Final transaction dedupe key uses:
 - manager
 - team
-- type
 - add
 - drop
 - FAAB
 - timestamp
 
-Reason:
-The prior key omitted type and timestamp and could collapse a manager repeating the same move at a different time.
+Type is intentionally excluded from the dedupe identity because legacy data can label the exact same timestamped move ADD, ADD/DROP or ADD_DROP.
 
 Final runtime:
-- 103 season transaction-side rows
-- 103 unique keys
-- 0 duplicate keys
+- 96 season transaction-side rows
+- 96 unique transaction identities
+- 0 duplicates
 
-The strengthened key recovered seven legitimate distinct transaction receipts that the prior key had collapsed.
-
-Oct 6 trade appears as two team-side records:
-Nick / TDs:
+Oct 6 trade:
+Nick / TDs
 - ACQUIRED Christian Watson
 - SENT Quinshon Judkins
 
-TomD / Mustache:
+TomD / Mustache
 - ACQUIRED Quinshon Judkins
 - SENT Christian Watson
 
-The shared transaction-card UI was corrected so TRADE records display ACQUIRED / SENT rather than ADD / DROP.
+Transaction cards display TRADE rows as ACQUIRED / SENT rather than ADD / DROP.
 
 2026 move counts:
 - Nick 23
-- Max 17
+- Max 16
 - TomD 16
-- Jim 12
+- Jim 10
 - Adam 8
-- Tommy 7
 - Billy 6
-- Chris 6
-- Nate 5
+- Tommy 6
+- Chris 5
 - Andrew 3
+- Nate 3
 
 2026 trade counts:
 - Nick 1
 - TomD 1
 - everyone else 0
 
-makers-weekly-sync.js now writes both:
-- Y.transactionCounts2026
-- Y.tradeCounts2026
-
-and rolls both moves and trades onto the live standings/franchise state.
+makers-weekly-sync.js writes both Y.transactionCounts2026 and Y.tradeCounts2026 and rolls moves/trades onto current standings/franchise state.
 
 FAAB / WAIVERS
-Phase 2 factual QA remains intact:
 - 10 FAAB / priority rows
 - 100 available players
 - QB 15 / RB 25 / WR 25 / TE 15 / K 10 / DEF 10
@@ -309,6 +313,7 @@ Verified no active Tuesday or Thursday workflow language in:
 - MAKERS_WEEKLY_COLLECTOR_GUIDE.md
 - MAKERS_WEEKLY_UPDATE_CHECKLIST.md
 - UPDATE_GUIDE.txt
+- README_GITHUB.txt
 - Makers_Weekly_Collector.user.js
 
 Collector source:
@@ -321,7 +326,7 @@ v1.3.5 continues to:
 - prefer Yahoo TEAM - POS metadata for position
 - clear current-week fake points
 - parse Yahoo "Traded to" rows with actual assets
-- validate trade rows only when assets are present
+- require trade assets before a trade row passes structured validation
 
 SCRIPT QA
 Syntax compilation passed for:
@@ -332,22 +337,25 @@ Syntax compilation passed for:
 - week5-available.js
 - week5-models.js
 - week5-editorial.js
-- makers-weekly-sync.js
+- week5-phase5-consistency.js
 - makers-weekly-loader.js
+- makers-weekly-sync.js
+- makers-engine.js
 - makers-h2h-live.js
-- live.js
 - Makers_Weekly_Collector.user.js
 
 PHASE 5 FIXES MADE
 1. Finalized makers-20261007-w5p5 loader cache.
-2. Rolled all live page wrappers from Week 4 cache keys to Week 5 Phase 5.
-3. Added Week 5 factual/model state to History.
+2. Rolled all active live wrappers from Week 4 cache keys to Week 5 Phase 5.
+3. Added Week 5 factual/model/editorial state to History.
 4. Added Week 5 factual state to Trophy Case.
 5. Updated H2H live refresh through Week 4 results / Week 5 runtime.
-6. Updated H2H fallback counters from 280/38/318 to 300/38/338.
-7. Strengthened transaction dedupe with type + timestamp.
+6. Updated H2H fallback counters to 300 / 38 / 338.
+7. Corrected H2H refresh label to Week 5.
 8. Added live 2026 trade counts.
 9. Corrected transaction trade cards from ADD/DROP to ACQUIRED/SENT.
+10. Corrected transaction dedupe so legacy type-label variants do not double-count the same timestamped move.
+11. Added a Phase 5 consistency guard so completed Weeks 1-4 uniformly resolve as FINAL.
 
 PHASE 5 STATUS
 PASS — RELEASE READY
@@ -355,4 +363,4 @@ PASS — RELEASE READY
 No production publish performed.
 
 Next:
-Phase 6 — fast-forward the Week 5 release to main, verify the GitHub Pages deployment, verify production source/cache state, then run the true rendered page-by-page browser audit in Work.
+Phase 6 — fast-forward the Week 5 branch to main, verify GitHub Pages deployment, verify production source/cache state, then run the rendered page-by-page browser audit in Work.
