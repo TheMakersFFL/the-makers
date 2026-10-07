@@ -104,7 +104,8 @@ function activityCard(x){
   const type=String(x?.type||'MOVE').toUpperCase(),manager=x?.manager||x?.team||'League move',team=x?.team&&x.team!==manager?x.team:'',add=x?.add||'',drop=x?.drop||'',faab=x?.faab,time=x?.time||x?.date||'';
   const kind=/trade/.test(type.toLowerCase())?'trade':/waiver|claim/.test(type.toLowerCase())?'waiver':/drop/.test(type.toLowerCase())?'drop':'add';
   const fallback=String(x?.description||'Completed transaction').replace(/[\uE000-\uF8FF]/g,'').replace(/\s+/g,' ').trim();
-  const players=[add?`<div class="activity-player activity-player-add"><span>ADD</span><strong>${e(add)}</strong></div>`:'',drop?`<div class="activity-player activity-player-drop"><span>DROP</span><strong>${e(drop)}</strong></div>`:''].join('');
+  const addLabel=kind==='trade'?'ACQUIRED':'ADD',dropLabel=kind==='trade'?'SENT':'DROP';
+  const players=[add?`<div class="activity-player activity-player-add"><span>${addLabel}</span><strong>${e(add)}</strong></div>`:'',drop?`<div class="activity-player activity-player-drop"><span>${dropLabel}</span><strong>${e(drop)}</strong></div>`:''].join('');
   const detail=players||`<p class="activity-description">${e(fallback)}</p>`;
   const spend=faab!=null&&Number.isFinite(Number(faab))?`<span class="activity-faab">$${e(faab)} FAAB</span>`:'';
   const mark=kind==='trade'?'↔':kind==='drop'?'−':'+';
