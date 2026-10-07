@@ -1,0 +1,162 @@
+MAKERS WEEK 5 — PHASE 2 FACTUAL DATA QA
+Date: 2026-10-07
+Branch: week5-update-2026-10-07
+Production: NOT PUBLISHED
+Source: MAKERS_2026_W05_WEDNESDAY.json + raw Yahoo captures embedded in the export
+Collector source repairs available on branch: Makers Weekly Collector v1.3.5
+
+FILES ADDED
+- week5-import.js
+- week5-rosters.js
+- week5-completed.js
+- week5-transactions.js
+- week5-available.js
+
+FILES UPDATED
+- makers-weekly-loader.js
+- makers-weekly-sync.js
+
+LOADER
+makers-weekly-loader.js now uses:
+makers-20261007-w5p2
+
+The Week 5 factual scripts load after the completed Week 4 factual payload and before makers-weekly-sync.js.
+Week 5 model/editorial replacement remains Phase 3 / Phase 4 work.
+
+WEEK 4 FINALS IMPORTED
+- The Eviscerators 128.00 def. The Mustache riders 125.68
+- Criterus 117.32 def. The Moose Knuckles 90.10
+- TDs In Your Face 132.92 def. Predacious Fungi 104.54
+- Kareem all over your Hunt 141.78 def. The A Gap 92.90
+- Pump and Go 70.92 def. Revenge of the period bloods 60.34
+
+WEEK 5 STANDINGS IMPORTED
+1. The Mustache riders / TomD — 3-1, PF 518.18, PA 383.76
+2. The Moose Knuckles / Jim — 3-1, PF 496.06, PA 366.46
+3. The Eviscerators / Andrew — 3-1, PF 466.82, PA 423.46
+4. Kareem all over your Hunt / Billy — 3-1, PF 449.02, PA 393.30
+5. TDs In Your Face / Nick — 2-2, PF 464.70, PA 445.24
+6. Criterus / Chris — 2-2, PF 391.52, PA 399.50
+7. Pump and Go / Tommy — 2-2, PF 373.46, PA 488.86
+8. Predacious Fungi / Max — 1-3, PF 394.62, PA 488.84
+9. Revenge of the period bloods / Nate — 1-3, PF 352.98, PA 410.00
+10. The A Gap / Adam — 0-4, PF 347.58, PA 455.52
+
+League arithmetic:
+- 20 wins / 20 losses
+- total PF = total PA = 4254.94
+
+WEEK 5 YAHOO MATCHUPS / PROJECTIONS
+- TDs In Your Face 120.43 vs The Eviscerators 107.38
+- The Moose Knuckles 115.91 vs The A Gap 105.10
+- The Mustache riders 105.78 vs Kareem all over your Hunt 100.22
+- Criterus 88.98 vs Revenge of the period bloods 73.57
+- Pump and Go 94.42 vs Predacious Fungi 101.68
+
+COMPLETED WEEK 4 LINEUPS
+- 10/10 imported
+- 90/90 starter scores retained
+- all 10 recomputed starter totals match the official Yahoo Week 4 final exactly
+
+CURRENT WEEK 5 ROSTERS
+- 10/10 imported
+- all current Week 5 player points normalized to null
+- all current roster starter/bench point totals normalized to zero
+- Week 5 projections preserved unchanged
+- all 10 populated-starter projection totals match Yahoo exactly
+
+Legitimate empty starter slots preserved:
+- Criterus / Chris — DEF empty; 8 populated starters; projection 88.98
+- Revenge of the period bloods / Nate — TE empty; 8 populated starters; projection 73.57
+
+No defense or tight end was invented.
+
+PLAYER / POSITION REPAIRS APPLIED
+Current Week 5:
+- The Moose Knuckles: malformed schedule text -> Ladd McConkey, LAC WR, Q
+- TDs In Your Face: malformed schedule text -> Jaylen Waddle, DEN WR
+- Pump and Go: malformed schedule text -> Jordan Addison, MIN WR
+- Revenge: J.K. Dobbins K -> RB
+
+Completed Week 4:
+- The Moose Knuckles: malformed final-status text -> Ladd McConkey, LAC WR, Q
+- TDs In Your Face: malformed final-status text -> Jaylen Waddle, DEN WR
+- Pump and Go: malformed final-status text -> Jordan Addison, MIN WR
+- Revenge: J.K. Dobbins K -> RB
+
+Runtime QA found zero remaining player names beginning with Sun or Final.
+
+OCT 6 TRADE RECONSTRUCTED
+TDs In Your Face / Nick:
+- acquired Christian Watson, GB WR
+- sent Quinshon Judkins, CLE RB
+
+The Mustache riders / TomD:
+- acquired Quinshon Judkins, CLE RB
+- sent Christian Watson, GB WR
+
+makers-weekly-sync.js now renders TRADE semantics as:
+- Acquired ...
+- Sent ...
+instead of generic Added / Dropped wording.
+
+TRANSACTIONS
+- Week 5 collector payload: 26 structured transaction-side rows
+- both trade-side rows are fully populated
+- runtime season transaction history after the Week 5 import: 96 deduped rows
+- two runtime TRADE rows present with correct team, add, drop and timestamp
+
+FAAB / WAIVER PRIORITY
+- TomD: 51 remaining / priority 10
+- Jim: 83 / 9
+- Andrew: 67 / 8
+- Billy: 61 / 7
+- Nick: 76 / 6
+- Chris: 91 / 5
+- Tommy: 84 / 4
+- Max: 78 / 3
+- Nate: 100 / 2
+- Adam: 82 / 1
+
+AVAILABLE PLAYER POOL
+- 100/100 imported
+- QB 15
+- RB 25
+- WR 25
+- TE 15
+- K 10
+- DEF 10
+- 100/100 have Week 5 projections
+
+MAKERS WEEKLY SYNC REPAIRS
+The factual sync now preserves on Y.liveRosters:
+- emptySlots
+- starterCount
+- starterProjectedPoints
+
+This makes the real Criterus and Revenge empty-slot state available to downstream site views and later QA.
+
+RUNTIME HARNESS VERIFIED
+- MAKERS_2026.week = 5
+- standings = 10
+- Week 4 final results = 5
+- current Week 5 rosters = 10
+- Week 4 completed lineups = 10
+- available players = 100
+- FAAB rows = 10
+- two correct trade-side runtime records
+- Criterus emptySlots = ["DEF"]
+- Revenge emptySlots = ["TE"]
+- every current starter points sum = 0
+- all 10 current projection sums equal Yahoo
+- all 10 Week 4 starter score sums equal Yahoo
+- Ladd McConkey / Jaylen Waddle / Jordan Addison names normalized
+- J.K. Dobbins position = RB
+- all Phase 2 JS files compile successfully
+
+PHASE 2 STATUS
+PASS — COMPLETE FACTUAL WEEK 5 DATA LAYER
+No production publish performed.
+Phase 3 remains Power / odds / Week 5 forecasts / Stock / prediction grading.
+Phase 4 remains Week 4 recap + Week 5 editorial.
+Phase 5 remains full source/runtime/cache/release QA.
