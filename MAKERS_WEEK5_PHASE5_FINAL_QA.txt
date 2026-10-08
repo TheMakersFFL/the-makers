@@ -2,7 +2,7 @@ THE MAKERS — WEEK 5 PHASE 5 FULL SITE / RELEASE QA
 Date: 2026-10-07
 Branch: week5-update-2026-10-07
 Production branch: main
-Publish status: NOT PUBLISHED
+Publish status at the Phase 5 checkpoint: NOT PUBLISHED
 
 RESULT
 PASS — RELEASE READY
@@ -250,7 +250,7 @@ Week 4:
 
 Season through Week 4:
 - Makers 15-5
-- Yahoo 13-7
+- Yahoo 14-6
 
 Week 4 team-score MAE:
 - Makers 21.56
@@ -362,5 +362,32 @@ PASS — RELEASE READY
 
 No production publish performed.
 
-Next:
-Phase 6 — fast-forward the Week 5 branch to main, verify GitHub Pages deployment, verify production source/cache state, then run the rendered page-by-page browser audit in Work.
+PHASE 6 PRODUCTION / RENDERED AUDIT
+Date: 2026-10-08 UTC (2026-10-07 Pacific)
+Production branch: main
+Live site: https://themakersffl.github.io/the-makers/index.html
+
+RELEASE
+- PR #4, "Publish Makers Week 5 update after Phase 5 QA", merged to main.
+- Week 5 release merge commit: a437296dcd3a1a9ad6d81c35c81e5382cdad3427.
+- Follow-up README correction commit: fc5a5778adaae5e10854f3d9e359b90193600ecd.
+- GitHub Pages build #63 completed successfully for fc5a5778adaae5e10854f3d9e359b90193600ecd.
+- Live runtime loaders use makers-20261007-w5p5.
+
+BROWSER AUDIT
+- Opened and inspected 47 rendered routes: homepage, weekly index, Week 1–17, all 14 core navigation destinations, and all 11 franchise profiles.
+- Week 1–4 render FINAL; Week 5 renders WEDNESDAY PREVIEW with five scheduled matchups; later regular-season and playoff routes render their scheduled/pending states.
+- Week 4 standings, Week 5 projections, Power and playoff odds match the locked Week 5 snapshot.
+- H2H renders 300 regular-season + 38 postseason/placement = 338 games.
+- Moves shows both Oct 6 trade sides as ACQUIRED / SENT; the trade also appears in current team/franchise views.
+- Audited pages rendered route-specific content with no site-origin JavaScript/runtime errors. No horizontal overflow was present at the desktop browser viewport (1348 px).
+- Narrow 390 px / 320 px viewport emulation was unavailable in this browser session and is not claimed as tested.
+- No site-side corrections were needed after release.
+
+PREDICTION COUNT CORRECTION
+- Rendered prediction ledger outcome totals are Makers 15-5 and Yahoo 14-6 through Week 4.
+- Yahoo weekly splits from the visible ledger: Week 1 4-1, Week 2 3-2, Week 3 4-1, Week 4 3-2.
+- This corrects the Phase 5 QA receipt's earlier Yahoo 13-7 cumulative value.
+
+PHASE 6 STATUS
+PASS — RELEASE DEPLOYED AND RENDERED AUDIT COMPLETE.
