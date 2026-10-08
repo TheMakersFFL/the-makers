@@ -1,0 +1,256 @@
+THE MAKERS — WEEK 5 PHASE 3 MODELS QA
+Date: 2026-10-07
+Branch: week5-update-2026-10-07
+Production: NOT PUBLISHED
+
+RESULT: PASS — MODEL / ANALYTICS ROLLOVER COMPLETE
+
+MODEL FILE
+- week5-models.js
+- loader cache key: makers-20261007-w5p3
+- model: Makers Power Blend v1 · Week 5 rollover
+- completed week: 4
+- target week: 5
+
+PREDICTION GRADING THROUGH WEEK 4
+Week 1:
+- Makers 4-1
+- Yahoo 4-1
+
+Week 2:
+- Makers 4-1
+- Yahoo 3-2
+
+Week 3:
+- Makers 3-2
+- Yahoo 3-2
+
+Week 4:
+- Makers 4-1
+- Yahoo 3-2
+
+Season through Week 4:
+- Makers 15-5
+- Yahoo 13-7
+
+Week 4 pick results:
+- Eviscerators over Mustache: Makers correct, Yahoo wrong
+- Criterus over Moose: both wrong
+- TDs over Fungi: both correct
+- Kareem over A Gap: both correct
+- Pump over Revenge: both correct
+
+Week 4 average team-score miss:
+- Makers 21.56 points
+- Yahoo 20.64 points
+
+POWER METHODOLOGY
+No methodology change.
+Existing Makers Power Index:
+- normalized preseason strength
+- blended with live record and live scoring
+- liveWeight = games played / 6, capped at 72%
+- live component = 58% record + 42% scoring
+
+With four completed games:
+- liveWeight = 4/6 = 66.67%
+- preseason weight = 33.33%
+
+WEEK 5 POWER INDEX
+1. Andrew / The Eviscerators — 87.56
+2. Jim / The Moose Knuckles — 83.82
+3. TomD / The Mustache riders — 79.74
+4. Billy / Kareem all over your Hunt — 67.58
+5. Nick / TDs In Your Face — 67.40
+6. Chris / Criterus — 57.16
+7. Tommy / Pump and Go — 47.72
+8. Max / Predacious Fungi — 31.27
+9. Nate / Revenge of the period bloods — 28.74
+10. Adam / The A Gap — 23.08
+
+WEEK-OVER-WEEK POWER MOVEMENT
+- Eviscerators: #2 -> #1; 86.86 -> 87.56
+- Moose: #1 -> #2; 92.02 -> 83.82
+- Mustache: stays #3; 83.42 -> 79.74
+- Kareem: #5 -> #4; 56.70 -> 67.58
+- TDs: #4 -> #5; 61.26 -> 67.40
+- Criterus: stays #6; 48.86 -> 57.16
+- Pump: stays #7; 37.63 -> 47.72
+- Fungi: stays #8; 25.09 -> 31.27
+- Revenge: stays #9; 24.80 -> 28.74
+- A Gap: stays #10; 19.62 -> 23.08
+
+PLAYOFF MODEL
+No methodology change.
+Existing deterministic 24,000-run Makers simulation:
+- starts from actual Week 4 standings / PF state
+- simulates the remaining Weeks 5-14 schedule
+- matchup win probability and simulated scoring use the established normalized preseason-strength model
+- top six make the championship bracket
+- top two receive byes
+- seeds 7-10 enter the Toilet Bowl path
+
+WEEK 5 ODDS
+Andrew / Eviscerators:
+- playoff 97.5%
+- bye 64.5%
+- title 28.4%
+- toilet 0.3%
+- avg seed 2.36
+
+Jim / Moose:
+- playoff 96.2%
+- bye 53.8%
+- title 22.1%
+- toilet 0.4%
+- avg seed 2.76
+
+TomD / Mustache:
+- playoff 93.5%
+- bye 37.1%
+- title 16.5%
+- toilet 0.9%
+- avg seed 3.37
+
+Billy / Kareem:
+- playoff 84.1%
+- bye 18.0%
+- title 8.8%
+- toilet 2.9%
+- avg seed 4.48
+
+Nick / TDs:
+- playoff 79.4%
+- bye 13.6%
+- title 11.7%
+- toilet 3.0%
+- avg seed 4.79
+
+Chris / Criterus:
+- playoff 70.3%
+- bye 8.2%
+- title 7.5%
+- toilet 5.2%
+- avg seed 5.40
+
+Tommy / Pump:
+- playoff 49.0%
+- bye 4.0%
+- title 3.6%
+- toilet 11.2%
+- avg seed 6.28
+
+Max / Fungi:
+- playoff 13.3%
+- bye 0.4%
+- title 0.6%
+- toilet 24.9%
+- avg seed 8.22
+
+Nate / Revenge:
+- playoff 11.4%
+- bye 0.3%
+- title 0.5%
+- toilet 26.2%
+- avg seed 8.46
+
+Adam / A Gap:
+- playoff 5.4%
+- bye 0.1%
+- title 0.3%
+- toilet 24.9%
+- avg seed 8.88
+
+BIGGEST ODDS MOVES VS WEEK 4
+Up:
+- Criterus playoff +9.5
+- Kareem +7.3
+- Pump +6.0
+- TDs +5.0
+- Eviscerators +2.3
+
+Down:
+- Revenge -10.9
+- Fungi -8.1
+- A Gap -6.5
+- Mustache -2.5
+- Moose -2.0
+
+FORECAST METHODOLOGY
+No methodology change.
+Existing Makers Power Blend v1 forecast:
+- 87% team Yahoo Week 5 projection
+- 13% Week 5 Yahoo league mean
+- plus preseason-board adjustment blended with live points-per-game adjustment
+
+Week 5 Yahoo projection mean:
+101.347
+
+2026 scoring average through Week 4:
+106.3735
+
+With four completed games, forecast live-adjustment weight:
+35%
+
+LOCKED WEEK 5 FORECASTS
+- Moose Knuckles 118.06 over The A Gap 102.13
+  Yahoo: Moose 115.91-105.10
+- TDs In Your Face 115.91 over The Eviscerators 110.75
+  Yahoo: TDs 120.43-107.38
+- Predacious Fungi 96.88 over Pump and Go 95.27
+  Yahoo: Fungi 101.68-94.42
+- Criterus 93.64 over Revenge 75.72
+  Yahoo: Criterus 88.98-73.57
+- Mustache riders 106.32 over Kareem 98.79
+  Yahoo: Mustache 105.78-100.22
+
+Makers and Yahoo agree on all five Week 5 winners.
+
+Important factual lineup state preserved in forecasts:
+- Criterus remains at the real empty DEF state from the Wednesday collector.
+- Revenge remains at the real empty TE state from the Wednesday collector.
+- No replacement starter is invented by the model.
+
+FRANCHISE STOCK MARKET
+No new pricing system was introduced.
+The Makers Stock Market continues to measure movement from the locked preseason Makers draft board to current live Power rank, with live Power and playoff odds coming from the same model snapshot.
+
+Stock movement:
+- Mustache: preseason #7 -> live #3, +4
+- Kareem: preseason #8 -> live #4, +4
+- TDs: preseason #9 -> live #5, +4
+- Fungi: preseason #10 -> live #8, +2
+- Eviscerators: preseason #2 -> live #1, +1
+- Moose: preseason #3 -> live #2, +1
+- Pump: preseason #4 -> live #7, -3
+- Revenge: preseason #5 -> live #9, -4
+- A Gap: preseason #6 -> live #10, -4
+- Criterus: preseason #1 -> live #6, -5
+
+Biggest stock risers:
+Mustache / Kareem / TDs (+4)
+
+Biggest stock faller:
+Criterus (-5)
+
+Hottest ticker:
+The Eviscerators — Power 87.56
+
+RUNTIME LOCK QA
+week5-models.js loads after week4-models.js and overrides the prior weekly lock.
+
+Verified:
+- MAKERS_2026.week = 5
+- currentModelSnapshot.week = 5
+- MAKERS_WEEK5_MODEL_LOCK_ACTIVE = true
+- MAKERS_WEEK4_MODEL_LOCK_ACTIVE = false
+- MAKERS_ENGINE.powerMetrics() exactly equals the stored Week 5 Power board
+- MAKERS_ENGINE.simulate() exactly equals the stored Week 5 odds board
+- Week 5 prediction snapshot contains all five locked forecasts
+- Franchise Stock Market reads the same locked Power and Odds state
+
+PHASE 3 STATUS
+PASS — COMPLETE
+No production publish performed.
+Phase 4 remains Week 4 recap + Week 5 editorial.
+Phase 5 remains full source/runtime/cache/release QA.

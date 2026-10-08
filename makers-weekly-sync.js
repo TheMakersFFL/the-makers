@@ -36,7 +36,7 @@
   const managerName=x=>x?.manager||TEAM_MANAGER[teamName(x)]||'';
   const pairKey=(week,a,b)=>`${Number(week)||0}|${[canonical(a),canonical(b)].sort().join('|')}`;
   const txText=v=>String(v??'').replace(/[\uE000-\uF8FF]/g,'').replace(/\s+/g,' ').trim();
-  const txKey=x=>[x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??''].map(txText).join('|').toLowerCase();
+  const txKey=x=>[x.manager||'',x.team||'',x.add||'',x.drop||'',x.faab??'',x.time||''].map(txText).join('|').toLowerCase();
   const seasonTransactions=new Map();
   let transactionSequence=0;
   const isWednesday=I=>String(I?.workflow||'').toLowerCase()==='wednesday-combined'||String(I?.mode||'').toUpperCase()==='WEDNESDAY';
@@ -147,7 +147,7 @@
     }
 
     if(Array.isArray(data.rosters)&&data.rosters.length){
-      Y.liveRosters=data.rosters.map(r=>({team:teamName(r),manager:managerName(r),players:Array.isArray(r.players)?r.players:[],capturedAt:I.capturedAt||''})).filter(r=>r.team);
+      Y.liveRosters=data.rosters.map(r=>({team:teamName(r),manager:managerName(r),players:Array.isArray(r.players)?r.players:[],emptySlots:Array.isArray(r.emptySlots)?r.emptySlots:[],starterCount:num(r.starterCount),starterProjectedPoints:num(r.starterProjectedPoints),capturedAt:I.capturedAt||''})).filter(r=>r.team);
     }
 
     if(Array.isArray(data.completedLineups)&&data.completedLineups.length){
@@ -162,7 +162,9 @@
       const add=txText(x.add||(Array.isArray(x.added)?x.added.map(p=>p?.name||p).filter(Boolean).join(', '):''));
       const drop=txText(x.drop||(Array.isArray(x.dropped)?x.dropped.map(p=>p?.name||p).filter(Boolean).join(', '):''));
       const faab=x.faab==null?(x.faabSpent==null?null:num(x.faabSpent)):num(x.faab);
-      return {type:txText(x.type||'MOVE').toUpperCase(),manager:txText(x.manager||TEAM_MANAGER[canonical(x.team)]||''),team:canonical(txText(x.team||MANAGER_TEAM[x.manager]||'')),add,drop,faab,description:txText(x.description||[add&&`Added ${add}`,drop&&`Dropped ${drop}`,faab!=null&&`${faab} FAAB`].filter(Boolean).join(' · ')||'Completed transaction'),time:txText(x.time||x.timestamp||x.date||'')};
+      const type=txText(x.type||'MOVE').toUpperCase();
+      const fallbackDescription=type==='TRADE'?[add&&`Acquired ${add}`,drop&&`Sent ${drop}`].filter(Boolean).join(' · '):[add&&`Added ${add}`,drop&&`Dropped ${drop}`,faab!=null&&`${faab} FAAB`].filter(Boolean).join(' · ');
+      return {type,manager:txText(x.manager||TEAM_MANAGER[canonical(x.team)]||''),team:canonical(txText(x.team||MANAGER_TEAM[x.manager]||'')),add,drop,faab,description:txText(x.description||fallbackDescription||'Completed transaction'),time:txText(x.time||x.timestamp||x.date||'')};
     });
     tx.forEach((x,order)=>{const key=txKey(x);if(key)seasonTransactions.set(key,{...x,_captureIndex:transactionSequence,_captureOrder:order})});
     transactionSequence++;
@@ -177,7 +179,9 @@
   const seasonTx=[...seasonTransactions.values()].sort((a,b)=>b._captureIndex-a._captureIndex||a._captureOrder-b._captureOrder).map(({_captureIndex,_captureOrder,...x})=>x);
   if(seasonTx.length)Y.recentTransactions=seasonTx;
   const moveCounts=Object.fromEntries(Object.values(TEAM_MANAGER).map(m=>[m,0]));
-  seasonTx.forEach(x=>{const m=x.manager||TEAM_MANAGER[x.team]||'';if(m)moveCounts[m]=(moveCounts[m]||0)+1});
+  const tradeCounts=Object.fromEntries(Object.values(TEAM_MANAGER).map(m=>[m,0]));
+  seasonTx.forEach(x=>{const m=x.manager||TEAM_MANAGER[x.team]||'';if(!m)return;moveCounts[m]=(moveCounts[m]||0)+1;if(String(x.type||'').toUpperCase()==='TRADE')tradeCounts[m]=(tradeCounts[m]||0)+1});
   Y.transactionCounts2026=moveCounts;
-  Y.standings=(Y.standings||[]).map(s=>({...s,moves:moveCounts[s.manager]??s.moves??0}));
+  Y.tradeCounts2026=tradeCounts;
+  Y.standings=(Y.standings||[]).map(s=>({...s,moves:moveCounts[s.manager]??s.moves??0,trades:tradeCounts[s.manager]??s.trades??0}));
 })();

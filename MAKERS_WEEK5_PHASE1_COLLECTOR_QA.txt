@@ -1,0 +1,134 @@
+MAKERS WEEK 5 — PHASE 1 COLLECTOR / BASELINE QA
+Date: 2026-10-07
+Source export: MAKERS_2026_W05_WEDNESDAY.json
+Working branch: week5-update-2026-10-07
+Production branch: main
+Production baseline SHA at branch creation: c600d15a5cd345e7e67f652d00d221b63af2f91f
+Publish status: NOT PUBLISHED
+
+COLLECTOR METADATA
+- schema: makers-weekly-collector/v2
+- export collectorVersion: 1.3.2
+- league: The Makers (471058)
+- season: 2026
+- workflow: wednesday-combined
+- targetWeek: 5
+- completedWeek: 4
+- capturedAt: 2026-10-07T16:14:55.991Z
+
+CORE VALIDATION
+PASS
+- standings: 10/10
+- Week 4 finals: 5/5, 10 unique teams
+- completed Week 4 lineups: 10/10
+- completed Week 4 starter scores: 90/90
+- score reconciliation: 10/10; every completed-lineup starter total equals Yahoo exactly
+- Week 5 matchups: 5/5 scheduled and projected
+- available players: 100/100 (QB15 RB25 WR25 TE15 K10 DEF10), all 100 projected
+- FAAB/waiver state: 10 teams
+- current rosters captured: 10/10
+- Week 5 Yahoo team projection reconciliation: 10/10; every populated starter-projection sum equals the Yahoo matchup projection exactly
+- standings arithmetic: 20 wins / 20 losses; total PF = total PA = 4254.94
+
+FALSE CURRENT-ROSTER CHECK — ROOT CAUSE
+The failed Current rosters check is legitimate roster-shape validation, not a missing capture.
+
+Two Week 5 teams have real empty starter slots:
+1. Criterus / Chris
+   - 8 populated starters
+   - raw Yahoo roster shows DEF = (Empty)
+   - 8 populated starters project to 88.98, exactly matching Yahoo's team projection
+2. Revenge of the period bloods / Nate
+   - 8 populated starters
+   - raw Yahoo roster shows TE = (Empty)
+   - Travis Kelce is on the bench during Kansas City's bye
+   - 8 populated starters project to 73.57, exactly matching Yahoo's team projection
+
+The collector validator requires exactly 9 populated starters for every team.
+Its display still says 10/10 with starter projections because it counts teams with >=8 projected starters.
+Therefore validation.ok=false is expected from the current rule.
+
+ROSTER PARSER REPAIRS REQUIRED BEFORE PHASE 2 IMPORT
+The structured Yahoo roster parser substituted game-status text for three WR names. Raw Yahoo captures identify them unambiguously.
+
+Current Week 5:
+1. The Moose Knuckles / Jim
+   structured: Sun 1:05 pm vs
+   correct: Ladd McConkey, LAC WR, BN, Q, projected 7.42
+2. TDs In Your Face / Nick
+   structured: Sun 1:05 pm @
+   correct: Jaylen Waddle, DEN WR, BN, projected 10.45
+3. Pump and Go / Tommy
+   structured: Sun 10:00 am @
+   correct: Jordan Addison, MIN WR, W/R/T, projected 7.55
+4. Revenge of the period bloods / Nate
+   J.K. Dobbins structured position = K
+   correct position = RB; current slot W/R/T; projected 7.70
+
+Completed Week 4:
+1. The Moose Knuckles
+   structured: Final L 23-30 @
+   correct: Ladd McConkey, LAC WR, BN, Q
+2. TDs In Your Face
+   structured: Final L 14-24 @
+   correct: Jaylen Waddle, DEN WR, BN
+3. Pump and Go
+   structured: Final W 15-10 vs
+   correct: Jordan Addison, MIN WR, W/R/T
+4. Revenge of the period bloods
+   J.K. Dobbins position must be normalized from K to RB.
+
+CURRENT-WEEK POINTS PARSER ISSUE
+The current Week 5 roster payload contains many numeric player "points" values that are actually Yahoo bye/week metadata, even though all Week 5 matchups are still SCHEDULED with null team scores.
+Phase 2 must normalize current Week 5 player points to null and current starter/bench point totals to zero while preserving projections.
+This prevents pregame fake points from leaking into roster views or analytics.
+
+TRADE COMPLETENESS GAP
+The structured transaction array contains 26 rows and validation reports 26/26 structured, but both Oct 6 trade rows have empty added/dropped/player arrays.
+
+Raw Yahoo transaction capture:
+- Oct 6, 4:45 pm
+- Christian Watson -> TDs In Your Face / Nick
+- Quinshon Judkins -> The Mustache riders / TomD
+
+Current structured rows:
+- TDs In Your Face: type TRADE, but added=[], dropped=[], players=[]
+- The Mustache riders: type TRADE, but added=[], dropped=[], players=[]
+
+Current production collector v1.3.4 recognizes "Traded" as a trade type, but its player-action extractor does not recognize "Traded to", so the trade is typed correctly but loses the actual players.
+The green 26/26 Transactions check therefore means the rows satisfy the current structural rule, not that trade assets were captured.
+
+Phase 2 must reconstruct the trade as two team-side records:
+- TDs In Your Face / Nick acquired Christian Watson and sent Quinshon Judkins.
+- The Mustache riders / TomD acquired Quinshon Judkins and sent Christian Watson.
+
+COLLECTOR VERSION CHECK
+The uploaded export was produced by collector v1.3.2.
+Current GitHub main has Makers Weekly Collector v1.3.4.
+The installed collector used for this export is behind production source.
+However, current v1.3.4 still has the "Traded to" asset-extraction defect noted above, so simply updating the userscript would not repair this export's trade rows.
+
+CURRENT PRODUCTION BASELINE
+- main SHA: c600d15a5cd345e7e67f652d00d221b63af2f91f
+- latest commit at branch creation: Refresh franchise page asset cache
+- current production state is the completed Week 4 release plus its post-release cache refresh
+- current Makers Weekly Collector source on main is v1.3.4
+- Week 5 branch was created from the exact current main SHA
+
+PHASE 2 CARRY-FORWARD REQUIREMENTS
+- Normalize the seven roster/name/position defects listed above.
+- Preserve Criterus DEF as genuinely empty; do not invent a defense.
+- Preserve Revenge TE as genuinely empty; do not invent a tight end.
+- Normalize all current Week 5 player points to null / roster point totals to zero because Week 5 is still scheduled.
+- Import all five Week 4 finals and all 10 standings rows.
+- Import all 10 completed Week 4 lineups and all 10 current Week 5 rosters.
+- Reconstruct the Oct 6 Christian Watson / Quinshon Judkins trade from the raw capture.
+- Import the remaining structured add/drop/waiver rows without duplication.
+- Import all FAAB/priority data and the full 100-player available pool.
+- Reconcile every Week 5 populated-starter projection to Yahoo after normalization.
+
+PHASE 1 STATUS
+PASS WITH KNOWN REPAIRS — source data is sufficient for the Week 5 Makers update.
+The false roster check is explained by two real empty starter slots.
+The structured export has recoverable parser defects; raw Yahoo captures contain the missing/correct information.
+No production publish performed.

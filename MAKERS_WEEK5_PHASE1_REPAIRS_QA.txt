@@ -1,0 +1,105 @@
+MAKERS WEEK 5 — PHASE 1 REPAIRS QA
+Date: 2026-10-07
+Branch: week5-update-2026-10-07
+Production: NOT PUBLISHED
+
+COLLECTOR UPDATED
+Makers Weekly Collector bumped from v1.3.4 to v1.3.5 on the Week 5 working branch.
+
+REPAIR 1 — LEGITIMATE EMPTY STARTER SLOTS
+Problem:
+The validator required exactly 9 populated starters for every current roster.
+The Week 5 Yahoo source has two legitimate empty starter positions:
+- Criterus / Chris: DEF is explicitly (Empty)
+- Revenge of the period bloods / Nate: TE is explicitly (Empty)
+
+Fix:
+- Current roster parsing now records explicit Yahoo empty starter slots in emptySlots.
+- Current roster validation now expects 9 minus the explicit empty-slot count.
+- A roster with 8 populated starters + 1 explicit Yahoo empty starter can pass.
+- Validation also requires the populated starter projections to reconcile to Yahoo's official matchup projection.
+- Current-roster detail now reports projected teams, projection reconciliation, and number of explicit empty starter slots.
+
+Expected Week 5 result:
+- Criterus: 8 populated starters + empty DEF, 88.98 projection
+- Revenge: 8 populated starters + empty TE, 73.57 projection
+Both are valid current roster states and should no longer create a false red Current rosters check.
+
+REPAIR 2 — PLAYER-NAME EXTRACTION
+Problem:
+Yahoo game-status links could be selected as player names, producing values such as:
+- Sun 1:05 pm vs
+- Sun 1:05 pm @
+- Sun 10:00 am @
+
+Fix:
+- Roster parsing now prioritizes the text immediately preceding Yahoo's authoritative TEAM - POS metadata.
+- Schedule/status strings beginning Sun/Mon/Tue/Wed/Thu/Fri/Sat/Final/Bye are rejected as names before anchor fallback.
+
+Sample tests using the actual Week 5 raw layouts returned:
+- Ladd McConkey (Q), LAC WR
+- Jaylen Waddle, DEN WR
+- Jordan Addison, MIN WR
+
+REPAIR 3 — PLAYER POSITION EXTRACTION
+Problem:
+Position inference previously searched the whole row and could pick unrelated slot/header text.
+That caused J.K. Dobbins to be exported as K instead of RB.
+
+Fix:
+- Position parsing now gives priority to Yahoo's TEAM - POS metadata.
+- D/ST is normalized to DEF.
+
+Sample test:
+J.K. Dobbins / DEN - RB -> RB.
+
+REPAIR 4 — CURRENT-WEEK FAKE POINTS
+Problem:
+On current Week 5 roster pages, Yahoo row text exposed numeric metadata that the collector could treat as player points even though Week 5 had not started.
+
+Fix:
+- parseRoot now tells parseRoster whether the page is a current roster or a completed roster.
+- Current roster player points are forced to null.
+- Current starterPoints / benchPoints therefore export as 0.
+- Projections, bye, start percentage, rostered percentage and opponent remain intact.
+- Completed Week 4 lineups continue to retain actual fantasy points for score reconciliation.
+
+REPAIR 5 — TRADED TO ASSET EXTRACTION
+Problem:
+The Oct 6 trade rows were recognized as type TRADE, but Yahoo's "Traded to" action was not parsed as a player action, leaving added/dropped/player arrays empty.
+
+Fix:
+- Added trade-specific Yahoo player extraction.
+- "trade" and "traded" both identify trade rows.
+- Each trade-side row records its incoming player(s).
+- Same-timestamp trade sides are paired to derive outgoing player(s).
+- Transaction validation no longer considers an empty TRADE row fully structured merely because type=TRADE.
+
+Actual Week 5 trade sample tests:
+TDs In Your Face / Nick:
+- acquired Christian Watson, GB WR
+- sent Quinshon Judkins, CLE RB
+
+The Mustache riders / TomD:
+- acquired Quinshon Judkins, CLE RB
+- sent Christian Watson, GB WR
+
+REPAIR 6 — SYNTAX / SOURCE QA
+- Updated collector compiles successfully with JavaScript syntax validation.
+- Active parseRoot uses the repaired current/completed roster mode flags.
+- Active transaction path uses the repaired V1.3.5 trade-aware parser.
+- No production publish occurred.
+
+FILES
+Updated:
+- Makers_Weekly_Collector.user.js
+
+Added archive:
+- Makers_Weekly_Collector_v1.3.5.txt
+
+PHASE 1 REPAIR STATUS
+PASS — COLLECTOR REPAIRS COMPLETE ON WORKING BRANCH.
+
+Important:
+The already-exported MAKERS_2026_W05_WEDNESDAY.json remains a v1.3.2 snapshot and is not mutated by these source repairs.
+Phase 2 can safely normalize that existing export using the raw Yahoo captures already embedded in it, so a new collector run is not required to continue the Week 5 site update.
