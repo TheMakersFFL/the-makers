@@ -133,7 +133,7 @@
           if(existing?.locked&&prior)return prior;
           return {teamA:row[0],teamB:row[1],meA:makersProjection(row[0],ya,meanYahoo,completed,data.standings),meB:makersProjection(row[1],yb,meanYahoo,completed,data.standings),yahooA:ya??0,yahooB:yb??0};
         }).filter(Boolean);
-        Y.predictionSnapshots[String(target)]={week:target,capturedAt:(existing?.locked?existing.capturedAt:(I.capturedAt||'')),phase:(existing?.locked&&existing.phase?existing.phase:'WEDNESDAY FORECAST'),source:(existing?.locked&&existing.source?existing.source:'Wednesday Yahoo collector + Makers Power Blend v1'),model:(existing?.locked&&existing.model?existing.model:'Makers Power Blend v1'),locked:true,matchups:forecast};
+        Y.predictionSnapshots[String(target)]={week:target,capturedAt:(existing?.locked?existing.capturedAt:(I.capturedAt||'')),phase:(existing?.locked&&existing.phase?existing.phase:'WEDNESDAY FORECAST'),source:(existing?.locked&&existing.source?existing.source:'Wednesday Yahoo collector + Makers Power Blend v1'),model:(existing?.locked&&existing.model?existing.model:'Makers Power Blend v1'),locked:existing?.locked===true,matchups:forecast};
       }
     }
     if(isLatest&&upcoming.length){
