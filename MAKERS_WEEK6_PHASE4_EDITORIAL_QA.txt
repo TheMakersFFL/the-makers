@@ -1,0 +1,58 @@
+THE MAKERS — WEEK 6 PHASE 4 EDITORIAL / CONTENT QA
+Date: 2026-10-14
+Production: main UNCHANGED, no site deployment in this phase
+Branch: week6-update-2026-10-14
+Status: PASS — EDITORIAL WRITTEN / INTEGRATED ON WORKING BRANCH; PREDICTION-ARCHIVE ISSUE FLAGGED FOR PHASE 5
+
+FILES
+- ADDED week6-editorial.js — Week 5 permanent full recap + Week 6 Wednesday preview, Game of the Week, all five game breakdowns, awards, waiver summary, market/Power/Odds stakes.
+- UPDATED makers-weekly-loader.js — loads week6-editorial.js AFTER the previous Week 5 consistency guard and AFTER week6-models.js, before league analytics/live render; internal cache makers-20261014-w6p4.
+- Kept original week5-editorial.js and week4-editorial.js, the locked Week 5 and Week 6 Makers/Yahoo forecast receipts, prior transaction records and all other historical model files unchanged.
+
+WEEK 5 FINAL RECAP
+- New headline: Week 5: Nick Drops 185, Adam Finally Wins, Nate Explodes, and TomD Takes 4-1
+- Longform recap length: 6,290 characters, 5 original game recaps, 5 editorial awards, full standings, title, Toilet, Power, trade and prediction-grade context.
+- Y.weekly['5'].status = FINAL (not stale Wednesday preview).
+- TDs In Your Face / Nick 185.20 def. The Eviscerators / Andrew 89.06, the week high and 96.14-point biggest margin. Nick's Week 5 starters: Gibbs 33.70, Warren 32.30, Burrow 29.10, newly traded Christian Watson 28.80.
+- The A Gap / Adam 125.56 def. The Moose Knuckles / Jim 120.24, the 5.32-point closest game. Adam first win after 0-4; Drake Maye 43.96; Puka Nacua 25.70; Jim's Jayden Daniels 32.26 on bench.
+- Revenge of the period bloods / Nate 155.80 def. Criterus / Chris 120.06. Nate's Brissett 27.78, Parker Washington 26.62; Makers and Yahoo Week 5 forecast picks missed.
+- Predacious Fungi / Max 138.30 def. Pump and Go / Tommy 70.80. Stafford 30.32, Isaiah Likely 24.40; Fungi margin 67.50.
+- The Mustache riders / TomD 91.66 def. Kareem all over your Hunt / Billy 70.74. Goff 31.94; TomD is now the lone 4-1 manager and Power #1.
+- Trade Week 5 first-game receipt: Nick received Watson and got 28.80; TomD received Judkins and got 5.00. Original Week 4 trade commentary and Week 5 locked forecasts preserved.
+- Week 5 predictions graded from original October 7 receipt: Makers 3-2; Yahoo 3-2; respective score MAE/team 33.17 and 32.50. Cumulative model ledger 18-7 vs 16-9.
+
+WEEK 6 WEDNESDAY PREVIEW
+- New headline: Week 6: TomD Owns the Top, Nick Drops 185, and Jim Gets His Chance to Answer
+- Longform Week 6 preview length: 8,058 characters; 5 dedicated opponent breakdowns, Game of the Week, waiver notes, title/Toilet stakes, Power/Stock storylines, frozen ME/Yahoo projected scores, and roster bye/empty-slot integrity.
+- Y.weekly['6'].status = WEDNESDAY PREVIEW, no Week 6 actual scores fabricated.
+- Game of the Week: The Moose Knuckles vs. The Mustache riders; No. 3 Power Jim (3-2) vs No. 1 TomD (4-1); Makers 121.42–110.07 Jim; Yahoo 120.15–110.79 Jim.
+- TDs In Your Face vs Pump and Go: Makers Nick 106.05–72.34; Yahoo Nick 106.71–69.80. Pump has two real empty starting RB/WR slots and Chase Brown starting on bye with projected null; no invented fixes.
+- Predacious Fungi vs Criterus: Makers Max 103.61–102.72, gap 0.89, closest Week 6 Makers projection; Yahoo Max 108.31–100.07.
+- Revenge of the period bloods vs The A Gap: Makers Nate 93.60–84.03; Yahoo Nate 93.16–84.11. Adam's current starting TE Sam LaPorta on bye with null projection; newly added Pat Freiermuth is captured on bench.
+- The Eviscerators vs Kareem: Makers Andrew 112.00–97.75; Yahoo Andrew 110.27–100.22. Andrew's corrected $11 combined Worthy/Myers waiver spend and $0 Rodgers pickup are described as Wednesday receipts; not presumptive final starting lineup.
+- Wednesday FAAB: 25 unique transactions and $37 in spending, including Max's single $3 BAL DEF Ravens waiver (not duplicated 'Baltimore'), Tommy's $10, Andrew's $11, TomD's $4, Nick's $4 Wednesday Chiefs DEF and Adam's $3.
+- Stock remains a rank movement (TomD +6, Nick +5, Chris -5), not a dollar-pricing system.
+- Highest Toilet risks at Wednesday snapshot: Nate 24.0%, Max 23.4%, Adam 23.3%.
+- No attributed commissioner-authored content was fabricated. Older commissioner material, if any, was left untouched.
+
+STRUCTURED RUNTIME QA
+20/20 assertions PASS while executing the model, prior editorials, new editorial and weekly consistency modules:
+- Week 6 current, completed Week 5, Week 5 FINAL with all five real results.
+- Complete Week 5 results article and Week 6 Wednesday article, Game of the Week and all 5 awards.
+- 5 archived Week 5 result breakdowns matching actual pairings; 5 current Week 6 previews matching the frozen model schedule.
+- Original locked Week 5 October 7 forecast scores and locked Week 6 October 14 forecasts unchanged.
+- 10-team Week 6 model remains active, no fabricated scores, correct Yahoo projection rows.
+- Original Week 4 recap and prior Week 5 editorial object preserved.
+- Trade and waiver notes are correctly scoped to their respective weeks.
+- Loader script order and cache key correct.
+- October 14 lastUpdated snapshot set.
+
+GENERATED-HTML PAGE SMOKE TEST
+Executed live.js in a mocked JS DOM environment on the staged branch:
+PASS: Home, Weekly hub, Week 5 full results, Week 6 full preview, Press Room, War Room/Stock, Power, Odds. These pages all returned nonempty full HTML with a footer, expected headline/score/odds context, and no runtime exceptions in the harness.
+PREDICTIONS PAGE: HTML renders and contains model columns; the expectation that it show 18-7/16-9 currently FAILS. It instead reports 15-5/13-7 on 20 completed games. Root cause confirmed by inspecting Y.predictionSnapshots: Weeks 1,2,4,5,6 exist, but the original Week 3 snapshot is absent. The correctly calculated Week 3 results (Makers 3-2/Yahoo 3-2) are present in the prior aggregated model-grade history, but the original Week 3 five per-matchup predicted scores are not in the currently available predictionSnapshots ledger. This is an existing ARCHIVE GAP, not a defect introduced by Phase 4. DO NOT fabricate an original Week 3 forecast.
+Required Phase 5 remediation: recover the authentic locked September 24 Week 3 Makers/Yahoo matchup forecast receipt from historical collector, GitHub state, or verified user export. Reinsert only if its exact captured projections and timestamp are recovered, then verify Predictions per-game ledger grades 25/25, rather than changing old scores or artificially adding totals. If unavailable, present a clearly labeled 20-game receipt-based grade with a separate five-game historical aggregate and disclose the source gap.
+This is not a live-browser rendered page-by-page audit; no production main deployment in this phase.
+
+NEXT
+Phase 5: full navigation/section and source consistency audit; diagnose and repair missing Week 3 prediction receipt without fabricating history; update HTML cache keys, merge/deploy only after full release gate, and then perform real rendered-browser production QA in Phase 6.
