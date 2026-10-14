@@ -1,0 +1,71 @@
+MAKERS WEEK 6 — PHASE 2 FACTUAL DATA / RUNTIME QA
+Date: 2026-10-14
+Source export: MAKERS_2026_W06_WEDNESDAY.json (private, captured 2026-10-14T16:19:57.354Z)
+League: The Makers, Yahoo 471058, 2026 season
+Branch: week6-update-2026-10-14
+Production main baseline: 68c6422b87546b3f667ca3046aadc0b0f8cf5675
+STATUS: COMPLETE / PASS ON WORKING BRANCH; NOT DEPLOYED TO main.
+
+PHASE 2 FILES ADDED
+- week6-import.js: sanitized Yahoo import and normalized QA provenance, 10 standings, five Week 5 finals, five Week 6 pair projections and FAAB.
+- week6-rosters.js: all 10 current Week 6 rosters (156 players), all actual points null, legitimate empty/bye slots retained.
+- week6-completed.js: all 10 Week 5 completed lineups (158 players, 90/90 starter scores).
+- week6-transactions.js: 25 UNIQUE, corrected structured transaction rows.
+- week6-available.js: 100-player current free-agent pool, 15 QB / 25 RB / 25 WR / 15 TE / 10 K / 10 DEF.
+
+PHASE 2 FILES UPDATED
+- makers-weekly-loader.js: loads all five Week 6 payload modules after Week 5 payloads and BEFORE makers-weekly-sync.js; staged cache key makers-20261014-w6p2.
+- makers-weekly-sync.js: a new Week 6 preliminary Makers forecast is NOT locked by the factual import. It remains provisional (locked=false) until Phase 3 calculates and freezes the approved model predictions. Existing locked forecast snapshots, including October 7 Week 5 Makers/Yahoo scores, remain unchanged.
+- week5-phase5-consistency.js: previously hard-coded Week 5 as WEDNESDAY PREVIEW after weekly sync. It now does so only if Week 5 is the CURRENT week. With Week 6 current, completed Week 5 stays FINAL.
+
+WEEK 5 FINAL RESULTS — RECONCILED EXACTLY
+- TDs In Your Face 185.20 def. The Eviscerators 89.06
+- The A Gap 125.56 def. The Moose Knuckles 120.24
+- The Mustache riders 91.66 def. Kareem all over your Hunt 70.74
+- Revenge of the period bloods 155.80 def. Criterus 120.06
+- Predacious Fungi 138.30 def. Pump and Go 70.80
+Every one of 10 completed lineup starter-point sums matches the relevant final matchup score, tolerance <= 0.025.
+Standings: 10 teams; 25 wins, 25 losses, PF=PA=5422.36. Week 5 total = 1167.42, consistent with the prior Week 4 Wednesday PF/PA 4254.94.
+
+WEEK 6 OFFICIAL YAHOO PROJECTIONS — 10/10 RECONCILED
+- The Moose Knuckles 120.15 vs The Mustache riders 110.79
+- The Eviscerators 110.27 vs Kareem all over your Hunt 100.22
+- TDs In Your Face 106.71 vs Pump and Go 69.80
+- Predacious Fungi 108.31 vs Criterus 100.07
+- Revenge of the period bloods 93.16 vs The A Gap 84.11
+No Week 6 final scores were invented. All 10 current roster starter-projection sums equal Yahoo official team projections within 0.025.
+
+SOURCE DEFECT CORRECTIONS
+- Pump and Go Week 6 Chase Brown (CIN RB): projected 100 was a BYE rostered-percentage parse, normalized to null, without changing starter slot or identity.
+- Pump and Go Week 6 Jordan Addison (MIN WR): projected 76 was a BYE rostered-percentage parse, normalized to null; remained on bench.
+- Pump and Go has two TRUE, explicit empty current starter slots (RB and WR), seven populated starters and a projected total 69.80. No invented player substitutions.
+- TDs In Your Face starter Will Reichard (K), and The A Gap starter Sam LaPorta (TE), legitimately have projected=null on bye. No invented projection.
+- All current Week 6 actual player scores are null; all current actual team point totals zero.
+- Retained original Week 5 actual fantasy points unchanged for completed lineups.
+
+DUPLICATE WAIVER / FAAB REPAIR
+- Source had two representations of the same Predacious Fungi / Max $3 Oct 14 12:40 am BAL DEF waiver: 'Ravens' and 'Baltimore', both dropping Tyler Shough.
+- Preserved the captured Yahoo 'Ravens' entry, removed the alias duplicate.
+- Week 6 source transaction records now 25 unique, not erroneous 26. Total bid spend = $37, correctly matching the six affected owners' FAAB decrements.
+- Team/manager identities, timestamps, add/drop semantics and historic Oct 6 Watson/Judkins trade preserved.
+- Complete weekly-loader runtime test showed 121 cumulative deduplicated transaction records and two correct historical TRADE-side rows. A separate reduced-load test intentionally excluded older weekly transaction modules, therefore cannot be used as a complete cumulative count.
+
+COLLECTOR SOURCE REPAIRS FOR NEXT WEEK
+- Makers_Weekly_Collector.user.js bumped to v1.3.6 on working branch.
+- Added a stored v1.3.6 source archive and updated MAKERS_WEEKLY_COLLECTOR_GUIDE.md.
+- Compact Yahoo BYE row with roster percentage, e.g. 6Bye100%, cannot be interpreted as a numeric projected player score.
+- Defense alias deduplication uses NFL team identity (BAL DEF), avoiding Ravens/Baltimore dual counting of a single waiver.
+- Validator accepts genuinely unprojected bye starters when official roster/team projected totals reconcile; does not require all 9 starters to have numeric projections.
+- Collector JavaScript syntax compiled successfully; existing uploaded v1.3.5 export remains intact. There is NO need to recollect Week 6.
+- v1.3.6 is not yet on production main and is not installed in user's Tampermonkey browser. Installation/update will be needed after production release.
+
+QA EVIDENCE
+- Normalization tool parsed the source collector metadata and source arrays, checked 10 lineups against five finals, checked 10 current Yahoo starter projections, confirmed emptySlots and two bye nulls, deduped Ravens and checked $37 unique FAAB outflow.
+- All five Week 6 compact modules compiled and executed, producing 10 rosters, 10 completed lineups, 25 transactions, 100 available players.
+- Full Week 6 site import chain (prior snapshots plus Week 6 import + sync + prior model + Week 5 guard) passed 22 functional assertions before the provisional forecast-lock refinement; transaction history was 121 records and two historic trades.
+- After the forecast-lock refinement, reduced-chain regression passed 17 of 18 assertions; the sole count assertion was inapplicable because early historical imports were deliberately omitted. All factual, model-integrity, bye, roster and projection checks passed.
+- Current Week 6 status: scheduled; completed Week 5 status: FINAL; prior locked Week 5 forecast preserved; final Week 6 Makers forecast remains UNLOCKED pending Phase 3.
+- All user Yahoo page captures and raw signed-in HTML omitted from public repository. Source validation (ok=false) retained separately from explicitly normalized import validation (ok=true).
+
+NEXT
+Phase 3: calculate and freeze Week 6 Makers Power, playoff/title/bye/toilet odds, stock and five match forecasts; grade original locked Week 5 prediction picks against the official Week 5 finals. Keep production main untouched until release phase.
