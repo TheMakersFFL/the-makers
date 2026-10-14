@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  const bust='makers-20261014-w6p4';
+  const bust='makers-20261014-w6p5';
   const load=file=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
@@ -32,6 +32,7 @@
       await load('week6-transactions.js');
       await load('week6-available.js');
       await load('makers-weekly-sync.js');
+      await load('week3-prediction-lock.js');
       await load('makers-engine.js');
       await load('week4-models.js');
       await load('week5-models.js');
