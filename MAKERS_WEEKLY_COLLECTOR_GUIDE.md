@@ -1,4 +1,4 @@
-# Makers Weekly Collector v1.3.4 — Wednesday workflow
+# Makers Weekly Collector v1.3.5 — Wednesday workflow
 
 The Makers collector uses the hardened Yahoo parsing/validation engine developed for Mis.Exp while remaining isolated to The Makers.
 
@@ -72,7 +72,7 @@ The previous week's recap and the upcoming week's preview are published together
 
 ## Files
 - `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
-- `Makers_Weekly_Collector_v1.3.4.txt` — identical versioned copy
+- `Makers_Weekly_Collector_v1.3.5.txt` — identical versioned copy
 
 The collector is natively Wednesday-only: one mode, one validation path, one export.
 
@@ -83,3 +83,20 @@ The collector is natively Wednesday-only: one mode, one validation path, one exp
 - Validation always requires the full completed-week + current-roster + upcoming-preview dataset.
 - The v1.3.2 Billy team-name alias fix remains preserved.
 - v1.3.4 removes the hard-coded Week 2 startup default and self-advances the suggested Upcoming week.
+
+## Install or update v1.3.5 in Chrome / Tampermonkey
+
+The code in GitHub is **v1.3.5**, but Chrome stores its own installed userscript copy. Updating GitHub does **not** update the Tampermonkey dashboard until Tampermonkey installs or refreshes the script.
+
+1. Open the canonical userscript URL: https://raw.githubusercontent.com/TheMakersFFL/the-makers/main/Makers_Weekly_Collector.user.js
+2. In Tampermonkey, choose **Update**, **Reinstall**, or **Install** as prompted. If the URL displays text instead, edit the existing **Makers Weekly Collector — Wednesday** script, replace all code with the current source, and save it.
+3. Verify the single **Makers Weekly Collector — Wednesday** entry shows version **1.3.5** and is enabled. Keep the retired **Makers Weekly Collector — Tuesday + Thursday** disabled. Do not run two Makers collector scripts simultaneously.
+4. Open Yahoo league 471058, refresh, verify the collector header says v1.3.5, set Upcoming week to the week about to be played, clear any stale workspace, and run AUTO COLLECT LEAGUE after Wednesday waivers.
+5. Do not export/import data for the site until the required recap and preview checks pass. Preserve the export JSON privately for source-level QA.
+
+## Changes already incorporated by v1.3.5
+
+- Corrected transaction parsing for traded players and Yahoo transaction row variants; validation now requires actual structured trade assets.
+- Tracks explicitly empty Yahoo starter slots rather than falsely marking otherwise valid current rosters as incomplete.
+- Avoids treating future-week bye/calendar metadata as current player fantasy points.
+- Retains 2026 Makers team ID mapping, team aliases, isolated league ID, and the Wednesday-only combined workflow.
