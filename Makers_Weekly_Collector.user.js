@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Makers Weekly Collector — Wednesday
 // @namespace    https://github.com/TheMakersFFL/the-makers/
-// @version      1.3.5
+// @version      1.3.6
 // @description  Collect Yahoo Fantasy league data once each Wednesday after waivers for The Makers, combining the prior-week recap with post-waiver rosters, projections and the upcoming-week preview.
 // @match        https://football.fantasysports.yahoo.com/f1/*
 // @match        https://football.fantasysports.yahoo.com/*/f1/*
@@ -20,7 +20,7 @@
   'use strict';
 
   const SCHEMA='makers-weekly-collector/v2';
-  const VERSION='1.3.5';
+  const VERSION='1.3.6';
   const EXPECTED_LEAGUE_ID='471058';
   const KNOWN_TEAMS={
     'The Eviscerators':'Andrew',
@@ -348,6 +348,9 @@
       const iPts=hix(h,['fan pts','fpts','fantasy points','pts','points']),iProj=hix(h,['proj pts','projected','proj']),iOpp=hix(h,['opp','opponent']),iStart=hix(h,['% start','start %','start']),iRos=hix(h,['% ros','rostered','% rostered']),iBye=hix(h,['bye']);
       const metrics=parseRosterMetrics(r.text);
       let points=isCurrent?null:(metrics?.points??numericAt(r,iPts)),projected=metrics?.projected??numericAt(r,iProj);
+      // Yahoo shows compact bye rows as e.g. 6Bye100% (rostered percent, not fantasy projection).
+      // Never infer a numeric player projection from roster percentages on a bye row.
+      if(/(?:^|\W)(?:[1-9]|1[0-8])\s*Bye\s*\d{1,3}%/i.test(r.text.replace(/\s+/g,' '))||/(?:[1-9]|1[0-8])Bye\d{1,3}%/i.test(r.text.replace(/\s+/g,'')))projected=null;
       if(!isCurrent&&points!=null&&Math.abs(points)>80&&metrics?.points!=null)points=metrics.points;
       const started=STARTER_SLOTS.has(slot),bench=BENCH_SLOTS.has(slot),status=inferRowStatus(name,r.text,picked.status),opponent=iOpp>=0?clean(c[iOpp]):inferOpponent(r.text);
       players.push({name,pos,nflTeam,slot,status,started,bench,points,projected,bye:metrics?.bye??numericAt(r,iBye),startPct:metrics?.startPct??numericAt(r,iStart),rosteredPct:metrics?.rosteredPct??numericAt(r,iRos),opponent,sourceText:r.text});
@@ -462,7 +465,7 @@
     }
     const by={};
     for(const x of out){
-      const moveSig=(x.players||[]).map(p=>`${p.name.toLowerCase()}:${norm(p.action)}`).sort().join(',');
+      const moveSig=(x.players||[]).map(p=>`${canonicalTransactionPlayerKey(p)}:${norm(p.action)}`).sort().join(',');
       const k=[x.team,x.timestamp,moveSig].join('|');
       const quality=(x.players||[]).length*10+(x.added||[]).length+(x.dropped||[]).length+(x.faabSpent!=null?2:0);
       if(!by[k]||quality>by[k]._quality)by[k]={...x,_quality:quality};
@@ -514,6 +517,7 @@
     const by={};for(const p of out){const k=[p.name.toLowerCase(),p.nflTeam,p.pos].join('|');if(!by[k])by[k]=p}return Object.values(by);
   }
 
+  function canonicalTransactionPlayerKey(p={}){return String(p.pos||'').toUpperCase()==='DEF'?'def:'+String(p.nflTeam||'').toUpperCase():String(p.name||'').trim().toLowerCase()}
   function parseTransactionsV125(root=document){
     const out=[],timeRe=/\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},?\s+\d{1,2}:\d{2}\s*(?:am|pm)\b/ig;
     const transactionRowRe=/(?:\bfree agent\b|\bwaivers?\b|\btrade\b|\btraded\b|\badded?\b|\bdropped?\b)/i;
@@ -542,7 +546,7 @@
     }
     const by={};
     for(const x of out){
-      const moveSig=(x.players||[]).map(p=>`${p.name.toLowerCase()}:${norm(p.action)}`).sort().join(','),k=[x.team,x.timestamp,moveSig].join('|');
+      const moveSig=(x.players||[]).map(p=>`${canonicalTransactionPlayerKey(p)}:${norm(p.action)}`).sort().join(','),k=[x.team,x.timestamp,moveSig].join('|');
       const quality=(x.players||[]).length*10+(x.added||[]).length+(x.dropped||[]).length+(x.faabSpent!=null?2:0);
       if(!by[k]||quality>by[k]._quality)by[k]={...x,_quality:quality};
     }
@@ -556,7 +560,7 @@
     for(const items of Object.values(groups)){
       const structured=items.filter(x=>(x.players||[]).length||(x.added||[]).length||(x.dropped||[]).length||x.type==='TRADE'),source=structured.length?structured:items,by={};
       for(const x of source){
-        const players=(x.players||[]).map(p=>`${String(p.name||'').toLowerCase()}:${norm(p.action||'')}`).sort().join(','),sig=players||norm(x.text||''),k=[x.team||'',x.timestamp||'',x.type||'',sig,x.faabSpent??''].join('|');
+        const players=(x.players||[]).map(p=>`${canonicalTransactionPlayerKey(p)}:${norm(p.action||'')}`).sort().join(','),sig=players||norm(x.text||''),k=[x.team||'',x.timestamp||'',x.type||'',sig,x.faabSpent??''].join('|');
         const quality=(x.players||[]).length*10+(x.added||[]).length+(x.dropped||[]).length+(x.faabSpent!=null?2:0);
         if(!by[k]||quality>(by[k]._quality||0))by[k]={...x,_quality:quality};
       }
@@ -566,7 +570,7 @@
   }
 
   function mergeKeyed(oldArr,newArr,keyFn){const by={};for(const x of [...(oldArr||[]),...(newArr||[])]){const k=keyFn(x);if(k)by[k]=x}return Object.values(by)}
-  function transactionIdentity(x={}){return [x.team||'',x.timestamp||'',x.type||'',(x.added||[]).map(p=>p.name).join(','),(x.dropped||[]).map(p=>p.name).join(','),x.faabSpent??''].join('|')||norm(x.text||'')}
+  function transactionIdentity(x={}){return [x.team||'',x.timestamp||'',x.type||'',(x.added||[]).map(canonicalTransactionPlayerKey).join(','),(x.dropped||[]).map(canonicalTransactionPlayerKey).join(','),x.faabSpent??''].join('|')||norm(x.text||'')}
   function mergeData(old={},patch={}){
     const o={...old};
     if(Array.isArray(patch.standings)&&patch.standings.length)o.standings=patch.standings;
@@ -688,7 +692,7 @@
       const source=structured.length?structured:items;
       const by={};
       for(const x of source){
-        const players=(x.players||[]).map(p=>`${String(p.name||'').toLowerCase()}:${norm(p.action||'')}`).sort().join(',');
+        const players=(x.players||[]).map(p=>`${canonicalTransactionPlayerKey(p)}:${norm(p.action||'')}`).sort().join(',');
         const sig=players||norm(x.text||'');
         const k=[x.team||'',x.timestamp||'',x.type||'',sig,x.faabSpent??''].join('|');
         const quality=(x.players||[]).length*10+(x.added||[]).length+(x.dropped||[]).length+(x.faabSpent!=null?2:0);
@@ -753,7 +757,7 @@
       const sh=realRosterShape(r),empty=uniq(r.emptySlots||[]).filter(x=>STARTER_SLOTS.has(x)).length,expectedStarters=Math.max(0,9-empty);
       emptyStarterSlots+=empty;
       if(sh.players<14||sh.players>18||sh.starters!==expectedStarters)currentShapeOk=false;
-      if(sh.projectedStarters===expectedStarters)currentProjectedTeams++;
+      if(sh.projectedStarters>0||expectedStarters===0)currentProjectedTeams++; // Bye players have no numeric projection; validate official team total instead.
       const official=teamProjectionFromMatchups(upcoming,r.team);if(official!=null&&r.starterProjectedPoints!=null&&Math.abs(Number(r.starterProjectedPoints)-Number(official))<=1.0)currentProjectionReconciled++;
     }
     currentShapeOk=currentShapeOk&&currentProjectionReconciled===10;
