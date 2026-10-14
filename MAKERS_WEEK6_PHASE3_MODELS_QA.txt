@@ -1,0 +1,83 @@
+THE MAKERS — WEEK 6 PHASE 3 MODEL / ANALYTICS QA
+Date: 2026-10-14
+Branch: week6-update-2026-10-14
+Production main: unchanged (68c6422b87546b3f667ca3046aadc0b0f8cf5675)
+Status: PASS — completed/locked on working branch; NOT DEPLOYED.
+
+FILES
+Added week6-models.js. Updated makers-weekly-loader.js to import it after week5-models.js and before editorial; cache key makers-20261014-w6p3.
+Private raw Yahoo captures not published. Phase 2 sanitized snapshot captured at 2026-10-14T16:19:57.354Z.
+
+METHODOLOGY — UNCHANGED FROM MAKERS POWER BLEND V1
+POWER: Existing Makers engine: normalized preseason strength 28%, live strength 72% cap at five games; live strength 58% record and 42% normalized points for.
+ODDS: Existing deterministic 24,000-run seeded Makers engine from current official standings and points for, 45 remaining real Weeks 6-14 games, preseason-strength win probabilities, PF tiebreaks, top-six playoffs/top-two byes, seeded title and Toilet Bowl brackets.
+FORECAST: Same Makers weekly sync algorithm, independently re-computed and compared with provisional Week 6 predictions: 87% individual team Yahoo forecast, 13% league Yahoo mean; preseason draft adjustment and team PPG adjustment blended at five-game 43.75% live forecast weight.
+STOCK: Existing Makers movement from locked preseason draft rank to current power rank; associated frozen Week 6 Power and playoff odds.
+Inputs: {"simulations":24000,"seed":20260901,"leaguePpg":108.4472,"meanYahooProjection":100.359,"powerLiveWeight":72,"forecastLiveWeight":43.75,"remainingGames":45}
+Current model computed from MAKERS_ENGINE.powerMetrics() and MAKERS_ENGINE.simulate(24000) BEFORE the previous model's lock patch; preserves original normalized preseason-strength win probability and simulated PF tiebreaks. Five completed games and 45 remaining. 24,000 simulations seeded 20260901.
+Forecast calculated independently and confirmed exactly equal to the Phase 2 provisional weekly-sync formula for all ten team scores. No re-selection or hindsight used.
+
+WEEK 5 PREDICTION GRADING — OCTOBER 7 LOCKED FORECAST
+Makers 3-2, team score MAE 33.17. Yahoo 3-2, team score MAE 32.5.
+Makers season through Week 5: 18-7; Yahoo: 16-9. Makers and Yahoo correctly called TDs, Predacious Fungi and Mustache; both missed A Gap over Moose and Revenge over Criterus.
+Historic Weeks 1–4 grading/Week 5 locked predictions remain identical.
+
+WEEK 6 POWER
+1. The Mustache riders / TomD: 80.89 (previous #3; movement +2)
+2. The Eviscerators / Andrew: 78.92 (previous #1; movement -1)
+3. The Moose Knuckles / Jim: 77.26 (previous #2; movement -1)
+4. TDs In Your Face / Nick: 74.58 (previous #5; movement +1)
+5. Kareem all over your Hunt / Billy: 61.27 (previous #4; movement -1)
+6. Criterus / Chris: 54.52 (previous #6; movement 0)
+7. Pump and Go / Tommy: 44.27 (previous #7; movement 0)
+8. Predacious Fungi / Max: 41.74 (previous #8; movement 0)
+9. Revenge of the period bloods / Nate: 40.38 (previous #9; movement 0)
+10. The A Gap / Adam: 33.98 (previous #10; movement 0)
+
+WEEK 6 ODDS (playoff / bye / title / Toilet, percentage points)
+The Mustache riders / TomD: 96.5 / 50.3 / 19.3 / 0.5 · average seed 2.83; SOS 6
+TDs In Your Face / Nick: 89.2 / 28.9 / 14.8 / 1.7 · average seed 3.82; SOS 5.67
+The Moose Knuckles / Jim: 93.2 / 42.8 / 21 / 0.9 · average seed 3.21; SOS 5.78
+The Eviscerators / Andrew: 95.5 / 55.5 / 26.1 / 0.5 · average seed 2.72; SOS 5.89
+Kareem all over your Hunt / Billy: 77.5 / 13.1 / 7.8 / 4.3 · average seed 4.95; SOS 5.56
+Predacious Fungi / Max: 21.6 / 1 / 1 / 23.4 · average seed 7.85; SOS 5.22
+Criterus / Chris: 59.8 / 5 / 6.1 / 7.2 · average seed 5.99; SOS 5.44
+Revenge of the period bloods / Nate: 20 / 0.9 / 0.8 / 24 · average seed 8.01; SOS 5.11
+Pump and Go / Tommy: 35.8 / 2.3 / 2.5 / 14.2 · average seed 7.02; SOS 5.33
+The A Gap / Adam: 10.9 / 0.3 / 0.6 / 23.3 · average seed 8.6; SOS 5
+Sum of playoff: 600
+Sum of bye: 200.1
+Sum of title: 100
+Sum of toilet: 100
+
+FRANCHISE STOCK — PRESEASON TO LIVE POWER RANK MOVEMENT (NO DOLLAR PRICE SYSTEM)
+TomD / The Mustache riders: preseason #7 → live #1, +6; Power 80.89; playoff 96.5%
+Andrew / The Eviscerators: preseason #2 → live #2, 0; Power 78.92; playoff 95.5%
+Jim / The Moose Knuckles: preseason #3 → live #3, 0; Power 77.26; playoff 93.2%
+Nick / TDs In Your Face: preseason #9 → live #4, +5; Power 74.58; playoff 89.2%
+Billy / Kareem all over your Hunt: preseason #8 → live #5, +3; Power 61.27; playoff 77.5%
+Chris / Criterus: preseason #1 → live #6, -5; Power 54.52; playoff 59.8%
+Tommy / Pump and Go: preseason #4 → live #7, -3; Power 44.27; playoff 35.8%
+Max / Predacious Fungi: preseason #10 → live #8, +2; Power 41.74; playoff 21.6%
+Nate / Revenge of the period bloods: preseason #5 → live #9, -4; Power 40.38; playoff 20%
+Adam / The A Gap: preseason #6 → live #10, -4; Power 33.98; playoff 10.9%
+
+LOCKED WEEK 6 FORECAST — MAKERS AND YAHOO
+The Moose Knuckles 121.42 — The Mustache riders 110.07; Yahoo 120.15–110.79
+TDs In Your Face 106.05 — Pump and Go 72.34; Yahoo 106.71–69.8
+Predacious Fungi 103.61 — Criterus 102.72; Yahoo 108.31–100.07
+Revenge of the period bloods 93.6 — The A Gap 84.03; Yahoo 93.16–84.11
+The Eviscerators 112 — Kareem all over your Hunt 97.75; Yahoo 110.27–100.22
+
+MODEL / HISTORY LOCK INTEGRITY
+Week 5 original predictionSnapshots['5'] remains locked at 2026-10-07T16:14:55.991Z; all five score forecasts unchanged.
+Week 6 predictionSnapshots['6'] locked at 2026-10-14T16:19:57.354Z with all five original Yahoo Wednesday projections and model forecasts.
+Week 5 status FINAL and Week 6 status Scheduled. No Week 6 actual scores invented.
+Y.week6ModelSnapshot, currentModelSnapshot, powerRankings, playoffOdds, week6StockMarket and predictionGradingThroughWeek5 share one frozen model.
+The MAKERS_ENGINE powerMetrics()/simulate() functions use the Week 6 model after week6-models.js is loaded, not the superseded Week 5 board.
+
+RUNTIME QA RESULTS
+24/24 structural and functional assertions PASS (2026 week state, 5 Week 5 finals, 10-team standings, power/odds identical to engine, 10 unique franchises, frozen Week 5 predictions, Week 6 locked forecast, snapshot timestamp, original Yahoo scores, season grading, 24k-run odds, stock movement, historical Week 5 FINAL, Week 6 Scheduled, loader cache and ordering).
+No GitHub Pages publish or rendered browser audit performed in Phase 3.
+
+NEXT: Phase 4 Week 5 recap, Week 6 preview and Game of the Week editorial. Continue working branch; do not publish until release gate.
