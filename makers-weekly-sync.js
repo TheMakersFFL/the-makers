@@ -168,7 +168,7 @@
     });
     tx.forEach((x,order)=>{const key=txKey(x);if(key)seasonTransactions.set(key,{...x,_captureIndex:transactionSequence,_captureOrder:order})});
     transactionSequence++;
-    const faab=(data.faab||[]).map((x,i)=>({priority:num(x.priority)??i+1,manager:x.manager||TEAM_MANAGER[canonical(x.team)]||'',team:canonical(x.team||MANAGER_TEAM[x.manager]||''),spent:num(x.spent)??Math.max(0,100-(num(x.remaining)??100)),remaining:num(x.remaining)??100,claimsWon:num(x.claimsWon)??0}));
+    const faab=(data.faab||[]).map((x,i)=>({priority:num(x.priority)??i+1,manager:x.manager||TEAM_MANAGER[canonical(x.team)]||'',team:canonical(x.team||MANAGER_TEAM[x.manager]||''),spent:num(x.spent)??Math.max(0,100-(num(x.remaining)??100)),remaining:num(x.remaining)??100,claimsWon:num(x.claimsWon)}));
     const available=(data.availablePlayers||[]).map(p=>({name:p.name||'',position:p.position||p.pos||'',nflTeam:p.nflTeam||p.nfl||'',status:p.status||'FA',recent:p.recent??p.points??'—',projected:p.projected??null,faabSuggestion:p.faabSuggestion||''})).filter(p=>p.name);
     if(faab.length)Y.faab=faab;
     if(available.length)Y.topAvailable=available;
