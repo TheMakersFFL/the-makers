@@ -1,0 +1,54 @@
+THE MAKERS — WEEK 6 PHASE 5 RELEASE-GATE / CONSISTENCY QA
+Date: 2026-10-14
+Branch: week6-update-2026-10-14
+Latest checked branch SHA: 8c7c33eabdaf354135b25c17f7d8f1f375f7bb23
+Production main: 68c6422b87546b3f667ca3046aadc0b0f8cf5675 (UNCHANGED)
+STATUS: RELEASE GATE HELD / PARTIALLY COMPLETE — DO NOT PUBLISH UNTIL THREE STATIC PAGES ARE UPDATED AND VERIFIED
+
+WORK COMPLETED ON WORKING BRANCH
+1. Authenticated Week 3 historical forecast recovered from published Sep 24 Makers article and Sep 24 original Yahoo collector timestamp 2026-09-24T20:23:52.435Z.
+2. Added week3-prediction-lock.js after makers-weekly-sync.js to preserve the five ORIGINAL published Makers/Yahoo scores as a permanent locked historical receipt. Source matches reconstituted original Wednesday forecast exactly; no guesses.
+3. Corrected a previously incorrect retrospective Yahoo Week 3 win-count label: Yahoo originally picked Kareem to beat Criterus, and Kareem won, so Yahoo Week 3 was 4-1, not 3-2. The archived matchup scores were never modified.
+4. Latest Week 6 prediction grading now correctly shows Makers 18-7 / Yahoo 17-8 after 25 completed games, rather than earlier incorrect Yahoo 16-9; Week 5 snapshot scores remain locked/unchanged. Edited ONLY Week 6 model aggregate and Week 6 editorial text, not archived historical game forecasts.
+5. 15 dynamic HTML navigation pages changed from old makers-weekly-loader.js?v=makers-20261007-w5p5 to makers-weekly-loader.js?v=makers-20261014-w6p5:
+  index.html, weeks.html, week.html, season-2026.html, predictions.html, analytics.html, transactions.html, waiver-wire.html, schedule.html, power-rankings.html, playoff-odds.html, franchise.html, franchises.html, records.html, press.html.
+6. Shared makers-weekly-loader.js bumped to makers-20261014-w6p5, imports restored Week 3 receipt AFTER sync and BEFORE engine, plus latest Week 6 factual, model, editorial, and prior guards in sequence.
+7. Updated makers-h2h-live.js to asynchronously load all five Week 6 factual scripts before rerunning makers-weekly-sync.js and applying restored Week 3 receipt; internal bust updated to makers-20261014-w6p5.
+8. No production main files altered, no GitHub Pages deployment attempted.
+
+DATA / FORECAST QA — PASS
+- Exactly 25 distinct 2026 final games, five per week Weeks 1-5, and five pending Week 6 matchups; no fabricated Week 6 actual scores.
+- Standings ten teams, PF=PA=5,422.36, 25 W/25 L, ten completed Week 5 lineups and ten new Week 6 rosters.
+- Week 6 current roster scores all actual=null, 25 unique new moves/$37 FAAB, 100 available players and ten FAAB rows. Pump and Go's two real empty RB/WR slots and bye-week Chase Brown remain correctly projected at 69.80 Yahoo team total; other bye projections remain null.
+- All six forecast weeks 1-6 have five permanently locked forecast rows, with authentic Week 3 receipt and original Week 5/Week 6 Wednesday snapshots. Weeks 1-5 actual picks:
+   Week 1: Makers 4-1 / Yahoo 4-1
+   Week 2: Makers 4-1 / Yahoo 3-2
+   Week 3: Makers 3-2 / Yahoo 4-1 (historically corrected)
+   Week 4: Makers 4-1 / Yahoo 3-2
+   Week 5: Makers 3-2 / Yahoo 3-2
+   Season through Week 5: Makers 18-7 / Yahoo 17-8.
+- Latest Week 6 model Power No. 1 Mustache riders 80.89, odds 10 franchises, 24,000-run distribution, Stock 10 franchises.
+- Native cumulative E.allGames(): 343 games total, years: 2022=81, 2023=79, 2024=79, 2025=79, 2026=25. 11 manager career-record rows, including historical El Rubio.
+- Latest generated HTML smoke checks: Home, individual Weeks 5 and 6, Predictions 17-8, Press Room, War Room/Stock, Power, Odds, Records, Franchises, Schedule and Transactions passed; weekly hub rendered and earlier uppercase-only expectation was a test-string mismatch, not a page failure.
+- Source JavaScript compilation of the Week 3 lock, latest Week 6 model, editorial, and H2H refresh passed.
+- This is source/runtime/generated-output QA only. No true live Chromium browser rendered/mobile audit attempted; that belongs in Phase 6 after publication.
+
+RELEASE BLOCKERS — THREE LEGACY STATIC HTML PAGES
+Direct GitHub connector modifications to legacy History and Trophy HTML were rejected by the connected tool's safety checks. Do not attempt to work around safety controls. These files remain old Week 5 and would display stale Week 4-closed data on Week 6 release. H2H HTML is also pinned to old cache versions.
+1. history.html STILL embeds old makers-20261007-w5p5 script keys, Week 5 factual imports only, and Week 5 model/editorial, so it cannot show Week 6 active history consistently. REQUIRED: update old version keys to makers-20261014-w6p5; insert week6-import.js, week6-rosters.js, week6-completed.js, week6-transactions.js, week6-available.js after week5-available.js and BEFORE makers-weekly-sync.js; insert week3-prediction-lock.js AFTER sync; insert week6-models.js after week5-models.js; insert week5-phase5-consistency.js and week6-editorial.js after week5-editorial.js and before history inline render.
+2. trophy-case.html STILL embeds old cache keys and lacks Week 6 factual imports. REQUIRED: update makers-20261007-w5p5 -> makers-20261014-w6p5 for loaded scripts; inject the five Week 6 factual files after week5-available.js BEFORE makers-weekly-sync.js; and insert week3-prediction-lock.js after sync. The original inline trophy career table updater then must run after the updated MAKERS_ENGINE.
+3. head-to-head.html STILL embeds makers-h2h-live.js and its other runtime dependencies at makers-20261007-w5p5. The target makers-h2h-live.js itself was updated on branch, but the old HTML query key can serve a cached prior script, causing Week 5 cumulative results to be omitted. REQUIRED: update all makers-20261007-w5p5 script keys in this HTML to makers-20261014-w6p5 and add week3-prediction-lock.js immediately after the initial makers-weekly-sync.js. Confirm the asynchronous H2H refresh now loads the latest Week 6 scripts and 2026 game count 25 (overall allGames 343).
+
+FURTHER RELEASE-GATE STEPS REQUIRED
+A. Apply these three static HTML page changes using an authorized editing environment capable of handling the existing HTML (e.g. user-approved GitHub GUI/Work, or another approved connector). Do not replace static pages with a different design or delete their historical content.
+B. Verify all 18 dynamic/static Week 6 active paths and all 51 HTML paths for broken local href/src dependencies, stale Week 5 'current' labels, and cross-franchise/rivalry/records correctness.
+C. Run full navigation, current 2026 career records, H2H, history, trophy, Prediction per-game grading (25/25), week 5 recap/6 preview, waivers and analytics smoke tests.
+D. Only after all source/dependency tests pass, fast-forward production main with the complete Week 6 branch; monitor Pages deployment and verify production SHA/build conclusion.
+E. Phase 6: real browser rendered desktop/mobile production audit, console errors, broken resources and screenshots.
+F. Earlier MAKERS_WEEK6_PHASE3_MODELS_QA.txt and MAKERS_WEEK6_PHASE4_EDITORIAL_QA.txt reflect the pre-Phase-5 Yahoo 16-9 aggregate; the authoritative corrected latest model is Yahoo 17-8 as independently regraded from the original frozen game-by-game forecasts.
+
+RELEASE DECISION
+Phase 5 main dynamic-page and historical-score reconciliations: PASS.
+Phase 5 legacy static HTML/caches: BLOCKED (3 pages).
+Production promotion: NOT DONE. Production main remains at 68c6422b87546b3f667ca3046aadc0b0f8cf5675.
+Phase 5 OVERALL: NOT COMPLETE / RELEASE ON HOLD.
