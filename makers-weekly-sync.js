@@ -31,7 +31,7 @@
     'The PRICE is wrong bitch!':'Kareem all over your Hunt'
   };
   const canonical=t=>TEAM_ALIASES[String(t||'').trim()]||String(t||'').trim();
-  const num=v=>{const n=Number(String(v??'').replace(/[$,% ,]/g,''));return Number.isFinite(n)?n:null};
+  const num=v=>{const raw=String(v??'').replace(/[$,% ,]/g,'');if(!raw)return null;const n=Number(raw);return Number.isFinite(n)?n:null};
   const teamName=x=>canonical(x?.team||x?.name||x?.teamName||MANAGER_TEAM[x?.manager]||'');
   const managerName=x=>x?.manager||TEAM_MANAGER[teamName(x)]||'';
   const pairKey=(week,a,b)=>`${Number(week)||0}|${[canonical(a),canonical(b)].sort().join('|')}`;
@@ -178,6 +178,21 @@
   valid.forEach((I,i)=>applyImport(I,i===valid.length-1));
   const seasonTx=[...seasonTransactions.values()].sort((a,b)=>b._captureIndex-a._captureIndex||a._captureOrder-b._captureOrder).map(({_captureIndex,_captureOrder,...x})=>x);
   if(seasonTx.length)Y.recentTransactions=seasonTx;
+  const waiverTotals=new Map();
+  seasonTx.forEach(x=>{
+    if(String(x.type||'').toUpperCase()!=='WAIVER')return;
+    const manager=x.manager||TEAM_MANAGER[x.team]||'';if(!manager)return;
+    const totals=waiverTotals.get(manager)||{spent:0,claims:0};
+    totals.claims++;
+    const amount=num(x.faab);if(amount!=null)totals.spent+=amount;
+    waiverTotals.set(manager,totals);
+  });
+  Y.faab=(Y.faab||[]).map(x=>{
+    const manager=x.manager||TEAM_MANAGER[canonical(x.team)]||'';
+    const totals=waiverTotals.get(manager)||{spent:0,claims:0};
+    const remaining=num(x.remaining),spent=num(x.spent),claimsWon=num(x.claimsWon);
+    return {...x,spent:spent??(remaining!=null?Math.max(0,100-remaining):totals.spent),claimsWon:claimsWon??totals.claims};
+  });
   const moveCounts=Object.fromEntries(Object.values(TEAM_MANAGER).map(m=>[m,0]));
   const tradeCounts=Object.fromEntries(Object.values(TEAM_MANAGER).map(m=>[m,0]));
   seasonTx.forEach(x=>{const m=x.manager||TEAM_MANAGER[x.team]||'';if(!m)return;moveCounts[m]=(moveCounts[m]||0)+1;if(String(x.type||'').toUpperCase()==='TRADE')tradeCounts[m]=(tradeCounts[m]||0)+1});
