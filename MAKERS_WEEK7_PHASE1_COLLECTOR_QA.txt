@@ -1,0 +1,41 @@
+MAKERS WEEK 7 — PHASE 1 COLLECTOR / BASELINE QA
+Date: 2026-10-21
+Working branch: week7-update-2026-10-21
+Phase 1: PASS — validated source, not yet imported or published.
+Collector file: MAKERS_2026_W07_WEDNESDAY(1).json
+Source version: makers-weekly-collector/v2; 1.3.8
+Target Week 7, completed Week 6, Wednesday snapshot 2026-10-21T15:54:13.230Z.
+Source bytes: 7,986,122. 31 page captures.
+Prior main baseline SHA at branch creation: 7d7561cfbf5c7a76b0641123cc6e6e4d5061d4e8.
+
+VALIDATION
+Collector validation.ok=true, eight of eight checks positive.
+Standings 10 distinct teams; 30 wins and 30 losses, PF=PA=6346.26.
+Week 6 completed five games ten teams. Sum of all Week 6 score totals=923.90. Last week's PF 5422.36 + Week 6 scores 923.90 = 6346.26.
+Week 6 completed lineups ten, 158 rostered players, 90 starter scores. Independently recalculated every starting lineup total; 10/10 match source official final team scores exactly.
+Week 7 current rosters ten, every actual starter score zero/no current player points; all ten recalculated starter projections match corresponding official Week 7 matchup projection exactly.
+Week 7 upcoming five matches ten teams with numeric Yahoo projections; no future final scores.
+Free-agent pool 100 (QB15/RB25/WR25/TE15/K10/DEF10) with 100 numeric projections.
+FAAB records ten, parsed structured transactions 25 (13 WAIVER, 12 ADD_DROP). Transaction-page pagination completeness is not independently established by 25 parsed rows.
+No duplicate named player across different current team rosters. No malformed named player placeholders found.
+One genuine explicit empty Week 7 starter slot: The A Gap W/R/T; do not invent a replacement.
+Kareem all over your Hunt Week 7 has three starters with null projections: Trevor Lawrence (QB), Cam Little (K), Bills (DEF). Combined current lineup sum 69.72 agrees exactly with official Yahoo projection. Preserve null values; do not assume these positions are empty.
+New team aliases from collector v1.3.8: Bang Bang Choke Gang maps Kareem all over your Hunt; Nate’s destroyers…sometimes maps Revenge of the period bloods. The ten official canonical franchise names and IDs are present.
+Source captures kinds: 10 roster, 10 completed-roster, 6 players, 2 matchups, 1 league, 1 standings, 1 transactions.
+
+WEEK 6 FINAL RESULTS
+Kareem all over your Hunt 105.54 defeats The Eviscerators 85.16
+The Moose Knuckles 112.60 defeats The Mustache riders 84.90
+Pump and Go 101.30 defeats TDs In Your Face 82.84
+Predacious Fungi 98.58 defeats Criterus 74.72
+Revenge of the period bloods 92.96 defeats The A Gap 85.30
+
+WEEK 7 OFFICIAL YAHOO PROJECTIONS
+Pump and Go 98.19 vs The Eviscerators 108.76
+The Moose Knuckles 118.07 vs Kareem all over your Hunt 69.72
+TDs In Your Face 124.34 vs Criterus 108.03
+The Mustache riders 116.88 vs Revenge of the period bloods 102.81
+Predacious Fungi 93.43 vs The A Gap 91.61
+
+PHASE 2 DEPENDENCIES
+Import facts on working branch with previous prediction snapshots preserved, retain null projected starters and explicit empty flex; never back-fill future game scores. Check 25 transaction source rows against raw Yahoo page for completeness and audit team aliases in exports. No production publication from Phase 1.

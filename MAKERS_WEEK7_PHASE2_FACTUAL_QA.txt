@@ -1,0 +1,28 @@
+MAKERS WEEK 7 — PHASE 2 FACTUAL DATA IMPORT QA
+Date: 2026-10-21
+Branch: week7-update-2026-10-21
+Status: PASS on working branch; not published to main.
+Source: MAKERS_2026_W07_WEDNESDAY(1).json, collector v1.3.8, captured 2026-10-21T15:54:13.230Z.
+Source original validation.ok=true (8 of 8). 31 source captures retained only in user's export, not copied into GitHub.
+
+MODULES CREATED AND COMMITTED
+week7-import.js — sanitized lightweight collector core; verified 10 standings / five Week 6 finals / five Week 7 official projections / FAAB ten.
+week7-rosters.js — full ten current Week 7 rosters; no fabricated actual points.
+week7-completed.js — full ten completed Week 6 lineups.
+week7-transactions.js — 25 structured captured transaction rows.
+week7-available.js — 100 free agents (QB15/RB25/WR25/TE15/K10/DEF10).
+week7-phase2-consistency.js — completed Week 6 marked FINAL, Week 7 Wednesday preview left provisional; prior model saved as previous and pending Week 7 new model.
+makers-weekly-loader.js — updated cache key makers-20261021-w7p2, imports all five Week 7 factual modules before makers-weekly-sync.js; consistency script after prior Week 6 editorials.
+
+CHECKS
+Source validation 10 standings, 5 finals, 10 completed lineups with 90 starter scores, 10/10 final score reconciliations, 10 current roster starter projections reconciled with Yahoo, 5 upcoming games and 100 free agents, 25 structured transactions.
+Recomputed completed starter point sums vs official Week 6 finals: 10/10 exact <=0.025.
+Recomputed current starter projections vs official Week 7 projected pair totals: 10/10 exact <=0.025.
+Preserved The A Gap's explicit empty W/R/T starter slot and Kareem's three legitimate null projected starters.
+Retained canonical name mapping Billy/Kareem and Nate/Revenge.
+Isolated JS test executed nine staged modules including season, Week 7 fact modules, weekly sync and consistency with no exception; confirmed Y.week=7, 10 standings, five results for Week 6, ten current rosters, ten completed lineups, five projected games, provisional Week 7 prediction, Week 6 status FINAL.
+No Week 7 model or prediction snapshot locked in Phase 2. Older prior-week model/forecast modules unchanged. Existing Week 6 locked receipts remain in prior scripts and are designed to survive weekly sync; end-to-end browser loader execution and historical prediction audit remain for Phase 5.
+Transaction capture rows 25 do not guarantee full historical Yahoo pagination.
+Production main UNCHANGED.
+
+PHASE 3 DEPENDENCY: Calculate and lock Week 7 Makers model projections, Power Rankings, playoff/bye/title/shame odds, franchise stocks and Week 6 prediction grading. Replace provisional Week 7 forecast only then.
