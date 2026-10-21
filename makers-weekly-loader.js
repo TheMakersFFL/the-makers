@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  const bust='makers-20261021-w7p6';
+  const bust='makers-20261021-w7p7';
   const load=file=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
@@ -11,6 +11,8 @@
   (async()=>{
     try{
       await load('season-2026.js');
+      const season=window.MAKERS_2026||{};
+      window.MAKERS_DRAFT_RANKINGS=JSON.parse(JSON.stringify(season.draftRankings||season.powerRankings||[]));
       await load('weekly-import.js');
       await load('week4-import.js');
       await load('week4-rosters-a.js');
