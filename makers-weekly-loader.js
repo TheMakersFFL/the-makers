@@ -46,6 +46,7 @@
       await load('week5-editorial.js');
       await load('week5-phase5-consistency.js');
       await load('week6-editorial.js');
+      await load('week7-phase2-consistency.js');
       await load('league-analytics.js');
       if((document.body.dataset.page||'')==='waivers'){
         await load('api-config.js');
