@@ -1,0 +1,11 @@
+MAKERS WEEK 7 PHASE 5 RELEASE GATE QA — 2026-10-21
+Branch week7-update-2026-10-21. Production main UNCHANGED.
+SOURCE RELEASE GATE: PASS. FULL RENDERED-BROWSER QA: NOT PERFORMED.
+
+CHANGES
+Refreshed makers-weekly-loader.js query parameter on 18 primary data-driven HTML pages to makers-20261021-w7p5; aligned internal cache bust to same key. Static historical/redirect pages had no stale Week 6 loader ref. Preserved past archival content.
+Verified 18 primary HTML pages carry new key and none carry old makers-20261015-w6p6. Note this audit does not certify all static 54 HTML pages visually.
+Weekly loader enumerates 44 existing script modules, with no duplicate module paths. Week 7 fact modules precede makers-weekly-sync; Week 7 model follows Week 6 model; Week 7 editorial follows Week 6 editorial and consistency.
+Isolated execution of source data, season, Week 7 factual modules, makers sync and engine, Week 6/7 models and editorials, consistency: zero JS errors. Runtime current week=7, 10 standings, PF=PA 6346.26, 5 final Week 6 games, 5 locked Week 7 forecasts, currentModelSnapshot.week=7, 10 playoff odds; Week 6 status FINAL, Week 7 status WEDNESDAY PREVIEW PICKS LOCKED. Week 6 and 7 locked receipts preserved. Earlier Week 1 and Week 2 lock receipts present in season source; broader historical receipt validation requires full loader execution and rendered QA.
+Week 6 grading Makers 21/30, Yahoo 20/30. Source 25 structured transactions and 100 free agents imported. No production deployment made.
+REMAINING PHASE 6 WORK: full rendered browser checks, dynamic UI interactions, historical H2H 343-game QA and archives, all nav subsections, production GitHub Pages release/deployment verification. Do not claim those completed in Phase 5.
