@@ -646,6 +646,10 @@
   async function autoCollect(){
     setBusy(true,'COLLECTING…');
     const target=Number(state.targetWeek)||1,completed=Math.max(0,target-1);let ok=0,fail=0;
+    // A new collection must not silently reuse standings or projections from an earlier Wednesday.
+    // Retain completed roster captures and raw page workspace for auditing, but rebuild these tables.
+    state.data={...(state.data||{}),standings:[],matchups:(state.data?.matchups||[]).filter(x=>Number(x.week)!==target&&Number(x.week)!==completed),matchupProjections:(state.data?.matchupProjections||[]).filter(x=>Number(x.week)!==target&&Number(x.week)!==completed)};
+
     try{
       const liveKind=detectKind(location.href,document),livePatch=parseRoot(document,location.href,document.title,liveKind,{week:target});state.data=mergeData(state.data,livePatch);
       const liveMap=discoverTeamMap(document);if(liveMap.length)state.teamMap=mergeTeamMap(state.teamMap,liveMap);
