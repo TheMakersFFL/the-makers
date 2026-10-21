@@ -1,0 +1,39 @@
+MAKERS WEEK 7 — PHASE 3 MODEL QA
+Date 2026-10-21
+Branch week7-update-2026-10-21
+Status PASS — integrated on working branch; production main unchanged.
+
+FILES
+week7-models.js created; makers-weekly-loader.js updated to load after week6-models.js with cache key makers-20261021-w7p3. week7-phase2-consistency.js updated to honor Week 7 locked predictions.
+Power model uses existing Makers engine's exact 72%-cap preseason / live win record (58%) / PF (42%) calculation.
+Odds use original deterministic 24,000 seeded trials, 40 remaining games in Weeks 7–14, 6 playoff teams, 2 byes, championship and 9th-place-game loser probabilities.
+Forecasts are 87% Yahoo projections +13% Yahoo league mean, with existing blend of preseason draft ranking and team points-per-game (52.5% live weight).
+Stock is franchise preseason draft rank vs current Power position, preserving Makers presentation.
+
+POWER BOARD
+1 The Moose Knuckles 81.45
+2 The Mustache riders 75.62
+3 The Eviscerators 75.34
+4 TDs In Your Face 70.40
+5 Kareem all over your Hunt 65.67
+6 Criterus 52.12
+7 Pump and Go 50.29
+8 Predacious Fungi 47.18
+9 Revenge of the period bloods 45.71
+10 The A Gap 33.62
+
+WEEK 7 MAKERS / YAHOO PROJECTIONS
+Pump and Go vs The Eviscerators: MAKERS 97.46–110.45; YAHOO 98.19–108.76
+The Moose Knuckles vs Kareem: MAKERS 120.21–72.22; YAHOO 118.07–69.72
+TDs In Your Face vs Criterus: MAKERS 121.92–109.02; YAHOO 124.34–108.03
+The Mustache riders vs Revenge: MAKERS 115.72–102.32; YAHOO 116.88–102.81
+Predacious Fungi vs The A Gap: MAKERS 91.73–90.79; YAHOO 93.43–91.61
+
+PREDICTION GRADING
+Week 6: Makers 3-2, Yahoo 3-2; both team-score MAE 15.57.
+Season through Week 6: Makers 21-9, Yahoo 20-10. Historical Weeks 1–5 receipts preserved, including earlier Week 3 correction.
+Simulation category sum rounding: playoff 600.1%, byes 199.9%, title 100.1%, toilet 100.0%.
+
+ISOLATED EXECUTION VALIDATION
+Imported source + Makers engine + Week 6 frozen model + Week 7 model + Week 6 editorial + consistency scripts in order. No exceptions/warnings; Week 7 snapshot active, both Week 6 and Week 7 predictions locked with 5 matchups each, Week 6 5 results, Week 7 status WEDNESDAY PREVIEW · PICKS LOCKED, 10 Power and 10 Odds entries.
+True rendered-browser production audit not performed; reserved for Phase 5/6. Production main not changed.
