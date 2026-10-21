@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Makers Weekly Collector — Wednesday
 // @namespace    https://github.com/TheMakersFFL/the-makers/
-// @version      1.3.6
+// @version      1.3.7
 // @description  Collect Yahoo Fantasy league data once each Wednesday after waivers for The Makers, combining the prior-week recap with post-waiver rosters, projections and the upcoming-week preview.
 // @match        https://football.fantasysports.yahoo.com/f1/*
 // @match        https://football.fantasysports.yahoo.com/*/f1/*
@@ -20,7 +20,7 @@
   'use strict';
 
   const SCHEMA='makers-weekly-collector/v2';
-  const VERSION='1.3.6';
+  const VERSION='1.3.7';
   const EXPECTED_LEAGUE_ID='471058';
   const KNOWN_TEAMS={
     'The Eviscerators':'Andrew',
@@ -231,7 +231,7 @@
       const hasVs=/(?:^|\s)vs\.?\s|\bversus\b/i.test(t);
       const scoreEls=[...el.querySelectorAll('[class*="score" i],[data-tst*="score" i],[class*="projection" i],[data-tst*="projection" i]')];
       const nums=scoreTokens(t),teamLinks=[...el.querySelectorAll('a[href]')].filter(a=>{try{return new RegExp(`/f1/${CTX.leagueId}/\\d+(?:/|$)`).test(new URL(a.href,location.href).pathname)}catch{return false}}).length;
-      if(!hasVs&&!pageFinal)return;if(nums.length<2&&scoreEls.length<2)return;
+      if(!hasVs&&teamLinks<2&&!pageFinal)return;if(nums.length<2&&scoreEls.length<2)return;
       const rowFinal=/\bfinal\b|completed|closed/i.test(t),quality=(hasVs?1000:0)+(nums.length>=4?360:nums.length>=2?180:0)+(scoreEls.length>=4?180:scoreEls.length>=2?90:0)+(teamLinks>=2?120:0)+(rowFinal?80:0)-Math.min(160,t.length/8);
       raw.push({el,text:t,teams,hasVs,quality});
     });
@@ -573,7 +573,7 @@
   function transactionIdentity(x={}){return [x.team||'',x.timestamp||'',x.type||'',(x.added||[]).map(canonicalTransactionPlayerKey).join(','),(x.dropped||[]).map(canonicalTransactionPlayerKey).join(','),x.faabSpent??''].join('|')||norm(x.text||'')}
   function mergeData(old={},patch={}){
     const o={...old};
-    if(Array.isArray(patch.standings)&&patch.standings.length)o.standings=patch.standings;
+    if(Array.isArray(patch.standings)&&patch.standings.length)o.standings=mergeKeyed(old.standings,patch.standings,x=>x.team);
     if(Array.isArray(patch.matchups)&&patch.matchups.length)o.matchups=mergeKeyed(old.matchups,patch.matchups,x=>`${x.week}|${[x.teamA,x.teamB].sort().join('|')}`);
     if(Array.isArray(patch.matchupProjections)&&patch.matchupProjections.length)o.matchupProjections=mergeKeyed(old.matchupProjections,patch.matchupProjections,x=>`${x.week}|${[x.teamA,x.teamB].sort().join('|')}`);
     if(Array.isArray(patch.rosters)&&patch.rosters.length)o.rosters=mergeKeyed(old.rosters,patch.rosters,x=>x.team);
@@ -670,7 +670,29 @@
         try{await collectUrl(u.toString(),'completed-roster',{week:completed,team:x.team});ok++}catch(e){console.warn('MAKERSFF completed lineup',x,e);fail++}await sleep(180);
       }
     }
-    setBusy(false);toast(`Auto collect: ${ok} pages${fail?`, ${fail} failed`:''}`);render();
+    // Recovery: Yahoo can omit server-side scoreboard/standings rows that appear in a rendered tab.
+    // Revisit alternative league endpoints, keeping previously captured teams instead of replacing them.
+    const missingBefore=validation(state.data||{});
+    if(!missingBefore.ok){
+      const retry=[
+        [`${CTX.base}?week=${completed}&view=matchups`,'matchups',{week:completed,forceFinal:true}],
+        [`${CTX.base}?week=${target}&view=matchups`,'matchups',{week:target,forceFinal:false}],
+        [`${CTX.base}/standings?offset=0`,'standings',{}],
+        [`${CTX.base}/standings?offset=10`,'standings',{}]
+      ];
+      for(const [u,k,o] of retry){
+        if(k==='matchups' && (o.forceFinal?validation().counts.finals:validation().counts.upcoming)>=5)continue;
+        if(k==='standings' && validation().counts.standings>=10)continue;
+        try{await collectUrl(u,k,o);ok++}catch(e){console.warn('MAKERSFF recovery',u,e);fail++}
+        await sleep(200);
+      }
+      // The visible Yahoo page may contain client-rendered rows absent from fetch HTML.
+      if(location.pathname.startsWith(`/f1/${CTX.leagueId}`)){
+        try{const k=detectKind(location.href,document);state.data=mergeData(state.data,parseRoot(document,location.href,document.title,k,{week:target}));saveState()}catch(e){console.warn('MAKERSFF rendered-page recovery',e)}
+      }
+    }
+    const v=validation(state.data||{});
+    setBusy(false);toast(`Auto collect: ${ok} pages${fail?`, ${fail} failed`:''}${v.ok?' · VERIFIED':' · INCOMPLETE — inspect checks before exporting'}`);render();
   }
 
   function sanitizeData(d={}){
