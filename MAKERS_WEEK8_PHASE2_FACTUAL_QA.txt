@@ -1,0 +1,57 @@
+MAKERS WEEK 8 — PHASE 2 FACTUAL IMPORT / CONSISTENCY QA
+Date: 2026-10-28
+Repository: TheMakersFFL/the-makers
+Working branch: week8-update-2026-10-28
+Production main: UNCHANGED / NOT DEPLOYED
+Source: MAKERS_2026_W08_WEDNESDAY.json, schema makers-weekly-collector/v2, collector 1.3.8, captured 2026-10-28T13:26:28.745Z
+Original normalized candidate: MAKERS_2026_W08_PHASE1_NORMALIZED.json (Phase 1 QA, original raw Yahoo capture preserved separately).
+PHASE 2 SOURCE GATE: PASS. LOCKED WEEK 8 MODEL IS NOT YET CREATED.
+
+NEW FILES
+week8-import.js — core collector metadata, ten standings, five Week 7 official final games, five Week 8 scheduled games, 10 Yahoo team projections, 10 FAAB balances, explicit validation provenance and Phase 2 normalization notes.
+week8-rosters.js — ten current Week 8 team rosters (155 real players), slots, byes, statuses, numeric-or-null forecasts and original emptySlots. Data compressed into player tuples and expanded at load time.
+week8-completed.js — ten official completed Week 7 team lineups (159 real players) with starting scores and bench results intact.
+week8-transactions.js — 25 parsed structured transactions (10 WAIVER and 15 ADD_DROP), preserving original team, manager, time, additions, drops, and amounts, with one documented alias-duplication correction.
+week8-available.js — 100 current free agents and preserved Yahoo projections.
+week8-phase2-consistency.js — after the existing Week 7 model/editorial, marks Week 7 FINAL, Week 8 WEDNESDAY PREVIEW PROVISIONAL, preserves the Week 7 frozen model as previousModelSnapshot and sets modelPendingWeek=8.
+Updated makers-weekly-loader.js — inserted Week 8 factual modules immediately after Week 7 factual modules and before makers-weekly-sync.js; appended Week 8 Phase 2 consistency after Week 7 editorial. Retained previous deployed cache token makers-20261021-w7p7 until Phase 5 page and loader cache refresh. No production publish.
+
+NORMALIZATIONS
+- One Oct 26 The Moose Knuckles Chig Okonkwo ADD_DROP row had a duplicate name alias 'McConkey' in the original collector. The imported transaction contains only the single confirmed actual dropped Ladd McConkey (LAC WR). 25 transactions preserved.
+- Canonicalized only one source display alias: San Francisco → 49ers for one current Kareem all over your Hunt defense asset (NFL team SF, position DEF). Did not change any scores, slot ownership, or roster count.
+- Preserved three truly empty starting positions: Predacious Fungi K; Criterus TE and DEF. Never fabricated players.
+- Preserved populated Week 8 starters with null forecasts: Revenge Ka'imi Fairbairn K; Kareem Christian McCaffrey RB and 49ers DEF. Null projection does not mean empty slot or zero actual score.
+- No Week 8 actual player scores or game final scores invented. Week 7 actual lineups remain unchanged.
+
+WEEK 7 FINAL RESULTS
+Kareem all over your Hunt 120.82 beats The Moose Knuckles 112.28
+TDs In Your Face 110.36 beats Criterus 100.10
+Predacious Fungi 106.90 beats The A Gap 82.64
+Revenge of the period bloods 104.88 beats The Mustache riders 98.92
+Pump and Go 101.32 beats The Eviscerators 87.32
+All ten completed roster starter score sums equal corresponding final official Yahoo team scores within 0.025 points.
+
+WEEK 8 YAHOO PROJECTIONS — FACTUAL ONLY, NOT LOCKED MAKERS MODEL
+The Moose Knuckles 121.84 vs The Eviscerators 101.87
+TDs In Your Face 121.23 vs The A Gap 99.47
+Predacious Fungi 91.20 vs The Mustache riders 112.62
+Pump and Go 108.28 vs Criterus 88.06
+Revenge of the period bloods 93.31 vs Kareem all over your Hunt 85.14
+All ten current roster starter projected sums equal Yahoo team projections within 0.025 points.
+
+STANDINGS, HISTORICAL PRESERVATION AND RUNTIME
+Week 8 standings: 10 teams; 35 W / 35 L, PF = PA = 7371.80.
+Dedicated full factual import-chain run: season-2026.js; weekly-import.js; week4-import.js; week5-import.js; week6-import.js; week7-import.js; week8-import.js and new Week 8 roster, completed, transaction, available modules; makers-weekly-sync.js. No exceptions. Runtime has 35 current-season completed games (exactly 5 games per week, Weeks 1–7), 0 Week 8 final games, 35 unique matchup keys, no duplicates; 10 standings; 8 collector snapshots; normalized single McConkey drop; 87 cumulative transaction rows (collector-derived, not independently paginated).
+Separate Week 7 / Week 8 full staged-slice JS execution (19 scripts): zero errors/warnings; Y.week=8, collector targetWeek=8, 10 standings, 5 Week 7 finals, 5 Week 8 matchups, 10 Week 7 complete lineups, 10 Week 8 current rosters, 100 available players, 10 FAAB balances, Week 7 status FINAL and Week 8 WEDNESDAY PREVIEW PROVISIONAL.
+Older Week 1–7 locked snapshot JSON remained identical in the staged model/editorial import; previously published Week 6 editorial untouched. Existing active Week 7 model is deliberately left in place (currentModelSnapshot.week=7) and flagged modelPendingWeek=8 until Phase 3 computes and freezes the Week 8 analytics.
+Existing post-Week-7 production fixes (preseason draft ranking board preservation and loader version w7p7) were not reverted.
+No existing Week 4–7 factual/model/editorial JS files modified. No commissioner-authored text changed.
+
+RELEASE STAGING CONSTRAINTS
+Phase 3: compute Week 8 Power Rankings, seeded playoff odds, stock movement and five Wednesday model forecasts; grade original locked Week 7 forecasts against five finals and lock Week 8 receipt. Must preserve all older prediction snapshots and actual historical data.
+Phase 4: build Week 7 recap and Week 8 Wednesday preview.
+Phase 5: update all data-driven page loader cache refs and internal cache token and conduct full source release gate.
+Phase 6: merge to main, confirm GitHub Pages deployment and conduct independent browser-rendered live-site audit where supported.
+Full browser-rendered testing and production deployment were NOT performed in Phase 2.
+
+PHASE 2 DECISION: PASS — factual import and stage-specific consistency verified; production main unchanged.
