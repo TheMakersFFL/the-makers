@@ -1,0 +1,18 @@
+MAKERS WEEK 8 — PHASE 4 EDITORIAL QA
+Date: 2026-10-28
+Working branch: week8-update-2026-10-28
+Production main unchanged; no deployment.
+
+SOURCE: Phase 2 normalized Week 8 Yahoo collector captured 2026-10-28T13:26:28.745Z; Phase 3 locked Week 8 model.
+CHANGESET: Created week8-editorial.js (Week 7 recap 749 words, Week 8 preview 817 words); updated makers-weekly-loader.js to load it after week8-models.js and before league-analytics.js. No historical file or prior editorial modified.
+
+WEEK 7 RECAP: Billy's Kareem 120.82 defeated Jim's Moose 112.28 to lead standings at 5-2. Six teams are 4-3. Nick beat Chris 110.36-100.10; Max beat Adam 106.90-82.64; Nate beat TomD 104.88-98.92; Tommy beat Andrew 101.32-87.32. Awards: Billy high score 120.82, Max largest margin 24.26, Nate closest finish 5.96, Drake Maye top starter 29.94, Tony Pollard top bench 34.00, Max/Nate three-game streaks. Week 7 forecast grade Makers 2-3 and Yahoo 2-3, cumulative Makers 23-12 and Yahoo 22-13, sourced from original October 21 forecast.
+
+WEEK 8 PREVIEW: Featured Moose vs Eviscerators 123.34-103.53. Nick vs Adam 119.72-97.05; Max vs TomD 90.32-111.98; Chris vs Tommy 90.93-105.92; Nate vs Billy 93.94-86.30. All scores are frozen Makers October 28 projections. Source discussion covers Power Rankings, playoff and Toilet Bowl odds, stock rankings, lineup uncertainty, and waiver transactions.
+
+LINEUP AND TRANSACTION ACCURACY: Three genuinely empty Week 8 starters (Max K; Chris TE and DEF), and three populated with no numeric projection (Nate Fairbairn; Billy McCaffrey and SF defense). Do not infer actual zero scores. The 25 captured transactions include $5 waivers for Geno Smith, Jaguars DEF, Rachaad White, Bengals DEF and Hunter Henry; $2 Cam Little and Antonio Williams; $0 Saints DEF. The duplicate McConkey drop is corrected to a single Ladd McConkey.
+
+QA PASS: Fifteen source/model/editorial scripts executed without exceptions or warnings. Five final score summaries and five forecast breakdowns agree exactly with the underlying source and locked model. Six recap awards, six preview awards, six transaction notes. Original Weeks 1-7 prediction lock JSON, Week 7 matchup rows, Week 6 recap and preseason rankings unchanged. Active Week 8 model locked; Week 7 marked FINAL; Week 8 marked WEDNESDAY PREVIEW PICKS LOCKED. All 52 loader script paths are unique, exist, and include Week 8 modules in factual -> model -> editorial order.
+
+PENDING PHASE 5: Align data-driven HTML pages and internal loader cache keys, full source release checks. PENDING PHASE 6: production deployment and actual live rendered audit. No live browser-rendered verification performed in Phase 4.
+DECISION: PHASE 4 PASS ON WORKING BRANCH.
