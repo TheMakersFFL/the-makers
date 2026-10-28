@@ -1,13 +1,7 @@
 (function(){
-  'use strict';
-  const bust='makers-20261015-w6p6';
-  const load=file=>new Promise((resolve,reject)=>{
-    const s=document.createElement('script');
-    s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
-    s.onload=resolve;
-    s.onerror=()=>reject(new Error('Failed to load '+file));
-    document.head.appendChild(s);
-  });
+'use strict';
+// Page scripts now preload the complete Week 8 factual and model chain.
+// Render exactly once instead of asynchronously reloading stale Week 4–6 snapshots.
   const render=()=>{
     const E=window.MAKERS_ENGINE,D=window.MAKERS_DATA;if(!E||!D)return;
     const managers=['Adam','Andrew','Billy','Chris','El Rubio','Jim','Max','Nate','Nick','TomD','Tommy'];
@@ -20,32 +14,5 @@
     document.querySelectorAll('[data-makers-live-h2h]').forEach(x=>x.remove());
     if(real.length){const sec=document.createElement('section');sec.className='section';sec.dataset.makersLiveH2h='1';sec.innerHTML=`<div class="wrap"><div class="kicker">2026 RESULTS</div><h2>Current-season H2H additions</h2><div class="table-wrap"><table><thead><tr><th>Week</th><th>Team A</th><th>Score</th><th>Team B</th><th>Stage</th></tr></thead><tbody>${real.map(g=>`<tr><td>${E.esc(g.round||`Week ${g.week}`)}</td><td><b>${E.esc(g.teamA||g.home)}</b><div class="small">${E.esc(g.managerA||E.managerByTeam(g.teamA||g.home))}</div></td><td><b>${Number(g.scoreA??g.homeScore).toFixed(2)}–${Number(g.scoreB??g.awayScore).toFixed(2)}</b></td><td><b>${E.esc(g.teamB||g.away)}</b><div class="small">${E.esc(g.managerB||E.managerByTeam(g.teamB||g.away))}</div></td><td>${E.esc(g.stage||'Regular Season')}</td></tr>`).join('')}</tbody></table></div></div>`;document.querySelector('.footer')?.insertAdjacentElement('beforebegin',sec)}
   };
-  (async()=>{
-    try{
-      // This page is a preserved static archive. Pull the latest Week 4/5/6 factual payloads,
-      // rerun the sync, then recompute the live matrix from the current engine state.
-      await load('week4-import.js');
-      await load('week4-rosters-a.js');
-      await load('week4-rosters-b.js');
-      await load('week4-completed-a.js');
-      await load('week4-completed-b.js');
-      await load('week4-transactions.js');
-      await load('week4-faab.js');
-      await load('week4-available-a.js');
-      await load('week4-available-b.js');
-      await load('week5-import.js');
-      await load('week5-rosters.js');
-      await load('week5-completed.js');
-      await load('week5-transactions.js');
-      await load('week5-available.js');
-      await load('week6-import.js');
-      await load('week6-rosters.js');
-      await load('week6-completed.js');
-      await load('week6-transactions.js');
-      await load('week6-available.js');
-      await load('makers-weekly-sync.js');
-      await load('week3-prediction-lock.js');
-      render();
-    }catch(err){console.error('Makers H2H Week 6 refresh failed',err);render()}
-  })();
+  render();
 })();
