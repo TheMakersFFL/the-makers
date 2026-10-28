@@ -1,0 +1,86 @@
+MAKERS WEEK 8 — PHASE 3 LOCKED ANALYTICS / MODEL QA
+Date: 2026-10-28
+Repository: TheMakersFFL/the-makers
+Branch: week8-update-2026-10-28
+Production main: unchanged; no deployment.
+Source: validated/normalized Wednesday Week 8 Yahoo collector captured 2026-10-28T13:26:28.745Z, league 471058.
+Model: Makers Power Blend v1. Existing makers-engine.js, existing shared Makers sync formula. No model-methodology changes.
+
+FILES CREATED / CHANGED
+- New week8-models.js: frozen Power, 24,000-trial seeded playoff/bye/title/Toilet probabilities, stock board, 5 predicted scores, Week 7 grading.
+- Updated makers-weekly-loader.js to load week8-models.js immediately after week8-phase2-consistency.js and before league analytics, live.js, site.js.
+- Did not modify any existing Week 1–7 model, snapshot, historical scores, commissioner editorial, preseason draft rankings, or data.js engine logic.
+- Loader still intentionally uses Week 7 cache token makers-20261021-w7p7; Phase 5 must align all data-driven HTML pages and internal cache for release.
+
+PRESERVED MODEL METHODOLOGY
+Power: normalized preseason strength 28% and live record/PF strength 72% (live 58% record, 42% normalized season points for), exactly makers-engine.js powerMetrics() with cap at 6 completed games.
+Odds: seeded deterministic engine simulate(24000), seed 20260901, actual 35 completed regular-season games and 35 remaining official schedule fixtures through Week 14. Six championship-bracket qualifiers, two first-round byes, single league title winner, bottom-four bracket with loser of the ninth-place game as Toilet Bowl risk. No historical game or current result invented.
+Forecast: exact existing makers-weekly-sync.js provisional Week 8 scores (87% team Yahoo + 13% ten-team Yahoo mean plus preseason and 7-game PF adjustments, 61.25% live adjustment). Predictions were originally created from the 2026-10-28T13:26:28.745Z collector by shared sync, then copied verbatim into the locked five-game Week 8 receipt; no manual alterations to predictions.
+Stock: the established Makers preseason draft ranking minus current Power rank, not dollar-priced stock shares.
+Yahoo mean projection = 102.30. Season average team score through seven weeks = 105.31. 35 of 70 scheduled regular season matchups completed and 35 remaining.
+
+WEEK 8 POWER RANKINGS (TEAM, RANK, INDEX, MOVEMENT FROM WEEK 7)
+The Moose Knuckles (Jim) 1 77.57 no change
+TDs In Your Face (Nick) 2 73.38 up 2
+The Eviscerators (Andrew) 3 72.02 no change
+The Mustache riders (TomD) 4 71.43 down 2
+Kareem all over your Hunt (Billy) 5 68.62 no change
+Pump and Go (Tommy) 6 53.96 up 1
+Predacious Fungi (Max) 7 50.58 up 1
+Criterus (Chris) 8 50.56 down 2
+Revenge of the period bloods (Nate) 9 49.21 no change
+The A Gap (Adam) 10 32.57 no change
+
+WEEK 8 WEDNESDAY LOCKED MAKERS AND YAHOO FORECASTS
+The Moose Knuckles vs The Eviscerators: Makers 123.34-103.53; Yahoo 121.84-101.87.
+TDs In Your Face vs The A Gap: Makers 119.72-97.05; Yahoo 121.23-99.47.
+Predacious Fungi vs The Mustache riders: Makers 90.32-111.98; Yahoo 91.20-112.62.
+Criterus vs Pump and Go: Makers 90.93-105.92; Yahoo 88.06-108.28.
+Revenge of the period bloods vs Kareem all over your Hunt: Makers 93.94-86.30; Yahoo 93.31-85.14.
+Both models currently project Moose, TDs, Mustache, Pump and Revenge to win.
+No Week 8 final fantasy scores entered. Captured three truly empty starters (Predacious Fungi K; Criterus TE, DEF) and three populated null-projection starters remain unchanged from Phase 2.
+
+WEEK 8 ODDS (PLAYOFF / BYE / TITLE / TOILET PERCENT)
+Kareem all over your Hunt: 93.1 / 45.1 / 13.4 / 1.5
+The Moose Knuckles: 92.0 / 50.5 / 23.0 / 1.1
+TDs In Your Face: 86.7 / 33.1 / 16.4 / 2.1
+The Mustache riders: 85.2 / 28.6 / 15.1 / 2.4
+The Eviscerators: 78.8 / 21.5 / 19.6 / 2.4
+Pump and Go: 62.4 / 10.6 / 5.4 / 8.9
+Predacious Fungi: 42.3 / 5.2 / 2.5 / 18.2
+Revenge of the period bloods: 38.2 / 4.7 / 2.3 / 19.6
+Criterus: 20.6 / 0.8 / 2.2 / 15.2
+The A Gap: 0.8 / 0.0 / 0.0 / 28.6
+Probability sums after per-team rounding: playoff 600.1%, bye 200.1%, championship 99.9%, Toilet 100.0%, consistent with six qualifying teams, two byes, one champion, one ninth-place-game loser in every trial.
+
+FRANCHISE STOCK (PRESEASON DRAFT RANK -> CURRENT LIVE RANK)
+The Moose Knuckles #3 -> #1 (+2)
+TDs In Your Face #9 -> #2 (+7)
+The Eviscerators #2 -> #3 (-1)
+The Mustache riders #7 -> #4 (+3)
+Kareem all over your Hunt #8 -> #5 (+3)
+Pump and Go #4 -> #6 (-2)
+Predacious Fungi #10 -> #7 (+3)
+Criterus #1 -> #8 (-7)
+Revenge of the period bloods #5 -> #9 (-4)
+The A Gap #6 -> #10 (-4)
+
+WEEK 7 LOCKED PREDICTION GRADING
+Makers 2 correct / 5 (2-3), team-score mean absolute error 14.67.
+Yahoo 2 correct / 5 (2-3), team-score mean absolute error 14.58.
+Both correctly selected TDs In Your Face over Criterus and Predacious Fungi over The A Gap; both incorrectly favored Eviscerators (lost to Pump and Go), Moose (lost to Kareem), and Mustache (lost to Revenge).
+Previous Weeks 1-6 prediction grading (Makers 21/30, Yahoo 20/30) preserved exactly.
+Cumulative through Week 7: Makers 23/35 (23-12), Yahoo 22/35 (22-13).
+Earlier authenticated Week 3 correction remains intact.
+
+INTEGRATION AND SOURCE QA
+- New week8-models.js compiles with no syntax errors and writes one locked Week 8 prediction receipt with capturedAt 2026-10-28T13:26:28.745Z.
+- Targeted 18-script old/new shared-runtime test (season, source imports, sync, predictions, engine, previous models/editorial, Week 8 consistency/model) ran without errors or warnings.
+- All existing locked Weeks 1–7 forecast receipts were JSON identical before/after the new Week 8 model. Previous Week 6 recap remained identical. Preserved preseason draft ranking board JSON identical.
+- Active week=8; active model week=8; Week 7 FINAL; Week 8 WEDNESDAY PREVIEW PICKS LOCKED; modelPendingWeek reset to null.
+- Provisional Week 8 five forecasts exactly equal locked Week 8 final forecasts. Underlying 35 finalized 2026 games preserved; no Week 8 actual finals.
+- All 10 Power Rankings, all 10 odds, all 10 franchise stocks and 5 locked matchups available from active model and overridden engine render methods. Overridden E.simulate returns the same frozen ten odds; overridden E.powerMetrics matches the frozen power.
+- makers-weekly-loader.js now has 51 unique existing script references. All 51 paths exist in branch, no duplicates; Week 8 factual modules before sync and locked Week 8 model after Week 8 status script.
+- No production branch modification, HTML release cache refresh, live browser audit or GitHub Pages deployment in Phase 3.
+
+PHASE 3 DECISION: PASS — Model and prediction receipts frozen on the working branch. Next Phase 4 Week 7 recap / Week 8 editorial, then Phase 5 source release gate, then Phase 6 publishing and browser audit.
