@@ -1,0 +1,46 @@
+THE MAKERS — WEEK 8 PHASE 5 SOURCE RELEASE GATE QA
+Audit date: 2026-10-28
+Repository: TheMakersFFL/the-makers
+Working branch: week8-update-2026-10-28
+Expected source release cache: makers-20261028-w8p5
+Gate result: PASS (source and isolated runtime). No production deployment or actual cloud-browser-rendered audit performed.
+
+SOURCE / PAGE FIXES
+- Audited all 18 active data-driven pages: index.html, weeks.html, week.html, season-2026.html, power-rankings.html, playoff-odds.html, predictions.html, schedule.html, analytics.html, transactions.html, waiver-wire.html, franchise.html, franchises.html, records.html, press.html, history.html, head-to-head.html and trophy-case.html.
+- All 15 standard loader pages now reference makers-weekly-loader.js?v=makers-20261028-w8p5. This includes the Power Rankings page, previously on w7p7 while other pages were w7p5.
+- makers-weekly-loader.js internal cache token updated from makers-20261021-w7p7 to makers-20261028-w8p5.
+- History, Head-to-Head and Trophy Case previously had direct, stale Week 6/7 script chains. Rebuilt only the bottom script-loading sections with the exact current weekly module sequence, including Week 8 facts, model and editorial, using makers-20261028-w8p5. All existing historical sections, archived tables, body markup, styles and in-page render functions were retained.
+- makers-h2h-live.js previously asynchronously reloaded old Week 4–6 data after the page loaded. Removed the stale internal duplicate-load sequence and now renders from the fully initialized Week 8 page state. Preserved matrix, career/history and current-season table functionality.
+- Static franchise manager redirects, week-01 through week-17 redirects, old-season pages, draft, keepers and shame archives were not redesigned or rewritten.
+
+ASSET / NAVIGATION CHECKS
+- Every local JS/CSS/HTML src/href on all 18 active data pages resolves to an existing repository path; no stale Week 6 or Week 7 production cache key remains on any active data page.
+- 74 literal HTML navigation link occurrences inspected across supporting site scripts and the three historical pages, zero missing link targets.
+- All 52 makers-weekly-loader.js script paths exist and are distinct; 52/52 individually passed JavaScript syntax compilation, plus makers-h2h-live.js separately (53/53 total).
+- Special pages have 51 direct script references on History, 52 on H2H, 51 on Trophy Case. The history and trophy inline scripts pass JavaScript syntax tests and run against the modeled source data without exceptions.
+
+HISTORICAL INTEGRITY
+- Data archive, 2022–2025: 318 games (2022 81; 2023 79; 2024 79; 2025 79).
+- Finalized 2026 through Week 7: exactly 35 games, five games in each Week 1–7; zero Week 8 finals; 35 distinct current-season matchup keys, no duplicates.
+- Complete ledger from makers-engine.js allGames(): 353 games. Regular season 315, postseason 38.
+- 2026 standings: 10 teams, 35 W/35 L, PF=PA=7,371.80.
+- Scheduled 2026 regular season: 14 weeks x 5 games = 70; 35 still to be played. All five Week 7 finals and five Week 8 schedules and Yahoo projections imported.
+- Prior locked Week 1–7 prediction snapshot JSON unchanged in the targeted model/editorial runtime; Week 6 editorial, Week 7 forecast matchup rows and preseason draft ranking board intact.
+- Week 8 locked forecast: 5 games; Week 8 Power, odds and stock 10 teams each; active model = Week 8; prior Week 7 marked FINAL. Frozen prediction grading: Makers 23-12, Yahoo 22-13 through Week 7.
+- 24,000-run Week 8 probability aggregates after rounding: playoff 600.1% (6 playoff teams), byes 200.1% (2), titles 99.9% (1), ninth-place-game Toilet loser 100.0% (1). Small deviations are per-team decimal rounding.
+- Week 8 original Yahoo source and locked model continue to preserve three true empty starters (Max K, Chris TE/DEF) and three populated null-projection starters (Nate Fairbairn; Billy McCaffrey/SF defense). No Week 8 actual scores fabricated. Normalized transactions retain one Ladd McConkey drop.
+
+RUNTIME VERIFICATION PERFORMED
+- Isolated factual/full-season engine execution across the current 2026 import chain: 353-game result ledger, standings, 35 actual matches, no JS errors/warnings.
+- Isolated Week 7/8 source-model-editorial chain: five locked Week 8 forecasts, ten Power/odds/stocks, historical locks intact, current source and model consistent, no JS errors/warnings.
+- H2H live renderer tested against a simulated document: 11-manager matrix, 12 header cells, 353 ledger counter (315 regular + 38 postseason), single current-season section including all five Week 7 games; no JS errors.
+- History inline renderer tested against simulated document: Week 7 completed / Week 8 active, Billy leads standings, Moose leads Power, Adam tops shame risk.
+- Trophy inline update tested with a simulated table row: historical career and ninth-place-game counts rendered from current complete engine, no JS errors.
+
+LIMITATIONS AND PHASE 6
+- Source checks and mock-document runtime tests are not a complete rendered-browser audit. Browser console/network, responsive layout, and actual interaction checks on both public domains remain unverified.
+- Complete 52-module browser execution as one actual DOM session has not been performed. All 52 are individually syntax-valid; multiple historical/model/UI tests completed as separate bounded runs.
+- No branch-to-main merge, PR, deployment or live production verification performed during Phase 5.
+- Phase 6 should merge this branch into main only after confirming no new conflicts, wait for successful GitHub Pages deployment, verify exact production SHA and audit the actual live website and mirror page-by-page.
+
+RELEASE DECISION: PHASE 5 SOURCE GATE PASS. Ready for Phase 6 publication and independently verified live browser QA.

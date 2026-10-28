@@ -1,0 +1,53 @@
+MAKERS WEEK 8 — PHASE 1 COLLECTOR / PRODUCTION BASELINE QA
+Date: 2026-10-28
+Branch: week8-update-2026-10-28
+Original production main baseline: 84a80cc924137e514209d7eb472d4110b952ef34
+Source: user-uploaded MAKERS_2026_W08_WEDNESDAY.json (7,719,904 bytes)
+Source SHA256: c8f8f800e504c59009a6a12eb27f4575a7c6a8928f2eb7418a9ac42e1a2a5283
+Collector schema makers-weekly-collector/v2; userscript version 1.3.8
+Yahoo league 471058 / The Makers / season 2026; mode WEDNESDAY; Wednesday collection captured 2026-10-28T13:26:28.745Z; target week 8, completed week 7.
+Source validation.ok=true, eight source checks reported positive. Independent audit: PASS with one minor transaction alias-duplication repair required for import.
+PHASE 1 DOES NOT IMPORT FACTS, LOCK WEEK 8 MODEL OR PUBLISH PRODUCTION.
+
+BASELINE AND STANDINGS
+10 unique canonical franchises; 35 W / 35 L; PF=PA=7371.80.
+Last released Week 7 source baseline had PF=PA=6346.26, and Week 7 ten final team scores total 1025.54; exact reconciliation 6346.26 + 1025.54 = 7371.80.
+Compared each of the ten standings records with the committed week7-import.js baseline on production main: all ten changes to wins, losses, points for, and points against agree with the Week 7 opponent and final scores to the cent; zero team-delta exceptions.
+Billy/Kareem leads 5-2, Nick/TDs, Jim/Moose, TomD/Mustache, Max/Fungi, Nate/Revenge and Tommy/Pump all 4-3. Andrew/Eviscerators 3-4; Chris/Criterus 2-5; Adam/A Gap 1-6.
+
+COMPLETED WEEK 7 RESULTS — VERIFIED
+Kareem all over your Hunt (Billy) 120.82 beat The Moose Knuckles (Jim) 112.28.
+TDs In Your Face (Nick) 110.36 beat Criterus (Chris) 100.10.
+Predacious Fungi (Max) 106.90 beat The A Gap (Adam) 82.64.
+Revenge of the period bloods (Nate) 104.88 beat The Mustache riders (TomD) 98.92.
+Pump and Go (Tommy) 101.32 beat The Eviscerators (Andrew) 87.32.
+5/5 final matches, exactly ten teams. Ten completed-roster captures containing 159 real player rows; 90 starting player scores, 10/10 independent starting points sums match official team final scores exactly. Completed results were not edited.
+
+CAPTURED WEEK 8 YAHOO PROJECTIONS — NOT LOCKED MAKERS MODEL FORECASTS
+Moose Knuckles 121.84 vs Eviscerators 101.87.
+TDs In Your Face 121.23 vs A Gap 99.47.
+Predacious Fungi 91.20 vs Mustache riders 112.62.
+Pump and Go 108.28 vs Criterus 88.06.
+Revenge of the period bloods 93.31 vs Kareem all over your Hunt 85.14.
+5/5 scheduled fixtures with ten unique teams, numeric source team projections and no future scores. Current roster captures 10/10, 155 real player rows. Each team's independently recomputed total of projected starting players agrees with its official Yahoo team projection to the cent.
+All current player actual points null, all current roster starter/bench actual point totals zero; do not back-fill any future scores.
+
+MANDATORY EMPTY/NULL STARTER HANDLING
+Three real explicit empty starting positions: Predacious Fungi K (one empty), Criterus TE and DEF (two empties). Preserve them; do not fabricate replacements.
+Three populated starters with null Yahoo Week 8 projections: Revenge of the period bloods Ka'imi Fairbairn (K); Kareem all over your Hunt Christian McCaffrey (RB) and San Francisco team defense (DEF). They are populated roster slots with unavailable projections, NOT empty starters or proof of already-scored zeros.
+Kareem's source calls the 49ers defense 'San Francisco' on its current roster, while the Week 7 completed roster calls it '49ers'; same NFL team SF, pos DEF. Review canonical alias at Phase 2; do not invent new team/roster player.
+
+WAIVERS / TRANSACTIONS / AVAILABLE PLAYERS
+Source shows 25 structured rows: 10 WAIVER, 15 ADD_DROP. Transaction pagination beyond captured Yahoo rows is not independently verified.
+One collector parser artifact on Oct 26 2:00 pm transaction: The Moose Knuckles added Chig Okonkwo and source mistakenly listed the same dropped player twice as 'Ladd McConkey' and 'McConkey'. Raw Yahoo transaction captured only one drop, 'Ladd McConkey' (LAC WR, Q). Phase 1 separately generated a normalized import candidate that removes the duplicate 'McConkey' alias from this single transaction's dropped/players arrays and leaves 25 transaction records unchanged. The original 7.7 MB upload remains untouched.
+FAAB 10 unique franchise balances; available players 100, exact source distribution QB15/RB25/WR25/TE15/K10/DEF10 and all 100 have numeric projections.
+No malformed day/time placeholder player names across completed/current lineups, no cross-team duplicated rostered player names.
+Raw Yahoo page captures: 31 (10 current roster, 10 completed roster, 6 free agent categories, 2 matchups, 1 league, 1 standings, 1 transactions). Raw captures remain only in original uploaded file; they are intentionally not embedded in the slim Phase 2 candidate.
+
+FILES AND RELEASE DISCIPLINE
+- Original user-uploaded source preserved and unchanged.
+- Normalized Phase 2 import candidate created locally as MAKERS_2026_W08_PHASE1_NORMALIZED.json with original validation provenance and explicit audit metadata, omitting original 31 bulky source captures. It is not yet a live site import.
+- No existing site files, model, prediction receipts, historical content, or HTML altered in Phase 1.
+- Branch created at current main 84a80cc, which includes the most recent Week 7 post-deployment preseason-board fix. Do not overwrite that fix in Phase 2.
+PHASE 1 DECISION: PASS WITH ONE DOCUMENTED TRANSACTION DUPLICATION REPAIR; READY FOR PHASE 2 FACTUAL STAGING.
+Phase 2: import the normalized collector into week8 modules and update the runtime in the working branch, retaining Week 7 locked forecasts, 10 standings, all completed games, three empty starter slots and three null-projection populated starters. Leave main untouched.
