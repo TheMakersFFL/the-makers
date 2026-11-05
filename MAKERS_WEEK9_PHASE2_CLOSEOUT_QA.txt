@@ -1,0 +1,43 @@
+THE MAKERS — WEEK 9 PHASE 2 FINAL CLOSEOUT / INDEPENDENT RECHECK
+Verified 2026-11-04
+Repository: TheMakersFFL/the-makers
+Working branch: week9-update-2026-11-04
+Production main at recheck: e4d95853acf551a1d1c6f667966d10f954e339bd
+Authoritative source: MAKERS_2026_W09_PHASE1_NORMALIZED.json, derived from MAKERS_2026_W09_WEDNESDAY.json.
+Prior Phase 2 source QA: MAKERS_WEEK9_PHASE2_FACTUAL_QA.txt.
+RECHECK DECISION: PASS — WEEK 9 PHASE 2 COMPLETE, CORRECT, AND READY FOR PHASE 3.
+This is an audited branch staging decision, NOT a production deployment or browser-rendered certification.
+
+1. FULL SOURCE FIELD-BY-FIELD EQUALITY
+Loaded all eight data sections from the user-supplied normalized JSON and independently reconstructed the committed GitHub week9-import.js, week9-rosters.js, week9-completed.js, week9-transactions.js and week9-available.js scripts through JavaScript execution.
+Every record was compared recursively with sorted object keys. Exact equality in every section: standings 10/10; matchups 10/10; matchupProjections 10/10; FAAB 10/10; rosters 10/10; completedLineups 10/10; transactions 26/26; availablePlayers 100/100.
+Also verified teamMap, collector validation and sourceValidation metadata byte-for-byte at the structured JSON level. No unintended missing, changed or fabricated source fields or players.
+Original collector remains untouched. The one explicit source normalization is the $4 Oct 29 Pump and Go Ladd McConkey shortened-alias duplicate removal; no transaction record, amount or receipt was dropped.
+
+2. COMPLETE HISTORICAL + 2026 LEDGER
+Executed genuine data.js and makers-engine.js against 2026 import chain through Week 9 (season-2026.js, weekly-import.js, week4–week9 core imports, week9 roster/completed/transaction/available adapters, weekly sync).
+Zero JavaScript exceptions/warnings.
+Actual 2022–2025 archive: 318 historical games, by year 2022=81; 2023=79; 2024=79; 2025=79. Genuine makers-engine.allGames() produces 358 total: archive 318 + 2026 40. Breakdown: 320 regular-season games and 38 postseason games.
+2026 Weeks 1–8: exactly five completed games per week, 40 unique fixtures, no Week 9 played scores, no duplicate 2026 matchups. Week 9 is still Wednesday pregame projection only.
+2026 standings 10/10 team W/L and PF/PA exactly reconcile to those 40 completed results: league PF=PA=8,472.98, 40 wins and 40 losses.
+All ten Week 8 starting-lineup score sums reconcile to official final team scores; all ten current Week 9 projected starting lineup sums match their Yahoo team projections to the cent.
+Preserved genuine vacant Week 9 starters: Criterus K and DEF. No future actual scores invented.
+
+3. FROZEN MODEL AND FORECAST INTEGRITY
+Ran two independent isolated configurations from the exact same committed source scripts: a Week 8 baseline with no Week 9 overlay and a Week 9 factual stage overlay.
+No execution errors or warnings in either.
+Compared every previous prediction snapshot present in this bounded baseline slice before/after staging: Week 1, 2, 3, 7 and 8 were all byte-identical at the JSON object level (Weeks 4–6 are covered by earlier locked snapshot QA and were not recomputed in this targeted slice).
+Week 8 official five-match forecast receipt remained locked=true and exact five-match row content unchanged; Week 8 model snapshot stayed JSON-identical; Week 8 editorial remained present. Week 9 has five provisional forecast rows, locked=false; these are not the Phase 3 final frozen model. Active model still Week 8 with modelPendingWeek=9.
+Y.week transitions from 8 to 9 only when Week 9 factual staging loads. Week 8 recap finalized; Week 9 status 'WEDNESDAY PREVIEW · PROVISIONAL'.
+
+4. SCRIPT LOADER / RELEASE INTEGRITY
+makers-weekly-loader.js contains 58 references: 58/58 GitHub files exist, distinct and individually compiled in independent 14+14+14+16 batches. All six new Week 9 module references correctly ordered; factual files before makers-weekly-sync, week9-phase2-consistency after week8-editorial.
+The outer loader cache remains makers-20261028-w8p5 and active HTML references are unchanged. This is correct for Phase 2 and must be bumped in Phase 5 when the final Week 9 model and editorial exist.
+Existing 2022–2025 game log, earlier models, current site HTML, page scripts and commissioner content untouched.
+Only Phase 1/2 QA, Week 9 factual modules and makers-weekly-loader.js changed on working branch. Main remains unchanged.
+
+LIMITATIONS / HANDOFF
+This is source/runtime QA; a complete actual DOM-rendered, desktop/mobile interactive and production custom-domain audit requires Phase 6 after publication.
+The collector's 26 structured transaction rows cover captured source, not independently authenticated proof of Yahoo pagination beyond the capture; the two TRADE rows are the two sides of one transaction.
+Phase 3 is next: freeze five Week 9 Makers forecasts and analytics using source truth, and grade five Week 8 locked picks against actual results. Phase 4 editorial; Phase 5 page cache/release QA; Phase 6 merge/deploy/browser audit.
+FINAL PHASE 2 DECISION: PASS. NO OPEN DATA / INTEGRATION BLOCKERS.
