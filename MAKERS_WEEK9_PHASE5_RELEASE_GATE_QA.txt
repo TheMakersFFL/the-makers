@@ -1,0 +1,50 @@
+THE MAKERS — WEEK 9 PHASE 5 SOURCE RELEASE GATE
+Audit date: 2026-11-04
+Repository: TheMakersFFL/the-makers
+Working branch: week9-update-2026-11-04
+Audited branch HEAD before QA report: ea92c44f30aec79422d8bd6e571b01a78d0b0053
+Production main baseline: e4d95853acf551a1d1c6f667966d10f954e339bd (unchanged)
+Source capture: MAKERS_2026_W09_WEDNESDAY.json, Wednesday 2026-11-04T17:17:47.028Z.
+Week 9 model and predictions already locked in Phase 3; Week 8 recap and Week 9 editorial approved in Phase 4.
+RELEASE CACHE KEY: makers-20261104-w9p5
+PHASE 5 SOURCE GATE: PASS, READY FOR PHASE 6 PUBLICATION. THIS IS NOT A LIVE BROWSER OR PRODUCTION AUDIT.
+
+CACHE / PAGE RELEASE UPDATES
+Updated all 18 active data-driven HTML pages:
+index.html, weeks.html, week.html, season-2026.html, power-rankings.html, playoff-odds.html, predictions.html, schedule.html, analytics.html, transactions.html, waiver-wire.html, franchise.html, franchises.html, records.html, press.html, history.html, head-to-head.html, trophy-case.html.
+On 15 standard pages, changed only existing makers-weekly-loader.js cache-bust query from makers-20261028-w8p5 to makers-20261104-w9p5. Left data.js, CSS, metadata, body markup, layout and navigation untouched.
+Updated makers-weekly-loader.js internal bust variable to makers-20261104-w9p5. Its ordered 60-script chain loads all Week 9 factual modules before makers-weekly-sync.js, then the previous model/editorial snapshots, week9-phase2-consistency.js, week9-models.js and week9-editorial.js before league-analytics.js and site renderer.
+On History, Head-to-Head and Trophy Case, preserved original HTML historical content and their inline scripts; added five Week 9 factual modules immediately before makers-weekly-sync.js and three Week 9 consistency/model/editorial modules immediately before league-analytics.js. Each direct script now carries the new Week 9 cache key. Result: History 58 scripts, H2H 59, Trophy Case 58, including unchanged data.js and page-specific scripts.
+All 18 active HTML pages and the internal loader contain the new release key, and none contains the old w8p5 key. Historic season archives, redirects, old-season HTML, dedicated franchise redirects, preseason draft/keepers/shame archive were not modified.
+
+SCRIPT / LINK / ASSET QA
+60 of 60 distinct makers-weekly-loader.js references exist in the staging GitHub tree, and all 60 passed individual JavaScript syntax compilation (independent batches 15+15+15+15).
+Each special page has one direct module chain with all required Week 9 modules and no duplicate script paths; respective existing inline scripts preserved unchanged.
+Validated all literal local href/src file references across the 18 active HTML pages against GitHub staging tree: 290/290 paths resolve, zero missing. This includes 54 local references from the fifteen small loader pages and 236 from the three historical pages. Every 18 active page has new cache token and zero old token.
+Additional static local URLs / HTML destinations in data.js, live.js, site.js, league-analytics.js, makers-engine.js, makers-h2h-live.js, makers-weekly-loader.js and Week 9 editorial were checked: 49 local references, zero missing destinations. Dynamic expressions and runtime-only routes are not certified by a literal-reference scan.
+Original CSS paths (including press and historic CSS variants) remain intentionally unchanged; all referenced CSS exists.
+The source and GitHub blob SHAs for data.js, season-2026.js, makers-engine.js, week8-models.js, week8-editorial.js, live.js, site.js and makers-h2h-live.js match production main exactly; no changes to prior year records, historic model snapshots, UI renderer code or previous editorial files.
+
+RUNTIME / HISTORY / H2H / TROPHY CHECKS
+Independent source runtime test executed 16 relevant scripts (real archive, actual season imports Weeks 1–9, synchronization and historic engine, the frozen Week 8 model/editorial and Week 9 rollover/model/editorial) against an isolated JavaScript environment. Zero exceptions, zero warnings and zero errors. This is not an actual browser DOM/network session.
+Historical ledger: 318 archived games (2022=81, 2023=79, 2024=79, 2025=79) + 40 official completed 2026 games through Week 8 = 358 games combined. Ledger breakdown 320 regular season + 38 postseason. Zero Week 9 final scores.
+Standings: 10 teams, league 40 wins/40 losses, PF=PA=8472.98; TDs In Your Face official lead on points for, Moose Knuckles top Power, A Gap highest modeled Toilet risk.
+Week 9 model active with 10 Power ranks, 10 playoff probabilities and five immutable Makers/Yahoo forecasts. Frozen Week 8 receipt remains locked, and Week 9 receipt remains locked.
+History inline-renderer mock: displayed THROUGH WEEK 8, 'Week 8 is closed. Week 9 is live', TDs standings leader (989.98 PF), Moose #1 Power (79.18), A Gap highest Toilet risk (30.6%), with working 2026 Week 9 URL. No exceptions.
+Trophy Case inline-renderer mock: updated manager career record from complete engine (sample Andrew 34–30); retained historical trophy counts; no exceptions.
+H2H mock renderer: 11 manager rows, 12 header cells, corrected 320 regular / 38 postseason / 358 total dynamic counters and one appended current-season results section with 40 rows plus table header. No duplicate section, no Week 9 invented result, no errors.
+Existing static historical HTML counters update from the live engine when scripts execute; static fallback may display older preseason/year counts before JavaScript runs. Actual user-browser rendering remains for Phase 6.
+
+PREDICTION AND EDITORIAL INTEGRITY
+Week 8 final scores 5/5, standings 10/10, completed starter score sums and Wednesday Week 9 roster projections had already been independently reconciled in Phase 2. Two real blank Criterus Week 9 starters K and DEF remain blank; no invented replacement from a waiver transaction.
+Week 8 original prediction grading preserved: Makers 4/5, Yahoo 4/5; through Week 8 Makers 27/40, Yahoo 26/40.
+Week 9 five Makers projections locked, unchanged from model: Moose 123.10–87.70 Revenge, TDs 120.75–111.80 Mustache, Fungi 102.02–107.63 Kareem, Criterus 96.89–113.28 Eviscerators, A Gap 92.25–97.15 Pump.
+Week 8 factual recap and Week 9 editorial source are imported after the frozen Week 9 model; 5/5 preview scores identical to the lock. No previous editorial source modified.
+One documented Phase 1 source correction remains: Pump's Oct 29 $4 Ladd McConkey claim was deduplicated in the normalized source only; 26 captured transactions preserved. Yahoo transaction pagination beyond those captured records was not separately verified.
+
+RELEASE BRANCH / KNOWN LIMITATIONS
+Pre-report branch compare against main: 36 commits ahead, zero behind; 33 changed files, including exactly all 18 active HTML pages, one loader, Week 9 factual/model/editorial modules and Phase 1–4 QA files. Production main is still at e4d95853acf551a1d1c6f667966d10f954e339bd and was not updated.
+No GitHub pull request, production merge, GitHub Pages deployment or true browser-rendered audit performed here.
+Full browser execution, DOM rendering, console/network errors, desktop/mobile responsive interactions and custom-domain versus GitHub Pages mirror remain to be verified in Phase 6 after deployment. Mock runtime/static checks cannot certify browser behavior.
+
+PHASE 5 RELEASE DECISION: PASS — READY TO CREATE/MERGE WEEK 9 PR AND PERFORM PHASE 6 DEPLOYMENT AND BROWSER VERIFICATION.
