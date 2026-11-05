@@ -1,0 +1,52 @@
+THE MAKERS — WEEK 9 PHASE 1 COLLECTOR / SOURCE RECONCILIATION QA
+Date: 2026-11-04
+Repository: TheMakersFFL/the-makers
+Working branch: week9-update-2026-11-04
+Production main baseline: e4d95853acf551a1d1c6f667966d10f954e339bd
+Source: user-uploaded MAKERS_2026_W09_WEDNESDAY.json
+Source size: 7,731,395 bytes
+Source SHA256: 34389b8dfae1f61d39bbf3dba650802cdcdbff4fbe7576825cb00e8b465d8070
+Collector schema: makers-weekly-collector/v2; version 1.3.8; leagueId=471058, The Makers, season 2026.
+Captured: 2026-11-04T17:17:47.028Z, mode WEDNESDAY, targetWeek=9, completedWeek=8.
+Collector reports validation.ok=true, all eight internal category checks positive.
+Independent audit: 34 structural, numeric and baseline checks run; 33 passed unchanged and one transaction duplicate alias was identified and normalized. The normalized Phase 2 candidate now passes the alias uniqueness condition as well.
+PHASE 1 IS A COLLECTOR QA, NOT AN IMPORT, MODEL LOCK, SITE RELEASE OR PRODUCTION AUDIT.
+
+PRIOR BASELINE / STANDINGS — 10/10 RECONCILED
+Production Week 8 import (week8-import.js) held 7 weeks of results: 35 wins, 35 losses, aggregate PF=PA=7,371.80.
+Week 8 final combined team scores sum to 1,101.18; current collector standings total PF=PA=8,472.98, exactly 7,371.80+1,101.18.
+The individual W/L and PF/PA deltas for each of the ten teams match its official Week 8 game outcome and score to the cent: 10/10. Total 40 wins, 40 losses. All 10 team IDs, canonical names, managers and standings ranks are unique. FAAB records agree with standings 10/10.
+Standings after Week 8: TDs In Your Face (Nick) 5-3; The Moose Knuckles (Jim) 5-3; Predacious Fungi (Max) 5-3; Kareem all over your Hunt (Billy) 5-3; Revenge of the period bloods (Nate) 5-3; Pump and Go (Tommy) 5-3; The Mustache riders (TomD) 4-4; The Eviscerators (Andrew) 3-5; Criterus (Chris) 2-6; The A Gap (Adam) 1-7.
+
+WEEK 8 OFFICIAL SCORES — 5/5 MATCHUPS, ALL 10 PLAYERS' TEAMS
+The Moose Knuckles 126.30 beat The Eviscerators 65.50.
+TDs In Your Face 146.88 beat The A Gap 102.06.
+Predacious Fungi 128.28 beat The Mustache riders 78.74.
+Pump and Go 122.06 beat Criterus 108.86.
+Revenge of the period bloods 117.80 beat Kareem all over your Hunt 104.70.
+Completed Week 8 lineups: 10 team captures, 159 real player entries, 90 populated starting slots with 90 numeric fantasy scores; no empty starter positions. Independent starting-score sums exactly match each of 10 official final team scores. No duplicate named NFL player across different completed team rosters; no opponent/time placeholder player names.
+
+WEEK 9 OFFICIAL YAHOO PROJECTIONS — FACTUAL ONLY, NO MAKERS MODEL LOCK
+Criterus 95.12 vs The Eviscerators 114.46.
+The Moose Knuckles 120.98 vs Revenge of the period bloods 85.53.
+TDs In Your Face 120.39 vs The Mustache riders 112.72.
+Predacious Fungi 103.05 vs Kareem all over your Hunt 109.04.
+Pump and Go 97.61 vs The A Gap 93.68.
+Five scheduled matchups cover all ten franchises exactly once; all future actual team scores are null. All five matchups and numeric team projections are duplicated consistently in matchupProjections. Current Week 9 rosters: 10 team captures, 159 real player entries, 88 populated starters plus 2 explicitly empty slots. All 10 teams' independently recomputed starting-player projections match official Yahoo team projection exactly; player actual points remain null.
+CRITICAL: Criterus has genuinely EMPTY K and DEF starter slots; do not assign imaginary players or treat a waiver acquisition as confirmed lineup placement. All 88 populated current starters have numerical projected points and no populated starter has a null projected value.
+
+AVAILABLE / WAIVERS / TRANSACTIONS
+Free agents: 100 distinct player-position-team rows with 100 numeric Yahoo projections; exact distribution QB15, RB25, WR25, TE15, K10, DEF10. No missing RB or duplicate free agent.
+FAAB 10 official balances. Captured 26 structured transaction rows: 15 ADD_DROP, 9 WAIVER and 2 TRADE (the two trade records reflect one bilateral DK Metcalf / Zach Charbonnet exchange).
+MANDATORY NORMALIZATION: In Oct 29 12:51 am Pump and Go $4 WAIVER claim, raw collector lists added 'Ladd McConkey' and a second alias 'McConkey', both LAC WR with identical $4 claim, in the added and players arrays. The captured source transaction text lists one $4 claim for Ladd McConkey. In separate normalized import candidate, deleted ONLY duplicate shortened 'McConkey' objects from those arrays; retained one Ladd McConkey acquisition, Kendre Miller drop, timestamp, manager, team, $4 amount and all 26 transaction rows. Original upload untouched. Do NOT double-count $4 or two waiver claims. Full Yahoo historical transaction pagination beyond 26 captured rows is not independently certified.
+Raw capture bundle contains 31 page captures: 10 current rosters, 10 completed rosters, six free-agent categories, two matchup pages, league/standings/transaction pages (one each).
+
+NORMALIZED NEXT-PHASE CANDIDATE
+Created locally: MAKERS_2026_W09_PHASE1_NORMALIZED.json (215,972 bytes). Omitted bulky 31 raw Yahoo page captures and unused null delta; preserved full substantive data, all source validation, ten standings, all official scores, rosters, current and completed player rows, 100 free agents, 26 transactions and explicit sourceValidation / phase1Audit provenance.
+Only data correction is the duplicate transaction alias described above. This local candidate is for Phase 2 factual staging; it was not committed into live site or substituted for the original collector.
+The existing preliminary file MAKERS_WEEK9_PHASE1_NO_COLLECTOR_BASELINE.txt correctly documented the period before source arrival, but its no-collector limitation is now SUPERSEDED by this new full-source QA.
+
+BRANCH / RELEASE DISCIPLINE
+Existing branch week9-update-2026-11-04 was already present, created at main e4d95853acf551a1d1c6f667966d10f954e339bd. Phase 1 adds this QA only. No previous-week factual modules, models, editorial, locked prediction receipts, historical pages, HTML, or production main changed.
+Phase 2 should import factual source into Week 9 modules using normalized candidate; preserve Week 8 locked forecast for unbiased retrospective grading and 2022–2025 historical ledger; do not invent Week 9 results; explicitly preserve Criterus K/DEF as vacant.
+PHASE 1 DECISION: PASS WITH ONE DOCUMENTED TRANSACTION ALIAS REPAIR. READY FOR PHASE 2 FACTUAL STAGING.

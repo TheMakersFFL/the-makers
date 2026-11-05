@@ -1,0 +1,67 @@
+THE MAKERS — WEEK 9 PHASE 4 EDITORIAL RELEASE-STAGING QA
+Audit date: 2026-11-04
+Repository: TheMakersFFL/the-makers
+Working branch: week9-update-2026-11-04
+Before final QA commit: 1615f88b014930445f3fc1dbe55da0e3203bdc14
+Production main: e4d95853acf551a1d1c6f667966d10f954e339bd (unchanged)
+Source collector: MAKERS_2026_W09_WEDNESDAY.json, normalized in Phase 1; targetWeek=9, completedWeek=8.
+Locked forecast and analytics: week9-models.js (Phase 3), source capture 2026-11-04T17:17:47.028Z.
+PHASE 4 DECISION: PASS — EDITORIAL WRITTEN, SOURCE-RECONCILED, STAGED, AND RUNTIME-VALIDATED. NOT YET PUBLISHED.
+
+CONTENT CREATED
+New file: week9-editorial.js (21,841 UTF-8 characters), preserving the existing Week 8 editorial object schema and site-facing weekly fields.
+- 741-word verified Week 8 recap containing all five official games, actual point receipts and standings context.
+- 1,254-word Week 9 Wednesday preview covering the six-way 5-3 tie, five locked score forecasts, H2H context, specific roster statuses, waiver implications, Power Rankings, the postseason and Toilet Bowl risks.
+- Five complete Week 8 matchup breakdown objects with official scoreA/scoreB and winners.
+- Five Week 9 matchup breakdown objects with exact immutable Makers/Yahoo team scores and approved winners.
+- Eight completed-week awards, eight upcoming-week awards.
+- Eight waiver/FAAB/transaction analysis notes in an object compatible with the prior site editorial schema.
+- Game of the Week: Predacious Fungi vs Kareem all over your Hunt, both 5-3; Makers 102.02-107.63 Kareem, margin 5.61, Yahoo 103.05-109.04.
+- Week 8 recap Game of the Week: Revenge of the period bloods 117.80 vs Kareem all over your Hunt 104.70, the week's closest game at 13.10 and the upset that ended Billy's sole first-place possession.
+
+WEEK 8 HISTORICAL FACTS AND GRADING
+Actual Week 8 final games:
+Moose Knuckles 126.30–65.50 Eviscerators (biggest victory, margin 60.80);
+TDs In Your Face 146.88–102.06 A Gap (week's highest team score);
+Predacious Fungi 128.28–78.74 Mustache riders (upset of both models, margin 49.54);
+Pump and Go 122.06–108.86 Criterus;
+Revenge of the period bloods 117.80–104.70 Kareem (closest game, margin 13.10).
+Official summed Week 8 ten-team score 1,101.18. Standings league PF=PA=8,472.98; six teams 5-3, then Mustache 4-4, Eviscerators 3-5, Criterus 2-6, A Gap 1-7.
+Named source-backed performances include Joe Burrow 44.48, Tee Higgins 32.00, Bhayshul Tuten 28.90, Josh Allen 29.56, Tony Pollard 26.20, D'Andre Swift 25.90, and the top scored bench player Patrick Mahomes 28.94. These are sourced from the ten completed Week 8 starting/bench lineups, not live NFL assumptions.
+Week 8 original forecast grading stays Makers 4-1, Yahoo 4-1; season through Week 8 Makers 27-13, Yahoo 26-14. Editorial does NOT edit historical grading or prior picks.
+
+WEEK 9 FORECASTS / ROSTERS / H2H
+The five gameBreakdowns are in the exact Phase 3 model order and preserve all locked fields teamA/teamB, meA/meB, yahooA/yahooB without modification.
+Moose 123.10–87.70 Revenge (Jim leads recorded all-time 5-2);
+TDs 120.75–111.80 Mustache (recorded all-time 5-5, TomD four straight);
+Fungi 102.02–107.63 Kareem (Max won lone previous recorded meeting);
+Criterus 96.89–113.28 Eviscerators (Andrew leads historical series 4-3);
+A Gap 92.25–97.15 Pump (Tommy leads all-time series 3-2).
+Historical manager H2H facts were checked through makers-engine.js and original 318-game archive + 40 current 2026 finals.
+All Week 9 player statuses described as CAPTURED WEDNESDAY, not promises about kickoff status. Critically, Criterus has two truly empty K and DEF starting slots even after the captured $4 Fairbairn/$5 Lions waiver acquisitions. No invented players, injury recovery, starting status or future scores.
+The original collector's duplicate shortened 'McConkey' waiver alias remains normalized to one actual Ladd McConkey $4 acquisition; 26 structured source transaction rows preserved, including two sides of the single Metcalf/Charbonnet trade; Yahoo pagination beyond captured rows is not certified.
+
+RENDERING WIRES / HISTORICAL PRESERVATION
+Added 'week9-editorial.js' immediately after the immutable week9-models.js in makers-weekly-loader.js and before league-analytics.js/site renderer. The loader now references 60 distinct module paths; 60/60 exist in staging and 60/60 passed isolated JavaScript syntax compilation (four independent batches of 15 scripts).
+Executed a 20-script integrated source/runtime slice with genuine data.js, all 2026 factual imports Weeks 4–9, Week 9 roster/completed/transaction/available adapters, makers-weekly-sync.js, makers-engine.js, Week 8 locked model and editorial, Week 9 Phase 2 rollover, Week 9 locked model, then new editorial. No exceptions, errors or warnings.
+Verified all 15 preservation/integration gates PASS:
+- all prior Week 1–8 prediction receipt content unchanged;
+- historical results, standings and 318-game archived log unchanged;
+- Week 8 model snapshot unchanged;
+- Week 9 model snapshot unchanged;
+- Week 9 five-forecast lock unchanged;
+- old Week 8 original source editorial object unchanged;
+- Criterus two empty slots unchanged;
+- active model remains week 9;
+- all five new editorial forecast tuples exactly match the Week 9 locked receipt;
+- Y.weekly['8'] populated with factual recap and FINAL status;
+- Y.weekly['9'] populated with preview and PICKS LOCKED status.
+Current engine's complete ledger remains 358 (318 historical + 40 completed 2026), zero Week 9 actual games. Forecasts remain future projections.
+Previously authored Week 8 source editorial file and all historical source files remain unmodified. Week 8 weekly DISPLAY fields are appropriately rolled forward from prior preview to final recap; immutable Week 8 source editorial object/receipt remains intact.
+
+RELEASE CONTROL / NEXT ACTION
+Working branch still only. Existing makers-weekly-loader.js bust key remains makers-20261028-w8p5; active HTML page cache keys and historical direct-load chains are NOT updated in Phase 4. Do not imply current production site shows the new recap.
+Phase 5 must bump all live data-driven page cache tokens, synchronize History/H2H/Trophy script chains with full Week 9 module order, verify nav/assets and run full source release gate. Phase 6 must merge/publish on main, confirm Pages deployment and perform actual browser-rendered verification where supported.
+No production merge, deployment or browser visual audit was run here.
+
+FINAL PHASE 4 DECISION: PASS — VERIFIED WEEK 8 RECAP + WEEK 9 EDITORIAL STAGED WITHOUT MODIFYING LOCKED WEEK 9 PREDICTIONS.

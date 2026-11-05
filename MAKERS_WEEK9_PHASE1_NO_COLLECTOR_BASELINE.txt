@@ -1,0 +1,38 @@
+THE MAKERS — WEEK 9 PHASE 1 PRELIMINARY BASELINE (NO NEW YAHOO COLLECTION)
+Prepared: 2026-11-04
+Repository: TheMakersFFL/the-makers
+Working branch: week9-update-2026-11-04
+Production main baseline: e4d95853acf551a1d1c6f667966d10f954e339bd
+Source audit status: PARTIAL — verified published repository baseline, NOT a full Week 9 collector QA.
+Production main remains unchanged.
+
+WHAT WAS VERIFIED
+- Latest available factual Yahoo collector in repository is makers-weekly-collector/v2, version 1.3.8, captured Wednesday 2026-10-28T13:26:28.745Z.
+- Its targetWeek=8, completedWeek=7, collector validation.ok=true. It contains five official Week 7 finals, Week 8 projected games, 10 Week 8 rosters, 10 Week 7 completed lineups, 25 transactions and 100 available players.
+- Published Week 8 update and supporting QA files exist on main, and loader uses makers-20261028-w8p5.
+- Last verifiable standings are after Week 7: one 5-2 team (Kareem/Billy), six 4-3 teams, The Eviscerators 3-4, Criterus 2-5, The A Gap 1-6. League 35 W and 35 L; PF=PA=7371.80.
+- Frozen Week 8 Makers Wednesday projections were saved and locked using the 2026-10-28 collector. These must be preserved for objective Week 8 grading once actual scores arrive.
+- 2026 schedule contains five Week 9 games with ten distinct teams:
+  1. The Moose Knuckles vs Revenge of the period bloods
+  2. TDs In Your Face vs The Mustache riders
+  3. Predacious Fungi vs Kareem all over your Hunt
+  4. Criterus vs The Eviscerators
+  5. The A Gap vs Pump and Go
+- There are 35 actual completed games in the last captured repository baseline, Weeks 1–7. Historical archive 318 completed games from 2022–2025, so previous combined count 353, NOT the unknown updated Week 9 total.
+- The Week 8 source has no official finalized Week 8 matches (five scheduled Week 8 games have final=false). Their official results must NOT be guessed from the prior projections.
+- The repository contains no Week 9-specific collector data/module. No connected Yahoo Fantasy provider is available in this session for authenticated league access.
+
+WHAT CANNOT BE CERTIFIED WITHOUT FRESH AUTHENTICATED YAHOO INFORMATION
+1. Five official Week 8 final scores and the ten completed Week 8 player lineups.
+2. Individual Week 8 score reconciliation and incremental current standings (including PF/PA, records and official seeding).
+3. Week 9 current rosters, actual starter and bench slots, byes, empty starters, week projections, official team matchup projections.
+4. Current Week 9 available players, waiver actions, FAAB balances and transaction feed; previous data may be stale.
+5. Complete eight-category Week 9 collector validation (five finals, 10 completed lineups, 10 current rosters, five upcoming games, 100 free agents etc.).
+6. Honest evaluation of Week 8 predictions against true outcomes.
+7. A reliable frozen Week 9 model and accurate Week 9 editorial tied to Wednesday Yahoo figures.
+
+DECISION / NEXT ACTIONS
+- Baseline inspection and Week 9 working branch preparation: COMPLETE.
+- Full Week 9 Phase 1 official-source reconciliation: PENDING FRESH FACTS. This report MUST NOT be labeled a full Phase 1 PASS.
+- Do not modify production main, do not generate imaginary scores, do not lock Wednesday Week 9 forecasts, and do not use old Week 8 data as if it were new.
+- A new collector is the established short path; alternatively, genuine authenticated Yahoo league results/data could be provided by another supported connection or file. Without either, only preliminary Phase 1 preparation is possible.

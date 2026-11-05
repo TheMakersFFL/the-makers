@@ -1,0 +1,75 @@
+THE MAKERS — WEEK 9 PHASE 3 LOCKED MODEL AND FORECAST QA
+Wednesday 2026-11-04
+Repository: TheMakersFFL/the-makers
+Branch: week9-update-2026-11-04
+Source of truth: Phase 2 normalized Wednesday Yahoo collector, captured 2026-11-04T17:17:47.028Z; target Week 9, completed Week 8.
+Production main baseline remains e4d95853acf551a1d1c6f667966d10f954e339bd.
+RELEASE STATUS: STAGED ONLY. No release page cache updates, HTML edits, merge, browser audit or deployment.
+
+PHASE 3 DECISION: PASS — LOCKED WEEK 9 ANALYTICS AND ALL FIVE MAKERS/YAHOO PREDICTION RECEIPTS.
+
+GRADED OFFICIAL WEEK 8 FORECAST RECEIPT (ORIGINAL OCT 28 LOCK)
+The source Week 8 forecast receipt remained locked, and its five original Makers and Yahoo estimates were compared against the five official Yahoo Week 8 FINAL scores, with no retrospectively edited forecasts.
+Makers: 4/5 winner picks correct; mean absolute error across 10 team scores 22.07 points.
+Yahoo: 4/5 winner picks correct; mean absolute error across 10 team scores 21.87 points.
+Correctly picked: Moose Knuckles over Eviscerators (actual 126.30-65.50); TDs In Your Face over The A Gap (146.88-102.06); Pump and Go over Criterus (122.06-108.86); Revenge of the period bloods over Kareem all over your Hunt (117.80-104.70).
+Missed by BOTH: Predacious Fungi defeated The Mustache riders 128.28-78.74; both had picked Mustache.
+Pre-Week-8 archived grading: Makers 23/35, Yahoo 22/35. Through Week 8: MAKERS 27/40 (67.5%), YAHOO 26/40 (65.0%). Archived Week 1-7 grade entries preserved, and Week 8 result appended.
+The score MAE is the average absolute predicted-versus-actual error over the ten individual team scores, not a percentage or margin MAE.
+
+WEEK 9 MAKERS PREDICTIONS — IMMUTABLY LOCKED
+Captured 2026-11-04T17:17:47.028Z. Official Yahoo projections were frozen alongside Makers model scores for independent grading after Week 9. All ten teams occur exactly once; no current Week 9 actual game/player scores were created.
+1. Moose Knuckles 123.10 vs Revenge of the period bloods 87.70. Makers pick: Moose. Yahoo: 120.98-85.53.
+2. TDs In Your Face 120.75 vs The Mustache riders 111.80. Makers pick: TDs. Yahoo: 120.39-112.72.
+3. Predacious Fungi 102.02 vs Kareem all over your Hunt 107.63. Makers pick: Kareem. Yahoo: 103.05-109.04.
+4. Criterus 96.89 vs The Eviscerators 113.28. Makers pick: Eviscerators. Yahoo: 95.12-114.46.
+5. The A Gap 92.25 vs Pump and Go 97.15. Makers pick: Pump. Yahoo: 93.68-97.61.
+
+WEEK 9 POWER RANKINGS (CONTINUITY: SAME MAKERS ENGINE)
+Power index = 28% normalized preseason plus 72% live, live component 58% record + 42% season points-for normalized against league max. Weight capped at six games. Last-week comparison references immutable Week 8 power snapshot.
+1 Moose Knuckles (Jim) 79.18, unchanged (Week 8 77.57)
+2 TDs In Your Face (Nick) 75.62, unchanged (73.38)
+3 The Eviscerators (Andrew) 67.91, unchanged (72.02)
+4 The Mustache riders (TomD) 66.63, unchanged (71.43)
+5 Kareem all over your Hunt (Billy) 64.12, unchanged (68.62)
+6 Pump and Go (Tommy) 56.48, unchanged (53.96)
+7 Predacious Fungi (Max) 52.81, unchanged (50.58)
+8 Revenge of the period bloods (Nate) 51.28, UP one (49.21)
+9 Criterus (Chris) 48.74, DOWN one (50.56)
+10 The A Gap (Adam) 31.53, unchanged (32.57)
+All ten preseason stock-market reference ranks preserved; franchise stock delta = preseason rank minus current power rank. The resulting stock ratings are NOT financial prices.
+
+PLAYOFF / BYE / TITLE / TOILET ODDS
+Recomputed with genuine pre-lock Makers engine, not Week 8's patched frozen simulation. The existing xorshift RNG seed 20260901 was used for 24,000 deterministic trials, with official standings after eight complete games each and 30 unplayed schedule games remaining, six playoff qualifiers and top-two byes.
+Moose: playoff 97.3%, bye 66.6%, title 26.6%, Toilet risk 0.4%.
+TDs: 92.7 / 47.1 / 19.7 / 1.2.
+Kareem: 85.2 / 28.3 / 11.6 / 3.3.
+Pump: 73.7 / 19.1 / 7.3 / 6.6.
+Mustache: 69.9 / 12.8 / 11.8 / 5.2.
+Eviscerators: 61.3 / 6.4 / 14.1 / 5.0.
+Fungi: 60.0 / 10.8 / 4.4 / 13.2.
+Revenge: 52.3 / 8.8 / 3.6 / 15.7.
+Criterus: 7.4 / 0.1 / 0.8 / 18.7.
+The A Gap: 0.1 / 0.0 / 0.0 / 30.6.
+Probability conservation checks after one-decimal rounding: playoff ≈599.9% (six places), bye=200.0% (two byes), title≈99.9%, Toilet≈99.9%. These are model estimates, not certainties. Source Week 8 odds preserved for week-over-week deltas.
+
+FORECAST METHOD AND MODEL INPUTS
+Makers Week 9 forecast copied exactly from provisional Wednesday weekly sync: 87% individual Yahoo team projection + 13% ten-team mean Yahoo projection, plus existing preseason rank adjustment and live team points-per-game adjustment at 70% live blend (eight completed games). Source ten-team mean Yahoo=105.26, 2026 league team PPG=105.91.
+Power live weight 72%; forecast live weight 70%. No formula rewrite; no outside estimates. All current Week 9 official team projections match Week 9 starter projections to the cent.
+Two genuinely empty Criterus starting positions, K and DEF, remain missing, no fictional replacements inserted.
+Staged output source: week9-models.js has an immutable model snapshot (10 power rankings, 10 odds, 10 stocks, five forecasts, eight-week grading history), and locks predictionSnapshots['9'] with capturedAt and source. All past locks, source Week 8 analytics/editorial, historical ledger and original collector are untouched.
+
+INTEGRATION / IDENTITY / IDPOTENCE
+- New week9-models.js committed and inserted into makers-weekly-loader.js directly after week9-phase2-consistency.js and before league-analytics.js. Existing Week 8 scripts load first.
+- All 59 loader script references exist, are unique, and ordered as expected. The 58 previously inspected sources and the new model parse as JavaScript. The outer loader still has cache makers-20261028-w8p5 pending Phase 5 cache release.
+- Executed source runtime of genuine historic data, all Week 4-9 factual imports, current source adapters, makers-weekly-sync, makers-engine, locked Week 8 model/editorial, Week 9 consistency, locked Week 9 model and league-analytics.js. 20/20 selected scripts executed, zero runtime errors or warnings.
+- Week 8 locked five-game prediction receipt, Week 8 static model snapshot and Week 8 editorial remained JSON-identical before/after the Week 9 lock; 40 current season result records unchanged; 318-game archive unchanged.
+- Week 9 pre-lock provisional receipt was locked with unchanged five forecast rows. Model snapshot week=9, Y.week=9, modelPendingWeek=null. Week 8 weekly status FINAL; Week 9 WEDNESDAY PREVIEW · PICKS LOCKED.
+- The live engine E.powerMetrics() and E.simulate() were repointed to the committed frozen Week 9 model, and returned matching ten-team values. Reapplying the Week 9 script was idempotent and did not mutate the prior receipt.
+- Prior frozen predictions through Week 8 remain preserved in season/previous models; the independent source runtime confirmed the earlier predictions exist and the Week 8 receipt is untouched.
+
+NEXT
+Phase 4: Write the Week 8 recap and Week 9 narrative preview, including five fact-checked game breakdowns, awards, transactions and playoff analysis, without changing locked predictions.
+Phase 5: Update ALL data-driven page cache keys, direct historical script chains, audit navigation / missing assets, and release gate.
+Phase 6: Merge/publish to main, verify successful GitHub Pages workflow and conduct actual browser-rendered live-site audit where possible.
+FINAL PHASE 3 DECISION: PASS — WEEK 9 MAKERS FORECASTS AND ANALYTICS LOCKED IN STAGING, NOT PUBLISHED.

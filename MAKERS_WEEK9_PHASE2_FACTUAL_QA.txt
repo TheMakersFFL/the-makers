@@ -1,0 +1,60 @@
+THE MAKERS — WEEK 9 PHASE 2 FACTUAL IMPORT / CONSISTENCY QA
+Date: 2026-11-04
+Repository: TheMakersFFL/the-makers
+Working branch: week9-update-2026-11-04
+Production main baseline: e4d95853acf551a1d1c6f667966d10f954e339bd
+User source: MAKERS_2026_W09_PHASE1_NORMALIZED.json derived from MAKERS_2026_W09_WEDNESDAY.json.
+Collector: makers-weekly-collector/v2, version 1.3.8, captured 2026-11-04T17:17:47.028Z.
+Yahoo league 471058, target week 9, completed week 8; all eight source validation checks passed.
+PHASE 2 SOURCE FACTS: PASS. Phase 3 Week 9 model forecasts are NOT yet computed or locked.
+
+STAGED CONTENT
+- week9-import.js: validated collector metadata/provenance, ten official standings records, five Week 8 official finals, five scheduled Week 9 games with exact Yahoo team projections, ten current FAAB balances and Phase 2 source audit marker; raw captures intentionally not embedded.
+- week9-rosters.js: ten Week 9 current team rosters with 159 real player entries, post-waiver starters/bench slots, player statuses, byes, valid Week 9 projected points, and genuine empty slots; uses the prior weeks' compact tuple adapter pattern.
+- week9-completed.js: ten completed Week 8 team lineups with 159 real player entries and all actual player points retained.
+- week9-transactions.js: 26 captured transactions (15 ADD_DROP, 9 WAIVER, 2 TRADE), retaining original additions, drops, amounts, timestamps and source receipt text in compact tuples.
+- week9-available.js: all 100 current free agents (QB15 RB25 WR25 TE15 K10 DEF10) with Yahoo projected points and source position/team/status values intact.
+- week9-phase2-consistency.js: Week 8 marked FINAL, Week 9 marked WEDNESDAY PREVIEW · PROVISIONAL, preserves Week 8 locked model as previousModelSnapshot, and indicates modelPendingWeek=9.
+- makers-weekly-loader.js: inserted five Week 9 factual modules AFTER Week 8 factual modules and BEFORE makers-weekly-sync.js; inserted Week 9 Phase 2 consistency AFTER the already published Week 8 editorial. Existing weekly loader cache remains makers-20261028-w8p5; update page and loader cache tokens in Phase 5 only.
+No old models, locked prediction snapshots, commissioner-authored texts, historical data files, HTML pages, site navigation or production main changed.
+
+NORMALIZATION / AUTHENTICITY
+The original Phase 1 collector upload remains untouched. One confirmed alias duplication in the Oct 29 12:51 am Pump and Go $4 waiver claim was removed ONLY in the normalized candidate: retain Ladd McConkey (LAC, WR) once and the dropped Kendre Miller; omit shortened alias 'McConkey'. There remains one $4 claim and one transaction, not two.
+The Nov 1 bilateral Criterus / Moose Knuckles trade has two team-side transaction records describing ONE DK Metcalf-for-Zach Charbonnet exchange; no extra trade created.
+Source contains 26 captured structured transaction records. Complete historical Yahoo pagination beyond captured transactions is not independently guaranteed.
+
+OFFICIAL WEEK 8 FINAL SCORES
+The Moose Knuckles 126.30 defeated The Eviscerators 65.50.
+TDs In Your Face 146.88 defeated The A Gap 102.06.
+Predacious Fungi 128.28 defeated The Mustache riders 78.74.
+Pump and Go 122.06 defeated Criterus 108.86.
+Revenge of the period bloods 117.80 defeated Kareem all over your Hunt 104.70.
+All ten completed starting lineup scores reconcile independently to official Yahoo finals to the cent. No Week 9 player actual points or scores were invented.
+
+WEEK 9 YAHOO TEAM PROJECTIONS — SOURCE ONLY, NOT MAKERS LOCKED FORECASTS
+Criterus 95.12 vs The Eviscerators 114.46.
+The Moose Knuckles 120.98 vs Revenge of the period bloods 85.53.
+TDs In Your Face 120.39 vs The Mustache riders 112.72.
+Predacious Fungi 103.05 vs Kareem all over your Hunt 109.04.
+Pump and Go 97.61 vs The A Gap 93.68.
+All ten current Week 9 starting-player projected totals independently sum to the official team projection to the cent.
+Two truly EMPTY Week 9 starters: Criterus K and DEF. These are not inferred zero-point players, and recorded transactions do not certify lineup placement.
+
+INTEGRATION / STANDINGS RECONCILIATION
+Loaded full 2026 factual core in isolated JavaScript: season-2026.js, original weekly-import.js, Weeks 4–8 import modules, all five Week 9 factual modules, makers-weekly-sync.js, makers-engine.js, frozen week8-models.js, and new week9-phase2-consistency.js.
+Zero script execution errors, zero warnings. 9 collector snapshots; 40 completed 2026 games, five per week for Weeks 1–8, zero in Week 9, zero duplicate matchup keys.
+Official Week 8 scoring sum 1101.18; 2026 season PF=PA=8472.98 and league records total 40 W, 40 L. Recalculated ALL ten individual records/PF/PA from the actual 40 games and matched each official Week 9 standing exactly to the cent.
+Six teams are 5-3: TDs In Your Face, The Moose Knuckles, Predacious Fungi, Kareem all over your Hunt, Revenge of the period bloods and Pump and Go. Mustache 4-4, Eviscerators 3-5, Criterus 2-6, A Gap 1-7.
+Separate 16-script previous-week editorial/model/current factual slice also ran without errors: 10 standings, 10 current rosters, 10 completed lineups, 5 Week 9 matchups, 100 available, 10 FAAB balances, 26 new transaction rows.
+Previous Week 8 model and editorial data stayed byte-identical in that isolated runtime after Week 9 Phase 2 consistency. Week 8 prediction receipt remains LOCKED, Week 9 receipt remains UNLOCKED/PROVISIONAL, and active model still Week 8 until Phase 3. Y.week=9, Y.modelPendingWeek=9, Y.weekly['8'].status='FINAL'.
+Loaded real historic/current source may require additional archive scripts for full combined 2022–2025 history counts; Phase 2 verified the 2026 40-game ledger and did not modify any archived history.
+
+SCRIPT LOADER / BRANCH QA
+58 distinct makers-weekly-loader.js references. 58/58 paths exist in the GitHub staging tree, with zero duplicates and correct import -> sync -> historical model/editorial -> Phase 2 rollover ordering.
+58/58 individually fetched and JavaScript syntax-compiled successfully in four independent batches (14 + 14 + 14 + 16). This is source-level syntax and isolated runtime QA, not a true browser-rendered page audit.
+Current production main SHA e4d95853acf551a1d1c6f667966d10f954e339bd remains unchanged. Only Phase 1 QA files, six new Week 9 factual/consistency modules, and makers-weekly-loader.js changed in staging.
+
+NEXT PHASES
+Phase 3: grade original frozen Week 8 Makers/Yahoo predictions against five actual Week 8 final scores; calculate and LOCK Week 9 Makers Power Rankings, playoff/bye/title/punishment odds, franchise stock, and five new Makers/Yahoo Wednesday forecast receipts. Preserve historic prediction locks and all player positions and current empty starters.
+Phase 4: Week 8 recap / Week 9 editorial. Phase 5: main page/internal cache refresh and release audit. Phase 6: production merge/deployment and independent live-site browser check where supported.
+PHASE 2 DECISION: PASS — complete factual import staged and source/runtime validated; production unchanged.
