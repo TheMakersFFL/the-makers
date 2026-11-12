@@ -1,4 +1,4 @@
-# Makers Weekly Collector v1.3.6 — Wednesday workflow
+# Makers Weekly Collector v1.3.9 — Wednesday workflow
 
 The Makers collector uses the hardened Yahoo parsing/validation engine developed for Mis.Exp while remaining isolated to The Makers.
 
@@ -72,7 +72,7 @@ The previous week's recap and the upcoming week's preview are published together
 
 ## Files
 - `Makers_Weekly_Collector.user.js` — install/update this in Tampermonkey
-- `Makers_Weekly_Collector_v1.3.6.txt` — identical versioned copy
+- `Makers_Weekly_Collector_v1.3.9.txt` — identical versioned copy
 
 The collector is natively Wednesday-only: one mode, one validation path, one export.
 
@@ -84,15 +84,28 @@ The collector is natively Wednesday-only: one mode, one validation path, one exp
 - The v1.3.2 Billy team-name alias fix remains preserved.
 - v1.3.4 removes the hard-coded Week 2 startup default and self-advances the suggested Upcoming week.
 
-## Install or update v1.3.6 in Chrome / Tampermonkey
+## Install or update v1.3.9 in Chrome / Tampermonkey
 
-The code in GitHub is **v1.3.6**, but Chrome stores its own installed userscript copy. Updating GitHub does **not** update the Tampermonkey dashboard until Tampermonkey installs or refreshes the script.
+Chrome stores its own installed script. A GitHub release alone does not verify that Chrome has updated it.
 
-1. Open the canonical userscript URL: https://raw.githubusercontent.com/TheMakersFFL/the-makers/main/Makers_Weekly_Collector.user.js
-2. In Tampermonkey, choose **Update**, **Reinstall**, or **Install** as prompted. If the URL displays text instead, edit the existing **Makers Weekly Collector — Wednesday** script, replace all code with the current source, and save it.
-3. Verify the single **Makers Weekly Collector — Wednesday** entry shows version **1.3.6** and is enabled. Keep the retired **Makers Weekly Collector — Tuesday + Thursday** disabled. Do not run two Makers collector scripts simultaneously.
-4. Open Yahoo league 471058, refresh, verify the collector header says v1.3.6, set Upcoming week to the week about to be played, clear any stale workspace, and run AUTO COLLECT LEAGUE after Wednesday waivers.
-5. Do not export/import data for the site until the required recap and preview checks pass. Preserve the export JSON privately for source-level QA.
+1. Open [the canonical userscript](https://raw.githubusercontent.com/TheMakersFFL/the-makers/main/Makers_Weekly_Collector.user.js) and update the existing **Makers Weekly Collector — Wednesday** entry. If the URL displays source text, replace the code in that existing entry and save. Do not delete the entry or create a duplicate.
+2. Reload [The Makers Yahoo league](https://football.fantasysports.yahoo.com/f1/471058) and confirm the panel displays **v1.3.9**. Existing captures, week selection, team mappings, and league binding are preserved.
+3. Click **EXPORT JSON**. Confirm the downloaded file exists in Chrome Downloads and opens as JSON. A request or Save As dialog alone does not confirm completion. If Tampermonkey rejects the download, the collector displays the actual error and a **SAVE JSON** link. Clipboard export remains available.
+4. For archived data, use Tampermonkey's **Makers: Export a saved weekly snapshot** menu on the league page. Both old raw snapshots and compressed snapshots export as normal JSON.
+
+If Tampermonkey fails before the script starts because its stored message exceeds 64 MiB, updating code cannot run a migration. Export a fresh Tampermonkey ZIP with script storage and settings included, and use a verified Makers-only recovery ZIP built from that backup. Import through **Dashboard → Utilities → Import from file**, review the one-script selection, then reload Yahoo. Do not restore an older backup over newer Makers captures or settings.
+
+## v1.3.9 download and storage repair
+
+- Requests the JSON file immediately using a Blob, independently of archive storage. Handles native success, rejection, cancellation, and timeout; offers a persistent user-click save link when completion is not confirmed.
+- Compresses new saved weekly snapshots losslessly and verifies their SHA-256 and byte length before writing. Current captures and parsed data remain unchanged.
+- Guards writes below the extension message ceiling; refuses oversized writes without deleting saved data.
+- Removes the version-change workspace reset. Upgrading no longer clears the current collection.
+- Preserves Makers' league restriction, names, aliases, team IDs, parser, validation, schema, storage keys, and filename prefix.
+
+Runtime reference: [Tampermonkey GM_download](https://www.tampermonkey.net/documentation.php?q=GM_download) supports Blob input in v5.4.6226 and newer. Browser verification still requires an actual download in the installed Chrome profile.
+
+Regression check: `node tests/collector-regression.cjs`. This exercises upgrade retention, league isolation, unchanged parsing/export data, lossless snapshots, size-limit protection, download callbacks, and failure fallbacks with simulated browser APIs. It does not certify a user's Chrome installation.
 
 ## Changes already incorporated by v1.3.6
 
