@@ -1,0 +1,9 @@
+THE MAKERS — WEEK 10 PHASE 4 EDITORIAL
+Decision: PASS. Five Week 9 result breakdowns match exact final scores; five Week 10 preview scores and picks match the Phase 3 lock.
+Published content staged: Week 9 recap, closest finish and awards, retrospective lineup efficiency, prediction grading, five previews with recorded H2H, ten roster-needs notes, $49 FAAB reconciliation and source-time availability/status notes.
+All 25 current transactions retained; acquisitions distinguished from confirmed starters. Criterus vacant-slot warning retired based on filled current slots.
+All-play rebuilt across nine complete weeks: 81 comparisons per team. Ten Week 9 lineup autopsies; three losing teams had a higher hindsight optimal score than their actual opponent.
+Earlier Week 1–8 editorial and Week 1–9 prediction receipts unchanged. No runtime errors/warnings.
+Source capture correctly dated Thursday November 12, 9:22 am Pacific, within the Wednesday-combined workflow.
+Production unchanged. Ready for Phase 5 full release QA.
+Final prose recheck: Fungi had four starters above 13 points (Cook, Higgins, Coleman, Bears); corrected the draft count before closing this phase.

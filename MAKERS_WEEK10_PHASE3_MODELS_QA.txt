@@ -1,0 +1,8 @@
+THE MAKERS — WEEK 10 PHASE 3 MODELS AND FORECAST LOCK
+Decision: PASS. Existing methodology retained; deterministic 24,000-trial simulation.
+Week 9 locked forecasts graded without retroactive edits: Makers 3/5 (score MAE 12.27); Yahoo 3/5 (score MAE 12.02).
+Season: Makers 30/45; Yahoo 29/45.
+Five Week 10 Makers forecasts locked beside the exact Yahoo projection receipt captured 2026-11-12T17:22:59.602Z.
+Ten Power ranks, playoff/bye/title/Toilet probabilities and stock movements frozen. Probability totals reconcile within rounding.
+All previous Week 1–9 forecast receipts and completed editorial remain unchanged. No Week 10 actual results created.
+Full numeric receipt: qa/week10/phase3.json. Production unchanged. Ready for Phase 4 editorial.

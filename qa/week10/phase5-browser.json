@@ -1,0 +1,301 @@
+{
+  "phase": 5,
+  "status": "PASS",
+  "viewport": "1348px desktop; mobile viewport not emulated",
+  "pages": [
+    {
+      "route": "index.html",
+      "h1": "The MakersWeek 10 Board",
+      "characters": 2178,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "weeks.html",
+      "h1": "2026 Weekly Write-Ups",
+      "characters": 15589,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "week.html?week=9",
+      "h1": "Week 9 — 2026",
+      "characters": 10553,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "week.html?week=10",
+      "h1": "Week 10 — 2026",
+      "characters": 16387,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "season-2026.html",
+      "h1": "2026 War Room",
+      "characters": 7100,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "predictions.html",
+      "h1": "Makers vs Yahoo",
+      "characters": 9822,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "analytics.html",
+      "h1": "League AnalyticsLab",
+      "characters": 26002,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "transactions.html",
+      "h1": "Moves & Trades",
+      "characters": 18310,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "waiver-wire.html",
+      "h1": "Waiver Wire",
+      "characters": 21808,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "schedule.html",
+      "h1": "2026 Schedule",
+      "characters": 12295,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "power-rankings.html",
+      "h1": "Power Rankings",
+      "characters": 8004,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "playoff-odds.html",
+      "h1": "Playoff Odds",
+      "characters": 2204,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchises.html",
+      "h1": "Franchise Files",
+      "characters": 5481,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "history.html",
+      "h1": "Season History",
+      "characters": 2344,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "head-to-head.html",
+      "h1": "Head-to-Head",
+      "characters": 12771,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "records.html",
+      "h1": "Record Book",
+      "characters": 4309,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "trophy-case.html",
+      "h1": "Trophy Case",
+      "characters": 1182,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "press.html",
+      "h1": "Press Room",
+      "characters": 13390,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "drafts.html",
+      "h1": "So… who actually won the draft?",
+      "characters": 43401,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "keepers.html",
+      "h1": "Keeper History",
+      "characters": 2485,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "wall-of-shame.html",
+      "h1": "Wall of Shame",
+      "characters": 1714,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Chris",
+      "h1": "Chris — Criterus",
+      "characters": 2841,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Andrew",
+      "h1": "Andrew — The Eviscerators",
+      "characters": 2905,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Nate",
+      "h1": "Nate — Revenge of the period bloods",
+      "characters": 2906,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Max",
+      "h1": "Max — Predacious Fungi",
+      "characters": 2847,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Tommy",
+      "h1": "Tommy — Pump and Go",
+      "characters": 2770,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Adam",
+      "h1": "Adam — The A Gap",
+      "characters": 2736,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Nick",
+      "h1": "Nick — TDs In Your Face",
+      "characters": 2878,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=TomD",
+      "h1": "TomD — The Mustache riders",
+      "characters": 2796,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Jim",
+      "h1": "Jim — The Moose Knuckles",
+      "characters": 2921,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=Billy",
+      "h1": "Billy — Kareem all over your Hunt",
+      "characters": 2930,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    },
+    {
+      "route": "franchise.html?manager=El%20Rubio",
+      "h1": "El Rubio — Retired / former manager",
+      "characters": 940,
+      "width": 1348,
+      "scrollWidth": 1348,
+      "rendered": true,
+      "noErrorText": true
+    }
+  ],
+  "siteConsoleErrors": [],
+  "checks": {
+    "predictionGrades": true,
+    "week9Final": true,
+    "week10Preview": true
+  }
+}

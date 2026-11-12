@@ -1,0 +1,14 @@
+MAKERS WEEK 10 — PHASE 5 RELEASE QA
+Status: PASS; desktop browser audit.
+
+45 current-season finals; 318 earlier games preserved; 363 total games.
+All Week 1–9 prediction receipts and Week 1–8 completed editorials preserved.
+5 Week 10 forecasts locked; 90 lineup autopsies; 100 available players.
+69 loader modules parse; 479 local references resolve; 18 active pages use the new cache token.
+32 browser routes rendered, including 11 franchise profiles. No site console errors, missing-data text or desktop horizontal overflow.
+Browser confirmed 30–15 Makers / 29–16 Yahoo grading, Week 9 final scores, Week 10 forecasts.
+Historical manager boundary retained: Billy begins in 2025; El Rubio remains separate.
+Prior weekly source modules, model engine, collector and custom-domain configuration unchanged.
+Limitation: mobile viewport was not emulated; no CSS/layout changes in this release.
+
+Production remains unchanged at phase completion. Phase 6 may now begin.

@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  const bust='makers-20261104-w9p5';
+  const bust='makers-20261112-w10p5';
   const load=file=>new Promise((resolve,reject)=>{
     const s=document.createElement('script');
     s.src=file+(file.includes('?')?'&':'?')+'v='+bust;
@@ -48,6 +48,11 @@
       await load('week9-completed.js');
       await load('week9-transactions.js');
       await load('week9-available.js');
+      await load('week10-import.js');
+      await load('week10-rosters.js');
+      await load('week10-completed.js');
+      await load('week10-transactions.js');
+      await load('week10-available.js');
       await load('makers-weekly-sync.js');
       await load('week3-prediction-lock.js');
       await load('makers-engine.js');
@@ -67,6 +72,10 @@
       await load('week9-phase2-consistency.js');
       await load('week9-models.js');
       await load('week9-editorial.js');
+      await load('week10-history-preservation.js');
+      await load('week10-phase2-consistency.js');
+      await load('week10-models.js');
+      await load('week10-editorial.js');
       await load('league-analytics.js');
       if((document.body.dataset.page||'')==='waivers'){
         await load('api-config.js');

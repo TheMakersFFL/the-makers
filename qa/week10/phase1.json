@@ -1,0 +1,662 @@
+{
+  "phase": 1,
+  "status": "PASS",
+  "sourceSHA256": "189468eb966134833a4209b294580bc120d1dfec6ec85dddd44c1a4d651a3c88",
+  "checks": [
+    {
+      "check": "Makers identity and Wednesday combined Week 10 / completed Week 9",
+      "pass": true
+    },
+    {
+      "check": "Collector all category gates",
+      "pass": true
+    },
+    {
+      "check": "Ten unique teams and managers",
+      "pass": true
+    },
+    {
+      "check": "Team map identity",
+      "pass": true
+    },
+    {
+      "check": "Prior production baseline",
+      "pass": true
+    },
+    {
+      "check": "finals five unique games / ten distinct teams",
+      "pass": true
+    },
+    {
+      "check": "upcoming five unique games / ten distinct teams",
+      "pass": true
+    },
+    {
+      "check": "Only Week 9 finals, Week 10 unplayed",
+      "pass": true
+    },
+    {
+      "check": "All upcoming Yahoo projections",
+      "pass": true
+    },
+    {
+      "check": "Projection copies match matchups",
+      "pass": true
+    },
+    {
+      "check": "The Moose Knuckles standings delta",
+      "pass": true
+    },
+    {
+      "check": "The Moose Knuckles FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "The Moose Knuckles FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "Kareem all over your Hunt standings delta",
+      "pass": true
+    },
+    {
+      "check": "Kareem all over your Hunt FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "Kareem all over your Hunt FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "TDs In Your Face standings delta",
+      "pass": true
+    },
+    {
+      "check": "TDs In Your Face FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "TDs In Your Face FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "The Mustache riders standings delta",
+      "pass": true
+    },
+    {
+      "check": "The Mustache riders FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "The Mustache riders FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "Predacious Fungi standings delta",
+      "pass": true
+    },
+    {
+      "check": "Predacious Fungi FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "Predacious Fungi FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "Revenge of the period bloods standings delta",
+      "pass": true
+    },
+    {
+      "check": "Revenge of the period bloods FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "Revenge of the period bloods FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "Pump and Go standings delta",
+      "pass": true
+    },
+    {
+      "check": "Pump and Go FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "Pump and Go FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "The Eviscerators standings delta",
+      "pass": true
+    },
+    {
+      "check": "The Eviscerators FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "The Eviscerators FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "Criterus standings delta",
+      "pass": true
+    },
+    {
+      "check": "Criterus FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "Criterus FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "The A Gap standings delta",
+      "pass": true
+    },
+    {
+      "check": "The A Gap FAAB fields agree",
+      "pass": true
+    },
+    {
+      "check": "The A Gap FAAB delta reconciles",
+      "pass": true
+    },
+    {
+      "check": "45 wins / losses, PF equals PA",
+      "pass": true
+    },
+    {
+      "check": "completedLineups ten teams",
+      "pass": true
+    },
+    {
+      "check": "completedLineups The Moose Knuckles score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups TDs In Your Face score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups Predacious Fungi score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups Criterus score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups The Mustache riders score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups Revenge of the period bloods score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups The Eviscerators score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups The A Gap score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups Pump and Go score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups Kareem all over your Hunt score sum",
+      "pass": true
+    },
+    {
+      "check": "completedLineups unique named players",
+      "pass": true
+    },
+    {
+      "check": "rosters ten teams",
+      "pass": true
+    },
+    {
+      "check": "rosters The Moose Knuckles score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters TDs In Your Face score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters Predacious Fungi score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters Criterus score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters The Mustache riders score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters Revenge of the period bloods score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters The Eviscerators score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters The A Gap score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters Pump and Go score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters Kareem all over your Hunt score sum",
+      "pass": true
+    },
+    {
+      "check": "rosters unique named players",
+      "pass": true
+    },
+    {
+      "check": "Current actual points absent",
+      "pass": true
+    },
+    {
+      "check": "Bye players have no fake points/projections",
+      "pass": true
+    },
+    {
+      "check": "No placeholder player names",
+      "pass": true
+    },
+    {
+      "check": "100 unique free agents with projections",
+      "pass": true
+    },
+    {
+      "check": "Position quotas",
+      "pass": true
+    },
+    {
+      "check": "Transaction 1 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 1 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 1 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 2 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 2 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 2 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 3 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 3 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 3 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 4 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 4 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 4 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 5 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 5 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 5 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 6 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 6 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 6 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 7 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 7 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 7 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 8 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 8 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 8 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 9 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 9 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 9 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 10 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 10 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 10 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 11 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 11 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 11 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 12 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 12 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 12 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 13 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 13 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 13 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 14 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 14 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 14 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 15 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 15 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 15 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 16 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 16 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 16 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 17 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 17 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 17 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 18 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 18 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 18 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 19 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 19 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 19 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 20 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 20 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 20 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 21 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 21 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 21 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 22 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 22 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 22 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 23 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 23 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 23 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 24 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 24 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 24 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 25 structured",
+      "pass": true
+    },
+    {
+      "check": "Transaction 25 added unique",
+      "pass": true
+    },
+    {
+      "check": "Transaction 25 dropped unique",
+      "pass": true
+    },
+    {
+      "check": "31 raw source page captures",
+      "pass": true
+    }
+  ],
+  "faabReconciliation": [
+    {
+      "team": "The Moose Knuckles",
+      "prior": 52,
+      "spent": 7,
+      "remaining": 45
+    },
+    {
+      "team": "Kareem all over your Hunt",
+      "prior": 61,
+      "spent": 0,
+      "remaining": 61
+    },
+    {
+      "team": "TDs In Your Face",
+      "prior": 50,
+      "spent": 3,
+      "remaining": 47
+    },
+    {
+      "team": "The Mustache riders",
+      "prior": 34,
+      "spent": 3,
+      "remaining": 31
+    },
+    {
+      "team": "Predacious Fungi",
+      "prior": 63,
+      "spent": 17,
+      "remaining": 46
+    },
+    {
+      "team": "Revenge of the period bloods",
+      "prior": 100,
+      "spent": 8,
+      "remaining": 92
+    },
+    {
+      "team": "Pump and Go",
+      "prior": 54,
+      "spent": 0,
+      "remaining": 54
+    },
+    {
+      "team": "The Eviscerators",
+      "prior": 40,
+      "spent": 6,
+      "remaining": 34
+    },
+    {
+      "team": "Criterus",
+      "prior": 61,
+      "spent": 5,
+      "remaining": 56
+    },
+    {
+      "team": "The A Gap",
+      "prior": 65,
+      "spent": 0,
+      "remaining": 65
+    }
+  ],
+  "totals": {
+    "pf": 9497.02,
+    "finals": 5,
+    "completedPlayers": 159,
+    "currentPlayers": 158,
+    "transactions": 25,
+    "faabSpent": 49
+  },
+  "normalization": "Raw page captures and null delta omitted; all substantive source data unchanged."
+}
