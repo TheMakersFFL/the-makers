@@ -1,0 +1,9 @@
+THE MAKERS — WEEK 10 PHASE 2 FACTUAL IMPORT
+Decision: PASS. All normalized source fields reconstruct exactly from five factual modules.
+Week 9 finals: 5 games / 10 teams. Season 2026: 45 completed games, 45 wins and losses, PF=PA=9,497.02.
+Historical ledger: 318 prior-year games unchanged + 45 current-year = 363 total.
+Ten standings, ten current rosters, ten completed lineups, 100 available players, 25 current transactions and ten FAAB balances imported.
+All prior prediction receipts Weeks 1–9 unchanged. All completed editorial Weeks 1–8 unchanged. Published Week 9 preview and model retained as original receipts.
+The original Week 9 model module is guarded to run only during Week 9. A new rollover archive carries its exact published objects forward without modifying that immutable source or recalculating its forecasts.
+Week 10 is provisional and unplayed; modelPendingWeek=10. Release HTML/cache and production main unchanged.
+Source runtime: no errors or warnings. Ready for Phase 3 models and prediction grading.

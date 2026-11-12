@@ -1,0 +1,11 @@
+THE MAKERS — WEEK 10 PHASE 1 SOURCE AUDIT
+Decision: PASS — 146 independent assertions passed. No factual source repairs required.
+Source: MAKERS_2026_W10_WEDNESDAY.json; SHA256 189468eb966134833a4209b294580bc120d1dfec6ec85dddd44c1a4d651a3c88.
+Collector v1.3.9, captured November 12, 2026 at 9:22 am Pacific; Wednesday-combined workflow.
+Production baseline: 4dc399be76ee1bf4c80dd1b4c28284a9a21ec881. Working branch: week10-update-2026-11-12.
+All ten standings W/L/PF/PA and FAAB deltas reconcile to the prior publication and five Week 9 finals.
+All 90 starting scores reconcile to official final totals. All ten current starting projection sums match Week 10 Yahoo projections. Bye-week player points/projections remain null.
+Ten current rosters, 100 available players, 25 structured transactions and 31 source captures validated.
+Normalized candidate: data/week10-normalized.json. Raw captures omitted; substantive data unchanged. Original upload untouched.
+No live data, models, editorial, HTML, previous predictions, collector code or production branch changed.
+Ready for Phase 2 factual import. Phase 6 publication and rendered audit remain pending.
