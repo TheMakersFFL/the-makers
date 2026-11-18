@@ -1,0 +1,215 @@
+{
+  "phase": 4,
+  "status": "PASS",
+  "checksPassed": 18,
+  "checks": [
+    {
+      "check": "Runtime editorial equals complete structured draft",
+      "pass": true
+    },
+    {
+      "check": "Completed Weeks 1–9 articles remain deeply unchanged",
+      "pass": true
+    },
+    {
+      "check": "All eleven locked forecast receipts remain deeply unchanged",
+      "pass": true
+    },
+    {
+      "check": "All published model/editorial/grading snapshots and current models remain unchanged",
+      "pass": true
+    },
+    {
+      "check": "Old Week 10 preview is retained exactly in its original published editorial object",
+      "pass": true
+    },
+    {
+      "check": "All factual standings, rosters, results, transactions, waivers and archive receipts remain unchanged",
+      "pass": true
+    },
+    {
+      "check": "Week 10 factual result and historical forecast fields remain exact",
+      "pass": true
+    },
+    {
+      "check": "Week 10 now contains a permanent complete recap and five exact completed cards",
+      "pass": true
+    },
+    {
+      "check": "Week 11 preview and five explicit preview cards agree with all frozen forecasts",
+      "pass": true
+    },
+    {
+      "check": "All five Week 11 histories refer to recorded Week 2 rematches",
+      "pass": true
+    },
+    {
+      "check": "All 100 lineup autopsies and Week 10 gain/decision-loss facts are retained",
+      "pass": true
+    },
+    {
+      "check": "Seven completed individual awards resolve to their intended managers",
+      "pass": true
+    },
+    {
+      "check": "Verified 14-row/140-point bye correction is plainly disclosed without changing finals",
+      "pass": true
+    },
+    {
+      "check": "Timestamp, captured lineup conditions and coverage limits are present",
+      "pass": true
+    },
+    {
+      "check": "League desk notes are explicitly authored notes without invented attribution",
+      "pass": true
+    },
+    {
+      "check": "Punishment wording matches the existing Wall of Shame page",
+      "pass": true
+    },
+    {
+      "check": "New module is after current model and before analytics; all modules parse",
+      "pass": true
+    },
+    {
+      "check": "Integrated runtime has zero errors or warnings",
+      "pass": true
+    }
+  ],
+  "articles": {
+    "completed": {
+      "week": 10,
+      "title": "Week 10 Recap",
+      "headline": "Week 10: CMC’s 45.30, a 2.96-Point Escape and Five Teams at 5–5",
+      "words": 940,
+      "sha256": "ef16d9f740e9531fba39de06edd08b1027c21ddba86e2357fbb08219ccd1d7ce"
+    },
+    "upcoming": {
+      "week": 11,
+      "headline": "Week 11: The Leaders, the Traffic Jam and the Empty Slots",
+      "words": 1855,
+      "sha256": "4c84dd1c56c8382e273245bebb4e6bea10129351356b7ebc4b127e3dc3787932"
+    }
+  },
+  "completedGameNarratives": 5,
+  "upcomingGameNarratives": 5,
+  "rosterNeeds": 10,
+  "transactionNotes": 7,
+  "completedAwards": 8,
+  "upcomingAwards": 8,
+  "gameOfWeek": {
+    "recap": "TDs In Your Face vs Kareem all over your Hunt",
+    "upcoming": "The Moose Knuckles vs TDs In Your Face",
+    "basis": "Editorial selection: the upcoming official first-place team meets the season points leader; recorded series is tied 4–4."
+  },
+  "sourceReferences": [
+    {
+      "claims": [
+        "Week 10 final score headings",
+        "Player scores, status, bye and bench facts",
+        "Ten standings, FAAB balances and $33 spend",
+        "25 captured transactions and 100 available players"
+      ],
+      "source": "data/week11-normalized.json",
+      "fields": [
+        "data.matchups",
+        "data.completedLineups",
+        "data.rosters",
+        "data.standings",
+        "data.faab",
+        "data.transactions",
+        "data.availablePlayers"
+      ]
+    },
+    {
+      "claims": [
+        "Week 11 locked forecasts",
+        "Power/odds/stock movement",
+        "Week 10 and cumulative prediction grading"
+      ],
+      "source": "week11-models.js",
+      "fields": [
+        "S.forecasts",
+        "S.powerRankings",
+        "S.odds",
+        "S.stock",
+        "S.predictionGrading"
+      ]
+    },
+    {
+      "claims": [
+        "All recorded/reconstructed H2H series",
+        "Five Week 2 rematch score pairs"
+      ],
+      "source": "data.js + cumulative weekly actual results",
+      "fields": [
+        "MAKERS_ENGINE.allGames()",
+        "MAKERS_ENGINE.matchupHistory()"
+      ]
+    },
+    {
+      "claims": [
+        "122.48 potential legal-lineup gains",
+        "Zero Week 10 decision losses",
+        "Individual optimal totals"
+      ],
+      "source": "league-analytics.js from normalized completed rows",
+      "fields": [
+        "MAKERS_ANALYTICS.lineupAutopsies()"
+      ]
+    },
+    {
+      "claims": [
+        "14 compact bye rows and 140 phantom bench points removed"
+      ],
+      "source": "data/week11-normalized.json",
+      "fields": [
+        "normalization.corrections",
+        "phase1Audit"
+      ]
+    },
+    {
+      "claims": [
+        "Draft-handle and board duty at the next draft"
+      ],
+      "source": "wall-of-shame.html",
+      "exactSource": "Makers punishment: last place earns the Wall of Shame and the draft-handle and board duty for the next draft."
+    }
+  ],
+  "originalWeek10PreviewRetained": "Y.week10Editorial.preview remains byte-identical to its published source; old module unchanged.",
+  "preserved": {
+    "previousCompletedArticles": 9,
+    "lockedForecastReceipts": 11,
+    "currentFinals": 50,
+    "historicalGames": 318,
+    "lineupAutopsies": 100,
+    "currentModel": "unchanged",
+    "rosters": "unchanged",
+    "faab": "unchanged",
+    "transactions": "unchanged"
+  },
+  "independentReviews": {
+    "rosterTransactionsAvailability": {
+      "path": "makers-work/phase4-roster-factcheck.json",
+      "status": "PASS"
+    },
+    "fullEditorial": {
+      "status": "PENDING_FINAL_REVIEW"
+    }
+  },
+  "rendererContract": {
+    "completedCardField": "gameBreakdowns[].recap",
+    "upcomingCardField": "gameBreakdowns[].preview",
+    "quoteType": "league-desk",
+    "rootHandlesNoteLabels": true
+  },
+  "errors": [],
+  "warnings": [],
+  "productionChanged": false,
+  "independentReview": "phase4-independent-review.json",
+  "rosterReview": "phase4-roster-factcheck.json",
+  "rootIntegration": "phase4-integration.json",
+  "independentReviewAssertions": 339,
+  "independentRosterAssertions": 298,
+  "rootIntegrationGroups": 7
+}
