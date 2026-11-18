@@ -1,0 +1,13 @@
+THE MAKERS — WEEK 11 PHASE 3 MODELS AND FORECAST LOCK
+
+MODEL GATE: PASS — 14 independent model/preservation assertion groups. Analytics audit is recorded separately before phase closeout.
+Two fresh runs of the original deterministic Makers engine, 24,000 trials each and seed 20260901, agree exactly. 50 official finals and 20 remaining actual schedule games (Weeks 11–14); no synthesized result enters the factual ledger.
+Existing Power, simulated-game, forecast and rank-based stock methodologies retained. Power and forecast formulas, Yahoo team-projection sums and remaining-SOS values independently verified.
+Power leader: The Moose Knuckles, 82.79.
+Probability totals: playoffs 599.9, byes 199.9, title 100.0, Toilet 100.0 percentage points. Rounded simulation estimates are not mathematical clinch/elimination certificates.
+All five Week 11 Makers/Yahoo forecasts locked at source capture 2026-11-18T17:36:14.776Z. Four bye starters and two empty slots remain exactly as captured; no replacement players or scores are invented.
+Week 10: Makers 4–1, Yahoo 4–1; score MAE 15.36 vs 15.43, margin MAE 18.49 vs 19.00. Grading uses the original November 12 lock, not later Yahoo estimates.
+Season through 50 games: Makers 34–16, Yahoo 33–17; score MAE 18.45 vs 18.28, margin MAE 25.98 vs 25.51. All 50 receipts were independently regraded.
+All ten previous locked forecasts, 50 current finals, 318 historical games, prior weekly/editorial/model/grading objects, current player choices, transaction rows and FAAB remain unchanged. Current model is Week 11; modelPendingWeek is cleared.
+Full numeric model receipt: qa/week11/phase3-model.json. No syntax/runtime errors or warnings. No editorial or production changes.
+Combined Phase 3 gate passed; see MAKERS_WEEK11_PHASE3_QA.txt and qa/week11/phase3.json.

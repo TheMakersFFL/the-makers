@@ -1,0 +1,1708 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "238 events and 200 acquisition rows preserve current ledger counts",
+      "pass": true
+    },
+    {
+      "name": "All 21 new events retain first-seen Week 11; 6 dated Week 10, 15 dated Week 11",
+      "pass": true
+    },
+    {
+      "name": "Five new Week 10 adds earn exactly 33.14 verified points; Week 11 adds earn none",
+      "pass": true
+    },
+    {
+      "name": "100 lineup autopsies preserve exact serialized content",
+      "pass": true
+    },
+    {
+      "name": "Every credited player week is unique and falls inside its dated episode",
+      "pass": true
+    },
+    {
+      "name": "Null bye scores do not become acquisition scored weeks",
+      "pass": true
+    },
+    {
+      "name": "All original source ledger objects and imports remain unchanged by analytics",
+      "pass": true
+    },
+    {
+      "name": "Published Week 10 state still has 217 events; its 90 autopsies are unchanged",
+      "pass": true
+    },
+    {
+      "name": "Dated identical re-adds survive deduplication; defense city/mascot aliases merge one true event",
+      "pass": true
+    },
+    {
+      "name": "Synthetic pre-add and post-drop points excluded, re-add interval scored once",
+      "pass": true
+    },
+    {
+      "name": "Duplicate completed-week captures, bye null, true zero and projected roster are distinguished",
+      "pass": true
+    },
+    {
+      "name": "Undated ledger-only acquisition remains unresolved with zero credited points",
+      "pass": true
+    },
+    {
+      "name": "Rendered analytics contains coverage limits and no nonfinite output",
+      "pass": true
+    },
+    {
+      "name": "Authoritative baseline file remains unchanged",
+      "pass": true
+    }
+  ],
+  "scope": "Only makers/league-analytics.js modified; source files, finals, prediction snapshots and model unchanged.",
+  "baselineSHA256": "aa620740723ca6d9ebdf902d9df1eebfc572c978769ba0f4c18665fdadd8a841",
+  "counts": {
+    "events": 238,
+    "acquisitions": 200,
+    "firstSnapshotMatched": 222,
+    "ledgerOnly": 16,
+    "newEvents": 21,
+    "newWeek10Events": 6,
+    "newWeek11Events": 15,
+    "currentAutopsies": 100,
+    "publishedAutopsies": 90,
+    "changedAcquisitions": 114
+  },
+  "impact": {
+    "before": 2073.5,
+    "after": 3756.26,
+    "delta": 1682.76,
+    "publishedWeek10Before": 1733.18,
+    "publishedWeek10Corrected": 3227.9,
+    "newFiveWeek10Adds": 33.14,
+    "faabBefore": 497,
+    "faabAfter": 497,
+    "increasedReceiptPoints": 1735.64,
+    "decreasedReceiptPoints": -52.88
+  },
+  "managerChanges": [
+    {
+      "manager": "Chris",
+      "currentBefore": 221.54,
+      "currentAfter": 346.88,
+      "delta": 125.34,
+      "oldGrade": "B+",
+      "newGrade": "B+",
+      "publishedWeek10Before": 167.88,
+      "publishedWeek10Corrected": 290.3,
+      "faab": 44
+    },
+    {
+      "manager": "Andrew",
+      "currentBefore": 124.22,
+      "currentAfter": 234.52,
+      "delta": 110.3,
+      "oldGrade": "D",
+      "newGrade": "D",
+      "publishedWeek10Before": 113.06,
+      "publishedWeek10Corrected": 217.76,
+      "faab": 67
+    },
+    {
+      "manager": "Jim",
+      "currentBefore": 134.6,
+      "currentAfter": 294.64,
+      "delta": 160.04,
+      "oldGrade": "C+",
+      "newGrade": "C+",
+      "publishedWeek10Before": 101.9,
+      "publishedWeek10Corrected": 264.94,
+      "faab": 67
+    },
+    {
+      "manager": "Tommy",
+      "currentBefore": 112.6,
+      "currentAfter": 208.72,
+      "delta": 96.12,
+      "oldGrade": "D",
+      "newGrade": "D",
+      "publishedWeek10Before": 99.5,
+      "publishedWeek10Corrected": 183.62,
+      "faab": 51
+    },
+    {
+      "manager": "Nate",
+      "currentBefore": 96.78,
+      "currentAfter": 207.04,
+      "delta": 110.26,
+      "oldGrade": "C",
+      "newGrade": "C",
+      "publishedWeek10Before": 55.8,
+      "publishedWeek10Corrected": 161.56,
+      "faab": 18
+    },
+    {
+      "manager": "Adam",
+      "currentBefore": 258.06,
+      "currentAfter": 300.96,
+      "delta": 42.9,
+      "oldGrade": "B+",
+      "newGrade": "C+",
+      "publishedWeek10Before": 207.52,
+      "publishedWeek10Corrected": 237.12,
+      "faab": 35
+    },
+    {
+      "manager": "TomD",
+      "currentBefore": 422.9,
+      "currentAfter": 614.72,
+      "delta": 191.82,
+      "oldGrade": "A+",
+      "newGrade": "A",
+      "publishedWeek10Before": 330.66,
+      "publishedWeek10Corrected": 484.58,
+      "faab": 69
+    },
+    {
+      "manager": "Billy",
+      "currentBefore": 180.5,
+      "currentAfter": 310.82,
+      "delta": 130.32,
+      "oldGrade": "C+",
+      "newGrade": "B",
+      "publishedWeek10Before": 160.9,
+      "publishedWeek10Corrected": 291.22,
+      "faab": 39
+    },
+    {
+      "manager": "Nick",
+      "currentBefore": 303.68,
+      "currentAfter": 557.62,
+      "delta": 253.94,
+      "oldGrade": "A",
+      "newGrade": "B+",
+      "publishedWeek10Before": 281.98,
+      "publishedWeek10Corrected": 505.62,
+      "faab": 53
+    },
+    {
+      "manager": "Max",
+      "currentBefore": 218.62,
+      "currentAfter": 680.34,
+      "delta": 461.72,
+      "oldGrade": "B",
+      "newGrade": "A+",
+      "publishedWeek10Before": 213.98,
+      "publishedWeek10Corrected": 591.18,
+      "faab": 54
+    }
+  ],
+  "changedAcquisitions": [
+    {
+      "manager": "Nate",
+      "add": "Tyjae Spears",
+      "time": "Sep 6, 12:04 pm",
+      "before": 7.5,
+      "after": 8,
+      "delta": 0.5,
+      "oldScoredWeeks": 1,
+      "newScoredWeeks": 2,
+      "startWeek": 1,
+      "endWeek": 4
+    },
+    {
+      "manager": "Chris",
+      "add": "Keaton Mitchell",
+      "time": "Sep 3, 12:09 pm",
+      "before": 4.84,
+      "after": 38.7,
+      "delta": 33.86,
+      "oldScoredWeeks": 1,
+      "newScoredWeeks": 6,
+      "startWeek": 1,
+      "endWeek": 8
+    },
+    {
+      "manager": "Billy",
+      "add": "Jaguars",
+      "time": "Sep 3, 12:18 am",
+      "before": 3,
+      "after": 19,
+      "delta": 16,
+      "oldScoredWeeks": 1,
+      "newScoredWeeks": 2,
+      "startWeek": 1,
+      "endWeek": 4
+    },
+    {
+      "manager": "Billy",
+      "add": "Bills",
+      "time": "Sep 24, 12:01 pm",
+      "before": 0,
+      "after": 10,
+      "delta": 10,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 3,
+      "endWeek": 7
+    },
+    {
+      "manager": "Max",
+      "add": "Michael Wilson",
+      "time": "Sep 24, 10:44 am",
+      "before": 0,
+      "after": 76.78,
+      "delta": 76.78,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 7,
+      "startWeek": 3,
+      "endWeek": 10
+    },
+    {
+      "manager": "Adam",
+      "add": "Rashod Bateman",
+      "time": "Sep 23, 10:43 pm",
+      "before": 0,
+      "after": 9.8,
+      "delta": 9.8,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 3,
+      "endWeek": 5
+    },
+    {
+      "manager": "Nick",
+      "add": "Jared Goff",
+      "time": "Sep 23, 6:39 pm",
+      "before": 0,
+      "after": 21.86,
+      "delta": 21.86,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 3,
+      "endWeek": 4
+    },
+    {
+      "manager": "Billy",
+      "add": "Alvin Kamara",
+      "time": "Sep 23, 11:02 am",
+      "before": 0,
+      "after": 57,
+      "delta": 57,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 7,
+      "startWeek": 3,
+      "endWeek": 10
+    },
+    {
+      "manager": "Nick",
+      "add": "Deebo Samuel Sr.",
+      "time": "Sep 23, 9:23 am",
+      "before": 0,
+      "after": 16.98,
+      "delta": 16.98,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 3,
+      "endWeek": 4
+    },
+    {
+      "manager": "Chris",
+      "add": "Juwan Johnson",
+      "time": "Sep 23, 7:42 am",
+      "before": 0,
+      "after": 28.500000000000004,
+      "delta": 28.5,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 5,
+      "startWeek": 3,
+      "endWeek": 8
+    },
+    {
+      "manager": "Max",
+      "add": "Tyler Shough",
+      "time": "Sep 23, 7:10 am",
+      "before": 0,
+      "after": 45.080000000000005,
+      "delta": 45.08,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 3,
+      "endWeek": 6
+    },
+    {
+      "manager": "Jim",
+      "add": "Panthers",
+      "time": "Sep 23, 2:14 am",
+      "before": 0,
+      "after": 4,
+      "delta": 4,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 3,
+      "endWeek": 4
+    },
+    {
+      "manager": "Max",
+      "add": "Chase McLaughlin",
+      "time": "Sep 23, 2:14 am",
+      "before": 0,
+      "after": 14,
+      "delta": 14,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 3,
+      "endWeek": 5
+    },
+    {
+      "manager": "Max",
+      "add": "Matthew Stafford",
+      "time": "Sep 23, 2:14 am",
+      "before": 0,
+      "after": 125.78,
+      "delta": 125.78,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 7,
+      "startWeek": 3,
+      "endWeek": 10
+    },
+    {
+      "manager": "Max",
+      "add": "Vikings",
+      "time": "Sep 23, 2:14 am",
+      "before": 74,
+      "after": 85,
+      "delta": 11,
+      "oldScoredWeeks": 7,
+      "newScoredWeeks": 8,
+      "startWeek": 3,
+      "endWeek": null
+    },
+    {
+      "manager": "Nick",
+      "add": "Harrison Butker",
+      "time": "Sep 23, 2:14 am",
+      "before": 0,
+      "after": 6,
+      "delta": 6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 3,
+      "endWeek": 4
+    },
+    {
+      "manager": "Nick",
+      "add": "Dalton Schultz",
+      "time": "Sep 23, 2:14 am",
+      "before": 0,
+      "after": 4.9,
+      "delta": 4.9,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 3,
+      "endWeek": 5
+    },
+    {
+      "manager": "Adam",
+      "add": "Dontayvion Wicks",
+      "time": "Sep 23, 2:14 am",
+      "before": 0,
+      "after": 18.2,
+      "delta": 18.2,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 4,
+      "startWeek": 3,
+      "endWeek": 7
+    },
+    {
+      "manager": "TomD",
+      "add": "Bryce Young",
+      "time": "Sep 23, 2:14 am",
+      "before": 0,
+      "after": 83.22,
+      "delta": 83.22,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 6,
+      "startWeek": 3,
+      "endWeek": 9
+    },
+    {
+      "manager": "TomD",
+      "add": "Woody Marks",
+      "time": "Sep 19, 3:05 pm",
+      "before": 65.94,
+      "after": 70.74000000000001,
+      "delta": 4.8,
+      "oldScoredWeeks": 8,
+      "newScoredWeeks": 9,
+      "startWeek": 2,
+      "endWeek": null
+    },
+    {
+      "manager": "Nick",
+      "add": "Alec Pierce",
+      "time": "Sep 19, 11:41 am",
+      "before": 0,
+      "after": 1.6,
+      "delta": 1.6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 2,
+      "endWeek": 5
+    },
+    {
+      "manager": "Nick",
+      "add": "Bears",
+      "time": "Sep 30, 12:59 am",
+      "before": 0,
+      "after": 7,
+      "delta": 7,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Nick",
+      "add": "Will Reichard",
+      "time": "Sep 30, 12:42 am",
+      "before": 0,
+      "after": 64,
+      "delta": 64,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 6,
+      "startWeek": 4,
+      "endWeek": 10
+    },
+    {
+      "manager": "Nick",
+      "add": "Kenyon Sadiq",
+      "time": "Sep 30, 12:42 am",
+      "before": 0,
+      "after": 0,
+      "delta": 0,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Max",
+      "add": "Carnell Tate",
+      "time": "Sep 30, 12:42 am",
+      "before": 0,
+      "after": 46.5,
+      "delta": 46.5,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 6,
+      "startWeek": 4,
+      "endWeek": 10
+    },
+    {
+      "manager": "TomD",
+      "add": "Ravens",
+      "time": "Sep 30, 12:42 am",
+      "before": 0,
+      "after": 6,
+      "delta": 6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Jim",
+      "add": "Jaylen Wright",
+      "time": "Sep 30, 12:42 am",
+      "before": 0,
+      "after": 2.64,
+      "delta": 2.64,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Jim",
+      "add": "Steelers",
+      "time": "Sep 27, 6:01 am",
+      "before": 0,
+      "after": 49,
+      "delta": 49,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 6,
+      "startWeek": 3,
+      "endWeek": 9
+    },
+    {
+      "manager": "TomD",
+      "add": "Tre Tucker",
+      "time": "Sep 26, 7:39 am",
+      "before": 0,
+      "after": 5.3,
+      "delta": 5.3,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 3,
+      "endWeek": 4
+    },
+    {
+      "manager": "Nick",
+      "add": "Rome Odunze",
+      "time": "Sep 26, 1:01 am",
+      "before": 0,
+      "after": 25.200000000000003,
+      "delta": 25.2,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 4,
+      "startWeek": 3,
+      "endWeek": 7
+    },
+    {
+      "manager": "Chris",
+      "add": "Tyler Loop",
+      "time": "Sep 26, 1:01 am",
+      "before": 0,
+      "after": 48,
+      "delta": 48,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 6,
+      "startWeek": 3,
+      "endWeek": 9
+    },
+    {
+      "manager": "Tommy",
+      "add": "Browns",
+      "time": "Oct 7, 8:58 am",
+      "before": 0,
+      "after": 26,
+      "delta": 26,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 4,
+      "startWeek": 5,
+      "endWeek": 9
+    },
+    {
+      "manager": "Nick",
+      "add": "Mike Gesicki",
+      "time": "Oct 7, 12:42 am",
+      "before": 0,
+      "after": 6.9,
+      "delta": 6.9,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 5,
+      "endWeek": 6
+    },
+    {
+      "manager": "Chris",
+      "add": "Texans",
+      "time": "Oct 7, 12:42 am",
+      "before": 0,
+      "after": 19,
+      "delta": 19,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 5,
+      "endWeek": 8
+    },
+    {
+      "manager": "Tommy",
+      "add": "Tyler Allgeier",
+      "time": "Oct 7, 12:42 am",
+      "before": 0,
+      "after": 1.6,
+      "delta": 1.6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 5,
+      "endWeek": 6
+    },
+    {
+      "manager": "TomD",
+      "add": "Jaguars",
+      "time": "Oct 7, 12:42 am",
+      "before": 0,
+      "after": 3,
+      "delta": 3,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 5,
+      "endWeek": 7
+    },
+    {
+      "manager": "Tommy",
+      "add": "Chiefs",
+      "time": "Oct 4, 8:46 am",
+      "before": 0,
+      "after": 4,
+      "delta": 4,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Chris",
+      "add": "Malik Washington",
+      "time": "Oct 3, 3:49 pm",
+      "before": 49.78,
+      "after": 16.560000000000002,
+      "delta": -33.22,
+      "oldScoredWeeks": 6,
+      "newScoredWeeks": 2,
+      "startWeek": 4,
+      "endWeek": 7
+    },
+    {
+      "manager": "Tommy",
+      "add": "George Holani",
+      "time": "Oct 3, 3:46 pm",
+      "before": 0,
+      "after": 2,
+      "delta": 2,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Jim",
+      "add": "Emanuel Wilson",
+      "time": "Oct 2, 8:58 am",
+      "before": 0,
+      "after": 41.900000000000006,
+      "delta": 41.9,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 4,
+      "endWeek": 7
+    },
+    {
+      "manager": "Max",
+      "add": "Kendre Miller",
+      "time": "Oct 1, 9:13 pm",
+      "before": 0,
+      "after": -0.1,
+      "delta": -0.1,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Nick",
+      "add": "Bengals",
+      "time": "Sep 30, 3:23 pm",
+      "before": 0,
+      "after": 13,
+      "delta": 13,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 4,
+      "endWeek": 6
+    },
+    {
+      "manager": "Nate",
+      "add": "Kalif Raymond",
+      "time": "Sep 30, 8:16 am",
+      "before": 0,
+      "after": 0.92,
+      "delta": 0.92,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 4,
+      "endWeek": 5
+    },
+    {
+      "manager": "Andrew",
+      "add": "Aaron Rodgers",
+      "time": "Oct 14, 12:40 am",
+      "before": 0,
+      "after": 32.6,
+      "delta": 32.6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 6,
+      "endWeek": 8
+    },
+    {
+      "manager": "Andrew",
+      "add": "Xavier Worthy",
+      "time": "Oct 14, 12:40 am",
+      "before": 0,
+      "after": 10.4,
+      "delta": 10.4,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 6,
+      "endWeek": 8
+    },
+    {
+      "manager": "Andrew",
+      "add": "Jason Myers",
+      "time": "Oct 14, 12:40 am",
+      "before": 0,
+      "after": 25,
+      "delta": 25,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 5,
+      "startWeek": 6,
+      "endWeek": 11
+    },
+    {
+      "manager": "Max",
+      "add": "Ravens",
+      "time": "Oct 14, 12:40 am",
+      "before": 0,
+      "after": 9,
+      "delta": 9,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 6,
+      "endWeek": 7
+    },
+    {
+      "manager": "Adam",
+      "add": "Pat Freiermuth",
+      "time": "Oct 14, 12:40 am",
+      "before": 0,
+      "after": 1.6,
+      "delta": 1.6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 6,
+      "endWeek": 7
+    },
+    {
+      "manager": "TomD",
+      "add": "MarShawn Lloyd",
+      "time": "Oct 14, 12:40 am",
+      "before": 0,
+      "after": 1,
+      "delta": 1,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 6,
+      "endWeek": 7
+    },
+    {
+      "manager": "Nick",
+      "add": "Chiefs",
+      "time": "Oct 14, 12:40 am",
+      "before": 0,
+      "after": 18,
+      "delta": 18,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 6,
+      "endWeek": 8
+    },
+    {
+      "manager": "Nate",
+      "add": "Hunter Henry",
+      "time": "Oct 10, 1:22 pm",
+      "before": 0,
+      "after": 24.700000000000003,
+      "delta": 24.7,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 5,
+      "endWeek": 7
+    },
+    {
+      "manager": "Nate",
+      "add": "Jacoby Brissett",
+      "time": "Oct 10, 1:21 pm",
+      "before": 0,
+      "after": 55.64000000000001,
+      "delta": 55.64,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 5,
+      "startWeek": 5,
+      "endWeek": 10
+    },
+    {
+      "manager": "TomD",
+      "add": "Tre' Harris",
+      "time": "Oct 10, 1:09 pm",
+      "before": 0,
+      "after": 2.1,
+      "delta": 2.1,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 5,
+      "endWeek": 6
+    },
+    {
+      "manager": "Tommy",
+      "add": "Roman Wilson",
+      "time": "Oct 10, 2:38 am",
+      "before": 0,
+      "after": 0,
+      "delta": 0,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 5,
+      "endWeek": 6
+    },
+    {
+      "manager": "Andrew",
+      "add": "Jake Bates",
+      "time": "Oct 10, 12:34 am",
+      "before": 0,
+      "after": 10,
+      "delta": 10,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 5,
+      "endWeek": 6
+    },
+    {
+      "manager": "Nick",
+      "add": "Rams",
+      "time": "Oct 10, 12:34 am",
+      "before": 0,
+      "after": 1,
+      "delta": 1,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 5,
+      "endWeek": null
+    },
+    {
+      "manager": "Nick",
+      "add": "Dallas Goedert",
+      "time": "Oct 9, 11:49 am",
+      "before": 0,
+      "after": 18.7,
+      "delta": 18.7,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 5,
+      "endWeek": 8
+    },
+    {
+      "manager": "Adam",
+      "add": "Isaac TeSlaa",
+      "time": "Oct 8, 1:41 pm",
+      "before": 0,
+      "after": 0,
+      "delta": 0,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 5,
+      "endWeek": 6
+    },
+    {
+      "manager": "Adam",
+      "add": "Romeo Doubs",
+      "time": "Oct 8, 1:35 pm",
+      "before": 0,
+      "after": 13.299999999999999,
+      "delta": 13.3,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 5,
+      "startWeek": 5,
+      "endWeek": 10
+    },
+    {
+      "manager": "Max",
+      "add": "Dominic Zvada",
+      "time": "Oct 7, 9:35 pm",
+      "before": 0,
+      "after": 21,
+      "delta": 21,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 5,
+      "endWeek": 7
+    },
+    {
+      "manager": "Chris",
+      "add": "Malik Washington",
+      "time": "Oct 21, 8:13 am",
+      "before": 49.78,
+      "after": 33.22,
+      "delta": -16.56,
+      "oldScoredWeeks": 6,
+      "newScoredWeeks": 4,
+      "startWeek": 7,
+      "endWeek": null
+    },
+    {
+      "manager": "Max",
+      "add": "Kyler Murray",
+      "time": "Oct 21, 7:00 am",
+      "before": 0,
+      "after": 14.9,
+      "delta": 14.9,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 7,
+      "endWeek": 8
+    },
+    {
+      "manager": "TomD",
+      "add": "Rams",
+      "time": "Oct 21, 5:37 am",
+      "before": 0,
+      "after": 12,
+      "delta": 12,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 7,
+      "endWeek": 9
+    },
+    {
+      "manager": "TomD",
+      "add": "Chris Boswell",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 11,
+      "delta": 11,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 7,
+      "endWeek": 8
+    },
+    {
+      "manager": "TomD",
+      "add": "Jets",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 1,
+      "delta": 1,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 7,
+      "endWeek": 8
+    },
+    {
+      "manager": "Max",
+      "add": "Evan McPherson",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 5,
+      "delta": 5,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 7,
+      "endWeek": 8
+    },
+    {
+      "manager": "Adam",
+      "add": "Chris Godwin Jr.",
+      "time": "Oct 21, 12:48 am",
+      "before": 6.5,
+      "after": 6.5,
+      "delta": 0,
+      "oldScoredWeeks": 4,
+      "newScoredWeeks": 3,
+      "startWeek": 7,
+      "endWeek": null
+    },
+    {
+      "manager": "Nick",
+      "add": "T.J. Hockenson",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 27.6,
+      "delta": 27.6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 7,
+      "endWeek": 10
+    },
+    {
+      "manager": "Nick",
+      "add": "Mike Washington Jr.",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 13.399999999999999,
+      "delta": 13.4,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 4,
+      "startWeek": 7,
+      "endWeek": null
+    },
+    {
+      "manager": "Tommy",
+      "add": "Germie Bernard",
+      "time": "Oct 21, 12:48 am",
+      "before": 8.2,
+      "after": 8.2,
+      "delta": 0,
+      "oldScoredWeeks": 4,
+      "newScoredWeeks": 3,
+      "startWeek": 7,
+      "endWeek": null
+    },
+    {
+      "manager": "Tommy",
+      "add": "C.J. Stroud",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 19.02,
+      "delta": 19.02,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 7,
+      "endWeek": 8
+    },
+    {
+      "manager": "Jim",
+      "add": "Omar Cooper Jr.",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 20,
+      "delta": 20,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 7,
+      "endWeek": 9
+    },
+    {
+      "manager": "Chris",
+      "add": "Tyrone Tracy Jr.",
+      "time": "Oct 21, 12:48 am",
+      "before": 0,
+      "after": 16.759999999999998,
+      "delta": 16.76,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 4,
+      "startWeek": 7,
+      "endWeek": null
+    },
+    {
+      "manager": "Tommy",
+      "add": "Kendre Miller",
+      "time": "Oct 17, 5:45 pm",
+      "before": 0,
+      "after": 10.3,
+      "delta": 10.3,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 6,
+      "endWeek": 8
+    },
+    {
+      "manager": "Tommy",
+      "add": "Rachaad White",
+      "time": "Oct 17, 5:44 pm",
+      "before": 0,
+      "after": 12.2,
+      "delta": 12.2,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 6,
+      "endWeek": 7
+    },
+    {
+      "manager": "Max",
+      "add": "Cam Little",
+      "time": "Oct 28, 12:54 am",
+      "before": 0,
+      "after": 6,
+      "delta": 6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 8,
+      "endWeek": 9
+    },
+    {
+      "manager": "Andrew",
+      "add": "Geno Smith",
+      "time": "Oct 28, 12:54 am",
+      "before": 0,
+      "after": 20.5,
+      "delta": 20.5,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 8,
+      "endWeek": 9
+    },
+    {
+      "manager": "Chris",
+      "add": "Bengals",
+      "time": "Oct 28, 12:54 am",
+      "before": 0,
+      "after": 4,
+      "delta": 4,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 8,
+      "endWeek": 9
+    },
+    {
+      "manager": "Jim",
+      "add": "Chig Okonkwo",
+      "time": "Oct 26, 2:00 pm",
+      "before": 0,
+      "after": 8.7,
+      "delta": 8.7,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 7,
+      "endWeek": 9
+    },
+    {
+      "manager": "Billy",
+      "add": "Wil Lutz",
+      "time": "Oct 24, 7:26 am",
+      "before": 0,
+      "after": 32,
+      "delta": 32,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 7,
+      "endWeek": 10
+    },
+    {
+      "manager": "Billy",
+      "add": "Tyler Shough",
+      "time": "Oct 24, 7:25 am",
+      "before": 0,
+      "after": 15.32,
+      "delta": 15.32,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 7,
+      "endWeek": 8
+    },
+    {
+      "manager": "Max",
+      "add": "Bam Knight",
+      "time": "Oct 23, 6:30 am",
+      "before": 0,
+      "after": 6.3,
+      "delta": 6.3,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 7,
+      "endWeek": 8
+    },
+    {
+      "manager": "Max",
+      "add": "Tyler Bass",
+      "time": "Nov 4, 8:00 am",
+      "before": 0,
+      "after": 20,
+      "delta": 20,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 9,
+      "endWeek": 11
+    },
+    {
+      "manager": "Andrew",
+      "add": "Devin Singletary",
+      "time": "Nov 4, 1:10 am",
+      "before": 0,
+      "after": 3.9,
+      "delta": 3.9,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 9,
+      "endWeek": 10
+    },
+    {
+      "manager": "Jim",
+      "add": "Giants",
+      "time": "Nov 4, 1:00 am",
+      "before": 0,
+      "after": 13,
+      "delta": 13,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 9,
+      "endWeek": 10
+    },
+    {
+      "manager": "TomD",
+      "add": "Adonai Mitchell",
+      "time": "Nov 4, 1:00 am",
+      "before": 0,
+      "after": 0,
+      "delta": 0,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 9,
+      "endWeek": 10
+    },
+    {
+      "manager": "Chris",
+      "add": "Lions",
+      "time": "Nov 4, 1:00 am",
+      "before": 0,
+      "after": 9,
+      "delta": 9,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 9,
+      "endWeek": 10
+    },
+    {
+      "manager": "Nate",
+      "add": "Drew Stevens",
+      "time": "Nov 1, 7:00 am",
+      "before": 0,
+      "after": 24,
+      "delta": 24,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 8,
+      "endWeek": 10
+    },
+    {
+      "manager": "Andrew",
+      "add": "Caleb Douglas",
+      "time": "Nov 1, 4:07 am",
+      "before": 0,
+      "after": 5.3,
+      "delta": 5.3,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 8,
+      "endWeek": 9
+    },
+    {
+      "manager": "Nick",
+      "add": "Chiefs",
+      "time": "Oct 31, 10:02 am",
+      "before": 0,
+      "after": 0,
+      "delta": 0,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 8,
+      "endWeek": null
+    },
+    {
+      "manager": "TomD",
+      "add": "Texans",
+      "time": "Oct 31, 12:45 am",
+      "before": 0,
+      "after": 26,
+      "delta": 26,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 3,
+      "startWeek": 8,
+      "endWeek": null
+    },
+    {
+      "manager": "Max",
+      "add": "Bears",
+      "time": "Oct 30, 5:08 pm",
+      "before": 0,
+      "after": 22,
+      "delta": 22,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 8,
+      "endWeek": 10
+    },
+    {
+      "manager": "Tommy",
+      "add": "Makai Lemon",
+      "time": "Oct 30, 4:50 pm",
+      "before": 14.3,
+      "after": 14.3,
+      "delta": 0,
+      "oldScoredWeeks": 3,
+      "newScoredWeeks": 2,
+      "startWeek": 8,
+      "endWeek": null
+    },
+    {
+      "manager": "Chris",
+      "add": "Rome Odunze",
+      "time": "Oct 29, 6:49 am",
+      "before": 24.7,
+      "after": 24.7,
+      "delta": 0,
+      "oldScoredWeeks": 3,
+      "newScoredWeeks": 2,
+      "startWeek": 8,
+      "endWeek": null
+    },
+    {
+      "manager": "Billy",
+      "add": "Buccaneers",
+      "time": "Oct 28, 1:46 pm",
+      "before": 29,
+      "after": 29,
+      "delta": 0,
+      "oldScoredWeeks": 3,
+      "newScoredWeeks": 2,
+      "startWeek": 8,
+      "endWeek": null
+    },
+    {
+      "manager": "Max",
+      "add": "Malik Willis",
+      "time": "Oct 28, 6:46 am",
+      "before": 0,
+      "after": 20.46,
+      "delta": 20.46,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 8,
+      "endWeek": 10
+    },
+    {
+      "manager": "Tommy",
+      "add": "Colts",
+      "time": "Nov 11, 9:39 am",
+      "before": 0,
+      "after": 12,
+      "delta": 12,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": 11
+    },
+    {
+      "manager": "Nate",
+      "add": "Audric Estime",
+      "time": "Nov 11, 8:40 am",
+      "before": 0,
+      "after": 1.1,
+      "delta": 1.1,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": 11
+    },
+    {
+      "manager": "Max",
+      "add": "Jonathon Brooks",
+      "time": "Nov 11, 6:23 am",
+      "before": 0,
+      "after": 0,
+      "delta": 0,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": null
+    },
+    {
+      "manager": "Nate",
+      "add": "Rico Dowdle",
+      "time": "Nov 11, 1:06 am",
+      "before": 0,
+      "after": 3.4,
+      "delta": 3.4,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": 11
+    },
+    {
+      "manager": "Jim",
+      "add": "Steelers",
+      "time": "Nov 11, 1:06 am",
+      "before": 0,
+      "after": -3,
+      "delta": -3,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": null
+    },
+    {
+      "manager": "Max",
+      "add": "Bryce Young",
+      "time": "Nov 11, 1:06 am",
+      "before": 0,
+      "after": 8.1,
+      "delta": 8.1,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": 11
+    },
+    {
+      "manager": "Chris",
+      "add": "Rams",
+      "time": "Nov 11, 1:06 am",
+      "before": 0,
+      "after": 16,
+      "delta": 16,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": null
+    },
+    {
+      "manager": "Andrew",
+      "add": "Tank Dell",
+      "time": "Nov 11, 1:06 am",
+      "before": 0,
+      "after": 2.6,
+      "delta": 2.6,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": 11
+    },
+    {
+      "manager": "Nick",
+      "add": "Khalil Shakir",
+      "time": "Nov 8, 6:09 pm",
+      "before": 0,
+      "after": 7.8,
+      "delta": 7.8,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 9,
+      "endWeek": 10
+    },
+    {
+      "manager": "TomD",
+      "add": "Demarcus Robinson",
+      "time": "Nov 7, 9:24 am",
+      "before": 0,
+      "after": 2.7,
+      "delta": 2.7,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 9,
+      "endWeek": 10
+    },
+    {
+      "manager": "Jim",
+      "add": "Omar Cooper Jr.",
+      "time": "Nov 7, 12:47 am",
+      "before": 0,
+      "after": 7.8,
+      "delta": 7.8,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 2,
+      "startWeek": 9,
+      "endWeek": 11
+    },
+    {
+      "manager": "Tommy",
+      "add": "Saints",
+      "time": "Nov 6, 11:54 pm",
+      "before": 0,
+      "after": 5,
+      "delta": 5,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 9,
+      "endWeek": 10
+    },
+    {
+      "manager": "Max",
+      "add": "Kaleb Johnson",
+      "time": "Nov 15, 5:38 am",
+      "before": 0,
+      "after": 4.2,
+      "delta": 4.2,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": 11
+    },
+    {
+      "manager": "Max",
+      "add": "Chimere Dike",
+      "time": "Nov 13, 7:35 pm",
+      "before": 0,
+      "after": 5.72,
+      "delta": 5.72,
+      "oldScoredWeeks": 0,
+      "newScoredWeeks": 1,
+      "startWeek": 10,
+      "endWeek": 11
+    },
+    {
+      "manager": "Jim",
+      "add": "Evan McPherson",
+      "time": "Sep 16, 2:03 am",
+      "before": 12,
+      "after": 28,
+      "delta": 16,
+      "oldScoredWeeks": 1,
+      "newScoredWeeks": 3,
+      "startWeek": 2,
+      "endWeek": 5
+    },
+    {
+      "manager": "TomD",
+      "add": "Jalen Coker",
+      "time": "Sep 16, 2:03 am",
+      "before": 9.08,
+      "after": 40.98,
+      "delta": 31.9,
+      "oldScoredWeeks": 1,
+      "newScoredWeeks": 9,
+      "startWeek": 2,
+      "endWeek": 11
+    },
+    {
+      "manager": "Tommy",
+      "add": "49ers",
+      "time": "Sep 16, 2:03 am",
+      "before": 8,
+      "after": 12,
+      "delta": 4,
+      "oldScoredWeeks": 1,
+      "newScoredWeeks": 3,
+      "startWeek": 2,
+      "endWeek": 5
+    },
+    {
+      "manager": "TomD",
+      "add": "Isaiah Likely",
+      "time": "Sep 10, 3:29 pm",
+      "before": 4.8,
+      "after": 6.6,
+      "delta": 1.8,
+      "oldScoredWeeks": 1,
+      "newScoredWeeks": 2,
+      "startWeek": 1,
+      "endWeek": 4
+    }
+  ],
+  "coverage": {
+    "unresolvedEvents": 0,
+    "uncreditedScoringReceipts": [],
+    "nullOwnedWeeksExcluded": 5,
+    "missingInterveningDrop": [
+      {
+        "manager": "Chris",
+        "player": "Malik Washington",
+        "time": "Oct 3, 3:49 pm",
+        "endWeek": 7
+      },
+      {
+        "manager": "Nick",
+        "player": "Deebo Samuel Sr.",
+        "time": "Sep 16, 2:38 pm",
+        "endWeek": 3
+      }
+    ],
+    "reassignedEpisodeWeeks": [
+      {
+        "manager": "Chris",
+        "player": "Malik Washington",
+        "week": 7,
+        "points": 4.76,
+        "reason": "Ownership changed within the scoring week"
+      },
+      {
+        "manager": "Nick",
+        "player": "Chiefs",
+        "week": 8,
+        "points": 0,
+        "reason": "Ownership changed within the scoring week"
+      },
+      {
+        "manager": "Jim",
+        "player": "Omar Cooper Jr.",
+        "week": 9,
+        "points": 7.8,
+        "reason": "Ownership changed within the scoring week"
+      },
+      {
+        "manager": "Nick",
+        "player": "Deebo Samuel Sr.",
+        "week": 3,
+        "points": 16.98,
+        "reason": "Ownership changed within the scoring week"
+      }
+    ],
+    "missingWeek1Receipts": [
+      {
+        "manager": "Nate",
+        "player": "Josh Downs",
+        "time": "Sep 6, 12:26 pm"
+      },
+      {
+        "manager": "Nate",
+        "player": "Tyjae Spears",
+        "time": "Sep 6, 12:04 pm"
+      },
+      {
+        "manager": "Jim",
+        "player": "Jake Bates",
+        "time": "Sep 6, 12:19 am"
+      },
+      {
+        "manager": "Chris",
+        "player": "Keaton Mitchell",
+        "time": "Sep 3, 12:09 pm"
+      },
+      {
+        "manager": "Tommy",
+        "player": "Titans",
+        "time": "Sep 3, 9:40 am"
+      },
+      {
+        "manager": "Max",
+        "player": "Chase McLaughlin",
+        "time": "Sep 3, 7:13 am"
+      },
+      {
+        "manager": "Jim",
+        "player": "Tank Dell",
+        "time": "Sep 3, 6:05 am"
+      },
+      {
+        "manager": "Max",
+        "player": "James Conner",
+        "time": "Sep 3, 12:18 am"
+      },
+      {
+        "manager": "Nick",
+        "player": "Mark Andrews",
+        "time": "Sep 3, 12:18 am"
+      },
+      {
+        "manager": "Billy",
+        "player": "Jaguars",
+        "time": "Sep 3, 12:18 am"
+      },
+      {
+        "manager": "Nick",
+        "player": "Steelers",
+        "time": "Sep 3, 12:18 am"
+      },
+      {
+        "manager": "Andrew",
+        "player": "Kaleb Johnson",
+        "time": "Sep 3, 12:18 am"
+      },
+      {
+        "manager": "Adam",
+        "player": "Bo Nix",
+        "time": "Sep 13, 5:34 pm"
+      },
+      {
+        "manager": "TomD",
+        "player": "Chris Bell",
+        "time": "Sep 10, 7:09 pm"
+      },
+      {
+        "manager": "TomD",
+        "player": "Isaiah Likely",
+        "time": "Sep 10, 3:29 pm"
+      }
+    ]
+  },
+  "weeklyTransactionCounts": {
+    "1": 17,
+    "2": 15,
+    "3": 29,
+    "4": 20,
+    "5": 28,
+    "6": 14,
+    "7": 30,
+    "8": 30,
+    "9": 13,
+    "10": 27,
+    "11": 15
+  }
+}

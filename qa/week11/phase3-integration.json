@@ -1,0 +1,97 @@
+{
+  "phase": 3,
+  "status": "PASS",
+  "checksPassed": 8,
+  "checks": [
+    "All factual data and historical results survive model and analytics integration",
+    "All ten earlier prediction locks and all earlier completed articles remain exact",
+    "Current model lock refers to the supplied raw upload and matches the frozen snapshot",
+    "All 100 lineup autopsies remain unchanged by acquisition timing repair",
+    "Schedule luck, manager DNA and published awards are unaffected",
+    "All 238 dated transactions remain represented in analytics and manager move totals",
+    "Acquisition impact is the sum of supported completed weeks without pre-add credit",
+    "Analytics renderer produces complete numeric output without runtime errors"
+  ],
+  "rawSHA256": "627ff7f28befe523b07c739a0809d9adcb9369a9dea6184733f663b9a88258ef",
+  "archiveGames": 368,
+  "priorPredictionLocksPreserved": 10,
+  "lineupAutopsies": 100,
+  "transactions": 238,
+  "acquisitions": 200,
+  "previousAcquisitionPoints": 2073.5,
+  "correctedAcquisitionPoints": 3756.26,
+  "frontOffice": [
+    {
+      "manager": "Chris",
+      "grade": "B+",
+      "points": 346.88,
+      "adds": 17,
+      "moves": 20
+    },
+    {
+      "manager": "Andrew",
+      "grade": "D",
+      "points": 234.52,
+      "adds": 15,
+      "moves": 16
+    },
+    {
+      "manager": "Jim",
+      "grade": "C+",
+      "points": 294.64,
+      "adds": 19,
+      "moves": 20
+    },
+    {
+      "manager": "Tommy",
+      "grade": "D",
+      "points": 208.72,
+      "adds": 19,
+      "moves": 21
+    },
+    {
+      "manager": "Nate",
+      "grade": "C",
+      "points": 207.04,
+      "adds": 13,
+      "moves": 14
+    },
+    {
+      "manager": "Adam",
+      "grade": "C+",
+      "points": 300.96,
+      "adds": 13,
+      "moves": 18
+    },
+    {
+      "manager": "TomD",
+      "grade": "A",
+      "points": 614.72,
+      "adds": 26,
+      "moves": 30
+    },
+    {
+      "manager": "Billy",
+      "grade": "B",
+      "points": 310.82,
+      "adds": 11,
+      "moves": 12
+    },
+    {
+      "manager": "Nick",
+      "grade": "B+",
+      "points": 557.62,
+      "adds": 31,
+      "moves": 42
+    },
+    {
+      "manager": "Max",
+      "grade": "A+",
+      "points": 680.34,
+      "adds": 36,
+      "moves": 45
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}
