@@ -131,7 +131,9 @@ function waiverAvailableSections(players=[]){
     }).slice(0,target);
     const rows=list.length?list.map((p,i)=>{
       const m=model?.metrics?model.metrics(p,week,i+1,list.length):{recent:week===1?'—':(p.recent??'—'),projected:p.projected??'—',faab:p.faabSuggestion||'—'};
-      return `<tr><td><b>${e(p.name)}</b></td><td>${e(p.nflTeam||p.nfl||'')}</td><td>${e(m.recent)}</td><td class="waiver-projected"><b>${e(m.projected)}</b></td><td class="waiver-faab"><b>${e(m.faab)}</b></td></tr>`;
+      const availability=p.availability==='W'?`Waivers${p.waiverDate?' · '+p.waiverDate:''}`:(p.availability==='FA'?'Free agent':'');
+      const detail=[availability,p.status?`Status: ${p.status}`:''].filter(Boolean).join(' · ');
+      return `<tr><td><b>${e(p.name)}</b>${detail?`<div class="small">${e(detail)}</div>`:''}</td><td>${e(p.nflTeam||p.nfl||'')}</td><td>${e(m.recent)}</td><td class="waiver-projected"><b>${e(m.projected)}</b></td><td class="waiver-faab"><b>${e(m.faab)}</b></td></tr>`;
     }).join(''):`<tr><td colspan="5"><div class="empty-state">No ${e(label.toLowerCase())} captured.</div></td></tr>`;
     return `<section class="waiver-position-card" id="waiver-${pos.toLowerCase()}"><div class="waiver-position-head"><div><div class="kicker">${e(pos)}</div><h3>${e(label)}</h3></div><span class="waiver-position-count">${list.length} listed</span></div><div class="table-wrap waiver-position-table-wrap" tabindex="0"><table class="waiver-position-table"><thead><tr><th>Player</th><th>Team</th><th>Recent</th><th>Projected</th><th>Suggested FAAB</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
   }).join('');
