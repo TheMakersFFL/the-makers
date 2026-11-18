@@ -1,0 +1,27 @@
+THE MAKERS — WEEK 11 PHASE 6 PUBLICATION AND LIVE VERIFICATION
+
+Decision: PASS — published successfully and all 32 live routes exactly match the audited preview.
+Live site: https://themakersffl.github.io/the-makers/
+Week 10 recap: https://themakersffl.github.io/the-makers/week.html?week=10
+Week 11 preview: https://themakersffl.github.io/the-makers/week.html?week=11
+
+PUBLICATION RECEIPT
+PR #15: https://github.com/TheMakersFFL/the-makers/pull/15
+Audited release commit: 88879af6d47d511a456c8718d679519708075e07
+Production merge commit: 5cc3a9978560783726eaf6c29e8dfd0c90e85fe6
+Production tree: 12b392b0c03677eef00a24528f7a50d9bc469104 — exactly the saved Phase 5 tree.
+GitHub Pages run: 44372453410
+https://github.com/TheMakersFFL/the-makers/actions/runs/44372453410
+Workflow: pages build and deployment. Status completed; conclusion success; exact production merge SHA.
+Deployment completed November 18, 2026 at 10:42 a.m. Pacific (18:42:18 UTC).
+The backup branch preserves the original published Week 10 commit.
+
+LIVE BROWSER VERIFICATION
+All 32 primary routes and franchise profiles passed again on the official live site. Visible text, main headings and table-row counts match the audited preview on every route. Zero site console errors, broken images or horizontal overflow. The live homepage screenshot was inspected and the live site was left open for review.
+Verified live content includes Week 10 recap, Week 11 preview, 50 current-season finals, 368 combined games, 238 transactions, 200 acquisition receipts, 100 lineup autopsies, 100 available players with 90 free-agent and ten dated-waiver labels, and eleven locked forecast receipts containing 55 matchups. The prediction page shows Makers 34–16 and Yahoo 33–17, with five Week 11 games pending.
+Historical records and separate Billy/El Rubio franchises remain intact. No raw Yahoo capture or private page content was published. Hosting and domain configuration are unchanged.
+The published roster/forecast snapshot is November 18 at 9:36 a.m. Pacific; later Yahoo lineup changes are not assumed. Browser coverage used the available desktop viewport; physical mobile-device testing was not performed.
+
+All six phases were completed in order, with each checkpoint saved before the next phase began. Phase 6 verification receipts are retained on the release branch; the published site remains the exact audited merge commit above.
+Detailed receipts: qa/week11/phase6.json, phase6-deployment.json and phase6-browser.json.
+No remaining publication blocker or pending continuation step.

@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "phase": 6,
+  "task": "Read-only merge integrity and GitHub Pages deployment verification",
+  "verifiedAtUTC": "2026-11-18 18:43:44 UTC",
+  "repository": "TheMakersFFL/the-makers",
+  "productionURL": "https://themakersffl.github.io/the-makers/",
+  "auditedRelease": {
+    "commit": "88879af6d47d511a456c8718d679519708075e07",
+    "tree": "12b392b0c03677eef00a24528f7a50d9bc469104"
+  },
+  "pullRequest": {
+    "number": 15,
+    "url": "https://github.com/TheMakersFFL/the-makers/pull/15",
+    "state": "closed",
+    "merged": true,
+    "mergedAt": "2026-11-18T18:41:31Z",
+    "headRef": "week11-update-2026-11-18",
+    "headSHA": "88879af6d47d511a456c8718d679519708075e07",
+    "baseRef": "main",
+    "mergeCommitSHA": "5cc3a9978560783726eaf6c29e8dfd0c90e85fe6"
+  },
+  "mergeCommit": {
+    "sha": "5cc3a9978560783726eaf6c29e8dfd0c90e85fe6",
+    "url": "https://github.com/TheMakersFFL/the-makers/commit/5cc3a9978560783726eaf6c29e8dfd0c90e85fe6",
+    "tree": "12b392b0c03677eef00a24528f7a50d9bc469104",
+    "parents": [
+      "88ea2e37370736931a3ad951fc69d2cfc6dd64a7",
+      "88879af6d47d511a456c8718d679519708075e07"
+    ]
+  },
+  "deployment": {
+    "id": 44372453410,
+    "url": "https://github.com/TheMakersFFL/the-makers/actions/runs/44372453410",
+    "name": "pages build and deployment",
+    "runNumber": 83,
+    "event": "dynamic",
+    "path": "dynamic/pages/pages-build-deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "headSHA": "5cc3a9978560783726eaf6c29e8dfd0c90e85fe6",
+    "headBranch": "main",
+    "createdAt": "2026-11-18T18:41:33Z",
+    "startedAt": "2026-11-18T18:41:33Z",
+    "updatedAt": "2026-11-18T18:42:18Z"
+  },
+  "observations": [
+    {
+      "runID": 44372453410,
+      "status": "queued",
+      "conclusion": null,
+      "githubUpdatedAt": "2026-11-18T18:42:05Z"
+    },
+    {
+      "runID": 44372453410,
+      "status": "completed",
+      "conclusion": "success",
+      "githubUpdatedAt": "2026-11-18T18:42:18Z"
+    }
+  ],
+  "checks": {
+    "repository": true,
+    "prMerged": true,
+    "prHeadEqualsAuditedRelease": true,
+    "prMergeEqualsPublishedCommit": true,
+    "mergeCommitExact": true,
+    "mergedTreeEqualsAuditedTree": true,
+    "auditedReleaseIsMergeParent": true,
+    "exactPagesWorkflow": true,
+    "deploymentHeadEqualsMerge": true,
+    "deploymentSucceeded": true
+  },
+  "checkCount": 10,
+  "sources": [
+    "https://api.github.com/repos/TheMakersFFL/the-makers/git/commits/5cc3a9978560783726eaf6c29e8dfd0c90e85fe6",
+    "https://api.github.com/repos/TheMakersFFL/the-makers/pulls/15",
+    "https://api.github.com/repos/TheMakersFFL/the-makers/actions/runs?head_sha=5cc3a9978560783726eaf6c29e8dfd0c90e85fe6&per_page=20",
+    "https://api.github.com/repos/TheMakersFFL/the-makers/actions/runs/44372453410"
+  ],
+  "scope": "Read-only GitHub connector verification; no repository changes, branch updates, browser actions or publication mutations performed by this monitor. Root independently verifies the live site and saves the final checkpoint."
+}
