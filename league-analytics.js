@@ -135,37 +135,107 @@
 
   function managerDNA(manager){return dnaRows().find(x=>x.manager===manager)}
 
+  const identityToken=v=>String(v||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  const defenseNames=[
+    ['ARI','Arizona','Cardinals'],['ATL','Atlanta','Falcons'],['BAL','Baltimore','Ravens'],['BUF','Buffalo','Bills'],
+    ['CAR','Carolina','Panthers'],['CHI','Chicago','Bears'],['CIN','Cincinnati','Bengals'],['CLE','Cleveland','Browns'],
+    ['DAL','Dallas','Cowboys'],['DEN','Denver','Broncos'],['DET','Detroit','Lions'],['GB','Green Bay','Packers'],
+    ['HOU','Houston','Texans'],['IND','Indianapolis','Colts'],['JAX','Jacksonville','Jaguars'],['KC','Kansas City','Chiefs'],
+    ['LAC','Los Angeles','Chargers'],['LAR','Los Angeles','Rams'],['LV','Las Vegas','Raiders'],['MIA','Miami','Dolphins'],
+    ['MIN','Minnesota','Vikings'],['NE','New England','Patriots'],['NO','New Orleans','Saints'],['NYG','New York','Giants'],
+    ['NYJ','New York','Jets'],['PHI','Philadelphia','Eagles'],['PIT','Pittsburgh','Steelers'],['SF','San Francisco','49ers'],
+    ['SEA','Seattle','Seahawks'],['TB','Tampa Bay','Buccaneers'],['TEN','Tennessee','Titans'],['WAS','Washington','Commanders']
+  ];
+  const defenseAliases=new Map();
+  for(const [abbr,city,mascot] of defenseNames)for(const name of [abbr,mascot,`${city} ${mascot}`,...(['New York','Los Angeles'].includes(city)?[]:[city])])defenseAliases.set(identityToken(name),abbr);
+  defenseAliases.set('jac','JAX');
+  function playerIdentity(player){
+    const name=typeof player==='object'?player?.name:player,token=identityToken(name),pos=String(player?.pos||player?.position||'').toUpperCase();
+    const code=String(player?.nflTeam||'').toUpperCase().replace(/^JAC$/,'JAX');
+    const defense=/^(DEF|DST|D\/ST)$/.test(pos)&&defenseAliases.has(identityToken(code))?defenseAliases.get(identityToken(code)):defenseAliases.get(token);
+    return defense?`def:${defense}`:token;
+  }
+  function captureClock(value){
+    try{
+      const date=new Date(value);if(!Number.isFinite(date.getTime()))return null;
+      const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(date).filter(x=>x.type!=='literal').map(x=>[x.type,Number(x.value)]));
+      const day=Date.UTC(p.year,p.month-1,p.day);
+      return {year:p.year,month:p.month,day,weekday:new Date(day).getUTCDay(),at:day+(p.hour*60+p.minute)*60000};
+    }catch(_){return null}
+  }
+  function receiptClock(tx){
+    const match=String(tx.time||'').trim().match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2}),\s+(\d{1,2}):(\d{2})\s*(am|pm)$/i);
+    if(!match)return null;
+    const captured=captureClock(tx.capturedAt),month=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'].indexOf(match[1].toLowerCase()),day=Number(match[2]),hour=Number(match[3]),minute=Number(match[4]);
+    if(hour<1||hour>12||minute>59)return null;
+    const year=captured?captured.year-(month+1>captured.month?1:0):currentYear;
+    const at=Date.UTC(year,month,day,hour%12+(match[5].toLowerCase()==='pm'?12:0),minute),date=new Date(at);
+    if(date.getUTCMonth()!==month||date.getUTCDate()!==day||(captured&&at>captured.at))return null;
+    return at;
+  }
+  function receiptCalendar(){
+    // The labeled completed/target imports anchor Yahoo's Tuesday roster weeks.
+    // Preseason captures are excluded; inconsistent anchors disable date inference.
+    const anchors=IMPORTS.filter(s=>Number(s.completedWeek)>=1&&Number(s.targetWeek)===Number(s.completedWeek)+1).map(s=>{
+      const c=captureClock(s.capturedAt);if(!c||c.weekday<2||c.weekday>4)return null;
+      return c.day-(c.weekday-2)*86400000-(Number(s.targetWeek)-1)*7*86400000;
+    }).filter(x=>x!=null);
+    return anchors.length&&new Set(anchors).size===1?anchors[0]:null;
+  }
   function txEvents(){
-    const seen=new Map(),snaps=[...IMPORTS].sort((a,b)=>String(a.capturedAt||'').localeCompare(String(b.capturedAt||'')));
-    const weekFromTime=v=>{const m=String(v||'').match(/Sep\s+(\d{1,2})/i),d=m?Number(m[1]):0;return d&&d<=9?1:d&&d<=16?2:3};
-    for(const raw of (Y.recentTransactions||[])){
+    const seen=new Map(),snaps=[...IMPORTS].sort((a,b)=>String(a.capturedAt||'').localeCompare(String(b.capturedAt||''))),calendar=receiptCalendar();
+    function record(raw,s){
       const manager=raw.manager||managerByTeam(raw.team),add=raw.add||(Array.isArray(raw.added)?raw.added.map(p=>p?.name||p).filter(Boolean).join(', '):''),drop=raw.drop||(Array.isArray(raw.dropped)?raw.dropped.map(p=>p?.name||p).filter(Boolean).join(', '):''),faab=num(raw.faab??raw.faabSpent)??0,time=raw.time||raw.timestamp||raw.date||'';
-      const key=[manager,raw.team,add,drop,faab].map(x=>String(x??'')).join('|').toLowerCase();
-      if(!seen.has(key))seen.set(key,{...raw,manager,add,drop,faab,time,firstTargetWeek:weekFromTime(time)||1,firstCompletedWeek:Math.max(0,(weekFromTime(time)||1)-1),capturedAt:''});
+      const addKey=playerIdentity(raw.added?.length===1?raw.added[0]:add),dropKey=playerIdentity(raw.dropped?.length===1?raw.dropped[0]:drop),capturedAt=s?.capturedAt||'';
+      const transactionAt=receiptClock({time,capturedAt}),transactionWeek=transactionAt!=null&&calendar!=null?Math.max(1,Math.floor((transactionAt-calendar)/(7*86400000))+1):null;
+      const key=[manager,addKey,dropKey,faab,transactionAt??String(time).trim().toLowerCase()].join('|');
+      if(seen.has(key))return;
+      const firstTargetWeek=s?(Number(s.targetWeek)||Number(s.completedWeek)+1):transactionWeek;
+      seen.set(key,{...raw,manager,add,drop,faab,time,addKey,dropKey,transactionAt,transactionWeek,firstTargetWeek,firstCompletedWeek:s?Number(s.completedWeek)||0:null,capturedAt,firstSeenBasis:s?'Saved collector snapshot':'Dated season ledger'});
     }
-    for(const s of snaps){for(const raw of s?.data?.transactions||[]){
-      const manager=raw.manager||managerByTeam(raw.team);
-      const add=raw.add||(Array.isArray(raw.added)?raw.added.map(p=>p?.name||p).filter(Boolean).join(', '):'');
-      const drop=raw.drop||(Array.isArray(raw.dropped)?raw.dropped.map(p=>p?.name||p).filter(Boolean).join(', '):'');
-      const faab=num(raw.faab??raw.faabSpent)??0,time=raw.time||raw.timestamp||raw.date||'';
-      const tx={...raw,manager,add,drop,faab,time};
-      const key=[manager,raw.team,add,drop,faab].map(x=>String(x??'')).join('|').toLowerCase();
-      if(!seen.has(key))seen.set(key,{...tx,firstTargetWeek:Number(s.targetWeek)||Number(s.completedWeek)+1||1,firstCompletedWeek:Number(s.completedWeek)||0,capturedAt:s.capturedAt});
-    }}
+    // Snapshot metadata wins over the cumulative ledger; a dated re-add stays distinct.
+    for(const s of snaps)for(const raw of s?.data?.transactions||[])record(raw,s);
+    for(const raw of Y.recentTransactions||[])record(raw,null);
     return [...seen.values()];
   }
-  function rosterPoint(p){for(const k of ['points','recent']){const n=num(p?.[k]);if(n!=null)return n}return null}
-  function completedSnapshots(){return [...IMPORTS].filter(s=>Number(s.completedWeek)>=1&&((s.data?.completedLineups||s.data?.rosters||[]).length>0)).sort((a,b)=>Number(a.completedWeek)-Number(b.completedWeek)||String(a.capturedAt||'').localeCompare(String(b.capturedAt||'')))}
-  function completedRows(s){return s?.data?.completedLineups?.length?s.data.completedLineups:(s?.data?.rosters||[])}
+  function rosterPoint(p){for(const k of ['points','recent']){const value=p?.[k];if(value==null||value==='')continue;const n=num(value);if(n!=null)return n}return null}
+  function lineupPoint(p,week){const points=rosterPoint(p);return points!=null?points:Number(p?.bye)===Number(week)?0:null}
+  function completedSnapshots(){
+    const weeks=new Map();
+    for(const s of [...IMPORTS].sort((a,b)=>String(a.capturedAt||'').localeCompare(String(b.capturedAt||''))))if(Number(s.completedWeek)>=1&&(s.data?.completedLineups||[]).length)weeks.set(Number(s.completedWeek),s);
+    return [...weeks.values()].sort((a,b)=>Number(a.completedWeek)-Number(b.completedWeek));
+  }
+  function completedRows(s){return s?.data?.completedLineups||[]}
 
   function acquisitionRows(){
-    const events=txEvents(),adds=events.filter(x=>x.add),drops=events.filter(x=>x.drop),snaps=completedSnapshots();
-    return adds.map(a=>{
-      const start=Number(a.firstTargetWeek)||1;const laterDrop=drops.filter(d=>d.manager===a.manager&&String(d.drop).toLowerCase()===String(a.add).toLowerCase()&&Number(d.firstTargetWeek)>=start).sort((x,y)=>x.firstTargetWeek-y.firstTargetWeek)[0];const stop=laterDrop?Number(laterDrop.firstTargetWeek):Infinity;
-      let impact=0,weeks=0,weekScores=[];
-      for(const s of snaps){const w=Number(s.completedWeek);if(w<start||w>=stop)continue;const roster=completedRows(s).find(r=>r.manager===a.manager||r.team===a.team),p=roster?.players?.find(p=>String(p.name).toLowerCase()===String(a.add).toLowerCase()),pts=rosterPoint(p);if(pts!=null){impact+=pts;weeks++;weekScores.push({week:w,points:pts})}}
-      return {...a,startWeek:start,dropWeek:Number.isFinite(stop)?stop:null,impact,weeksScored:weeks,weekScores,faab:num(a.faab)??0};
+    const events=txEvents(),adds=events.filter(x=>x.add),snaps=completedSnapshots(),latestWeek=Math.max(0,...snaps.map(s=>Number(s.completedWeek)));
+    const eventWeek=x=>x.transactionWeek??(x.capturedAt?x.firstTargetWeek:null);
+    const follows=(x,a)=>x!==a&&(x.transactionAt!=null&&a.transactionAt!=null?x.transactionAt>=a.transactionAt:Number(x.firstTargetWeek)>=Number(a.firstTargetWeek));
+    const compare=(x,y)=>x.transactionAt!=null&&y.transactionAt!=null?x.transactionAt-y.transactionAt:(eventWeek(x)??Infinity)-(eventWeek(y)??Infinity);
+    const rows=adds.map(a=>{
+      const start=eventWeek(a),later=events.filter(x=>x.manager===a.manager&&(x.dropKey===a.addKey||x.addKey===a.addKey)&&follows(x,a)).sort(compare)[0],stop=later?eventWeek(later):null;
+      const weekScores=[],uncreditedWeekScores=[],unscoredOwnedWeeks=[],coverageNotes=[];
+      if(start==null)coverageNotes.push('Transaction timing unresolved; no points credited.');
+      for(const s of snaps){
+        const week=Number(s.completedWeek);if(start==null||week<start)continue;
+        const roster=completedRows(s).find(r=>(r.manager||managerByTeam(r.team))===a.manager),p=roster?.players?.find(p=>playerIdentity(p)===a.addKey),points=rosterPoint(p);
+        if(!p)continue;
+        if(later&&(stop==null||week>=stop)){if(week===stop&&points!=null)uncreditedWeekScores.push({week,points,reason:'Ownership changed within the scoring week'});continue}
+        if(points==null){unscoredOwnedWeeks.push({week,reason:Number(p.bye)===week?'Bye':'Score unavailable'});continue}
+        weekScores.push({week,points});
+      }
+      if(start!=null&&start<=latestWeek){const capturedWeeks=new Set(snaps.map(s=>Number(s.completedWeek))),missing=[];for(let w=start;w<=latestWeek&&(stop==null||w<stop);w++)if(!capturedWeeks.has(w))missing.push(w);if(missing.length)coverageNotes.push(`No player scoring receipts for Week ${missing.join(', ')}.`)}
+      const isDrop=later?.dropKey===a.addKey;
+      if(later&&!isDrop)coverageNotes.push('A later acquisition closes this period; the intervening drop was not captured.');
+      return {...a,startWeek:start,dropWeek:isDrop?stop:null,endWeek:stop,endReason:later?(isDrop?'Recorded drop':'Later acquisition'):null,impact:weekScores.reduce((n,x)=>n+x.points,0),weeksScored:weekScores.length,weekScores,uncreditedWeekScores,unscoredOwnedWeeks,coverageNotes,timingBasis:a.transactionWeek!=null?'Dated transaction and completed-lineup ownership':a.capturedAt?'Conservative first-snapshot boundary':'Unresolved',faab:num(a.faab)??0};
     });
+    const credited=new Set(rows.flatMap(a=>a.weekScores.map(x=>`${a.manager}|${a.addKey}|${x.week}`)));
+    for(const a of rows){
+      a.reassignedWeekScores=a.uncreditedWeekScores.filter(x=>credited.has(`${a.manager}|${a.addKey}|${x.week}`));
+      a.uncreditedWeekScores=a.uncreditedWeekScores.filter(x=>!credited.has(`${a.manager}|${a.addKey}|${x.week}`));
+      if(a.uncreditedWeekScores.length)a.coverageNotes.push(`${a.uncreditedWeekScores.reduce((n,x)=>n+x.points,0).toFixed(2)} points not credited to this acquisition period because ownership changed during the scoring week.`);
+    }
+    return rows;
   }
 
   function frontOfficeRows(){
@@ -185,8 +255,8 @@
   function opponentManager(g,m){return g.managerA===m?g.managerB:g.managerA}
   function isBenchSlot(slot){return /^(BN|IR|IL|NA|RES)$/i.test(String(slot||'').trim())}
   function normalizePos(p){let z=String(p?.pos||p?.position||'').toUpperCase();if(z==='D/ST'||z==='DST')z='DEF';return z}
-  function optimizeRoster(players){
-    const usable=players.map((p,i)=>({...p,_i:i,_pts:rosterPoint(p),_pos:normalizePos(p)})).filter(p=>p._pts!=null&&!/^(IR|IL|NA|RES)$/i.test(String(p.slot||'')));
+  function optimizeRoster(players,week){
+    const usable=players.map((p,i)=>({...p,_i:i,_pts:lineupPoint(p,week),_pos:normalizePos(p)})).filter(p=>p._pts!=null&&!/^(IR|IL|NA|RES)$/i.test(String(p.slot||'')));
     const slots=['QB','RB','RB','WR','WR','TE','FLEX','K','DEF'];let best=-Infinity,bestIdx=[];
     const eligible=(p,s)=>s==='FLEX'?['RB','WR','TE'].includes(p._pos):p._pos===s;
     function go(si,used,total,picks){if(si===slots.length){if(total>best){best=total;bestIdx=[...picks]}return}const s=slots[si];for(const p of usable){if(used.has(p._i)||!eligible(p,s))continue;used.add(p._i);picks.push(p._i);go(si+1,used,total+p._pts,picks);picks.pop();used.delete(p._i)}}
@@ -194,7 +264,7 @@
   }
   function lineupAutopsies(){
     const out=(Y.legacyLineupAutopsies||[]).map(x=>({...x}));for(const s of completedSnapshots()){
-      const week=Number(s.completedWeek);for(const roster of completedRows(s)){const m=roster.manager||managerByTeam(roster.team);if(!m)continue;const g=resultForManagerWeek(m,week);if(!g)continue;const players=roster.players||[],relevant=players.filter(p=>!/^(IR|IL|NA|RES)$/i.test(String(p.slot||''))),allScored=relevant.length>=9&&relevant.every(p=>rosterPoint(p)!=null);if(!allScored)continue;const starters=relevant.filter(p=>!isBenchSlot(p.slot)),starterSum=starters.reduce((s,p)=>s+(rosterPoint(p)||0),0),official=officialScore(g,m),oppScore=opponentScore(g,m);if(official==null||Math.abs(starterSum-official)>1.5)continue;const opt=optimizeRoster(players);if(!opt||opt.score+0.01<official)continue;const left=Math.max(0,opt.score-official),eff=opt.score?official/opt.score:1,bench=[...relevant].filter(p=>isBenchSlot(p.slot)).map(p=>({...p,_pts:rosterPoint(p)})).sort((a,b)=>b._pts-a._pts),topBench=bench[0]||null,lost=official<oppScore,costGame=lost&&opt.score>oppScore;
+      const week=Number(s.completedWeek);for(const roster of completedRows(s)){const m=roster.manager||managerByTeam(roster.team);if(!m)continue;const g=resultForManagerWeek(m,week);if(!g)continue;const players=roster.players||[],relevant=players.filter(p=>!/^(IR|IL|NA|RES)$/i.test(String(p.slot||''))),allScored=relevant.length>=9&&relevant.every(p=>lineupPoint(p,week)!=null);if(!allScored)continue;const starters=relevant.filter(p=>!isBenchSlot(p.slot)),starterSum=starters.reduce((s,p)=>s+(lineupPoint(p,week)||0),0),official=officialScore(g,m),oppScore=opponentScore(g,m);if(official==null||Math.abs(starterSum-official)>1.5)continue;const opt=optimizeRoster(players,week);if(!opt||opt.score+0.01<official)continue;const left=Math.max(0,opt.score-official),eff=opt.score?official/opt.score:1,bench=[...relevant].filter(p=>isBenchSlot(p.slot)).map(p=>({...p,_pts:lineupPoint(p,week)})).sort((a,b)=>b._pts-a._pts),topBench=bench[0]||null,lost=official<oppScore,costGame=lost&&opt.score>oppScore;
         out.push({week,manager:m,team:roster.team||teamByManager(m),official,optimal:opt.score,left,eff,opponent:opponentManager(g,m),oppScore,topBench,costGame});
       }}return out;
   }
@@ -217,7 +287,7 @@
     return {leader:Object.values(leader).map(x=>({...x,weeks:x.weeks.size})).sort((a,b)=>b.awards-a.awards||b.gotw-a.gotw||a.manager.localeCompare(b.manager)),archive:archive.sort((a,b)=>b.week-a.week)};
   }
 
-  function transactionsByWeek(){const map={};for(const x of txEvents()){const w=Number(x.firstTargetWeek)||1;(map[w]??=[]).push(x)}return map}
+  function transactionsByWeek(){const map={};for(const x of txEvents()){const w=x.transactionWeek??x.firstTargetWeek;if(w!=null)(map[w]??=[]).push(x)}return map}
   function pulseWeeks(){
     const games=allGames().filter(g=>Number(g.year)===currentYear&&String(g.stage||'Regular Season')==='Regular Season'&&scored(g)),groups={};for(const g of games)(groups[Number(g.week)]??=[]).push(g);const tx=transactionsByWeek();return Object.entries(groups).map(([w,gs])=>{const scores=gs.flatMap(g=>[{m:g.managerA,team:g.teamA||teamByManager(g.managerA),s:num(g.scoreA)},{m:g.managerB,team:g.teamB||teamByManager(g.managerB),s:num(g.scoreB)}]),high=[...scores].sort((a,b)=>b.s-a.s)[0],low=[...scores].sort((a,b)=>a.s-b.s)[0],close=[...gs].sort((a,b)=>Math.abs(num(a.scoreA)-num(a.scoreB))-Math.abs(num(b.scoreA)-num(b.scoreB)))[0],blow=[...gs].sort((a,b)=>Math.abs(num(b.scoreA)-num(b.scoreB))-Math.abs(num(a.scoreA)-num(a.scoreB)))[0];return {week:Number(w),games:gs.length,avg:mean(scores.map(x=>x.s)),high,low,close,blow,transactions:(tx[Number(w)]||[]).length,headline:Y.weekly?.[w]?.headline||'',gotw:Y.weekly?.[w]?.gameOfWeek||''}}).sort((a,b)=>a.week-b.week)
   }
@@ -249,9 +319,9 @@
     const scored=rows.filter(x=>x.scoredAdds>0),top=scored[0],bestAdd=[...rows].filter(x=>x.bestAdd?.weeksScored).sort((a,b)=>(b.bestAdd?.impact||0)-(a.bestAdd?.impact||0))[0],acqs=acquisitionRows().sort((a,b)=>b.startWeek-a.startWeek||b.impact-a.impact),worstBurn=[...acqs].filter(x=>x.faab>0&&x.weeksScored>0).sort((a,b)=>(a.impact/(a.faab||1))-(b.impact/(b.faab||1)))[0];
     const body=`<div class="analytics-stat-grid">${statCard('Front-office leader',top?`${top.manager} · ${top.grade}`:'Awaiting Week 1','Grades activate when acquired players produce scored weeks')}${statCard('Best acquisition',bestAdd?`${bestAdd.bestAdd.add} · ${bestAdd.bestAdd.impact.toFixed(2)} pts`:'Awaiting Week 1',bestAdd?`${bestAdd.manager} · from Week ${bestAdd.bestAdd.startWeek}`:'The acquisition tracker is already armed')}${statCard('Worst FAAB burn',worstBurn?`${worstBurn.add} · $${worstBurn.faab}`:'Not enough scored data',worstBurn?`${worstBurn.impact.toFixed(2)} points after acquisition`:'Activates after paid claims produce points')}${statCard('Moves logged',String(rows.reduce((s,x)=>s+x.moves,0)),'2026 deduplicated manager activity')}${statCard('FAAB tied to adds',`$${rows.reduce((s,x)=>s+x.faab,0).toFixed(0)}`,'Public completed spending only')}</div>`+
       table(['Manager','Grade','Moves','FAAB','Acquisition pts','Best add','Cost / pt'],rows.map(r=>`<tr><td><b>${e(r.manager)}</b><div class="table-sub">${e(r.team)}</div></td><td><span class="analytics-grade grade-${slug(r.grade)}">${e(r.grade)}</span></td><td>${r.moves}</td><td>$${r.faab.toFixed(0)}</td><td>${r.scoredAdds?r.impact.toFixed(2):'—'}</td><td>${r.bestAdd?.weeksScored?`<b>${e(r.bestAdd.add)}</b><div class="table-sub">${r.bestAdd.impact.toFixed(2)} pts</div>`:'—'}</td><td>${r.costPerPoint!=null&&r.scoredAdds?`$${r.costPerPoint.toFixed(2)}`:'—'}</td></tr>`).join(''),'front-office-table')+
-      `<div class="analytics-subsection"><h3>Acquisition receipts</h3>${acqs.length?table(['Manager','Added','Start','FAAB','Scored weeks','Impact','Status'],acqs.map(x=>`<tr><td><b>${e(x.manager)}</b></td><td>${e(x.add)}</td><td>W${x.startWeek}</td><td>$${x.faab.toFixed(0)}</td><td>${x.weeksScored}</td><td>${x.weeksScored?x.impact.toFixed(2):'—'}</td><td>${x.weeksScored?'Tracking':'Awaiting points'}</td></tr>`).join('')):`<div class="analytics-empty compact"><b>No acquisition receipts yet.</b><p>The first completed add, waiver claim or trade acquisition will appear here automatically.</p></div>`}</div>`+
+      `<div class="analytics-subsection"><h3>Acquisition receipts</h3>${acqs.length?table(['Manager','Added','Start','FAAB','Scored weeks','Impact','Status'],acqs.map(x=>`<tr><td><b>${e(x.manager)}</b></td><td>${e(x.add)}</td><td>${x.startWeek==null?'Unresolved':`W${x.startWeek}`}</td><td>$${x.faab.toFixed(0)}</td><td>${x.weeksScored}</td><td>${x.weeksScored?x.impact.toFixed(2):'—'}</td><td>${x.startWeek==null?'Timing unresolved':x.endWeek!=null?'Closed':x.weeksScored?'Tracking':'Awaiting points'}${x.coverageNotes.length?`<div class="table-sub">${x.coverageNotes.map(e).join(' ')}</div>`:''}</td></tr>`).join('')):`<div class="analytics-empty compact"><b>No acquisition receipts yet.</b><p>The first completed add, waiver claim or trade acquisition will appear here automatically.</p></div>`}</div>`+
       `<div class="analytics-subsection"><h3>Historical activity efficiency</h3>${table(['Manager','Career moves','Regular-season wins','Wins / 100 moves'],historical.map(r=>`<tr><td><b>${e(r.manager)}</b></td><td>${r.moves}</td><td>${r.w}</td><td>${r.per100==null?'—':r.per100.toFixed(1)}</td></tr>`).join(''))}</div>`;
-    return section('front-office','FRONT OFFICE','Transaction ROI & front-office grades',body)
+    return section('front-office','FRONT OFFICE','Transaction ROI & front-office grades',body,'Points come from completed-lineup scoring during each acquisition period. Byes and weeks without player scoring receipts are excluded. Points from a week with an ownership change are left unattributed when the timing cannot be established.')
   }
 
   function renderLineups(){

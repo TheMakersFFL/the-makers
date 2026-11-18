@@ -1,0 +1,208 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_SOURCE_CORRECTIONS",
+  "rawValidationOK": true,
+  "normalizedValidationOK": true,
+  "unresolvedBlockers": [],
+  "sourceSha256": "627ff7f28befe523b07c739a0809d9adcb9369a9dea6184733f663b9a88258ef",
+  "rawRosterRowsVerified": 315,
+  "normalRosterMetricRowsVerified": 270,
+  "compactByeRowsReconciled": 45,
+  "availableRowsVerified": 100,
+  "baselineReconciliation": {
+    "status": "PASS",
+    "completed2026Games": 50,
+    "historicalGames": 318,
+    "combinedGames": 368,
+    "allTenStandingsReconstructed": true,
+    "wins": 50,
+    "losses": 50,
+    "aggregatePF": 10686.7,
+    "aggregatePA": 10686.7,
+    "remainingFAAB": 498,
+    "weeklyFAABSpent": 33,
+    "faabChangesByManager": {
+      "Jim": 12,
+      "Billy": 0,
+      "TomD": 0,
+      "Nick": 0,
+      "Max": 5,
+      "Andrew": 1,
+      "Nate": 10,
+      "Tommy": 5,
+      "Chris": 0,
+      "Adam": 0
+    },
+    "baselineUniqueTransactions": 217
+  },
+  "summary": {
+    "standings": 10,
+    "totalWins": 50,
+    "totalLosses": 50,
+    "totalPF": 10686.7,
+    "totalPA": 10686.7,
+    "remainingFAAB": 498,
+    "uniqueTransactions": 25,
+    "waiverSpendCaptured": 33,
+    "completedPlayers": 158,
+    "currentPlayers": 157,
+    "completedByePlayers": 17,
+    "currentByePlayers": 28,
+    "currentByeStarters": 4,
+    "currentEmptySlots": 2,
+    "phantomCompletedByePointsRemoved": 140.0,
+    "currentStarterInjuryFlags": [
+      {
+        "team": "The Moose Knuckles",
+        "manager": "Jim",
+        "name": "Carnell Tate",
+        "pos": "WR",
+        "slot": "WR",
+        "status": "Q",
+        "started": true,
+        "projected": 10.82,
+        "bye": 9
+      },
+      {
+        "team": "TDs In Your Face",
+        "manager": "Nick",
+        "name": "Jaylen Waddle",
+        "pos": "WR",
+        "slot": "WR",
+        "status": "Q",
+        "started": true,
+        "projected": 8.98,
+        "bye": 10
+      },
+      {
+        "team": "The Mustache riders",
+        "manager": "TomD",
+        "name": "Kenneth Walker III",
+        "pos": "RB",
+        "slot": "RB",
+        "status": "Q",
+        "started": true,
+        "projected": 17.16,
+        "bye": 5
+      },
+      {
+        "team": "The Mustache riders",
+        "manager": "TomD",
+        "name": "Brock Bowers",
+        "pos": "TE",
+        "slot": "TE",
+        "status": "Q",
+        "started": true,
+        "projected": 10.92,
+        "bye": 13
+      },
+      {
+        "team": "Pump and Go",
+        "manager": "Tommy",
+        "name": "DeVonta Smith",
+        "pos": "WR",
+        "slot": "WR",
+        "status": "Q",
+        "started": true,
+        "projected": 9.52,
+        "bye": 10
+      }
+    ],
+    "available": 100,
+    "positions": {
+      "QB": 15,
+      "RB": 25,
+      "WR": 25,
+      "TE": 15,
+      "K": 10,
+      "DEF": 10
+    },
+    "freeAgents": 90,
+    "waivers": 10,
+    "numericRowsVerified": 100,
+    "restoredGamesPlayed": 81,
+    "clearedUnverifiedSeasonRank": 100,
+    "uniqueAvailableIdentities": 100,
+    "ownershipOverlap": 0,
+    "capturedTransactions": 25,
+    "capturedNov18WaiverSpend": 33
+  },
+  "currentByeStarters": [
+    {
+      "week": 11,
+      "team": "The A Gap",
+      "manager": "Adam",
+      "player": "DeMario Douglas",
+      "nflTeam": "NE",
+      "slot": "W/R/T",
+      "started": true,
+      "capture": 18,
+      "row": 288
+    },
+    {
+      "week": 11,
+      "team": "The A Gap",
+      "manager": "Adam",
+      "player": "Patriots",
+      "nflTeam": "NE",
+      "slot": "DEF",
+      "started": true,
+      "capture": 18,
+      "row": 301
+    },
+    {
+      "week": 11,
+      "team": "Kareem all over your Hunt",
+      "manager": "Billy",
+      "player": "Harold Fannin Jr.",
+      "nflTeam": "CLE",
+      "slot": "TE",
+      "started": true,
+      "capture": 20,
+      "row": 287
+    },
+    {
+      "week": 11,
+      "team": "Kareem all over your Hunt",
+      "manager": "Billy",
+      "player": "Jadarian Price",
+      "nflTeam": "SEA",
+      "slot": "W/R/T",
+      "started": true,
+      "capture": 20,
+      "row": 288
+    }
+  ],
+  "emptySlots": [
+    {
+      "week": 11,
+      "team": "TDs In Your Face",
+      "manager": "Nick",
+      "slot": "W/R/T",
+      "capture": 12,
+      "row": 288
+    },
+    {
+      "week": 11,
+      "team": "Pump and Go",
+      "manager": "Tommy",
+      "slot": "DEF",
+      "capture": 19,
+      "row": 309
+    }
+  ],
+  "teamAliases": {
+    "The Moose Knuckles": "The Moose Knuckles",
+    "Bang Bang Choke Gang": "Kareem all over your Hunt",
+    "The Mustache riders": "The Mustache riders",
+    "Dem TDs": "TDs In Your Face",
+    "Predacious Fungi": "Predacious Fungi",
+    "The Eviscerators": "The Eviscerators",
+    "Nate’s destroyers…sometimes": "Revenge of the period bloods",
+    "Pump and Go": "Pump and Go",
+    "Criterus": "Criterus",
+    "The A Gap": "The A Gap"
+  },
+  "phase": 1,
+  "sourceFile": "MAKERS_2026_W11_WEDNESDAY.json",
+  "baselineCommit": "88ea2e37370736931a3ad951fc69d2cfc6dd64a7"
+}

@@ -1,0 +1,48 @@
+THE MAKERS — WEEK 11 PHASE 1 SOURCE AUDIT
+Decision: PASS WITH DOCUMENTED SOURCE CORRECTIONS.
+Source: MAKERS_2026_W11_WEDNESDAY.json
+SHA256: 627ff7f28befe523b07c739a0809d9adcb9369a9dea6184733f663b9a88258ef
+Captured November 18, 2026 at 9:36 a.m. Pacific. Collector 1.3.9; league 471058.
+Completed Week 10; upcoming Week 11; combined Wednesday workflow.
+Production baseline: 88ea2e37370736931a3ad951fc69d2cfc6dd64a7.
+Backup: backup-pre-week11-2026-11-18. Release branch: week11-update-2026-11-18.
+
+All ten standings independently reconstruct from 50 final games: 50 wins/50 losses;
+aggregate PF=PA=10,686.70. Five new finals and five upcoming projections match Yahoo.
+All 315 roster rows checked against captured tables: 270 normal and 45 compact bye rows.
+All 90 completed starter scores reconcile to official finals.
+Week 10: 158 players, 141 scored players and 17 byes.
+Week 11: 157 players, 88 occupied starter slots, 84 projected starters, four bye starters
+and two explicit empty starter slots. All ten Yahoo projection totals reconcile.
+Every upcoming actual score remains null. No duplicate ownership or available/owned overlap.
+
+SOURCE REPAIRS
+Original collector validation was green; preserve it separately from corrected validation.
+Fourteen completed bench/IR bye rows incorrectly parsed "10Bye" as 10 fantasy points.
+Remove those 140 phantom bench points, restore null points/projections and bye=10,
+restore rostered percentages and clear absent start percentages. Final scores are unchanged.
+All 45 compact bye rows now preserve correct bye/rostered fields (17 completed, 28 current).
+Available pool: 100 unique players (15 QB,25 RB,25 WR,15 TE,10 K,10 DEF).
+All 100 numerical rows verified. Restore selected-period GP for 81 rows; clear 100
+unsupported seasonRank interpretations while retaining the source's actualRank.
+Separate availability and waiver dates from injuries: 90 free agents, ten waiver-pending.
+
+All 25 captured transactions are distinct and raw-row verified. Coverage is November 11-18,
+not a certification of complete Yahoo history. Remaining FAAB $498; Wednesday spend $33,
+exactly reconciling prior balances: Jim $12, Max $5, Andrew $1, Nate $10, Tommy $5.
+Canonical identities retained for Nick, Billy and Nate despite different Yahoo display aliases.
+
+CURRENT LINEUP FLAGS
+Nick has an empty FLEX; Tommy has an empty DEF with Chiefs on the bench.
+Adam starts DeMario Douglas and Patriots DEF on bye.
+Billy starts Harold Fannin Jr. and Jadarian Price on bye.
+Preserve all choices and source forecasts; these are Wednesday snapshots, not final lineups.
+Questionable starters: Carnell Tate, Jaylen Waddle, Kenneth Walker III, Brock Bowers,
+DeVonta Smith. No commissioner copy was supplied.
+
+Saved source: data/week11-normalized.json. Compact receipt: qa/week11/phase1.json.
+Original upload unchanged. Raw captures, raw transaction text, page URLs and private page
+content are excluded from normalized source. Prior 45 finals, 318 historical games,
+ten prediction locks, earlier articles, collector and live site remain unchanged.
+No unresolved factual import blocker. Save Phase 1 before starting Phase 2.
+

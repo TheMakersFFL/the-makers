@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "purpose": "Independent reproduction of exact published Week 10 model before Week 11 lock",
+  "trials": 24000,
+  "oddsFields": 70,
+  "powerValues": 10,
+  "sosValues": 10,
+  "forecasts": 5,
+  "engineMethodologyUnchanged": true
+}

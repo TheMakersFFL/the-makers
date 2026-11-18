@@ -1,0 +1,35 @@
+{
+  "phase": 5,
+  "status": "PASS",
+  "cacheToken": "makers-20261118-w11p5",
+  "staticReceipt": "phase5-static.json",
+  "browserReceipt": "phase5-browser.json",
+  "independentReceipt": "phase5-independent-review.json",
+  "sourcePrivacyReceipt": "phase5-source-privacy.json",
+  "activePages": 18,
+  "loaderModules": 78,
+  "parsedJavaScriptFiles": 83,
+  "htmlFiles": 53,
+  "localReferences": 506,
+  "inlineScripts": 30,
+  "browserRoutes": 32,
+  "browserConsoleErrors": 0,
+  "browserBrokenImages": 0,
+  "browserHorizontalOverflowRoutes": 0,
+  "directChainParity": [
+    "history.html",
+    "head-to-head.html",
+    "trophy-case.html"
+  ],
+  "preservedBaselineGames": 363,
+  "currentGames": 368,
+  "lockedPredictions": 11,
+  "forecastRows": 55,
+  "collectorVersion": "1.3.9",
+  "hostingURL": "https://themakersffl.github.io/the-makers/",
+  "rawExportPublic": false,
+  "normalizedSourceBytes": 301203,
+  "limitations": [
+    "Browser coverage is the 32 primary routes and franchise profiles at the available desktop viewport; physical mobile-device testing was not performed."
+  ]
+}

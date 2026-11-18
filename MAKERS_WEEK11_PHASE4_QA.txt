@@ -1,0 +1,16 @@
+THE MAKERS — WEEK 11 PHASE 4 EDITORIAL
+
+Decision: PASS — 18 author invariant groups, 339 independent editorial assertions across nine groups, 298 independent roster/source checks and seven root integration groups.
+Completed article: Week 10: CMC’s 45.30, a 2.96-Point Escape and Five Teams at 5–5 (940 words).
+Upcoming article: Week 11: The Leaders, the Traffic Jam and the Empty Slots (1,855 words).
+Five full Week 10 recap narratives and five Week 11 preview narratives; eight awards per week, ten roster-needs notes, seven transaction notes and source-time waiver options.
+All final scores, 29 player-score claims, ten H2H records, lineup math, all-play records, forecast grading, standings, FAAB, roster choices, available players, model odds and rank-based stocks reconcile to the saved sources.
+The 14-row/140-point bye-bench correction is explained without changing official finals. Legal hindsight gains total 122.48; no Week 10 loss could have been reversed by the best legal lineup from the captured roster.
+Week 11 Game of the Week: Moose Knuckles vs TDs In Your Face, the official standings leader against the season scoring leader. Their reconstructed H2H is 4–4. Every upcoming game is a verified Week 2 rematch.
+All Makers/Yahoo projections equal the frozen November 18, 9:36 a.m. Pacific receipt. Four bye starters, two vacant slots and injury/availability timing limits are explicit.
+New notes are labeled League Desk in the weekly hub, articles and Press Room; no commissioner or manager quotation is invented. The punishment wording matches the existing Wall of Shame: draft-handle and board duty at the next draft.
+Completed individual awards resolve correctly: Billy two; Andrew, Chris, Nick, Adam and Tommy one each. The league prediction award does not invent a manager recipient. Upcoming preview awards do not enter the completed awards ledger.
+Prior completed articles Weeks 1–9, all eleven forecast locks, all model/grading objects, 50 current finals, 318 historical games and every factual roster/transaction/FAAB object remain unchanged. The original Week 10 preview remains in its unchanged historical editorial object and source module.
+Root rendering checks pass for the homepage, weekly hub, both articles, Press Room and prediction page. Explicit recap/preview fields show the authored matchup stories. All 78 loader modules parse; no runtime errors or warnings.
+Detailed receipts: qa/week11/phase4.json, phase4-independent-review.json, phase4-roster-factcheck.json and phase4-integration.json.
+Phase 4 is complete; save this checkpoint before Phase 5. Production remains unchanged.

@@ -1,0 +1,240 @@
+{
+  "phase": 5,
+  "component": "static release and dependency-chain audit",
+  "status": "PASS",
+  "checksPassed": 13,
+  "checks": [
+    {
+      "check": "All tracked JavaScript files parse, including the collector and repository helpers",
+      "pass": true
+    },
+    {
+      "check": "78 loader modules are unique, present, current and in dependency order",
+      "pass": true
+    },
+    {
+      "check": "All 18 active pages use the new release token with no stale weekly cache key",
+      "pass": true
+    },
+    {
+      "check": "HTML content and layout are unchanged beyond release tags and new module tags",
+      "pass": true
+    },
+    {
+      "check": "history.html exact current dependency-chain runtime parity",
+      "pass": true
+    },
+    {
+      "check": "head-to-head.html exact current dependency-chain runtime parity",
+      "pass": true
+    },
+    {
+      "check": "trophy-case.html exact current dependency-chain runtime parity",
+      "pass": true
+    },
+    {
+      "check": "Every local HTML href/src and CSS asset reference resolves",
+      "pass": true
+    },
+    {
+      "check": "Release packaging preserves the exact saved Phase 4 factual and editorial state",
+      "pass": true
+    },
+    {
+      "check": "Protected archives, prior modules, collector, CSS/assets and hosting configuration are unchanged",
+      "pass": true
+    },
+    {
+      "check": "README version correction agrees with the actual published collector and changes nothing else",
+      "pass": true
+    },
+    {
+      "check": "Published current source contains no raw Yahoo capture bodies or credential fields",
+      "pass": true
+    },
+    {
+      "check": "No integrated source runtime errors or warnings",
+      "pass": true
+    }
+  ],
+  "cacheToken": "makers-20261118-w11p5",
+  "activePages": [
+    "analytics.html",
+    "franchise.html",
+    "franchises.html",
+    "head-to-head.html",
+    "history.html",
+    "index.html",
+    "playoff-odds.html",
+    "power-rankings.html",
+    "predictions.html",
+    "press.html",
+    "records.html",
+    "schedule.html",
+    "season-2026.html",
+    "transactions.html",
+    "trophy-case.html",
+    "waiver-wire.html",
+    "week.html",
+    "weeks.html"
+  ],
+  "activePageCount": 18,
+  "loaderModules": 78,
+  "currentWeekModules": 9,
+  "javascriptFilesSyntaxChecked": 83,
+  "javascriptFiles": [
+    "Makers_Weekly_Collector.user.js",
+    "api-config.js",
+    "data.js",
+    "league-analytics.js",
+    "live.js",
+    "makers-engine.js",
+    "makers-h2h-live.js",
+    "makers-weekly-loader.js",
+    "makers-weekly-sync.js",
+    "season-2026.js",
+    "site.js",
+    "tests/collector-regression.cjs",
+    "waiver-model.js",
+    "week10-available.js",
+    "week10-completed.js",
+    "week10-editorial.js",
+    "week10-history-preservation.js",
+    "week10-import.js",
+    "week10-models.js",
+    "week10-phase2-consistency.js",
+    "week10-rosters.js",
+    "week10-transactions.js",
+    "week11-available.js",
+    "week11-completed.js",
+    "week11-editorial.js",
+    "week11-history-preservation.js",
+    "week11-import.js",
+    "week11-models.js",
+    "week11-phase2-consistency.js",
+    "week11-rosters.js",
+    "week11-transactions.js",
+    "week3-prediction-lock.js",
+    "week4-available-a.js",
+    "week4-available-b.js",
+    "week4-completed-a.js",
+    "week4-completed-b.js",
+    "week4-editorial.js",
+    "week4-faab.js",
+    "week4-import.js",
+    "week4-models.js",
+    "week4-rosters-a.js",
+    "week4-rosters-b.js",
+    "week4-transactions.js",
+    "week5-available.js",
+    "week5-completed.js",
+    "week5-editorial.js",
+    "week5-import.js",
+    "week5-models.js",
+    "week5-phase5-consistency.js",
+    "week5-rosters.js",
+    "week5-transactions.js",
+    "week6-available.js",
+    "week6-completed.js",
+    "week6-editorial.js",
+    "week6-import.js",
+    "week6-models.js",
+    "week6-rosters.js",
+    "week6-transactions.js",
+    "week7-available.js",
+    "week7-completed.js",
+    "week7-editorial.js",
+    "week7-import.js",
+    "week7-models.js",
+    "week7-phase2-consistency.js",
+    "week7-rosters.js",
+    "week7-transactions.js",
+    "week8-available.js",
+    "week8-completed.js",
+    "week8-editorial.js",
+    "week8-import.js",
+    "week8-models.js",
+    "week8-phase2-consistency.js",
+    "week8-rosters.js",
+    "week8-transactions.js",
+    "week9-available.js",
+    "week9-completed.js",
+    "week9-editorial.js",
+    "week9-import.js",
+    "week9-models.js",
+    "week9-phase2-consistency.js",
+    "week9-rosters.js",
+    "week9-transactions.js",
+    "weekly-import.js"
+  ],
+  "directChains": [
+    {
+      "file": "history.html",
+      "scriptTags": 76,
+      "uniqueScriptTags": 76,
+      "currentWeekModules": 9,
+      "week": 11,
+      "completedWeek": 10,
+      "finals": 50,
+      "archive": 368,
+      "parity": "exact season data, games, Power, odds, all autopsies and acquisition receipts"
+    },
+    {
+      "file": "head-to-head.html",
+      "scriptTags": 77,
+      "uniqueScriptTags": 77,
+      "currentWeekModules": 9,
+      "week": 11,
+      "completedWeek": 10,
+      "finals": 50,
+      "archive": 368,
+      "parity": "exact season data, games, Power, odds, all autopsies and acquisition receipts"
+    },
+    {
+      "file": "trophy-case.html",
+      "scriptTags": 76,
+      "uniqueScriptTags": 76,
+      "currentWeekModules": 9,
+      "week": 11,
+      "completedWeek": 10,
+      "finals": 50,
+      "archive": 368,
+      "parity": "exact season data, games, Power, odds, all autopsies and acquisition receipts"
+    }
+  ],
+  "localReferences": {
+    "htmlFiles": 53,
+    "htmlReferences": 506,
+    "cssReferences": 0,
+    "inlineScripts": 30
+  },
+  "state": {
+    "week": 11,
+    "completedWeek": 10,
+    "finals": 50,
+    "historicalGames": 318,
+    "totalGames": 368,
+    "lockedPredictions": 11,
+    "lineupAutopsies": 100,
+    "pulseWeeks": 10,
+    "transactions": 238,
+    "availablePlayers": 100,
+    "freeAgents": 90,
+    "waivers": 10,
+    "remainingFAAB": 498
+  },
+  "exactPhase4StatePreserved": true,
+  "priorCompletedArticlesPreserved": 9,
+  "priorLockedForecastsPreserved": 10,
+  "protectedFilesChecked": 66,
+  "protectedFilesUnchanged": true,
+  "htmlChangeScope": "Only release-token replacements and nine new Week 11 script tags on each direct-chain page.",
+  "collectorVersion": "1.3.9",
+  "productionURL": "https://themakersffl.github.io/the-makers/",
+  "customDomainConfigured": false,
+  "sourcePrivacy": "Normalized data reconstructs exactly; raw signed-in capture bodies and credential fields are excluded.",
+  "browserAudit": "Separate root-owned Phase 5 rendered preview audit; this report certifies source/runtime only.",
+  "errors": [],
+  "warnings": [],
+  "productionChanged": false
+}

@@ -1,0 +1,429 @@
+{
+  "phase": 2,
+  "status": "PASS",
+  "checksPassed": 88,
+  "checks": [
+    {
+      "check": "Five factual modules reconstruct the complete normalized source exactly",
+      "pass": true
+    },
+    {
+      "check": "Correct week and collector identity",
+      "pass": true
+    },
+    {
+      "check": "Exactly 50 unique current finals, five for every completed week",
+      "pass": true
+    },
+    {
+      "check": "All 45 previous current-season finals remain exact",
+      "pass": true
+    },
+    {
+      "check": "All 318 historical games remain exact; 368 combined receipts",
+      "pass": true
+    },
+    {
+      "check": "Billy and El Rubio remain separate historical managers",
+      "pass": true
+    },
+    {
+      "check": "Week 10 final Revenge of the period bloods / The Eviscerators",
+      "pass": true
+    },
+    {
+      "check": "Week 10 final The Moose Knuckles / Predacious Fungi",
+      "pass": true
+    },
+    {
+      "check": "Week 10 final TDs In Your Face / Kareem all over your Hunt",
+      "pass": true
+    },
+    {
+      "check": "Week 10 final Pump and Go / The Mustache riders",
+      "pass": true
+    },
+    {
+      "check": "Week 10 final Criterus / The A Gap",
+      "pass": true
+    },
+    {
+      "check": "Jim standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Billy standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "TomD standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Nick standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Max standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Andrew standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Nate standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Tommy standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Chris standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "Adam standings reconstructed from all ten actual games",
+      "pass": true
+    },
+    {
+      "check": "League wins/losses and PF/PA reconcile",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 1 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 2 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 3 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 4 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 5 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 6 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 7 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 8 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 9 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously locked forecast 10 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 1 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 2 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 3 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 4 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 5 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 6 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 7 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 8 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Completed weekly editorial 9 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week4ModelSnapshot remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week5ModelSnapshot remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week5StockMarket remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published predictionGradingThroughWeek4 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week6ModelSnapshot remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week6StockMarket remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published predictionGradingThroughWeek5 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week5Editorial remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week7ModelSnapshot remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week7StockMarket remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published predictionGradingThroughWeek6 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week6Editorial remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week7Editorial remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week8ModelSnapshot remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week8StockMarket remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published predictionGradingThroughWeek7 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week8Editorial remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week9ModelSnapshot remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week9Editorial remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published predictionGradingThroughWeek8 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week9StockMarket remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week10ModelSnapshot remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week10StockMarket remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published predictionGradingThroughWeek9 remains exact",
+      "pass": true
+    },
+    {
+      "check": "Previously published week10Editorial remains exact",
+      "pass": true
+    },
+    {
+      "check": "Week 10 published preview fields retained while results become FINAL",
+      "pass": true
+    },
+    {
+      "check": "Week 11 forecasts provisional; previous model is still Week 10",
+      "pass": true
+    },
+    {
+      "check": "Upcoming Yahoo projections exact and all actual scores absent",
+      "pass": true
+    },
+    {
+      "check": "Jim current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Nick current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Max current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Chris current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "TomD current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Nate current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Andrew current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Adam current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Tommy current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "Billy current players, positions, byes and vacancies unchanged",
+      "pass": true
+    },
+    {
+      "check": "All ten completed lineups and every normalized corrected player field exact",
+      "pass": true
+    },
+    {
+      "check": "Four current bye starters and two current vacant slots are preserved",
+      "pass": true
+    },
+    {
+      "check": "Available pool preserves every normalized field and exactly 90 FA / 10 waivers",
+      "pass": true
+    },
+    {
+      "check": "FAAB remaining balances and priorities exact",
+      "pass": true
+    },
+    {
+      "check": "Canonical defenses do not duplicate previously captured Nov 11 transactions",
+      "pass": true
+    },
+    {
+      "check": "All 25 captured moves represented once and current move counts sum to ledger",
+      "pass": true
+    },
+    {
+      "check": "All loader paths are unique, present and syntactically valid",
+      "pass": true
+    },
+    {
+      "check": "No runtime errors or warnings",
+      "pass": true
+    },
+    {
+      "check": "No raw capture or source-text fields embedded in normalized source",
+      "pass": true
+    }
+  ],
+  "sourceEquality": "Full normalized source exactly reconstructed by five factual modules",
+  "completed2026Games": 50,
+  "priorCurrentSeasonGamesPreserved": 45,
+  "historicalGamesPreserved": 318,
+  "totalGames": 368,
+  "standingsPF": 10686.7,
+  "standingsPA": 10686.7,
+  "wins": 50,
+  "losses": 50,
+  "priorLockedPredictionsPreserved": 10,
+  "priorCompletedEditorialPreserved": 9,
+  "historicalPropertiesPreserved": [
+    "week4ModelSnapshot",
+    "week5ModelSnapshot",
+    "week5StockMarket",
+    "predictionGradingThroughWeek4",
+    "week6ModelSnapshot",
+    "week6StockMarket",
+    "predictionGradingThroughWeek5",
+    "week5Editorial",
+    "week7ModelSnapshot",
+    "week7StockMarket",
+    "predictionGradingThroughWeek6",
+    "week6Editorial",
+    "week7Editorial",
+    "week8ModelSnapshot",
+    "week8StockMarket",
+    "predictionGradingThroughWeek7",
+    "week8Editorial",
+    "week9ModelSnapshot",
+    "week9Editorial",
+    "predictionGradingThroughWeek8",
+    "week9StockMarket",
+    "week10ModelSnapshot",
+    "week10StockMarket",
+    "predictionGradingThroughWeek9",
+    "week10Editorial"
+  ],
+  "previousModelWeek": 10,
+  "modelPendingWeek": 11,
+  "currentForecastsLocked": false,
+  "completedLineups": 10,
+  "completedPlayers": 158,
+  "currentRosters": 10,
+  "currentPlayers": 157,
+  "completedByePlayersNull": 17,
+  "currentByeStartersPreserved": 4,
+  "currentVacanciesPreserved": 2,
+  "availablePlayers": 100,
+  "freeAgents": 90,
+  "waiverPending": 10,
+  "remainingFAAB": 498,
+  "weeklyFAABSpent": 33,
+  "transactions": {
+    "baseline": 217,
+    "captured": 25,
+    "overlap": 4,
+    "added": 21,
+    "total": 238,
+    "canonicalDefenseCheck": true,
+    "allPriorRowsUnchanged": true
+  },
+  "loaderModules": 76,
+  "limitations": [
+    "Captured transaction window is not certified exhaustive Yahoo pagination.",
+    "Four bye starters and two vacancies are source facts, not automatically repaired.",
+    "Phase 2 does not publish or lock Week 11 models."
+  ],
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,15 @@
+THE MAKERS — WEEK 11 PHASE 2 FACTUAL IMPORT
+
+Decision: PASS — 88 data, history and runtime assertion groups passed.
+Five factual modules reconstruct the full sanitized normalized source exactly; seven Phase 2 modules were appended in cumulative loader order.
+50 unique 2026 finals (five each Weeks 1–10), all previous 45 unchanged; 318 historical games unchanged; 368 total receipts.
+All ten standings independently reconstructed; 50 wins/50 losses; PF=PA=10,686.70.
+Ten completed lineups (158 players), ten current rosters (157 players), and all normalized player fields preserved. The 17 completed-week bye players have null points/projections, including the 14 source corrections removing 140 phantom bench points. Four Week 11 bye starters and two vacant slots are retained exactly.
+100 available players: 90 free agents and ten pending waivers. Availability, waiver dates, injury status, bye/opponent and verified numeric metadata remain distinct; unverified season ranks remain null.
+Waiver rows now display Free agent or Waivers with the captured date, plus separate injury flags. The focused renderer check confirms all 100 players, 90 free-agent labels, ten waiver-date labels and all six position groups; the existing five-column layout, sorting and FAAB logic are retained.
+Ten FAAB balances/priorities match the source; $498 remains and $33 was spent.
+25 captured transactions overlap four prior entries and add 21 to the 217-row baseline, yielding 238 unique season moves. Semantic defense-identity checks find no city/mascot duplicate overlap; all prior rows remain deeply unchanged. Captured coverage does not certify complete Yahoo transaction pagination.
+All ten prior locked prediction receipts and completed Weeks 1–9 editorial remain exact. Published Week 9/10 model/editorial/grading objects and all earlier historical model properties are retained. Week 10 is FINAL with its original published preview fields preserved for Phase 4 closeout.
+Week 11 forecast remains provisional/unlocked; modelPendingWeek=11. Current and previous model references retain the exact published Week 10 snapshot until Phase 3. No Week 11 actual scores were created.
+76 unique loader modules pass syntax/path checks. No runtime errors or warnings. Billy begins in 2025 and remains separate from El Rubio's 2022–24 history.
+Production unchanged. Phase 3 may begin only after this Phase 2 checkpoint is reviewed and saved.

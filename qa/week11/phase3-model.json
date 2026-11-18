@@ -1,0 +1,1015 @@
+{
+  "phase": 3,
+  "component": "models and prediction lock",
+  "status": "PASS",
+  "checksPassed": 14,
+  "checks": [
+    {
+      "check": "Two fresh 24,000-trial simulations and model inputs agree exactly",
+      "pass": true
+    },
+    {
+      "check": "Only 50 real completed games and 20 actual remaining schedule games",
+      "pass": true
+    },
+    {
+      "check": "All ten Power values independently agree with the unchanged formula",
+      "pass": true
+    },
+    {
+      "check": "Remaining SOS derives from the 20 scheduled games and current Power ranks",
+      "pass": true
+    },
+    {
+      "check": "Probability ranges and playoff/bye/title/Toilet totals reconcile within rounding",
+      "pass": true
+    },
+    {
+      "check": "All five provisional forecasts retain exact source Yahoo projections and existing formula",
+      "pass": true
+    },
+    {
+      "check": "Four bye starters and two vacant slots receive no invented player projections",
+      "pass": true
+    },
+    {
+      "check": "All 50 original receipts grade consistently, including previous published totals",
+      "pass": true
+    },
+    {
+      "check": "All ten previous locked prediction receipts remain deeply unchanged",
+      "pass": true
+    },
+    {
+      "check": "All prior results, historical games and completed/editorial fields remain unchanged",
+      "pass": true
+    },
+    {
+      "check": "Current snapshot, live Power/odds APIs and lock match the saved model",
+      "pass": true
+    },
+    {
+      "check": "Roster choices, available pool, transactions and FAAB are unchanged by modeling",
+      "pass": true
+    },
+    {
+      "check": "Week 11 stock rows retain original rank-based methodology",
+      "pass": true
+    },
+    {
+      "check": "New model syntax and integrated runtime have no errors or warnings",
+      "pass": true
+    }
+  ],
+  "trials": 24000,
+  "seed": 20260901,
+  "independentRuns": 2,
+  "reproducible": true,
+  "completedGames": 50,
+  "remainingGames": 20,
+  "remainingSchedule": [
+    {
+      "week": 11,
+      "teamA": "The Moose Knuckles",
+      "teamB": "TDs In Your Face"
+    },
+    {
+      "week": 11,
+      "teamA": "Predacious Fungi",
+      "teamB": "Revenge of the period bloods"
+    },
+    {
+      "week": 11,
+      "teamA": "Criterus",
+      "teamB": "The Mustache riders"
+    },
+    {
+      "week": 11,
+      "teamA": "The Eviscerators",
+      "teamB": "The A Gap"
+    },
+    {
+      "week": 11,
+      "teamA": "Pump and Go",
+      "teamB": "Kareem all over your Hunt"
+    },
+    {
+      "week": 12,
+      "teamA": "The Moose Knuckles",
+      "teamB": "Pump and Go"
+    },
+    {
+      "week": 12,
+      "teamA": "TDs In Your Face",
+      "teamB": "Revenge of the period bloods"
+    },
+    {
+      "week": 12,
+      "teamA": "Predacious Fungi",
+      "teamB": "The Eviscerators"
+    },
+    {
+      "week": 12,
+      "teamA": "Criterus",
+      "teamB": "Kareem all over your Hunt"
+    },
+    {
+      "week": 12,
+      "teamA": "The Mustache riders",
+      "teamB": "The A Gap"
+    },
+    {
+      "week": 13,
+      "teamA": "The Moose Knuckles",
+      "teamB": "Criterus"
+    },
+    {
+      "week": 13,
+      "teamA": "TDs In Your Face",
+      "teamB": "Predacious Fungi"
+    },
+    {
+      "week": 13,
+      "teamA": "The Mustache riders",
+      "teamB": "The Eviscerators"
+    },
+    {
+      "week": 13,
+      "teamA": "Revenge of the period bloods",
+      "teamB": "Pump and Go"
+    },
+    {
+      "week": 13,
+      "teamA": "The A Gap",
+      "teamB": "Kareem all over your Hunt"
+    },
+    {
+      "week": 14,
+      "teamA": "The Moose Knuckles",
+      "teamB": "The A Gap"
+    },
+    {
+      "week": 14,
+      "teamA": "TDs In Your Face",
+      "teamB": "The Eviscerators"
+    },
+    {
+      "week": 14,
+      "teamA": "Predacious Fungi",
+      "teamB": "Pump and Go"
+    },
+    {
+      "week": 14,
+      "teamA": "Criterus",
+      "teamB": "Revenge of the period bloods"
+    },
+    {
+      "week": 14,
+      "teamA": "The Mustache riders",
+      "teamB": "Kareem all over your Hunt"
+    }
+  ],
+  "probabilityTotals": {
+    "playoff": 599.9,
+    "bye": 199.9,
+    "title": 100,
+    "toilet": 100
+  },
+  "powerRankings": [
+    {
+      "rank": 1,
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "powerIndex": 82.79,
+      "previousRank": 1,
+      "movement": 0,
+      "previousPowerIndex": 81.27,
+      "powerChange": 1.52
+    },
+    {
+      "rank": 2,
+      "team": "The Eviscerators",
+      "manager": "Andrew",
+      "powerIndex": 74.23,
+      "previousRank": 3,
+      "movement": 1,
+      "previousPowerIndex": 71.1,
+      "powerChange": 3.13
+    },
+    {
+      "rank": 3,
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "powerIndex": 71.31,
+      "previousRank": 4,
+      "movement": 1,
+      "previousPowerIndex": 69.34,
+      "powerChange": 1.97
+    },
+    {
+      "rank": 4,
+      "team": "TDs In Your Face",
+      "manager": "Nick",
+      "powerIndex": 70.4,
+      "previousRank": 2,
+      "movement": -2,
+      "previousPowerIndex": 72.72,
+      "powerChange": -2.32
+    },
+    {
+      "rank": 5,
+      "team": "Kareem all over your Hunt",
+      "manager": "Billy",
+      "powerIndex": 68.65,
+      "previousRank": 5,
+      "movement": 0,
+      "previousPowerIndex": 66.83,
+      "powerChange": 1.82
+    },
+    {
+      "rank": 6,
+      "team": "Criterus",
+      "manager": "Chris",
+      "powerIndex": 51.17,
+      "previousRank": 9,
+      "movement": 3,
+      "previousPowerIndex": 47.58,
+      "powerChange": 3.59
+    },
+    {
+      "rank": 7,
+      "team": "Pump and Go",
+      "manager": "Tommy",
+      "powerIndex": 50.99,
+      "previousRank": 6,
+      "movement": -1,
+      "previousPowerIndex": 52.84,
+      "powerChange": -1.85
+    },
+    {
+      "rank": 8,
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "powerIndex": 47.66,
+      "previousRank": 7,
+      "movement": -1,
+      "previousPowerIndex": 50.22,
+      "powerChange": -2.56
+    },
+    {
+      "rank": 9,
+      "team": "Revenge of the period bloods",
+      "manager": "Nate",
+      "powerIndex": 45.76,
+      "previousRank": 8,
+      "movement": -1,
+      "previousPowerIndex": 48.06,
+      "powerChange": -2.3
+    },
+    {
+      "rank": 10,
+      "team": "The A Gap",
+      "manager": "Adam",
+      "powerIndex": 33.38,
+      "previousRank": 10,
+      "movement": 0,
+      "previousPowerIndex": 35.15,
+      "powerChange": -1.77
+    }
+  ],
+  "odds": [
+    {
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "playoff": 100,
+      "bye": 88.5,
+      "title": 28.7,
+      "toilet": 0,
+      "avgSeed": 1.52,
+      "seedLow": 1,
+      "seedHigh": 3,
+      "playoffChange": 0.9,
+      "byeChange": 9.1,
+      "titleChange": 0.9,
+      "toiletChange": -0.2,
+      "streak": "W3",
+      "remainingSOS": 6.75,
+      "need": "Protect position and chase a top-two bye.",
+      "path": "Bye → likely seed 4/5 semifinal"
+    },
+    {
+      "team": "Kareem all over your Hunt",
+      "manager": "Billy",
+      "playoff": 99.7,
+      "bye": 53.2,
+      "title": 14.9,
+      "toilet": 0.1,
+      "avgSeed": 2.61,
+      "seedLow": 1,
+      "seedHigh": 4,
+      "playoffChange": 4.9,
+      "byeChange": 14.6,
+      "titleChange": 1.7,
+      "toiletChange": -1,
+      "streak": "W2",
+      "remainingSOS": 6.5,
+      "need": "Protect position and chase a top-two bye.",
+      "path": "Bye → likely seed 3/6 semifinal"
+    },
+    {
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "playoff": 96.3,
+      "bye": 31.3,
+      "title": 16.7,
+      "toilet": 0.6,
+      "avgSeed": 3.5,
+      "seedLow": 2,
+      "seedHigh": 6,
+      "playoffChange": 10.1,
+      "byeChange": 8.5,
+      "titleChange": 1.8,
+      "toiletChange": -1.5,
+      "streak": "W2",
+      "remainingSOS": 5.75,
+      "need": "Protect position and chase a top-two bye.",
+      "path": "Projected vs Pump and Go"
+    },
+    {
+      "team": "TDs In Your Face",
+      "manager": "Nick",
+      "playoff": 80.5,
+      "bye": 11,
+      "title": 12.5,
+      "toilet": 3.3,
+      "avgSeed": 4.68,
+      "seedLow": 2,
+      "seedHigh": 7,
+      "playoffChange": -7.9,
+      "byeChange": -21,
+      "titleChange": -3.6,
+      "toiletChange": 1.4,
+      "streak": "L2",
+      "remainingSOS": 5,
+      "need": "Protect position and chase a top-two bye.",
+      "path": "Projected vs The Eviscerators"
+    },
+    {
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "playoff": 46.3,
+      "bye": 0.7,
+      "title": 2.2,
+      "toilet": 16.8,
+      "avgSeed": 6.55,
+      "seedLow": 4,
+      "seedHigh": 9,
+      "playoffChange": -6,
+      "byeChange": -3.6,
+      "titleChange": -0.5,
+      "toiletChange": 1.8,
+      "streak": "L2",
+      "remainingSOS": 5.5,
+      "need": "Needs wins now and help around the six-seed line.",
+      "path": "Toilet Bowl field"
+    },
+    {
+      "team": "The Eviscerators",
+      "manager": "Andrew",
+      "playoff": 86.9,
+      "bye": 12.5,
+      "title": 19.2,
+      "toilet": 1.5,
+      "avgSeed": 4.48,
+      "seedLow": 2,
+      "seedHigh": 7,
+      "playoffChange": 11.8,
+      "byeChange": 2,
+      "titleChange": 1.8,
+      "toiletChange": -1.4,
+      "streak": "W2",
+      "remainingSOS": 6.25,
+      "need": "Protect position and chase a top-two bye.",
+      "path": "Projected vs TDs In Your Face"
+    },
+    {
+      "team": "Revenge of the period bloods",
+      "manager": "Nate",
+      "playoff": 39,
+      "bye": 0.7,
+      "title": 1.9,
+      "toilet": 18.6,
+      "avgSeed": 6.83,
+      "seedLow": 4,
+      "seedHigh": 9,
+      "playoffChange": -5.6,
+      "byeChange": -3,
+      "titleChange": -0.8,
+      "toiletChange": 0.7,
+      "streak": "L2",
+      "remainingSOS": 6.25,
+      "need": "Needs wins now and help around the six-seed line.",
+      "path": "Toilet Bowl field"
+    },
+    {
+      "team": "Pump and Go",
+      "manager": "Tommy",
+      "playoff": 46.1,
+      "bye": 2,
+      "title": 3.4,
+      "toilet": 13.7,
+      "avgSeed": 6.47,
+      "seedLow": 4,
+      "seedHigh": 9,
+      "playoffChange": -10.7,
+      "byeChange": -6.8,
+      "titleChange": -1.5,
+      "toiletChange": 2.7,
+      "streak": "L2",
+      "remainingSOS": 5.75,
+      "need": "Needs wins now and help around the six-seed line.",
+      "path": "Projected vs The Mustache riders"
+    },
+    {
+      "team": "Criterus",
+      "manager": "Chris",
+      "playoff": 5.1,
+      "bye": 0,
+      "title": 0.5,
+      "toilet": 17.4,
+      "avgSeed": 8.43,
+      "seedLow": 7,
+      "seedHigh": 9,
+      "playoffChange": 2.6,
+      "byeChange": 0,
+      "titleChange": 0.2,
+      "toiletChange": -1.3,
+      "streak": "W1",
+      "remainingSOS": 4.5,
+      "need": "Needs a run before the playoff race gets away.",
+      "path": "Toilet Bowl field"
+    },
+    {
+      "team": "The A Gap",
+      "manager": "Adam",
+      "playoff": 0,
+      "bye": 0,
+      "title": 0,
+      "toilet": 28,
+      "avgSeed": 9.92,
+      "seedLow": 10,
+      "seedHigh": 10,
+      "playoffChange": -0.2,
+      "byeChange": 0,
+      "titleChange": 0,
+      "toiletChange": -1.1,
+      "streak": "L1",
+      "remainingSOS": 2.75,
+      "need": "Needs a run before the playoff race gets away.",
+      "path": "Toilet Bowl field"
+    }
+  ],
+  "stock": [
+    {
+      "team": "The Moose Knuckles",
+      "manager": "Jim",
+      "preseasonRank": 3,
+      "liveRank": 1,
+      "delta": 2,
+      "powerIndex": 82.79,
+      "playoff": 100
+    },
+    {
+      "team": "The Eviscerators",
+      "manager": "Andrew",
+      "preseasonRank": 2,
+      "liveRank": 2,
+      "delta": 0,
+      "powerIndex": 74.23,
+      "playoff": 86.9
+    },
+    {
+      "team": "The Mustache riders",
+      "manager": "TomD",
+      "preseasonRank": 7,
+      "liveRank": 3,
+      "delta": 4,
+      "powerIndex": 71.31,
+      "playoff": 96.3
+    },
+    {
+      "team": "TDs In Your Face",
+      "manager": "Nick",
+      "preseasonRank": 9,
+      "liveRank": 4,
+      "delta": 5,
+      "powerIndex": 70.4,
+      "playoff": 80.5
+    },
+    {
+      "team": "Kareem all over your Hunt",
+      "manager": "Billy",
+      "preseasonRank": 8,
+      "liveRank": 5,
+      "delta": 3,
+      "powerIndex": 68.65,
+      "playoff": 99.7
+    },
+    {
+      "team": "Criterus",
+      "manager": "Chris",
+      "preseasonRank": 1,
+      "liveRank": 6,
+      "delta": -5,
+      "powerIndex": 51.17,
+      "playoff": 5.1
+    },
+    {
+      "team": "Pump and Go",
+      "manager": "Tommy",
+      "preseasonRank": 4,
+      "liveRank": 7,
+      "delta": -3,
+      "powerIndex": 50.99,
+      "playoff": 46.1
+    },
+    {
+      "team": "Predacious Fungi",
+      "manager": "Max",
+      "preseasonRank": 10,
+      "liveRank": 8,
+      "delta": 2,
+      "powerIndex": 47.66,
+      "playoff": 46.3
+    },
+    {
+      "team": "Revenge of the period bloods",
+      "manager": "Nate",
+      "preseasonRank": 5,
+      "liveRank": 9,
+      "delta": -4,
+      "powerIndex": 45.76,
+      "playoff": 39
+    },
+    {
+      "team": "The A Gap",
+      "manager": "Adam",
+      "preseasonRank": 6,
+      "liveRank": 10,
+      "delta": -4,
+      "powerIndex": 33.38,
+      "playoff": 0
+    }
+  ],
+  "forecasts": [
+    {
+      "teamA": "The Moose Knuckles",
+      "teamB": "TDs In Your Face",
+      "meA": 118.74,
+      "meB": 103.02,
+      "yahooA": 116.37,
+      "yahooB": 100.88
+    },
+    {
+      "teamA": "Predacious Fungi",
+      "teamB": "Revenge of the period bloods",
+      "meA": 112.72,
+      "meB": 101.4,
+      "yahooA": 116.16,
+      "yahooB": 102.46
+    },
+    {
+      "teamA": "Criterus",
+      "teamB": "The Mustache riders",
+      "meA": 104.87,
+      "meB": 113.47,
+      "yahooA": 104.83,
+      "yahooB": 115.02
+    },
+    {
+      "teamA": "The Eviscerators",
+      "teamB": "The A Gap",
+      "meA": 100.51,
+      "meB": 62.26,
+      "yahooA": 99.58,
+      "yahooB": 61.36
+    },
+    {
+      "teamA": "Pump and Go",
+      "teamB": "Kareem all over your Hunt",
+      "meA": 98.25,
+      "meB": 91.94,
+      "yahooA": 100.02,
+      "yahooB": 90.5
+    }
+  ],
+  "forecastAudit": [
+    {
+      "team": "The Moose Knuckles",
+      "yahoo": 116.37,
+      "makers": 118.74,
+      "draftRank": 3,
+      "preseasonAdjustment": 3.38,
+      "liveAdjustment": 4.8501,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "TDs In Your Face",
+      "yahoo": 100.88,
+      "makers": 103.02,
+      "draftRank": 9,
+      "preseasonAdjustment": -4.73,
+      "liveAdjustment": 5.1063,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "Predacious Fungi",
+      "yahoo": 116.16,
+      "makers": 112.72,
+      "draftRank": 10,
+      "preseasonAdjustment": -6.08,
+      "liveAdjustment": 0.5625,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "Revenge of the period bloods",
+      "yahoo": 102.46,
+      "makers": 101.4,
+      "draftRank": 5,
+      "preseasonAdjustment": 0.68,
+      "liveAdjustment": -1.4775,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "Criterus",
+      "yahoo": 104.83,
+      "makers": 104.87,
+      "draftRank": 1,
+      "preseasonAdjustment": 6.08,
+      "liveAdjustment": -1.7787,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "The Mustache riders",
+      "yahoo": 115.02,
+      "makers": 113.47,
+      "draftRank": 7,
+      "preseasonAdjustment": -2.03,
+      "liveAdjustment": 1.3053,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "The Eviscerators",
+      "yahoo": 99.58,
+      "makers": 100.51,
+      "draftRank": 2,
+      "preseasonAdjustment": 4.73,
+      "liveAdjustment": -0.9081,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "The A Gap",
+      "yahoo": 61.36,
+      "makers": 62.26,
+      "draftRank": 6,
+      "preseasonAdjustment": -0.68,
+      "liveAdjustment": -5.7405,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "Pump and Go",
+      "yahoo": 100.02,
+      "makers": 98.25,
+      "draftRank": 4,
+      "preseasonAdjustment": 2.03,
+      "liveAdjustment": -3.5229,
+      "meanYahoo": 100.718
+    },
+    {
+      "team": "Kareem all over your Hunt",
+      "yahoo": 90.5,
+      "makers": 91.94,
+      "draftRank": 8,
+      "preseasonAdjustment": -3.38,
+      "liveAdjustment": 1.6035,
+      "meanYahoo": 100.718
+    }
+  ],
+  "slotFacts": {
+    "byeStarters": [
+      {
+        "team": "The A Gap",
+        "manager": "Adam",
+        "name": "DeMario Douglas",
+        "slot": "W/R/T",
+        "projected": null
+      },
+      {
+        "team": "The A Gap",
+        "manager": "Adam",
+        "name": "Patriots",
+        "slot": "DEF",
+        "projected": null
+      },
+      {
+        "team": "Kareem all over your Hunt",
+        "manager": "Billy",
+        "name": "Harold Fannin Jr.",
+        "slot": "TE",
+        "projected": null
+      },
+      {
+        "team": "Kareem all over your Hunt",
+        "manager": "Billy",
+        "name": "Jadarian Price",
+        "slot": "W/R/T",
+        "projected": null
+      }
+    ],
+    "emptySlots": [
+      {
+        "team": "TDs In Your Face",
+        "manager": "Nick",
+        "slot": "W/R/T"
+      },
+      {
+        "team": "Pump and Go",
+        "manager": "Tommy",
+        "slot": "DEF"
+      }
+    ]
+  },
+  "gradingWeek10": {
+    "week": 10,
+    "makers": {
+      "correct": 4,
+      "total": 5,
+      "scoreMAE": 15.36,
+      "marginMAE": 18.49
+    },
+    "yahoo": {
+      "correct": 4,
+      "total": 5,
+      "scoreMAE": 15.43,
+      "marginMAE": 19
+    },
+    "games": [
+      {
+        "week": 10,
+        "teamA": "The Moose Knuckles",
+        "teamB": "Predacious Fungi",
+        "actualA": 136.68,
+        "actualB": 107.62,
+        "meA": 127.55,
+        "meB": 102.23,
+        "yahooA": 125.48,
+        "yahooB": 102.68,
+        "actualWinner": "The Moose Knuckles",
+        "makersPick": "The Moose Knuckles",
+        "yahooPick": "The Moose Knuckles",
+        "makersCorrect": true,
+        "yahooCorrect": true
+      },
+      {
+        "week": 10,
+        "teamA": "TDs In Your Face",
+        "teamB": "Kareem all over your Hunt",
+        "actualA": 132.66,
+        "actualB": 135.62,
+        "meA": 123.81,
+        "meB": 110.13,
+        "yahooA": 123.63,
+        "yahooB": 110.65,
+        "actualWinner": "Kareem all over your Hunt",
+        "makersPick": "TDs In Your Face",
+        "yahooPick": "TDs In Your Face",
+        "makersCorrect": false,
+        "yahooCorrect": false
+      },
+      {
+        "week": 10,
+        "teamA": "Revenge of the period bloods",
+        "teamB": "The Eviscerators",
+        "actualA": 109.98,
+        "actualB": 140.86,
+        "meA": 98.22,
+        "meB": 111.31,
+        "yahooA": 97.64,
+        "yahooB": 111.6,
+        "actualWinner": "The Eviscerators",
+        "makersPick": "The Eviscerators",
+        "yahooPick": "The Eviscerators",
+        "makersCorrect": true,
+        "yahooCorrect": true
+      },
+      {
+        "week": 10,
+        "teamA": "Criterus",
+        "teamB": "The A Gap",
+        "actualA": 120.78,
+        "actualB": 63.12,
+        "meA": 104.36,
+        "meB": 84.11,
+        "yahooA": 103.39,
+        "yahooB": 84.44,
+        "actualWinner": "Criterus",
+        "makersPick": "Criterus",
+        "yahooPick": "Criterus",
+        "makersCorrect": true,
+        "yahooCorrect": true
+      },
+      {
+        "week": 10,
+        "teamA": "The Mustache riders",
+        "teamB": "Pump and Go",
+        "actualA": 123.12,
+        "actualB": 119.24,
+        "meA": 118.54,
+        "meB": 97.8,
+        "yahooA": 119.79,
+        "yahooB": 98.76,
+        "actualWinner": "The Mustache riders",
+        "makersPick": "The Mustache riders",
+        "yahooPick": "The Mustache riders",
+        "makersCorrect": true,
+        "yahooCorrect": true
+      }
+    ]
+  },
+  "seasonGrading": {
+    "makers": {
+      "correct": 34,
+      "total": 50,
+      "scoreMAE": 18.45,
+      "marginMAE": 25.98
+    },
+    "yahoo": {
+      "correct": 33,
+      "total": 50,
+      "scoreMAE": 18.28,
+      "marginMAE": 25.51
+    }
+  },
+  "independentWeeklyGrades": [
+    {
+      "week": 1,
+      "makers": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 14.99,
+        "marginMAE": 28.49
+      },
+      "yahoo": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 16.87,
+        "marginMAE": 28.95
+      }
+    },
+    {
+      "week": 2,
+      "makers": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 15.07,
+        "marginMAE": 18.2
+      },
+      "yahoo": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 14.87,
+        "marginMAE": 20.3
+      }
+    },
+    {
+      "week": 3,
+      "makers": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 19.76,
+        "marginMAE": 34.98
+      },
+      "yahoo": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 18.41,
+        "marginMAE": 30.47
+      }
+    },
+    {
+      "week": 4,
+      "makers": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 21.56,
+        "marginMAE": 20.74
+      },
+      "yahoo": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 20.64,
+        "marginMAE": 21.34
+      }
+    },
+    {
+      "week": 5,
+      "makers": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 33.17,
+        "marginMAE": 49.03
+      },
+      "yahoo": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 32.5,
+        "marginMAE": 45.19
+      }
+    },
+    {
+      "week": 6,
+      "makers": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 15.57,
+        "marginMAE": 25.61
+      },
+      "yahoo": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 15.57,
+        "marginMAE": 24.23
+      }
+    },
+    {
+      "week": 7,
+      "makers": {
+        "correct": 2,
+        "total": 5,
+        "scoreMAE": 14.67,
+        "marginMAE": 25.77
+      },
+      "yahoo": {
+        "correct": 2,
+        "total": 5,
+        "scoreMAE": 14.58,
+        "marginMAE": 26
+      }
+    },
+    {
+      "week": 8,
+      "makers": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 22.07,
+        "marginMAE": 28.32
+      },
+      "yahoo": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 21.87,
+        "marginMAE": 29.36
+      }
+    },
+    {
+      "week": 9,
+      "makers": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 12.27,
+        "marginMAE": 10.21
+      },
+      "yahoo": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 12.02,
+        "marginMAE": 10.26
+      }
+    },
+    {
+      "week": 10,
+      "makers": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 15.36,
+        "marginMAE": 18.49
+      },
+      "yahoo": {
+        "correct": 4,
+        "total": 5,
+        "scoreMAE": 15.43,
+        "marginMAE": 19
+      }
+    }
+  ],
+  "priorPredictionReceiptsPreserved": 10,
+  "priorResultsAndEditorialPreserved": true,
+  "modelSnapshotLockedAt": "2026-11-18T17:36:14.776Z",
+  "limitations": [
+    "Rounded simulated odds do not establish mathematical clinches or elimination.",
+    "Wednesday starter choices and vacant slots are captured facts; no later lineup changes assumed.",
+    "Remaining game simulation uses the established preseason-strength formula."
+  ],
+  "errors": [],
+  "warnings": []
+}

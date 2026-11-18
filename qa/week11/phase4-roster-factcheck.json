@@ -1,0 +1,154 @@
+{
+  "scope": "Independent Phase 4 editorial factcheck: transactions, FAAB, availability, current roster placements, injury flags, bye flags, empty slots and source-time qualifications.",
+  "status": "PASS",
+  "reviewedFiles": [
+    "week11-editorial.js",
+    "makers-work/phase4-editorial-draft.json"
+  ],
+  "editorialSHA256": "42bbeb08e5baa7bf1661468acc2ff2ed58ce4f6a696c53b274f3d4b81055dd59",
+  "sourceFile": "data/week11-normalized.json",
+  "sourceSHA256": "627ff7f28befe523b07c739a0809d9adcb9369a9dea6184733f663b9a88258ef",
+  "sourceCapturedAt": "2026-11-18T17:36:14.776Z",
+  "sourceCapturedPacific": "November 18, 2026, 9:36 a.m. Pacific",
+  "method": "Read the full drafted preview and all distinct transaction, roster, availability, award and synopsis claims; independently compared them with normalized source rows and the current loaded runtime. Phase 3 editorial facts were used only as a navigation guide.",
+  "assertions": {
+    "checked": 298,
+    "passed": 298,
+    "failed": 0
+  },
+  "summary": {
+    "capturedTransactions": 25,
+    "baselineTransactions": 217,
+    "currentTransactions": 238,
+    "newTransactions": 21,
+    "overlapRows": 4,
+    "november18WaiverClaims": 9,
+    "waiverSpend": 33,
+    "remainingFAAB": 498,
+    "availablePlayers": 100,
+    "freeAgents": 90,
+    "waiverPending": 10,
+    "byeStarters": 4,
+    "emptyStartingSlots": 2
+  },
+  "criticalRosterClaims": {
+    "emptySlots": [
+      {
+        "manager": "Nick",
+        "slot": "W/R/T"
+      },
+      {
+        "manager": "Tommy",
+        "slot": "DEF"
+      }
+    ],
+    "byeStarters": [
+      {
+        "manager": "Adam",
+        "name": "DeMario Douglas",
+        "slot": "W/R/T",
+        "projection": null
+      },
+      {
+        "manager": "Adam",
+        "name": "Patriots",
+        "slot": "DEF",
+        "projection": null
+      },
+      {
+        "manager": "Billy",
+        "name": "Harold Fannin Jr.",
+        "slot": "TE",
+        "projection": null
+      },
+      {
+        "manager": "Billy",
+        "name": "Jadarian Price",
+        "slot": "W/R/T",
+        "projection": null
+      }
+    ],
+    "chiefs": {
+      "manager": "Tommy",
+      "cost": 5,
+      "slot": "BN",
+      "projection": 9.55,
+      "startingDEF": "empty"
+    },
+    "nateNewRunningBacks": "Emari Demercado and Seth McGowan both remain on the bench after separate $5 claims.",
+    "maxQuarterbacks": "C.J. Stroud starts; newly claimed Cam Ward is on the bench.",
+    "questionableStarters": [
+      "Jim/Carnell Tate",
+      "Nick/Jaylen Waddle",
+      "TomD/Kenneth Walker III",
+      "TomD/Brock Bowers",
+      "Tommy/DeVonta Smith"
+    ]
+  },
+  "freeAgentLeaders": {
+    "QB": {
+      "name": "Bo Nix",
+      "projection": 20.14
+    },
+    "RB": {
+      "name": "Samaje Perine",
+      "projection": 6.44
+    },
+    "WR": {
+      "name": "Ryan Flournoy",
+      "projection": 8.32
+    },
+    "TE": {
+      "name": "Dallas Goedert",
+      "projection": 6.98
+    },
+    "K": {
+      "name": "Harrison Butker",
+      "projection": 8.16
+    },
+    "DEF": {
+      "name": "Bears",
+      "projection": 7.34
+    }
+  },
+  "remainingFAAB": {
+    "Jim": 33,
+    "Billy": 61,
+    "TomD": 31,
+    "Nick": 47,
+    "Max": 41,
+    "Andrew": 33,
+    "Nate": 82,
+    "Tommy": 49,
+    "Chris": 56,
+    "Adam": 65
+  },
+  "waiverDates": {
+    "Bryce Young": "Nov 20",
+    "Rico Dowdle": "Nov 21",
+    "Audric Estime": "Nov 21",
+    "Jalen Coker": "Nov 20",
+    "Omar Cooper Jr.": "Nov 21",
+    "Tank Dell": "Nov 21",
+    "Chimere Dike": "Nov 20",
+    "Devaughn Vele": "Nov 21",
+    "Tyler Bass": "Nov 21",
+    "Colts": "Nov 21"
+  },
+  "qualifications": {
+    "captureTimeExplicit": true,
+    "statusesBoundToCapture": true,
+    "availablePlayersBoundToCapture": true,
+    "waiverPendingNeverPresentedAsInstantFreeAgents": true,
+    "waiverAndInjuryStatusKeptSeparate": true,
+    "visibleTransactionIntervalCaveatPresent": true,
+    "noLaterStatusInvented": true
+  },
+  "issues": [],
+  "notes": [
+    "No corrections requested within this bounded review.",
+    "The written waiver dates repeat captured W(date) availability; they do not promise later instant free agency.",
+    "The 14 corrected phantom-point rows are a subset of 17 completed Week 10 bye rows; the draft accurately specifies the 14 rows that had incorrectly carried 10 points.",
+    "Broader results, model, historical-series and editorial-style review remains with the other Phase 4 reviewers."
+  ]
+}

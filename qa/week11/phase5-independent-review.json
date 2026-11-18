@@ -1,0 +1,423 @@
+{
+  "phase": 5,
+  "status": "PASS",
+  "scope": "Independent read-only release integrity gate; browser validation and publication belong to root.",
+  "baselineCommit": "88ea2e37370736931a3ad951fc69d2cfc6dd64a7",
+  "phase4SavedCommit": "f40a289fb1554ef4b60c5fafa51fd3cd3a281111",
+  "checks": [
+    {
+      "name": "Protected game history",
+      "status": "PASS",
+      "detail": "All 363 baseline game objects retained exactly: 318 historical plus 45 prior 2026 finals; five new Week 10 finals yield 368."
+    },
+    {
+      "name": "Locked prediction receipts",
+      "status": "PASS",
+      "detail": "Prior ten receipts exact; current eleven locked receipts contain 55 forecasts, with 50 completed games and five pending Week 11 games."
+    },
+    {
+      "name": "Prior editorial and model records",
+      "status": "PASS",
+      "detail": "Weekly 1–9 objects and prior saved model snapshots retained exactly; Week 11 model source unchanged since Phase 3 save."
+    },
+    {
+      "name": "Protected files and permitted diff",
+      "status": "PASS",
+      "detail": "92 protected-family files byte-identical; existing-file changes limited to 18 HTML files, loader, analytics, renderer and README. No collector, engine, historical data, CSS or hosting mutation."
+    },
+    {
+      "name": "HTML scope and cache",
+      "status": "PASS",
+      "detail": "All 18 HTML files retain exact prior content apart from Week 11 script inserts and cache query changes; final cache makers-20261118-w11p5."
+    },
+    {
+      "name": "Direct-chain state parity",
+      "status": "PASS",
+      "detail": "H2H, history and trophy direct chains match loader full season, 368 games, Power, odds, transactions and 100 autopsies exactly."
+    },
+    {
+      "name": "Source privacy",
+      "status": "PASS",
+      "detail": "Independent privacy audit found no raw export, private capture payload, credentials or private URLs in 51 changed/new files."
+    }
+  ],
+  "inventory": {
+    "basis": "Observed release candidate before root adds final combined/browser QA artifacts.",
+    "candidateFiles": 237,
+    "candidateManifestSHA256": "90f83c0a5133d267b77cb0da410c7887b2823b5aad5e1851d572bfdb0b641fa1",
+    "baselineFiles": 207,
+    "baselineFilesUnchanged": 185,
+    "changedExistingFiles": 22,
+    "newCandidateFiles": 30,
+    "htmlRoutes": 53,
+    "loaderRoutes": 15,
+    "directRoutes": 3,
+    "redirectRoutes": 28,
+    "staticRoutes": 7,
+    "jsFiles": 82,
+    "cjsFiles": 1,
+    "cssFiles": 1
+  },
+  "preservation": {
+    "priorFinalObjectsExact": 363,
+    "prior2026Finals": 45,
+    "historicalFinals": 318,
+    "current2026Finals": 50,
+    "totalFinals": 368,
+    "priorPredictionReceipts": [
+      {
+        "week": 1,
+        "exact": true,
+        "sha256": "336b1798a2daa3152c05b20a6cd9dcbeb182c97d6ed1422a5c9df00cc2b10787"
+      },
+      {
+        "week": 2,
+        "exact": true,
+        "sha256": "86f6e7cbb2da7a728ffa21a81a554f98b1346d98af7db5dd4ef7ca5840c486d9"
+      },
+      {
+        "week": 3,
+        "exact": true,
+        "sha256": "17eba94a2eaac577458dcc6a0f81876e3fc40c8e8df1b5e4c6d7f0968b99e347"
+      },
+      {
+        "week": 4,
+        "exact": true,
+        "sha256": "6ac792fca94ddf41427b8d8752ed4ef9d67f96c8bea14dd722291880a8d175a7"
+      },
+      {
+        "week": 5,
+        "exact": true,
+        "sha256": "32e9561035a86385ed096e8c70694eff4a13daaf72e7623183ec09a9bf35d21e"
+      },
+      {
+        "week": 6,
+        "exact": true,
+        "sha256": "b88ab984278867e2d0c8b556a0a503ec3700e7cb292c3cf051a497096994fd26"
+      },
+      {
+        "week": 7,
+        "exact": true,
+        "sha256": "9072fe06644701a25e35caaefb3b2b6fbbabb8396984d08296eba9eefc6bad0e"
+      },
+      {
+        "week": 8,
+        "exact": true,
+        "sha256": "46878b514f21f1e1cfd6b93f68d5063efd0f50b5b3f80a0213f5fedd0009c53f"
+      },
+      {
+        "week": 9,
+        "exact": true,
+        "sha256": "bcaccdb4e9255baad9f2dbffe36a53c27b257f5f48241ff822d78c6b395d380b"
+      },
+      {
+        "week": 10,
+        "exact": true,
+        "sha256": "15c3daef5cb2120796fd42e77bbf9d559bf2c56b9b134ca338855d4630c75df4"
+      }
+    ],
+    "currentPredictionReceipts": 11,
+    "currentForecasts": 55,
+    "futureFinalScores": 0,
+    "oldEditorialWeeksExact": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "priorModelSnapshotsExact": [
+      "week4ModelSnapshot",
+      "week5ModelSnapshot",
+      "week6ModelSnapshot",
+      "week7ModelSnapshot",
+      "week8ModelSnapshot",
+      "week9ModelSnapshot",
+      "week10ModelSnapshot"
+    ],
+    "newModelSourceSHA256": "b7507cc106c9447fc547346f8d7e9a2f684ea37a3e777dd1457422561ace4038",
+    "protectedFamilyFilesChecked": 92,
+    "unexpectedExistingFileChanges": []
+  },
+  "routes": [
+    {
+      "route": "analytics.html",
+      "type": "loader"
+    },
+    {
+      "route": "drafts.html",
+      "type": "static"
+    },
+    {
+      "route": "franchise-adam.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-andrew.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-billy.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-chris.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-el-rubio.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-jim.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-max.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-nate.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-nick.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-tomd.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise-tommy.html",
+      "type": "redirect"
+    },
+    {
+      "route": "franchise.html",
+      "type": "loader"
+    },
+    {
+      "route": "franchises.html",
+      "type": "loader"
+    },
+    {
+      "route": "head-to-head.html",
+      "type": "direct"
+    },
+    {
+      "route": "history.html",
+      "type": "direct"
+    },
+    {
+      "route": "index.html",
+      "type": "loader"
+    },
+    {
+      "route": "keepers.html",
+      "type": "static"
+    },
+    {
+      "route": "playoff-odds.html",
+      "type": "loader"
+    },
+    {
+      "route": "power-rankings.html",
+      "type": "loader"
+    },
+    {
+      "route": "predictions.html",
+      "type": "loader"
+    },
+    {
+      "route": "press.html",
+      "type": "loader"
+    },
+    {
+      "route": "records.html",
+      "type": "loader"
+    },
+    {
+      "route": "schedule.html",
+      "type": "loader"
+    },
+    {
+      "route": "season-2022.html",
+      "type": "static"
+    },
+    {
+      "route": "season-2023.html",
+      "type": "static"
+    },
+    {
+      "route": "season-2024.html",
+      "type": "static"
+    },
+    {
+      "route": "season-2025.html",
+      "type": "static"
+    },
+    {
+      "route": "season-2026.html",
+      "type": "loader"
+    },
+    {
+      "route": "transactions.html",
+      "type": "loader"
+    },
+    {
+      "route": "trophy-case.html",
+      "type": "direct"
+    },
+    {
+      "route": "waiver-wire.html",
+      "type": "loader"
+    },
+    {
+      "route": "wall-of-shame.html",
+      "type": "static"
+    },
+    {
+      "route": "week-01.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-02.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-03.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-04.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-05.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-06.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-07.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-08.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-09.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-10.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-11.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-12.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-13.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-14.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-15.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-16.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week-17.html",
+      "type": "redirect"
+    },
+    {
+      "route": "week.html",
+      "type": "loader"
+    },
+    {
+      "route": "weeks.html",
+      "type": "loader"
+    }
+  ],
+  "directParity": [
+    {
+      "route": "head-to-head.html",
+      "scriptTags": 77,
+      "externalScripts": 77,
+      "parity": "EXACT",
+      "currentWeek": 11,
+      "gameCount": 368,
+      "lockedReceipts": 11,
+      "errors": []
+    },
+    {
+      "route": "history.html",
+      "scriptTags": 77,
+      "externalScripts": 76,
+      "parity": "EXACT",
+      "currentWeek": 11,
+      "gameCount": 368,
+      "lockedReceipts": 11,
+      "errors": []
+    },
+    {
+      "route": "trophy-case.html",
+      "scriptTags": 77,
+      "externalScripts": 76,
+      "parity": "EXACT",
+      "currentWeek": 11,
+      "gameCount": 368,
+      "lockedReceipts": 11,
+      "errors": []
+    }
+  ],
+  "privacy": {
+    "report": "phase5-source-privacy.json",
+    "status": "PASS",
+    "changedOrNewFilesScanned": 51,
+    "scannedBytes": 1172319,
+    "originalRawExportBytes": 7730808,
+    "normalizedBytes": 301203,
+    "rawExportPublic": false,
+    "rawCapturePayloadMatches": 0,
+    "credentialMatches": 0,
+    "privateURLMatches": 0,
+    "additionalFinalQA": {
+      "file": "qa/week11/phase5-browser.json",
+      "bytes": 21154,
+      "status": "PASS",
+      "note": "New final browser QA metadata screened after the 51-file delegated privacy audit; no credential, signed URL or raw-capture fields."
+    },
+    "totalChangedOrNewFilesScreened": 52,
+    "totalScannedBytes": 1193473
+  },
+  "knownQualifiedLimits": [
+    "Roster choices, injuries, availability and projections describe November 18 at 9:36 a.m. Pacific, including four bye starters and two empty slots.",
+    "H2H statistics refer to the recorded archive; Billy and El Rubio histories remain separate.",
+    "Simulation extremes are rounded probabilities, not formal clinches or elimination.",
+    "Acquisition receipts retain disclosed missing Week 1 scoring and two missing-drop intervals; no speculative points are credited."
+  ],
+  "remainingFactualConsistencyRisks": [],
+  "blockers": [],
+  "browserWorkPerformed": false,
+  "publicationPerformed": false,
+  "repositoryEditsPerformed": false
+}

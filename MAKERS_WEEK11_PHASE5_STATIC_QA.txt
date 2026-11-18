@@ -1,0 +1,13 @@
+THE MAKERS — WEEK 11 PHASE 5 STATIC RELEASE QA
+
+STATIC GATE: PASS — 13 release/source/runtime assertion groups.
+Cache token: makers-20261118-w11p5. All 18 active pages and the loader use this release token; no stale weekly release token remains on those pages.
+78 unique loader modules and 83 tracked JavaScript files pass syntax and path checks.
+History, Head-to-Head and Trophy Case now load all nine Week 11 modules in the same dependency order as the normal loader. Independent VM execution of each direct chain matches the normal runtime exactly for full season state, all 368 games, Power, odds, 100 lineup autopsies and acquisition receipts.
+53 HTML files: 506 local href/src references resolve; 30 inline scripts parse. 0 local CSS asset references resolve.
+All 18 HTML page changes reverse exactly to the saved Phase 4 files after removing the nine new script tags on each direct-chain page and restoring the old release token. No content, layout, stylesheet or asset changes.
+README collector version corrected from 1.3.5 to the published 1.3.9; the collector source itself is unchanged.
+All 66 protected files checked against published Week 10 remain unchanged, including historical data, prior weekly modules, the model engine, collector, CSS/assets and repository hosting automation.
+Exact saved Phase 4 state remains intact: 50 current finals, 318 historical games, 368 total receipts, eleven locked forecast receipts, 100 lineup autopsies, ten pulse weeks, 238 transactions, 100 available players (90 FA / ten waivers), and $498 FAAB remaining. No upcoming actual scores.
+Raw Yahoo captures and credential fields are excluded from current published source. Official hosting remains https://themakersffl.github.io/the-makers/ with no CNAME.
+No integrated runtime errors or warnings. This is the static/source audit; the separate rendered browser audit is owned by root. Production remains unchanged. Phase 6 awaits the complete saved Phase 5 checkpoint.

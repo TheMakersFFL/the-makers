@@ -1,0 +1,18 @@
+THE MAKERS — WEEK 11 PHASE 3 ANALYTICS AND FORECAST LOCK
+
+Decision: PASS — 14 model checks, 14 acquisition regression checks and 8 independent integration checks.
+The published Week 10 engine was independently reproduced exactly: 70 probability fields, ten Power values, ten remaining-SOS values and all five forecasts.
+Two fresh Week 11 runs, each with 24,000 trials and seed 20260901, match exactly. Inputs are 50 official finals and the 20 actual remaining Week 11–14 games. Established Makers Power, simulation, forecast and rank-based stock formulas are retained.
+Five Makers/Yahoo forecasts are locked to November 18, 2026 at 9:36 a.m. Pacific. Four captured bye starters and two empty slots remain unchanged; no player replacement was invented. Moose Knuckles leads Power at 82.79.
+Week 10 grading uses the original November 12 receipt: Makers 4–1 and Yahoo 4–1; score MAE 15.36 and 15.43. Across 50 games: Makers 34–16, Yahoo 33–17; score MAE 18.45 and 18.28.
+
+ACQUISITION CORRECTION
+The previous analytics assigned October/November activity to Week 3 and could close or credit the wrong acquisition period. Dated add/drop episodes now use the earliest saved source, validated weekly capture anchors and completed-roster ownership. Repeated acquisitions remain separate; defense city/mascot names resolve to the same player. Null bye scores no longer count as scored acquisition weeks.
+All 238 source events and 200 acquisition receipts remain. The 21 new events were first captured in Week 11: six occurred during Week 10 and fifteen during Week 11. Five Week 10 additions have 33.14 verified points; Week 11 additions receive no prior credit.
+The repair changes 114 derived acquisition receipts, restores 1,735.64 supported points and removes 52.88 incorrectly credited points. Total tracked acquisition impact changes from 2,073.50 to 3,756.26; linked FAAB remains $497. Derived front-office rankings and grades are recalculated from those corrected receipts.
+All 100 lineup autopsies remain exactly unchanged, including ten Week 10 lineups, 122.48 potential legal-lineup points and zero Week 10 decision losses. Bye zeroes are used only for legal lineup optimization, not as scored acquisition receipts.
+Week 1 player scoring is unavailable and is not estimated. Same-week episode ambiguity is explained in each affected acquisition receipt. Captured transaction coverage does not certify complete Yahoo history.
+
+All ten prior prediction locks, completed articles, prior model snapshots, 50 current finals, 318 historical games, player choices, available players, FAAB and source transaction objects remain unchanged. Schedule-luck, manager-DNA and award calculations are unchanged by the repair. Integrated analytics renders without NaN, errors or warnings.
+Full receipts: qa/week11/phase3.json, phase3-model.json, phase3-analytics.json, phase3-integration.json and phase3-baseline-reproduction.json.
+Phase 3 is complete; save this checkpoint before starting Phase 4.

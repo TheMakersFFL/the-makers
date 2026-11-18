@@ -1,0 +1,222 @@
+{
+  "phase": 4,
+  "status": "PASS",
+  "reviewedModule": "week11-editorial.js",
+  "moduleSHA256": "237a9dbb818bf49667022b80f4e58ac3c33dacc82dd0f4901295a607a0c36b22",
+  "draftSHA256": "3a44e5c215a30cecc054080409f505735c41ebc18e05c6b4a63208bd6d987b95",
+  "sourceSHA256": "627ff7f28befe523b07c739a0809d9adcb9369a9dea6184733f663b9a88258ef",
+  "sourceCapturedAt": "2026-11-18T17:36:14.776Z",
+  "scope": "Independent editorial factual and attribution review only; no repository modification or Phase 5 work.",
+  "assertions": 339,
+  "groups": [
+    {
+      "name": "Five complete recaps and five forecasts match actual game identities, final scores and frozen projections",
+      "status": "PASS",
+      "assertions": 62
+    },
+    {
+      "name": "29 named completed-player score and starter/bench claims match normalized lineups",
+      "status": "PASS",
+      "assertions": 116
+    },
+    {
+      "name": "Recap aggregates, close-loss arithmetic and legal hindsight claims are accurate",
+      "status": "PASS",
+      "assertions": 22
+    },
+    {
+      "name": "All ten recap/preview recorded H2H counts and five Week 2 rematches match the archive",
+      "status": "PASS",
+      "assertions": 41
+    },
+    {
+      "name": "Standings distribution, all-play table, Power ranks and stock movements match current data",
+      "status": "PASS",
+      "assertions": 28
+    },
+    {
+      "name": "Original forecast grading and all cited playoff/bye/toilet odds match frozen model",
+      "status": "PASS",
+      "assertions": 30
+    },
+    {
+      "name": "Week 10 individual awards receive the intended analytics credits",
+      "status": "PASS",
+      "assertions": 17
+    },
+    {
+      "name": "Timestamp, author attribution, coverage language and Makers punishment are correctly qualified",
+      "status": "PASS",
+      "assertions": 11
+    },
+    {
+      "name": "Rendered analytics award table shows all ten manager totals and seven Week 10 owner credits",
+      "status": "PASS",
+      "assertions": 12
+    }
+  ],
+  "coverage": {
+    "recapGames": 5,
+    "previewGames": 5,
+    "completedNamedPlayerClaims": 29,
+    "h2hSeriesClaims": 10,
+    "rosterAndTransactionAssertions": 298,
+    "sourceCorrectionsDisclosed": "140 phantom bye bench points removed from 14 rows; official finals unchanged",
+    "tone": "Established Makers league-desk voice; humor attaches to verified results and captured lineup choices",
+    "gameOfWeek": "Explicit editorial selection; no claim that Moose–TDs is the narrowest forecast"
+  },
+  "resolvedFindings": [
+    {
+      "issue": "Draft-name punishment paraphrase implied an unsupported naming rule",
+      "resolution": "Uses established draft-handle and board duty at next draft from wall-of-shame.html"
+    },
+    {
+      "issue": "Four award recipient labels omitted manager identities required by analytics",
+      "resolution": "All seven individual award recipients explicitly name their intended owner; no opponent receives accidental credit"
+    }
+  ],
+  "expectedWeek10AwardOwners": {
+    "Highest Team Score": [
+      "Andrew"
+    ],
+    "Largest Victory": [
+      "Chris"
+    ],
+    "Closest Finish": [
+      "Billy"
+    ],
+    "Bad Beat": [
+      "Nick"
+    ],
+    "Best Starting Player": [
+      "Billy"
+    ],
+    "Largest Bench Score": [
+      "Adam"
+    ],
+    "Best Lineup Efficiency": [
+      "Tommy"
+    ],
+    "Prediction Results": []
+  },
+  "actualAnalyticsAwardCredits": [
+    {
+      "award": "Highest Team Score",
+      "recipient": "Andrew · The Eviscerators · 140.86",
+      "managers": [
+        "Andrew"
+      ]
+    },
+    {
+      "award": "Largest Victory",
+      "recipient": "Chris · Won by 57.66 points",
+      "managers": [
+        "Chris"
+      ]
+    },
+    {
+      "award": "Closest Finish",
+      "recipient": "Billy · Won by 2.96 points",
+      "managers": [
+        "Billy"
+      ]
+    },
+    {
+      "award": "Bad Beat",
+      "recipient": "Nick · 132.66 actual; legal optimum 135.46",
+      "managers": [
+        "Nick"
+      ]
+    },
+    {
+      "award": "Best Starting Player",
+      "recipient": "Billy · Christian McCaffrey · 45.30",
+      "managers": [
+        "Billy"
+      ]
+    },
+    {
+      "award": "Largest Bench Score",
+      "recipient": "Adam · Patrick Mahomes · 41.42",
+      "managers": [
+        "Adam"
+      ]
+    },
+    {
+      "award": "Best Lineup Efficiency",
+      "recipient": "Tommy · Pump and Go · 99.50%",
+      "managers": [
+        "Tommy"
+      ]
+    },
+    {
+      "award": "Prediction Results",
+      "recipient": "Makers 4–1 / Yahoo 4–1; season 34–16 / 33–17",
+      "managers": []
+    }
+  ],
+  "rosterReview": {
+    "file": "phase4-roster-factcheck.json",
+    "status": "PASS",
+    "assertions": 298,
+    "finalChangesSinceThatReview": "Punishment wording, coverage prose and award-owner labels only; no player/roster/transaction/FAAB/availability claims changed"
+  },
+  "limitations": [
+    "Injuries, roster placements, free-agent status and forecasts are qualified to the November 18 9:36 a.m. Pacific capture.",
+    "H2H counts describe the reconstructed/recorded archive, not every game since league inception.",
+    "Model 100.0% and 0.0% are rounded simulation outputs, not formal clinches or elimination."
+  ],
+  "unresolvedIssues": [],
+  "renderedAnalyticsAwardRows": [
+    {
+      "manager": "Nick",
+      "renderedTotal": 7,
+      "week10Credits": 1
+    },
+    {
+      "manager": "Billy",
+      "renderedTotal": 6,
+      "week10Credits": 2
+    },
+    {
+      "manager": "Adam",
+      "renderedTotal": 5,
+      "week10Credits": 1
+    },
+    {
+      "manager": "Max",
+      "renderedTotal": 5,
+      "week10Credits": 0
+    },
+    {
+      "manager": "Tommy",
+      "renderedTotal": 5,
+      "week10Credits": 1
+    },
+    {
+      "manager": "Chris",
+      "renderedTotal": 4,
+      "week10Credits": 1
+    },
+    {
+      "manager": "Jim",
+      "renderedTotal": 3,
+      "week10Credits": 0
+    },
+    {
+      "manager": "Andrew",
+      "renderedTotal": 1,
+      "week10Credits": 1
+    },
+    {
+      "manager": "TomD",
+      "renderedTotal": 1,
+      "week10Credits": 0
+    },
+    {
+      "manager": "Nate",
+      "renderedTotal": 0,
+      "week10Credits": 0
+    }
+  ]
+}

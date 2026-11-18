@@ -1,0 +1,57 @@
+{
+  "phase": 4,
+  "status": "PASS",
+  "checksPassed": 7,
+  "checks": [
+    "Editorial preserves all source facts, completed games, eleven prediction locks and model receipts",
+    "Previously completed Week 1–9 articles remain exact",
+    "Both new articles cover every matchup with explicit renderer copy and desk-note attribution",
+    "Week 10 and Week 11 matchup tiles show the authored narratives and correct note labels",
+    "Homepage and weekly hub feature the new Week 11 headline",
+    "Press Room labels new notes accurately and retains historical quote labels",
+    "Prediction page retains fifty completed grades and five upcoming locked forecasts"
+  ],
+  "rendered": [
+    {
+      "page": "week",
+      "search": "?week=10",
+      "characters": 25526
+    },
+    {
+      "page": "week",
+      "search": "?week=11",
+      "characters": 32971
+    },
+    {
+      "page": "home",
+      "search": "",
+      "characters": 5002
+    },
+    {
+      "page": "weeks",
+      "search": "",
+      "characters": 38592
+    },
+    {
+      "page": "press",
+      "search": "",
+      "characters": 39029
+    },
+    {
+      "page": "predictions",
+      "search": "",
+      "characters": 23515
+    }
+  ],
+  "recapHeadline": "Week 10: CMC’s 45.30, a 2.96-Point Escape and Five Teams at 5–5",
+  "previewHeadline": "Week 11: The Leaders, the Traffic Jam and the Empty Slots",
+  "articleWordCounts": {
+    "10": 940,
+    "11": 1855
+  },
+  "recapMatchups": 5,
+  "previewMatchups": 5,
+  "priorCompletedArticlesPreserved": 9,
+  "predictionLocksPreserved": 11,
+  "attribution": "New notes explicitly labeled League Desk; original historical quote labels retained."
+}

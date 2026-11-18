@@ -1,0 +1,51 @@
+{
+  "phase": 3,
+  "status": "PASS",
+  "modelChecks": 14,
+  "analyticsChecks": 14,
+  "integrationChecks": 8,
+  "publishedModelReproduction": {
+    "status": "PASS",
+    "purpose": "Independent reproduction of exact published Week 10 model before Week 11 lock",
+    "trials": 24000,
+    "oddsFields": 70,
+    "powerValues": 10,
+    "sosValues": 10,
+    "forecasts": 5,
+    "engineMethodologyUnchanged": true
+  },
+  "modelReceipt": "phase3-model.json",
+  "analyticsReceipt": "phase3-analytics.json",
+  "integrationReceipt": "phase3-integration.json",
+  "completedGames": 50,
+  "archivedGames": 368,
+  "transactions": 238,
+  "acquisitions": 200,
+  "lineupAutopsies": 100,
+  "predictionLock": "2026-11-18T17:36:14.776Z",
+  "impactCorrection": {
+    "before": 2073.5,
+    "after": 3756.26,
+    "delta": 1682.76,
+    "publishedWeek10Before": 1733.18,
+    "publishedWeek10Corrected": 3227.9,
+    "newFiveWeek10Adds": 33.14,
+    "faabBefore": 497,
+    "faabAfter": 497,
+    "increasedReceiptPoints": 1735.64,
+    "decreasedReceiptPoints": -52.88
+  },
+  "preserved": [
+    "All supplied source data and canonical manager identities",
+    "All ten prior prediction locks",
+    "All prior completed articles and historical model objects",
+    "All actual finals, archive games and lineup autopsies",
+    "Schedule luck, manager DNA and award calculations"
+  ],
+  "limitations": [
+    "Transaction export is a captured window; complete Yahoo transaction pagination is not certified.",
+    "Week 1 player-level scoring receipts are unavailable; missing player points are not estimated.",
+    "Rounded simulation odds are not mathematical clinch or elimination certificates.",
+    "Four current bye starters and two empty slots are preserved as captured."
+  ]
+}

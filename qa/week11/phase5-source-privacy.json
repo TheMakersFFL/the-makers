@@ -1,0 +1,402 @@
+{
+  "scope": "Read-only Phase 5 release privacy and raw-source leakage audit of changed/new repository files relative to the published Week 10 baseline. No repository modifications, browser actions, or publication.",
+  "status": "PASS",
+  "auditedAt": "2026-11-18T18:37:28.867517+00:00",
+  "baselineCommit": "88ea2e37370736931a3ad951fc69d2cfc6dd64a7",
+  "headAtScanStart": "f40a289fb1554ef4b60c5fafa51fd3cd3a281111",
+  "headAtScanEnd": "f40a289fb1554ef4b60c5fafa51fd3cd3a281111",
+  "manifest": {
+    "filesScanned": 51,
+    "textFilesScanned": 51,
+    "jsonFilesParsed": 14,
+    "totalBytes": 1172319,
+    "paths": [
+      {
+        "path": "MAKERS_WEEK11_PHASE1_COLLECTOR_QA.txt",
+        "bytes": 3140,
+        "sha256": "2139270e11a6e0f462143874cc34f40dd4e7aa70524b300c2fe619489e514c0b"
+      },
+      {
+        "path": "MAKERS_WEEK11_PHASE2_FACTUAL_QA.txt",
+        "bytes": 2431,
+        "sha256": "f3eb10e618723198f328d80d85830ba0d5365eb420669a358ac6caf43ecc0934"
+      },
+      {
+        "path": "MAKERS_WEEK11_PHASE3_MODELS_QA.txt",
+        "bytes": 1820,
+        "sha256": "4739c101e5bd8312bf362b0a01faf95c352edcf13a11d4bff4f431657dbc0bb8"
+      },
+      {
+        "path": "MAKERS_WEEK11_PHASE3_QA.txt",
+        "bytes": 2996,
+        "sha256": "10451d7c32b393edbb28eb686e111de9c65af701287cea94d774aa310dfec5ea"
+      },
+      {
+        "path": "MAKERS_WEEK11_PHASE4_QA.txt",
+        "bytes": 2629,
+        "sha256": "4c81c94ece40aadf21ea552c19b373b1fe90370011ab48f06c5ccea445002d79"
+      },
+      {
+        "path": "MAKERS_WEEK11_PHASE5_STATIC_QA.txt",
+        "bytes": 1972,
+        "sha256": "11780e0460a178ca32c0e8e1a73b67e3f1554ffc00aafea721b8bf888d573f84"
+      },
+      {
+        "path": "README_GITHUB.txt",
+        "bytes": 2295,
+        "sha256": "24c28de23dbc428c78aa1995234155748a20c1f22caf97c4c0ed044f804e15fc"
+      },
+      {
+        "path": "analytics.html",
+        "bytes": 498,
+        "sha256": "808c257e8e7477b91777232baf41147b0fde7f0a54a599413988a6f63d1e310a"
+      },
+      {
+        "path": "data/week11-normalized.json",
+        "bytes": 301203,
+        "sha256": "d02de5cfe8af47b19a01095da037d5b5fce8c28dfe27fb5d438b6e3fea036161"
+      },
+      {
+        "path": "franchise.html",
+        "bytes": 477,
+        "sha256": "a886f4eb8a2b4023bf07eff4398f301f68263df0f430522d89dce9c731ca883d"
+      },
+      {
+        "path": "franchises.html",
+        "bytes": 491,
+        "sha256": "2073358ef5e10d8e4b4850498929be9c1684e59a62b15bac4e4ab0e5dbdedb28"
+      },
+      {
+        "path": "head-to-head.html",
+        "bytes": 77718,
+        "sha256": "461f005a88dc48c943dfdf6f8860ba2f363f9fcad65dc1e21149c28c1205b4ae"
+      },
+      {
+        "path": "history.html",
+        "bytes": 11829,
+        "sha256": "92ad86841d16131f46cdf9f4060d9a281cfda4347e35827150b63d8a17db2884"
+      },
+      {
+        "path": "index.html",
+        "bytes": 492,
+        "sha256": "2f366206ae5ea94d41916786f6152944beda6a41bd2cda84209b0d9261c131a4"
+      },
+      {
+        "path": "league-analytics.js",
+        "bytes": 46368,
+        "sha256": "f6b9f1a0a285801efe289221e38aed0158d2d8028e9841877380e0c96ad64187"
+      },
+      {
+        "path": "live.js",
+        "bytes": 61014,
+        "sha256": "4047c8f74651f58eefa8db9133623709c75d5f3bca4c58356004ecf7c292f211"
+      },
+      {
+        "path": "makers-weekly-loader.js",
+        "bytes": 3974,
+        "sha256": "c00f534163ca5d5c2693d8d990d9110ffbcb4123a169b16599976323262ab1d1"
+      },
+      {
+        "path": "playoff-odds.html",
+        "bytes": 488,
+        "sha256": "39ad1bc442167272cca403354918d36aaa9bde07ed4e0fc9a681bf54e55f5245"
+      },
+      {
+        "path": "power-rankings.html",
+        "bytes": 489,
+        "sha256": "b01013c150637d1f70faf6c27e1760d442d8dc98091e7d395fbd10fd55a6c961"
+      },
+      {
+        "path": "predictions.html",
+        "bytes": 505,
+        "sha256": "2fbea4d46c9138800b4dd90ecbfc32f90775b05705ab92d045fb826520735eb4"
+      },
+      {
+        "path": "press.html",
+        "bytes": 510,
+        "sha256": "edd5c521c9f5419410d9cb23d73685e61c4e3e6bff111f60d750db46bda0d4e1"
+      },
+      {
+        "path": "qa/week11/active-pages.json",
+        "bytes": 364,
+        "sha256": "d940a0d2b3b94b631b415a6fdf4a248337e6a26238c157f4912e50e77ac3b414"
+      },
+      {
+        "path": "qa/week11/phase1.json",
+        "bytes": 4964,
+        "sha256": "f8472472ec1a9159d71d9353442f7802f4f2536b7f4ab170225081a2633afe87"
+      },
+      {
+        "path": "qa/week11/phase2.json",
+        "bytes": 11274,
+        "sha256": "7fa31fbc64df8119729e96ba134785f239d02f6030123523906734a1f33f9755"
+      },
+      {
+        "path": "qa/week11/phase3-analytics.json",
+        "bytes": 37449,
+        "sha256": "b2e8d7428644cc732b78607c37c12d3e76cd0da5cc545c7bc810cb47c533f4c5"
+      },
+      {
+        "path": "qa/week11/phase3-baseline-reproduction.json",
+        "bytes": 252,
+        "sha256": "90775d789862b05978d45e5a3bc6b15dbd2d56f83bfe0749033f20f60ee6e6bb"
+      },
+      {
+        "path": "qa/week11/phase3-integration.json",
+        "bytes": 2294,
+        "sha256": "b9db7a0da99bf28edd89654d9a57ee2802c4f0073400093d323345595ec08ea0"
+      },
+      {
+        "path": "qa/week11/phase3-model.json",
+        "bytes": 23062,
+        "sha256": "d9e48a038939a97f553b09a4ce1d0f57c8f78cb118f8ed291a8b007fc96a1820"
+      },
+      {
+        "path": "qa/week11/phase3.json",
+        "bytes": 1747,
+        "sha256": "25971c01aab2cfbdfa21930ab1734a008e16d991a61c04261dad922140c6a99f"
+      },
+      {
+        "path": "qa/week11/phase4-independent-review.json",
+        "bytes": 6207,
+        "sha256": "886255896f8377514bbbded7105a74fa5328b551f99cba1692ca6597dd909f58"
+      },
+      {
+        "path": "qa/week11/phase4-integration.json",
+        "bytes": 1657,
+        "sha256": "10713042252b268c05b40945bf14593134430a8af69bb118a216b32bb133613d"
+      },
+      {
+        "path": "qa/week11/phase4-roster-factcheck.json",
+        "bytes": 4430,
+        "sha256": "c00c072ca909a9281ee0e3b857fdd54ca939c67fca5a9f65beec368702f22a9a"
+      },
+      {
+        "path": "qa/week11/phase4.json",
+        "bytes": 6374,
+        "sha256": "bce2165c6887ffbcedfb0d66d4efb7371416d714dc8eb70c92264ff312467c15"
+      },
+      {
+        "path": "qa/week11/phase5-static.json",
+        "bytes": 6703,
+        "sha256": "beaf053ab537d0d355f7eb8f47ad04b3c83c03d6e2eef45b999bc00b5d2f623e"
+      },
+      {
+        "path": "records.html",
+        "bytes": 476,
+        "sha256": "5fb1b7f0f8639bad565e5b104e2c3c719ac8f69eb0ccbbafcee177559e3ac072"
+      },
+      {
+        "path": "schedule.html",
+        "bytes": 490,
+        "sha256": "5495515ff785a47171a6b6a97c5d2add4ee6749686459a4ea8c9cd1e4265b825"
+      },
+      {
+        "path": "season-2026.html",
+        "bytes": 491,
+        "sha256": "3f36797e2617e2f1917fc4ae8de77120615f0826fbcea88f4513d06d21f852b8"
+      },
+      {
+        "path": "transactions.html",
+        "bytes": 497,
+        "sha256": "39b231230cdea23966bd074d5fb3c9a0a5758fe4567ef5d437007b2a01a717d6"
+      },
+      {
+        "path": "trophy-case.html",
+        "bytes": 9931,
+        "sha256": "bde58fb47ae2b4978d21f636c4866bd01c052b7061d9d78e5f501a30f79043f6"
+      },
+      {
+        "path": "waiver-wire.html",
+        "bytes": 498,
+        "sha256": "1a3b584d1473091f1c9877c3267fa936361db3b74492ed053aee6b0dc41e42a8"
+      },
+      {
+        "path": "week.html",
+        "bytes": 476,
+        "sha256": "d1b685d9e8acd1fb1e416aaa837d9ad141a74b10cc3876e51f579b70cd39b104"
+      },
+      {
+        "path": "week11-available.js",
+        "bytes": 25532,
+        "sha256": "1e832ecb3347340b81a66990dc27d806d7dff3cd3c9069b06055e5aa182331c8"
+      },
+      {
+        "path": "week11-completed.js",
+        "bytes": 33497,
+        "sha256": "3fb10487826e7603e5dd80c5cce2ecf58f87cf34c69db343d50f53cd1b680f27"
+      },
+      {
+        "path": "week11-editorial.js",
+        "bytes": 42953,
+        "sha256": "237a9dbb818bf49667022b80f4e58ac3c33dacc82dd0f4901295a607a0c36b22"
+      },
+      {
+        "path": "week11-history-preservation.js",
+        "bytes": 301187,
+        "sha256": "0857d29f8942b0f7303721518ddd6ffb64a8c1ee5107e4bf91306e7f2444f390"
+      },
+      {
+        "path": "week11-import.js",
+        "bytes": 64950,
+        "sha256": "55f14c5e83c273b0480bbf4a58c62e09810374fad6db034c1e09dd0078c112d1"
+      },
+      {
+        "path": "week11-models.js",
+        "bytes": 15688,
+        "sha256": "b7507cc106c9447fc547346f8d7e9a2f684ea37a3e777dd1457422561ace4038"
+      },
+      {
+        "path": "week11-phase2-consistency.js",
+        "bytes": 1175,
+        "sha256": "bab715c88744d1f75fde2406d9a76ec08a17b25d9ba4e24017cb5bffd2268f19"
+      },
+      {
+        "path": "week11-rosters.js",
+        "bytes": 33411,
+        "sha256": "1545e34185320e4ac0359924beb0a68672dc7695be6d05fec02c9fabb61d3ca6"
+      },
+      {
+        "path": "week11-transactions.js",
+        "bytes": 10455,
+        "sha256": "71b464fd67ff9c90f967760a4eba10e2bff1ab8e85177ef10a16dd05422a2bcb"
+      },
+      {
+        "path": "weeks.html",
+        "bytes": 496,
+        "sha256": "a49304271c54d4cfa8ba720e26a5d1165dd3e712dab7edcfd9e1fc9ecca007bb"
+      }
+    ]
+  },
+  "rawSource": {
+    "filename": "MAKERS_2026_W11_WEDNESDAY.json",
+    "bytes": 7730808,
+    "sha256": "627ff7f28befe523b07c739a0809d9adcb9369a9dea6184733f663b9a88258ef",
+    "captureCount": 31,
+    "outsideRepository": true,
+    "identicalCopyInRepositoryCount": 0,
+    "identicalCopyPaths": []
+  },
+  "normalizedPayload": {
+    "path": "data/week11-normalized.json",
+    "bytes": 301203,
+    "topLevelKeys": [
+      "schema",
+      "collectorVersion",
+      "league",
+      "mode",
+      "workflow",
+      "targetWeek",
+      "completedWeek",
+      "capturedAt",
+      "validation",
+      "teamMap",
+      "data",
+      "normalization",
+      "originalValidation",
+      "sourceSHA256",
+      "phase1Audit"
+    ],
+    "dataKeys": [
+      "standings",
+      "matchups",
+      "matchupProjections",
+      "transactions",
+      "faab",
+      "availablePlayers",
+      "rosters",
+      "completedLineups"
+    ],
+    "provenance": {
+      "sourceHashMatchesOriginal": true,
+      "normalizationHashMatchesOriginal": true,
+      "sourceFilenamePreserved": true,
+      "captureTimePreserved": true,
+      "collectorVersionPreserved": true,
+      "leagueIdentityPreserved": true,
+      "weekIdentityPreserved": true,
+      "originalValidationPreserved": true,
+      "rawCaptureArrayRemoved": true,
+      "runtimeRawCaptureArrayRemoved": true,
+      "runtimeMatchesNormalizedProvenance": true
+    }
+  },
+  "checks": {
+    "secretAndPrivateURLPatterns": {
+      "private_key": {
+        "count": 0,
+        "paths": []
+      },
+      "github_token": {
+        "count": 0,
+        "paths": []
+      },
+      "openai_api_key": {
+        "count": 0,
+        "paths": []
+      },
+      "aws_access_key": {
+        "count": 0,
+        "paths": []
+      },
+      "jwt": {
+        "count": 0,
+        "paths": []
+      },
+      "auth_bearer_value": {
+        "count": 0,
+        "paths": []
+      },
+      "credential_assignment": {
+        "count": 0,
+        "paths": []
+      },
+      "signed_url": {
+        "count": 0,
+        "paths": []
+      },
+      "private_service_url": {
+        "count": 0,
+        "paths": []
+      }
+    },
+    "serializedSensitiveFieldCount": 0,
+    "serializedSensitiveFields": [],
+    "numericCaptureProvenanceReferenceCount": 474,
+    "rawCaptureTextSamplesChecked": 110,
+    "rawCaptureTextFragmentMatchCount": 0,
+    "rawCaptureTextFragmentMatches": [],
+    "htmlSnapshotPayloadMatchCount": 0,
+    "htmlSnapshotPayloadMatches": [],
+    "urlsScanned": 3,
+    "urlDomains": {
+      "themakersffl.github.io": 3
+    },
+    "urlUserinfoCount": 0,
+    "credentialQueryCount": 0,
+    "ordinaryDomRenderingIdentifiers": [
+      {
+        "path": "history.html",
+        "count": 1
+      },
+      {
+        "path": "live.js",
+        "count": 2
+      }
+    ],
+    "runtimeLoadErrors": [],
+    "runtimeLoadWarnings": []
+  },
+  "concurrentChangeCheck": {
+    "filesChangedDuringScan": [],
+    "filesAddedDuringScan": [],
+    "stable": true
+  },
+  "blockers": [],
+  "interpretation": [
+    "The original filename and SHA-256 are harmless source-provenance metadata; the original upload is not a public repository file.",
+    "Numeric capture/row references and validation capture counts preserve traceability without retaining page text or raw capture objects.",
+    "The innerHTML identifiers are ordinary site DOM rendering code, not stored Yahoo page snapshots.",
+    "Secret scanning covers known credential formats, credential assignments, signed URLs, authenticated query parameters, serialized sensitive fields, and sampled raw-page fragments; no payload or credential values are included in this report."
+  ]
+}

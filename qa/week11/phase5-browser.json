@@ -1,0 +1,767 @@
+{
+  "phase": 5,
+  "status": "PASS",
+  "browser": "Chromium cloud browser, desktop viewport",
+  "routeCount": 32,
+  "pages": [
+    {
+      "phase": 5,
+      "route": "index.html",
+      "url": "http://127.0.0.1:4173/",
+      "brokenImages": [],
+      "h1": "The Makers\nWeek 11 Board",
+      "headings": [
+        "Wednesday League Desk",
+        "Latest Weekly Write-Up"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [],
+      "title": "Home · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2259,
+      "bodySHA256": "71668134a7ed6f421e724a007dba317ebd0a5ca9422aebe81321e95eae3e31bd"
+    },
+    {
+      "phase": 5,
+      "route": "weeks.html",
+      "url": "http://127.0.0.1:4173/weeks.html",
+      "brokenImages": [],
+      "h1": "2026 Weekly Write-Ups",
+      "headings": [
+        "Week 11 Write-Up",
+        "Week 11 preview",
+        "Makers vs Yahoo projections",
+        "Weekly awards",
+        "Every week gets receipts",
+        "Weekly Awards"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        5,
+        10
+      ],
+      "title": "2026 Weekly Write-Ups · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 20977,
+      "bodySHA256": "608051d7e85f7cd7993acea19b669d7dad52473333962f1a59ccdc86eed62b90"
+    },
+    {
+      "phase": 5,
+      "route": "week.html?week=10",
+      "url": "http://127.0.0.1:4173/week.html?week=10",
+      "brokenImages": [],
+      "h1": "Week 10 — 2026",
+      "headings": [
+        "Week 10: CMC’s 45.30, a 2.96-Point Escape and Five Teams at 5–5",
+        "Week 10 recap",
+        "Makers vs Yahoo projections",
+        "The slate",
+        "Weekly awards",
+        "Our rankings"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        5
+      ],
+      "title": "Weekly Write-Up · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 15095,
+      "bodySHA256": "c31437276baa3a8b7e64f8c2e313aa71d19502791c62b2e1dcb698f1b2fad571"
+    },
+    {
+      "phase": 5,
+      "route": "week.html?week=11",
+      "url": "http://127.0.0.1:4173/week.html?week=11",
+      "brokenImages": [],
+      "h1": "Week 11 — 2026",
+      "headings": [
+        "Week 11: The Leaders, the Traffic Jam and the Empty Slots",
+        "Week 11 preview",
+        "Makers vs Yahoo projections",
+        "The slate",
+        "Weekly awards",
+        "Our rankings"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        5
+      ],
+      "title": "Weekly Write-Up · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 21717,
+      "bodySHA256": "ace1f18ac1fb2c3a8b266ae594b14c889556705a4e655bdabedfb3b5a4e1ab73"
+    },
+    {
+      "phase": 5,
+      "route": "season-2026.html",
+      "url": "http://127.0.0.1:4173/season-2026.html",
+      "brokenImages": [],
+      "h1": "2026 War Room",
+      "headings": [
+        "What everybody needs",
+        "Race dashboard",
+        "Franchise Stock Market",
+        "2026 postseason bracket",
+        "Our draft-day field",
+        "Yahoo draft-day field",
+        "League setup"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "title": "2026 War Room · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 7062,
+      "bodySHA256": "2b59bed99ede6fb5e4db18d6182083de3c949e316df448c9afb87ed38310e0be"
+    },
+    {
+      "phase": 5,
+      "route": "predictions.html",
+      "url": "http://127.0.0.1:4173/predictions.html",
+      "brokenImages": [],
+      "h1": "Makers vs Yahoo",
+      "headings": [
+        "Prediction ledger",
+        "All-Play Standings"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        55,
+        10
+      ],
+      "title": "Predictions · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 10706,
+      "bodySHA256": "4524df709dc8593150f06ca39b77b71cfb448f7a19f123f938fc42c87f49d25f"
+    },
+    {
+      "phase": 5,
+      "route": "analytics.html",
+      "url": "http://127.0.0.1:4173/analytics.html",
+      "brokenImages": [],
+      "h1": "League Analytics\nLab",
+      "headings": [
+        "Schedule luck, all-play truth and scoring context",
+        "Transaction ROI & front-office grades",
+        "Lineup decisions and optimal-score forensics",
+        "How every manager actually operates",
+        "Season timeline & weekly pulse",
+        "Weekly Awards Leaderboard"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        11,
+        10,
+        200,
+        10,
+        10,
+        10
+      ],
+      "title": "Analytics · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 27939,
+      "bodySHA256": "0d2aa832a899086ac2b201ed5c9589e9770d23a7a77bb9098b1c24e1ba80ea1f"
+    },
+    {
+      "phase": 5,
+      "route": "transactions.html",
+      "url": "http://127.0.0.1:4173/transactions.html",
+      "brokenImages": [],
+      "h1": "Moves & Trades",
+      "headings": [
+        "2026 activity",
+        "Career move ledger"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        11
+      ],
+      "title": "Moves · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 19974,
+      "bodySHA256": "f5e01518c364014508e100b416810cd03fbf55cdda3c3e587c3bbe334b9d5fd7"
+    },
+    {
+      "phase": 5,
+      "route": "waiver-wire.html",
+      "url": "http://127.0.0.1:4173/waiver-wire.html",
+      "brokenImages": [],
+      "h1": "Waiver Wire",
+      "headings": [
+        "FAAB & waiver priority",
+        "Available players by position",
+        "League activity"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        10,
+        15,
+        25,
+        25,
+        15,
+        10,
+        10
+      ],
+      "title": "Waiver Wire · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 24830,
+      "bodySHA256": "d38c94488a2b81259f55ad489d638894d10035e829b37de80c4944795156e998"
+    },
+    {
+      "phase": 5,
+      "route": "schedule.html",
+      "url": "http://127.0.0.1:4173/schedule.html",
+      "brokenImages": [],
+      "h1": "2026 Schedule",
+      "headings": [
+        "What jumps off the page",
+        "Marquee dates",
+        "Every road to Week 14"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [],
+      "title": "Schedule · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 12521,
+      "bodySHA256": "88e38c8208a2fd93860b9eaeb7ed5c38b08eefdb14022c18a41a3fff595e5f26"
+    },
+    {
+      "phase": 5,
+      "route": "power-rankings.html",
+      "url": "http://127.0.0.1:4173/power-rankings.html",
+      "brokenImages": [],
+      "h1": "Power Rankings",
+      "headings": [
+        "Live power index",
+        "The preseason board",
+        "Why we ranked them this way"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        10,
+        10
+      ],
+      "title": "Power Rankings · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 8024,
+      "bodySHA256": "f537e2c5e630e1b9a875987904ab6716e800b88395a039d9b097e14504931791"
+    },
+    {
+      "phase": 5,
+      "route": "playoff-odds.html",
+      "url": "http://127.0.0.1:4173/playoff-odds.html",
+      "brokenImages": [],
+      "h1": "Playoff Odds",
+      "headings": [
+        "Make the six-team bracket",
+        "First-round bye odds",
+        "Title equity",
+        "Toilet Bowl odds",
+        "Full model table"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        10
+      ],
+      "title": "Playoff Odds · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2207,
+      "bodySHA256": "6be9521c4ee65a821db78239782fb45d6963141719c8163f68a1198a3eab990c"
+    },
+    {
+      "phase": 5,
+      "route": "franchises.html",
+      "url": "http://127.0.0.1:4173/franchises.html",
+      "brokenImages": [],
+      "h1": "Franchise Files",
+      "headings": [
+        "Know your enemy"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [],
+      "title": "Franchises · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 5499,
+      "bodySHA256": "38db4ce804789c706a428aa6b317054fb45068f44a5bbba7beb24cd5fb760cd1"
+    },
+    {
+      "phase": 5,
+      "route": "history.html",
+      "url": "http://127.0.0.1:4173/history.html",
+      "brokenImages": [],
+      "h1": "Season History",
+      "headings": [
+        "Completed season history",
+        "The active chapter"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [],
+      "title": "Season History · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2344,
+      "bodySHA256": "ee706212cf156b1e9085ddcfe5ad1a3dd86ce02346e15c3cfa49a6dfb6f3f7bc"
+    },
+    {
+      "phase": 5,
+      "route": "head-to-head.html",
+      "url": "http://127.0.0.1:4173/head-to-head.html",
+      "brokenImages": [],
+      "h1": "Head-to-Head",
+      "headings": [
+        "Regular season + postseason",
+        "Complete game log",
+        "Current-season H2H additions"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        11,
+        81,
+        79,
+        79,
+        79,
+        50
+      ],
+      "title": "Head-to-Head · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 13198,
+      "bodySHA256": "79d5fb8b0b9e6c2426d48c9c9cce822034be14ac8f01a4ac50cd834d55ecd3c2"
+    },
+    {
+      "phase": 5,
+      "route": "records.html",
+      "url": "http://127.0.0.1:4173/records.html",
+      "brokenImages": [],
+      "h1": "Record Book",
+      "headings": [
+        "League ledger",
+        "Historical leaderboards",
+        "Score archive extremes",
+        "Career standings",
+        "Playoff records",
+        "Best, worst & weirdest"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        11,
+        11,
+        14
+      ],
+      "title": "Records · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 4327,
+      "bodySHA256": "d05893ad9a5dbfc3f92bd521e299544942fc5847a8dd9711ec122ccb3c2a1c3c"
+    },
+    {
+      "phase": 5,
+      "route": "trophy-case.html",
+      "url": "http://127.0.0.1:4173/trophy-case.html",
+      "brokenImages": [],
+      "h1": "Trophy Case",
+      "headings": [
+        "Championship banners",
+        "Title leaderboard"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        11
+      ],
+      "title": "Trophy Case · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 1178,
+      "bodySHA256": "6498b260e1d6eedb8476fc3487263c7dd473fa07c4a1163ddc0e3eeb771fb7e9"
+    },
+    {
+      "phase": 5,
+      "route": "press.html",
+      "url": "http://127.0.0.1:4173/press.html",
+      "brokenImages": [],
+      "h1": "Press Room",
+      "headings": [
+        "Week 11: The Leaders, the Traffic Jam and the Empty Slots",
+        "League desk archive",
+        "Quotes and desk notes",
+        "Prediction receipts",
+        "Preseason files"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [],
+      "title": "Press Room · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 14506,
+      "bodySHA256": "a4f15e40180befd21cc63bef9dedc5217c9b28552c6398c4c79d8e0aae28b3d4"
+    },
+    {
+      "phase": 5,
+      "route": "drafts.html",
+      "url": "http://127.0.0.1:4173/drafts.html",
+      "brokenImages": [],
+      "h1": "So… who actually won the draft?",
+      "headings": [
+        "Our 2026 draft rankings",
+        "Draft awards",
+        "Every roster, our grade, our reasoning",
+        "Pick-by-pick breakdown"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        10
+      ],
+      "title": "2026 Draft Breakdown · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 43401,
+      "bodySHA256": "9786e1b74060b7f5673d946025f5147c0f4e600e8f7f92649ed318660c906637"
+    },
+    {
+      "phase": 5,
+      "route": "keepers.html",
+      "url": "http://127.0.0.1:4173/keepers.html",
+      "brokenImages": [],
+      "h1": "Keeper History",
+      "headings": [
+        "The keeper constitution",
+        "Keeper classes by season",
+        "Who has lived on discounts"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        12,
+        5,
+        6,
+        10,
+        11
+      ],
+      "title": "Keepers · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2485,
+      "bodySHA256": "a959d367d48952dc46c50de4a05213a96e0cebd28c7ad43403ee412e4c70a277"
+    },
+    {
+      "phase": 5,
+      "route": "wall-of-shame.html",
+      "url": "http://127.0.0.1:4173/wall-of-shame.html",
+      "brokenImages": [],
+      "h1": "Wall of Shame",
+      "headings": [
+        "Wall of Shame",
+        "Shame records"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [],
+      "title": "Wall of Shame · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 1714,
+      "bodySHA256": "6939a9d251428d388c4ff4a6983ed05fd0a2dd610fed7cdb618fc21145fc4cff"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Chris",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Chris",
+      "brokenImages": [],
+      "h1": "Chris — Criterus",
+      "headings": [
+        "2026 command center",
+        "Balanced Operator",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        16
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2852,
+      "bodySHA256": "c56b8ca5527502e5363fe4140075808e96b5e1b4bbfcf693c729ed6c8e874320"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Andrew",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Andrew",
+      "brokenImages": [],
+      "h1": "Andrew — The Eviscerators",
+      "headings": [
+        "2026 command center",
+        "Banner Collector",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        16
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2923,
+      "bodySHA256": "304ada32f870b4f13626d086cd24d658e126fa693435094d8fa82992ec372113"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Nate",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Nate",
+      "brokenImages": [],
+      "h1": "Nate — Revenge of the period bloods",
+      "headings": [
+        "2026 command center",
+        "Late-Game Operator",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        15
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2926,
+      "bodySHA256": "9a89c037c6cbd8acbd532c17f313cc01533d8ad78341ed7f878f838280460d9d"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Max",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Max",
+      "brokenImages": [],
+      "h1": "Max — Predacious Fungi",
+      "headings": [
+        "2026 command center",
+        "Waiver Day Trader",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        16
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2868,
+      "bodySHA256": "c21e1c454f4c4190b18fa999395b19076eaf99e897b488bcfedc47bbaeb198b0"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Tommy",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Tommy",
+      "brokenImages": [],
+      "h1": "Tommy — Pump and Go",
+      "headings": [
+        "2026 command center",
+        "December Operator",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        16
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2785,
+      "bodySHA256": "359db72744f452180b8e56aa992e17ad106f6e81ed48a0a951deb26fe5f7926e"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Adam",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Adam",
+      "brokenImages": [],
+      "h1": "Adam — The A Gap",
+      "headings": [
+        "2026 command center",
+        "Balanced Operator",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        16
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2759,
+      "bodySHA256": "ccc97255475a360815890616382c95c1ea4c0ebf31590de74b5e6795dd8995c5"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Nick",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Nick",
+      "brokenImages": [],
+      "h1": "Nick — TDs In Your Face",
+      "headings": [
+        "2026 command center",
+        "Chaos Engine",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        16
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2892,
+      "bodySHA256": "45f187f26b2057f8dd0ecd1ccb39a4ac1017212417b2e635602c7de0c7113b7a"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=TomD",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=TomD",
+      "brokenImages": [],
+      "h1": "TomD — The Mustache riders",
+      "headings": [
+        "2026 command center",
+        "Scoreboard Bully",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        15
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2783,
+      "bodySHA256": "090dd783562c1997ec8f1e0f772593f6b35ae8cec6c61788db498920d85ad6c8"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Jim",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Jim",
+      "brokenImages": [],
+      "h1": "Jim — The Moose Knuckles",
+      "headings": [
+        "2026 command center",
+        "Waiver Day Trader",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        16
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2935,
+      "bodySHA256": "d8bc56f060b36f3e369252bf111a7252709e8d61b61e517656a56d679f434472"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=Billy",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=Billy",
+      "brokenImages": [],
+      "h1": "Billy — Kareem all over your Hunt",
+      "headings": [
+        "2026 command center",
+        "One-Score Assassin",
+        "2026 outlook",
+        "Draft snapshot",
+        "Current Yahoo roster"
+      ],
+      "scrollWidth": 1348,
+      "tableRows": [
+        15
+      ],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 2948,
+      "bodySHA256": "3e528993e9379fcf0d292c8ad92a2e55ba0db9fe085ddef87accd99c2c84eb7d"
+    },
+    {
+      "phase": 5,
+      "route": "franchise.html?manager=El%20Rubio",
+      "url": "http://127.0.0.1:4173/franchise.html?manager=El%20Rubio",
+      "brokenImages": [],
+      "h1": "El Rubio — Retired / former manager",
+      "headings": [],
+      "scrollWidth": 1348,
+      "tableRows": [],
+      "title": "Franchise · The Makers",
+      "width": 1348,
+      "errors": [],
+      "characters": 958,
+      "bodySHA256": "7c0e6fb3cb0eede4c90933f30cdba9d17c820043c5bf51ef92fb19286c1e87fa"
+    }
+  ],
+  "checks": [
+    {
+      "check": "Homepage features Week 11 and the new preview",
+      "pass": true
+    },
+    {
+      "check": "Week 10 recap and all five Week 11 predictions render",
+      "pass": true
+    },
+    {
+      "check": "Prediction ledger contains 55 receipts and the correct 34–16 / 33–17 grades",
+      "pass": true
+    },
+    {
+      "check": "Analytics includes 200 acquisition receipts with the corrected leader",
+      "pass": true
+    },
+    {
+      "check": "Available-player rows preserve all six groups and 90 FA / 10 dated waiver labels",
+      "pass": true
+    },
+    {
+      "check": "Head-to-head renders all 368 games including 50 current-season finals",
+      "pass": true
+    },
+    {
+      "check": "Billy and El Rubio remain separate franchise histories",
+      "pass": true
+    },
+    {
+      "check": "New desk notes have explicit labels in articles and Press Room",
+      "pass": true
+    }
+  ],
+  "siteConsoleErrors": [],
+  "brokenImages": [],
+  "horizontalOverflowRoutes": [],
+  "visualReview": "Homepage screenshot inspected; all 32 routes have visible headings and populated content.",
+  "limitations": [
+    "Browser coverage is the 32 primary routes and franchise profiles at the available desktop viewport; physical mobile-device testing was not performed."
+  ]
+}
