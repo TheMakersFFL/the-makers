@@ -1,0 +1,386 @@
+{
+  "phase": 2,
+  "status": "PASS",
+  "checksPassed": 90,
+  "checks": [
+    {
+      "name": "Current import reconstructs complete normalized source exactly",
+      "status": "PASS"
+    },
+    {
+      "name": "Correct Makers identity and week",
+      "status": "PASS"
+    },
+    {
+      "name": "All historical data is unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "55 unique current finals, five per completed week",
+      "status": "PASS"
+    },
+    {
+      "name": "All 50 prior current finals remain exact",
+      "status": "PASS"
+    },
+    {
+      "name": "373 total recorded games; all 368 prior objects preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Jim standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Billy standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "TomD standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Max standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Nick standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Andrew standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Nate standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Tommy standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Chris standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "Adam standings reconcile with all eleven results",
+      "status": "PASS"
+    },
+    {
+      "name": "League wins/losses and PF/PA reconcile",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 1 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 2 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 3 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 4 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 5 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 6 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 7 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 8 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 9 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 10 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Previously locked prediction 11 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 1 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 2 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 3 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 4 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 5 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 6 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 7 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 8 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 9 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed weekly article 10 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week4ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week5ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week5StockMarket is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property predictionGradingThroughWeek4 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week6ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week6StockMarket is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property predictionGradingThroughWeek5 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week5Editorial is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week7ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week7StockMarket is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property predictionGradingThroughWeek6 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week6Editorial is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week7Editorial is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week8ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week8StockMarket is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property predictionGradingThroughWeek7 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week8Editorial is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week9ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week9Editorial is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property predictionGradingThroughWeek8 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week9StockMarket is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week10ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week10StockMarket is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property predictionGradingThroughWeek9 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week10Editorial is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week11ModelSnapshot is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week11StockMarket is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property predictionGradingThroughWeek10 is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Historical property week11Editorial is exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Published W11 preview content retained when finals added",
+      "status": "PASS"
+    },
+    {
+      "name": "Current forecasts provisional; prior model is W11",
+      "status": "PASS"
+    },
+    {
+      "name": "All five current Yahoo projections match supplied source",
+      "status": "PASS"
+    },
+    {
+      "name": "No current future finals or actual scores",
+      "status": "PASS"
+    },
+    {
+      "name": "Jim current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Nick current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Max current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Chris current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "TomD current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Nate current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Andrew current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Adam current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Tommy current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Billy current roster players and vacancies exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Current completed lineups exact",
+      "status": "PASS"
+    },
+    {
+      "name": "All prior completed lineup rows remain exact",
+      "status": "PASS"
+    },
+    {
+      "name": "All old lineup autopsies exact; ten new generated",
+      "status": "PASS"
+    },
+    {
+      "name": "All available-player normalized fields retained",
+      "status": "PASS"
+    },
+    {
+      "name": "FAAB remaining balances and priority exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Manager move counts sum to current captured transaction ledger",
+      "status": "PASS"
+    },
+    {
+      "name": "All previous captured transactions remain represented",
+      "status": "PASS"
+    },
+    {
+      "name": "Billy and El Rubio franchise history stays separate",
+      "status": "PASS"
+    },
+    {
+      "name": "No source/runtime warnings",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "counts": {
+    "finals": 55,
+    "allGames": 373,
+    "predictionReceipts": 12,
+    "completedLineups": 10,
+    "currentRosters": 10,
+    "availablePlayers": 100,
+    "transactions": 258,
+    "acquisitions": 215,
+    "lineupAutopsies": 110,
+    "remainingFAAB": 485,
+    "currentWeek": 12,
+    "completedWeek": 11
+  },
+  "sourceSha256": "42d246539aba4e0bb3254211eb2b32a7991caf268b548b394b5aa2293f8021fe",
+  "baselineCommit": "5cc3a9978560783726eaf6c29e8dfd0c90e85fe6",
+  "errors": [],
+  "warnings": []
+}
