@@ -1,0 +1,106 @@
+{
+  "phase": 4,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Candidate parses and applies only to locked Week 12",
+      "status": "PASS",
+      "assertions": 5
+    },
+    {
+      "name": "Previous completed articles stay exact",
+      "status": "PASS",
+      "assertions": 10
+    },
+    {
+      "name": "Every prior editorial object, model and forecast stays exact",
+      "status": "PASS",
+      "assertions": 36
+    },
+    {
+      "name": "Factual roster/result/history state stays exact",
+      "status": "PASS",
+      "assertions": 11
+    },
+    {
+      "name": "Five exact completed results and all ten managers",
+      "status": "PASS",
+      "assertions": 27
+    },
+    {
+      "name": "Five exact frozen Makers/Yahoo forecasts and all ten managers",
+      "status": "PASS",
+      "assertions": 39
+    },
+    {
+      "name": "Current records and scoring comparisons",
+      "status": "PASS",
+      "assertions": 7
+    },
+    {
+      "name": "All-play records independently recomputed from current-season official scores",
+      "status": "PASS",
+      "assertions": 31
+    },
+    {
+      "name": "Legal lineup receipts and potential decision losses",
+      "status": "PASS",
+      "assertions": 15
+    },
+    {
+      "name": "Exact player-score claims",
+      "status": "PASS",
+      "assertions": 49
+    },
+    {
+      "name": "All current starter claims and status distinctions",
+      "status": "PASS",
+      "assertions": 46
+    },
+    {
+      "name": "Recorded head-to-head history excludes unrelated franchises",
+      "status": "PASS",
+      "assertions": 12
+    },
+    {
+      "name": "Model odds, Power movement and stock claims",
+      "status": "PASS",
+      "assertions": 15
+    },
+    {
+      "name": "Captured transaction and FAAB reconciliation",
+      "status": "PASS",
+      "assertions": 15
+    },
+    {
+      "name": "Available-player quotas, leaders and dated waivers",
+      "status": "PASS",
+      "assertions": 20
+    },
+    {
+      "name": "Prediction grading uses original lock",
+      "status": "PASS",
+      "assertions": 7
+    },
+    {
+      "name": "Source correction and attribution",
+      "status": "PASS",
+      "assertions": 8
+    },
+    {
+      "name": "Award attribution includes completed week only",
+      "status": "PASS",
+      "assertions": 10
+    },
+    {
+      "name": "Editorial completeness and no runtime warnings",
+      "status": "PASS",
+      "assertions": 9
+    }
+  ],
+  "assertions": 372,
+  "candidateSha256": "ec2bb1765c3565e9d25ce8ecf45a1bc235ef10c3cfd7a5ce2419288ef088998e",
+  "recapWords": 1218,
+  "previewWords": 2161,
+  "scope": "Author invariants; candidate executed outside repository; independent release audit belongs to root."
+}

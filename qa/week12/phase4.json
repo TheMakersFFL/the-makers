@@ -1,0 +1,20 @@
+{
+  "phase": 4,
+  "status": "PASS",
+  "editorialSHA256": "ec2bb1765c3565e9d25ce8ecf45a1bc235ef10c3cfd7a5ce2419288ef088998e",
+  "authorAssertions": 372,
+  "authorGroups": 19,
+  "independentFactualReviewGroups": 19,
+  "rootIntegrationGroups": 6,
+  "recapWords": 1218,
+  "previewWords": 2161,
+  "recapMatchups": 5,
+  "previewMatchups": 5,
+  "awardsPerWeek": 8,
+  "transactionNotes": 8,
+  "rosterNeeds": 10,
+  "quoteAttribution": "League Desk",
+  "gameOfWeek": "Predacious Fungi vs The Eviscerators",
+  "protectedHistory": "Exact original weekly1–10, original Week11 editorial, all prior predictions/models and all factual data preserved",
+  "blockers": []
+}
