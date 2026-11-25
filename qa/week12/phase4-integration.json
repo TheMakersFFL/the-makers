@@ -1,0 +1,131 @@
+{
+  "phase": 4,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "All29 historical properties and original W11 editorial exact",
+      "pass": true
+    },
+    {
+      "name": "All11 prior forecast receipts exact",
+      "pass": true
+    },
+    {
+      "name": "All ten earlier completed weekly articles exact",
+      "pass": true
+    },
+    {
+      "name": "All368 old games retained and five new added",
+      "pass": true
+    },
+    {
+      "name": "Both articles complete with five stories and accurate attribution",
+      "pass": true
+    },
+    {
+      "name": "Six key rendered routes populated without warnings",
+      "pass": true,
+      "detail": [
+        {
+          "route": "index.html",
+          "characters": 5007,
+          "preview": true,
+          "recap": true,
+          "leagueDesk": true,
+          "warnings": []
+        },
+        {
+          "route": "weeks.html",
+          "characters": 42574,
+          "preview": true,
+          "recap": true,
+          "leagueDesk": true,
+          "warnings": []
+        },
+        {
+          "route": "week.html?week=11",
+          "characters": 27758,
+          "preview": false,
+          "recap": true,
+          "leagueDesk": true,
+          "warnings": []
+        },
+        {
+          "route": "week.html?week=12",
+          "characters": 35537,
+          "preview": true,
+          "recap": false,
+          "leagueDesk": true,
+          "warnings": []
+        },
+        {
+          "route": "press.html",
+          "characters": 42363,
+          "preview": true,
+          "recap": true,
+          "leagueDesk": true,
+          "warnings": []
+        },
+        {
+          "route": "predictions.html",
+          "characters": 25270,
+          "preview": false,
+          "recap": false,
+          "leagueDesk": false,
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "rendered": [
+    {
+      "route": "index.html",
+      "characters": 5007,
+      "preview": true,
+      "recap": true,
+      "leagueDesk": true,
+      "warnings": []
+    },
+    {
+      "route": "weeks.html",
+      "characters": 42574,
+      "preview": true,
+      "recap": true,
+      "leagueDesk": true,
+      "warnings": []
+    },
+    {
+      "route": "week.html?week=11",
+      "characters": 27758,
+      "preview": false,
+      "recap": true,
+      "leagueDesk": true,
+      "warnings": []
+    },
+    {
+      "route": "week.html?week=12",
+      "characters": 35537,
+      "preview": true,
+      "recap": false,
+      "leagueDesk": true,
+      "warnings": []
+    },
+    {
+      "route": "press.html",
+      "characters": 42363,
+      "preview": true,
+      "recap": true,
+      "leagueDesk": true,
+      "warnings": []
+    },
+    {
+      "route": "predictions.html",
+      "characters": 25270,
+      "preview": false,
+      "recap": false,
+      "leagueDesk": false,
+      "warnings": []
+    }
+  ],
+  "sourceCapturedAt": "2026-11-25T17:30:01.477Z"
+}

@@ -1,0 +1,63 @@
+{
+  "phase": 5,
+  "status": "PASS",
+  "staticChecks": 23,
+  "sourcePrivacyChecks": 9,
+  "browserRoutes": 32,
+  "browserRedirectChecks": 2,
+  "cacheToken": "makers-20261125-w12p5",
+  "htmlFiles": 53,
+  "javascriptFiles": 92,
+  "inlineScripts": 30,
+  "localReferences": 533,
+  "loaderModules": 87,
+  "activePages": 18,
+  "directParity": [
+    {
+      "route": "history.html",
+      "scripts": 85,
+      "uniqueScripts": 85,
+      "newModules": 9,
+      "week": 12,
+      "completedWeek": 11,
+      "parity": "EXACT",
+      "warnings": []
+    },
+    {
+      "route": "head-to-head.html",
+      "scripts": 86,
+      "uniqueScripts": 86,
+      "newModules": 9,
+      "week": 12,
+      "completedWeek": 11,
+      "parity": "EXACT",
+      "warnings": []
+    },
+    {
+      "route": "trophy-case.html",
+      "scripts": 85,
+      "uniqueScripts": 85,
+      "newModules": 9,
+      "week": 12,
+      "completedWeek": 11,
+      "parity": "EXACT",
+      "warnings": []
+    }
+  ],
+  "protectedBaselineFiles": 222,
+  "state": {
+    "week": 12,
+    "completedWeek": 11,
+    "finals": 55,
+    "historicalGames": 318,
+    "allGames": 373,
+    "predictionReceipts": 12,
+    "lineupAutopsies": 110,
+    "transactions": 258,
+    "acquisitions": 215,
+    "availablePlayers": 100
+  },
+  "warnings": [],
+  "blockers": [],
+  "productionChanged": false
+}

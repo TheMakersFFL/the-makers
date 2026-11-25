@@ -1,0 +1,114 @@
+{
+  "phase": 4,
+  "status": "PASS",
+  "reviewer": "independent-source-audit",
+  "reviewedAt": "2026-11-25T18:31:11.504942+00:00",
+  "candidateSHA256": "ec2bb1765c3565e9d25ce8ecf45a1bc235ef10c3cfd7a5ce2419288ef088998e",
+  "candidateJSONSHA256": "06516423e1b62b12ac08d413c5a6201413b47a509c565bfe7e9cf211d0d19520",
+  "sourceSHA256": "42d246539aba4e0bb3254211eb2b32a7991caf268b548b394b5aa2293f8021fe",
+  "checkedSections": [
+    {
+      "check": "Candidate JS/JSON identity",
+      "status": "PASS",
+      "detail": "Frozen JS and JSON contain identical editorial objects."
+    },
+    {
+      "check": "Final games and future forecast fields",
+      "status": "PASS",
+      "detail": "Five completed game stories and five preview stories."
+    },
+    {
+      "check": "All forecast numbers and winner fields",
+      "status": "PASS",
+      "detail": "All20 Makers/Yahoo score predictions match locked Week12 model; previews consistently describe forecasts."
+    },
+    {
+      "check": "Independent legal hindsight totals",
+      "status": "PASS",
+      "detail": "All ten legal optima recomputed independently;91.42 total points available, with null Bye production excluded."
+    },
+    {
+      "check": "Chris two-swap example",
+      "status": "PASS",
+      "detail": "RB/flex replacements are eligible; hypothetical win margin0.06 is against actual opponent score."
+    },
+    {
+      "check": "Andrew WR swap example",
+      "status": "PASS",
+      "detail": "Evans-for-Olave adds6.20; actual-opponent comparison qualified, Adam also had12.90 available."
+    },
+    {
+      "check": "Tommy WR/flex swap example",
+      "status": "PASS",
+      "detail": "Two legal swaps add23.70; hypothetical margin14.32 against actual Billy score."
+    },
+    {
+      "check": "Player and lineup awards",
+      "status": "PASS",
+      "detail": "Dak39.90 top starter; Ward24.72 top scored bench; Jim/Billy100% efficient."
+    },
+    {
+      "check": "Archive counts",
+      "status": "PASS",
+      "detail": "373 combined archived games,55 completed2026 games."
+    },
+    {
+      "check": "All-play season and Week11",
+      "status": "PASS",
+      "detail": "Every all-play value in article independently reconstructed from2026 weekly scores; all eleven weeks contain10teams."
+    },
+    {
+      "check": "Ten H2H series and repeat Week3 pairings",
+      "status": "PASS",
+      "detail": "All ten cited series recomputed using exact manager identities; Billy history remains separate from El Rubio."
+    },
+    {
+      "check": "Current lineups, injury and bye language",
+      "status": "PASS",
+      "detail": "All named starter/bench choices manually checked;90 occupied starters, twoQstarters, no starter byes/empties."
+    },
+    {
+      "check": "Available status and waiver dates",
+      "status": "PASS",
+      "detail": "94FA/6W; all six published waiver dates match source."
+    },
+    {
+      "check": "Six free-agent projection leaders",
+      "status": "PASS",
+      "detail": "All positional leader identities/projections match source; called snapshot opportunities."
+    },
+    {
+      "check": "Transactions and FAAB",
+      "status": "PASS",
+      "detail": "Fiveclaims/$13; balances/transactions/20new+5overlap verified; cumulative ledger258, reacquisitions backed by prior ownership events."
+    },
+    {
+      "check": "Prediction grading",
+      "status": "PASS",
+      "detail": "W11 both3–2, season37–18/36–19; Week11 MAE14.70/15.14, season18.11/17.99 match frozen model grading."
+    },
+    {
+      "check": "Simulation, Power and stock claims",
+      "status": "PASS",
+      "detail": "Manually checked all quoted power scores/rank movement, odds and percentage-point changes,24000trials,stock deltas against locked model; rounded extremes consistently qualified."
+    },
+    {
+      "check": "Source corrections and no false attribution",
+      "status": "PASS",
+      "detail": "Desk commentary labelled league-desk; no attributed commissioner/group-chat quotation;275phantom points/25Bye rows accurately described."
+    },
+    {
+      "check": "Corrected margin wording",
+      "status": "PASS",
+      "detail": "Corrected minor0.07margin wording; no numerical data changed."
+    }
+  ],
+  "issuesResolved": [
+    {
+      "issue": "0.07 originally described as smallest possible meaningful margin",
+      "resolution": "Author changed to closest projected margin on this slate; verified finalcandidate."
+    }
+  ],
+  "unresolvedBlockers": [],
+  "scopeNote": "Independent factual release gate; full editorial read, targeted recomputation of game/lineup/all-play/H2H claims and source/model cross-checks. No repository files edited."
+}
