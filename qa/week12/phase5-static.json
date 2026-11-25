@@ -1,0 +1,209 @@
+{
+  "phase": 5,
+  "component": "Independent static release and source/runtime integrity gate",
+  "status": "PASS",
+  "checksPassed": 23,
+  "baselineCommit": "5cc3a9978560783726eaf6c29e8dfd0c90e85fe6",
+  "checks": [
+    {
+      "name": "All JavaScript and CJS files parse",
+      "status": "PASS",
+      "detail": {
+        "files": 92,
+        "errors": []
+      }
+    },
+    {
+      "name": "87 loader modules are unique and present",
+      "status": "PASS",
+      "detail": {
+        "moduleCount": 87
+      }
+    },
+    {
+      "name": "Current modules load in correct dependency order",
+      "status": "PASS"
+    },
+    {
+      "name": "Release token identifies current Week12 package",
+      "status": "PASS",
+      "detail": "makers-20261125-w12p5"
+    },
+    {
+      "name": "All18 active pages use current cache token",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "HTML content and layout preserved beyond new module tags and cache",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Every protected baseline file remains byte-identical",
+      "status": "PASS",
+      "detail": {
+        "checked": 222,
+        "errors": []
+      }
+    },
+    {
+      "name": "Saved Phase3 model and factual source files remain frozen",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "All local HTML/CSS links and referenced assets resolve",
+      "status": "PASS",
+      "detail": {
+        "references": 533,
+        "errors": []
+      }
+    },
+    {
+      "name": "Inline scripts parse",
+      "status": "PASS",
+      "detail": {
+        "scripts": 30,
+        "errors": []
+      }
+    },
+    {
+      "name": "55 current finals and373 total games; prior368 preserved exactly",
+      "status": "PASS"
+    },
+    {
+      "name": "All11 earlier prediction locks remain exact",
+      "status": "PASS"
+    },
+    {
+      "name": "All ten earlier completed articles remain exact",
+      "status": "PASS"
+    },
+    {
+      "name": "All29 stored historical properties remain exact",
+      "status": "PASS"
+    },
+    {
+      "name": "All100 prior autopsies exact; ten new W11 rows",
+      "status": "PASS"
+    },
+    {
+      "name": "Current model and editorial agree on Week12 and W11 recap",
+      "status": "PASS"
+    },
+    {
+      "name": "Ten unique active managers in standings, Power and odds",
+      "status": "PASS"
+    },
+    {
+      "name": "Public source modules reconstruct saved normalized source exactly",
+      "status": "PASS"
+    },
+    {
+      "name": "Raw capture bodies excluded from normalized source",
+      "status": "PASS"
+    },
+    {
+      "name": "history.html full current dependency-chain runtime parity",
+      "status": "PASS"
+    },
+    {
+      "name": "head-to-head.html full current dependency-chain runtime parity",
+      "status": "PASS"
+    },
+    {
+      "name": "trophy-case.html full current dependency-chain runtime parity",
+      "status": "PASS"
+    },
+    {
+      "name": "No source/runtime warnings",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "cacheToken": "makers-20261125-w12p5",
+  "activePages": [
+    "analytics.html",
+    "franchise.html",
+    "franchises.html",
+    "head-to-head.html",
+    "history.html",
+    "index.html",
+    "playoff-odds.html",
+    "power-rankings.html",
+    "predictions.html",
+    "press.html",
+    "records.html",
+    "schedule.html",
+    "season-2026.html",
+    "transactions.html",
+    "trophy-case.html",
+    "waiver-wire.html",
+    "week.html",
+    "weeks.html"
+  ],
+  "loaderModules": 87,
+  "htmlFiles": 53,
+  "javascriptFiles": 92,
+  "localReferences": 533,
+  "inlineScripts": 30,
+  "directChainParity": [
+    {
+      "route": "history.html",
+      "scripts": 85,
+      "uniqueScripts": 85,
+      "newModules": 9,
+      "week": 12,
+      "completedWeek": 11,
+      "parity": "EXACT",
+      "warnings": []
+    },
+    {
+      "route": "head-to-head.html",
+      "scripts": 86,
+      "uniqueScripts": 86,
+      "newModules": 9,
+      "week": 12,
+      "completedWeek": 11,
+      "parity": "EXACT",
+      "warnings": []
+    },
+    {
+      "route": "trophy-case.html",
+      "scripts": 85,
+      "uniqueScripts": 85,
+      "newModules": 9,
+      "week": 12,
+      "completedWeek": 11,
+      "parity": "EXACT",
+      "warnings": []
+    }
+  ],
+  "state": {
+    "week": 12,
+    "completedWeek": 11,
+    "finals": 55,
+    "historicalGames": 318,
+    "allGames": 373,
+    "predictionReceipts": 12,
+    "lineupAutopsies": 110,
+    "transactions": 258,
+    "acquisitions": 215,
+    "availablePlayers": 100
+  },
+  "protectedFilesChecked": 222,
+  "frozenSourceFiles": [
+    "week12-models.js",
+    "data/week12-normalized.json",
+    "week12-import.js",
+    "week12-rosters.js",
+    "week12-completed.js",
+    "week12-transactions.js",
+    "week12-available.js"
+  ],
+  "errors": [],
+  "warnings": [],
+  "browserAuditPerformed": false,
+  "productionChanged": false
+}
