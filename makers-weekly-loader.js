@@ -92,6 +92,7 @@
       await load('week11-editorial.js');
       await load('week12-history-preservation.js');
       await load('week12-phase2-consistency.js');
+      await load('week12-models.js');
       await load('league-analytics.js');
       if((document.body.dataset.page||'')==='waivers'){
         await load('api-config.js');

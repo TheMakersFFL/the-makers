@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "baselineCommit": "5cc3a9978560783726eaf6c29e8dfd0c90e85fe6",
+  "protectedSnapshot": "baseline-protected.json",
+  "sha256": "3d6d5db99b7b6c330a51501091c5ceb7903cb02a742c29d909743d0371588a94",
+  "counts": {
+    "historicalGames": 318,
+    "finals": 50,
+    "allGames": 368,
+    "predictionLocks": 11,
+    "priorCompletedArticles": 10,
+    "protectedProperties": 29,
+    "lineupAutopsies": 100,
+    "transactions": 238,
+    "acquisitions": 200
+  },
+  "modelReproduction": {
+    "engineUnmodified": true,
+    "trials": 24000,
+    "powerRows": 10,
+    "oddsRows": 10,
+    "oddsFields": 70,
+    "forecasts": 5,
+    "exact": true,
+    "diffs": []
+  },
+  "warnings": []
+}

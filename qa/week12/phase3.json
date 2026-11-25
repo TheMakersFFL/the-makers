@@ -1,0 +1,61 @@
+{
+  "phase": 3,
+  "status": "PASS",
+  "modelChecks": 17,
+  "analyticsChecks": 23,
+  "currentWeek": 12,
+  "completedGames": 55,
+  "remainingGames": 15,
+  "simulationTrials": 24000,
+  "seed": 20260901,
+  "sourceCapturedAt": "2026-11-25T17:30:01.477Z",
+  "lockedReceipts": 12,
+  "priorLockedReceiptsPreserved": 11,
+  "newForecasts": 5,
+  "currentPowerLeader": {
+    "team": "The Moose Knuckles",
+    "powerIndex": 84.14
+  },
+  "predictionGrading": {
+    "week11": {
+      "makers": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 14.7,
+        "marginMAE": 18.68
+      },
+      "yahoo": {
+        "correct": 3,
+        "total": 5,
+        "scoreMAE": 15.14,
+        "marginMAE": 18.56
+      }
+    },
+    "season": {
+      "makers": {
+        "correct": 37,
+        "total": 55,
+        "scoreMAE": 18.11,
+        "marginMAE": 25.32
+      },
+      "yahoo": {
+        "correct": 36,
+        "total": 55,
+        "scoreMAE": 17.99,
+        "marginMAE": 24.88
+      }
+    }
+  },
+  "analyticalReceipts": {
+    "transactions": 258,
+    "acquisitions": 215,
+    "lineupAutopsies": 110,
+    "priorLineupAutopsiesPreserved": 100,
+    "week11LegalHindsightGain": 91.42,
+    "week11PotentialDecisionLosses": 3,
+    "newlyCapturedWeek11AcquisitionPoints": 62,
+    "week12AcquisitionPoints": 0
+  },
+  "warnings": [],
+  "blockers": []
+}
