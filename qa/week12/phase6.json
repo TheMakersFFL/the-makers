@@ -1,0 +1,27 @@
+{
+  "phase": 6,
+  "status": "PASS",
+  "allSixPhasesCompleted": true,
+  "sequentialCheckpointsSaved": true,
+  "productionURL": "https://themakersffl.github.io/the-makers/",
+  "week11RecapURL": "https://themakersffl.github.io/the-makers/week.html?week=11",
+  "week12PreviewURL": "https://themakersffl.github.io/the-makers/week.html?week=12",
+  "weeklyHubURL": "https://themakersffl.github.io/the-makers/weeks.html#latest-writeup",
+  "pullRequest": {
+    "number": 16,
+    "url": "https://github.com/TheMakersFFL/the-makers/pull/16"
+  },
+  "mergeCommit": "a90de76f449f9ae04aeb9d50f276a261ea7b8538",
+  "tree": "42b4170c901f24f40ff02230160beb2ac948bda7",
+  "pagesRun": 45677160247,
+  "pagesSuccess": true,
+  "exactPublishedTree": true,
+  "liveRoutesVerified": 32,
+  "liveRedirectsVerified": 2,
+  "allLiveTextMatchesPreview": true,
+  "verifiedAtUTC": "2026-11-25 18:42:13 UTC",
+  "rawExportPublished": false,
+  "blockingIssues": [],
+  "continuationNeeded": false,
+  "note": "Phase6 verification receipts are retained on the release branch; production remains the exact audited Phase5 merge tree."
+}

@@ -1,0 +1,612 @@
+{
+  "phase": 6,
+  "status": "PASS",
+  "browser": "Chromium cloud browser, available desktop viewport",
+  "baseURL": "https://themakersffl.github.io/the-makers/",
+  "routeCount": 32,
+  "redirectCount": 2,
+  "viewportWidth": 1348,
+  "comparison": "Every route's full visible body text, H1/H2 headings and table-row counts compared exactly against the audited browser preview.",
+  "pages": [
+    {
+      "route": "index.html",
+      "characters": 2263,
+      "textFingerprint": "d42e9f58",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "weeks.html",
+      "characters": 23747,
+      "textFingerprint": "2809ea5d",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        5,
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "week.html?week=11",
+      "characters": 17489,
+      "textFingerprint": "0bfc933b",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        5
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "week.html?week=12",
+      "characters": 24324,
+      "textFingerprint": "951c1db0",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        5
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "season-2026.html",
+      "characters": 7102,
+      "textFingerprint": "bc0dfd4f",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "predictions.html",
+      "characters": 11576,
+      "textFingerprint": "01bedc68",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        60,
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "analytics.html",
+      "characters": 29789,
+      "textFingerprint": "3df7bdb9",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        11,
+        10,
+        215,
+        10,
+        10,
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "transactions.html",
+      "characters": 21550,
+      "textFingerprint": "c386214e",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        11
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "waiver-wire.html",
+      "characters": 26362,
+      "textFingerprint": "a970a5e2",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        10,
+        15,
+        25,
+        25,
+        15,
+        10,
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "schedule.html",
+      "characters": 12722,
+      "textFingerprint": "682af0f4",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "power-rankings.html",
+      "characters": 8023,
+      "textFingerprint": "7f80545d",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        10,
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "playoff-odds.html",
+      "characters": 2181,
+      "textFingerprint": "8dc0c8af",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchises.html",
+      "characters": 5499,
+      "textFingerprint": "6deebb0a",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "history.html",
+      "characters": 2346,
+      "textFingerprint": "b0c3c42e",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "head-to-head.html",
+      "characters": 13611,
+      "textFingerprint": "4ad275ab",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        11,
+        81,
+        79,
+        79,
+        79,
+        55
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "records.html",
+      "characters": 4327,
+      "textFingerprint": "ed394273",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        11,
+        11,
+        14
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "trophy-case.html",
+      "characters": 1182,
+      "textFingerprint": "c3a43207",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        11
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "press.html",
+      "characters": 15818,
+      "textFingerprint": "cc513bc6",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "drafts.html",
+      "characters": 43401,
+      "textFingerprint": "2c212cab",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        10
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "keepers.html",
+      "characters": 2485,
+      "textFingerprint": "da879d4c",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        12,
+        5,
+        6,
+        10,
+        11
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "wall-of-shame.html",
+      "characters": 1714,
+      "textFingerprint": "3b5c13fb",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Chris",
+      "characters": 2854,
+      "textFingerprint": "ed2a1141",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        16
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Andrew",
+      "characters": 2921,
+      "textFingerprint": "63498647",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        16
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Nate",
+      "characters": 2926,
+      "textFingerprint": "0c27e1f2",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        15
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Max",
+      "characters": 2863,
+      "textFingerprint": "ef7afd36",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        16
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Tommy",
+      "characters": 2786,
+      "textFingerprint": "961f8ea3",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        16
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Adam",
+      "characters": 2720,
+      "textFingerprint": "49a4c9a6",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        15
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Nick",
+      "characters": 2871,
+      "textFingerprint": "74afc2b7",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        15
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=TomD",
+      "characters": 2802,
+      "textFingerprint": "69bb3787",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        16
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Jim",
+      "characters": 2942,
+      "textFingerprint": "03bf37a1",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        16
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=Billy",
+      "characters": 2945,
+      "textFingerprint": "f76fa560",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [
+        15
+      ],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    },
+    {
+      "route": "franchise.html?manager=El%20Rubio",
+      "characters": 958,
+      "textFingerprint": "a9a3d98e",
+      "fingerprintMethod": "FNV-1a of visible UTF-16 text; production verification additionally compares full strings",
+      "width": 1348,
+      "overflow": 0,
+      "tableRows": [],
+      "headingPresent": true,
+      "siteErrors": [],
+      "brokenImages": [],
+      "matchesPreviewFullText": true,
+      "matchesPreviewHeadings": true,
+      "matchesPreviewTableRows": true
+    }
+  ],
+  "redirects": [
+    {
+      "route": "week-12.html",
+      "url": "https://themakersffl.github.io/the-makers/week.html?week=12",
+      "h1": "Week 12 — 2026"
+    },
+    {
+      "route": "franchise-billy.html",
+      "url": "https://themakersffl.github.io/the-makers/franchise.html?manager=Billy",
+      "h1": "Billy — Kareem all over your Hunt"
+    }
+  ],
+  "deliverableURL": "https://themakersffl.github.io/the-makers/weeks.html#latest-writeup",
+  "visibleEvidence": {
+    "homeWeek": 12,
+    "recapWeek": 11,
+    "recapHindsightPoints": 91.42,
+    "closestHindsightWin": 0.06,
+    "previewClosestMakersMargin": 0.07,
+    "makersRecord": "37-18",
+    "yahooRecord": "36-19",
+    "makersScoreMAE": 18.11,
+    "yahooScoreMAE": 17.99,
+    "pendingForecasts": 5,
+    "predictionRows": 60,
+    "acquisitionRows": 215,
+    "freeAgentLabels": 94,
+    "availablePlayers": 100,
+    "combinedGameRows": 373,
+    "historyThroughWeek": 11
+  },
+  "visualReview": {
+    "liveHomepage": "PASS",
+    "liveWeeklyHub": "PASS"
+  },
+  "resolvedIssue": "The initial homepage showed unstyled content. One normal reload restored styling; the final screenshot and all32 final text/structure comparisons match preview. No source change was needed.",
+  "siteConsoleErrors": 0,
+  "brokenImages": 0,
+  "horizontalOverflowRoutes": 0,
+  "scope": "All32 primary routes and franchise profiles; two redirect checks; desktop only. Physical mobile-device testing not performed.",
+  "verifiedAtUTC": "2026-11-25 18:42:13 UTC",
+  "blockers": []
+}
